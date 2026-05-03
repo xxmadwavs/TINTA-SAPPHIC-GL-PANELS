@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GL PANELS — カタログ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ── BASE ─────────────────────────────────────────────── */
+:root {
+  --ink: #0a0a0a;
+  --paper: #f5f0e8;
+  --screen: #111118;
+  --neon: #e8ff47;
+  --neon2: #ff47a3;
+  --neon3: #47ffe0;
+  --white: #ffffff;
+  --muted: rgba(245,240,232,0.45);
+  --dim: rgba(245,240,232,0.2);
+  --border: rgba(245,240,232,0.12);
+  --dot-size: 2px;
+  --dot-space: 18px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--screen);
+  color: var(--paper);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* halftone dot texture */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background-image: radial-gradient(circle, rgba(245,240,232,0.06) var(--dot-size), transparent var(--dot-size));
+  background-size: var(--dot-space) var(--dot-space);
+  pointer-events: none;
+}
+
+/* ── SCAN LINE OVERLAY ────────────────────────────────── */
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.04) 2px,
+    rgba(0,0,0,0.04) 4px
+  );
+  pointer-events: none;
+}
+
+/* ── TOPBAR ───────────────────────────────────────────── */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  height: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px;
+  background: var(--screen);
+  border-bottom: 1px solid var(--border);
+}
+.topbar::after {
+  content: '';
+  position: absolute; bottom: -3px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--neon), var(--neon2), var(--neon3));
+}
+
+.logo {
+  display: flex; align-items: baseline; gap: 10px;
+}
+.logo-main {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px; letter-spacing: 3px;
+  color: var(--white);
+  line-height: 1;
+}
+.logo-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 11px; color: var(--neon);
+  letter-spacing: 3px; opacity: 0.8;
+}
+.logo-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--neon);
+  animation: blink 1.4s ease-in-out infinite;
+  flex-shrink: 0; align-self: center;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.15} }
+
+.topbar-center {
+  flex: 1; max-width: 400px; margin: 0 24px;
+  position: relative;
+}
+.search-box {
+  width: 100%;
+  background: rgba(245,240,232,0.06);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--paper);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  padding: 7px 12px 7px 32px;
+  outline: none;
+  transition: border-color .2s, background .2s;
+}
+.search-box:focus {
+  border-color: var(--neon);
+  background: rgba(232,255,71,0.04);
+}
+.search-box::placeholder { color: var(--dim); font-size: 11px; letter-spacing: .5px; }
+.search-icon {
+  position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+  font-size: 13px; color: var(--dim); pointer-events: none;
+}
+
+.topbar-right { display: flex; align-items: center; gap: 8px; }
+
+.adult-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 5px 11px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+  cursor: pointer; transition: all .2s;
+}
+.adult-btn:hover { border-color: var(--neon2); color: var(--neon2); }
+.adult-btn.active {
+  background: rgba(255,71,163,0.12);
+  border-color: rgba(255,71,163,0.5);
+  color: var(--neon2);
+}
+.adult-btn .pill {
+  width: 20px; height: 10px; border-radius: 10px;
+  background: var(--dim); position: relative; transition: background .2s;
+}
+.adult-btn.active .pill { background: var(--neon2); }
+.adult-btn .pill::after {
+  content: ''; position: absolute;
+  top: 1px; left: 1px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--screen); transition: transform .2s;
+}
+.adult-btn.active .pill::after { transform: translateX(10px); }
+
+/* ── HERO ─────────────────────────────────────────────── */
+.hero {
+  position: relative; z-index: 1;
+  padding: 100px 20px 0;
+  overflow: hidden;
+}
+
+/* manga speed lines behind hero text */
+.hero-bg {
+  position: absolute; inset: 0;
+  background: conic-gradient(
+    from 270deg at 50% 120%,
+    transparent 0deg,
+    rgba(232,255,71,0.02) 1deg,
+    transparent 2deg,
+    transparent 4deg,
+    rgba(232,255,71,0.015) 5deg,
+    transparent 6deg
+  );
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1400px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: end;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 24px;
+}
+
+.hero-text {}
+.hero-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--neon); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px; height: 1px;
+  background: var(--neon);
+}
+.hero-h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 9vw, 9rem);
+  letter-spacing: 4px;
+  line-height: .92;
+  color: var(--white);
+}
+.hero-h1 .accent { color: var(--neon); }
+.hero-h1 .accent2 { color: var(--neon2); }
+.hero-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 13px; color: var(--muted);
+  letter-spacing: 6px; margin-top: 10px;
+}
+
+.hero-stats {
+  display: flex; flex-direction: column;
+  gap: 1px; align-items: flex-end;
+  flex-shrink: 0;
+}
+.hstat {
+  display: flex; align-items: baseline; gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+  justify-content: flex-end;
+}
+.hstat:last-child { border-bottom: none; }
+.hstat-n {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem; color: var(--white); line-height: 1;
+}
+.hstat-l {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--dim);
+}
+
+/* ── FILTER STRIP ─────────────────────────────────────── */
+.filter-strip {
+  position: sticky; top: 52px; z-index: 200;
+  background: rgba(17,17,24,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ROW 1 — category pills */
+.cat-tabs {
+  max-width: 1400px; margin: 0 auto;
+  display: flex; overflow-x: auto; scrollbar-width: none;
+  padding: 10px 20px; gap: 6px;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+.cat-tabs::-webkit-scrollbar { display: none; }
+
+.ctab {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 14px; border-radius: 100px;
+  border: 1px solid var(--border);
+  background: transparent; color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; font-weight: 500;
+  cursor: pointer; white-space: nowrap;
+  transition: all .18s; flex-shrink: 0;
+}
+.ctab:hover { color: var(--paper); border-color: rgba(245,240,232,0.3); background: rgba(245,240,232,0.05); }
+.ctab.on { background: rgba(232,255,71,0.12); border-color: rgba(232,255,71,0.5); color: var(--neon); }
+.ctab .ctab-icon { font-size: 13px; }
+.ctab .ctab-count {
+  font-family: 'Space Mono', monospace; font-size: 9px;
+  background: rgba(245,240,232,0.1); border-radius: 100px;
+  padding: 1px 7px; color: var(--dim); font-weight: 400;
+}
+.ctab.on .ctab-count { background: rgba(232,255,71,0.2); color: var(--neon); }
+
+/* ROW 2 — filter dropdowns in one line */
+.filter-row {
+  max-width: 1400px; margin: 0 auto;
+  display: flex; align-items: center;
+  gap: 6px; padding: 8px 20px;
+  overflow-x: auto; scrollbar-width: none;
+}
+.filter-row::-webkit-scrollbar { display: none; }
+
+.fdrop {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 12px; border-radius: 100px;
+  border: 1px solid var(--border2);
+  background: rgba(245,240,232,0.04); color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+  cursor: pointer; white-space: nowrap;
+  transition: all .18s; position: relative; flex-shrink: 0;
+  user-select: none;
+}
+.fdrop:hover { color: var(--paper); border-color: rgba(245,240,232,0.3); }
+.fdrop.on { background: rgba(232,255,71,0.1); border-color: rgba(232,255,71,0.45); color: var(--neon); }
+.fdrop.on-teal { background: rgba(71,255,224,0.08); border-color: rgba(71,255,224,0.4); color: var(--neon3); }
+.fdrop.on-pink { background: rgba(255,71,163,0.1); border-color: rgba(255,71,163,0.45); color: var(--neon2); }
+.fdrop .arrow { font-size: 8px; opacity: .5; transition: transform .15s; display: inline-block; }
+.fdrop.open .arrow { transform: rotate(180deg); }
+.fdrop .fval { max-width: 90px; overflow: hidden; text-overflow: ellipsis; }
+
+.drop-panel {
+  position: absolute; top: calc(100% + 6px); left: 0;
+  background: #1c1c28; border: 1px solid var(--border2);
+  border-radius: 12px; padding: 5px;
+  display: none; min-width: 170px; z-index: 600;
+  box-shadow: 0 8px 32px rgba(0,0,0,.6);
+}
+.fdrop.open .drop-panel { display: block; }
+
+.dopt {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 10px; border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px;
+  color: var(--muted); cursor: pointer; white-space: nowrap;
+  transition: all .12s;
+}
+.dopt:hover { background: rgba(245,240,232,0.07); color: var(--paper); }
+.dopt.on { color: var(--neon); background: rgba(232,255,71,0.08); }
+.dopt.on-teal { color: var(--neon3); background: rgba(71,255,224,0.06); }
+.dopt.on-pink { color: var(--neon2); background: rgba(255,71,163,0.07); }
+.dopt .dopt-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+/* +18 toggle pill */
+.adult-pill-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: 100px;
+  border: 1px solid var(--border2);
+  background: rgba(245,240,232,0.04); color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+  cursor: pointer; white-space: nowrap; transition: all .18s; flex-shrink: 0;
+}
+.adult-pill-btn:hover { border-color: rgba(255,71,163,.4); color: var(--neon2); }
+.adult-pill-btn.on { background: rgba(255,71,163,0.12); border-color: rgba(255,71,163,0.5); color: var(--neon2); }
+.adult-pill-btn .tog {
+  width: 22px; height: 12px; border-radius: 100px;
+  background: rgba(245,240,232,0.15); position: relative; transition: background .2s; flex-shrink: 0;
+}
+.adult-pill-btn.on .tog { background: var(--neon2); }
+.adult-pill-btn .tog::after {
+  content: ''; position: absolute; top: 2px; left: 2px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--screen); transition: transform .2s;
+}
+.adult-pill-btn.on .tog::after { transform: translateX(10px); }
+
+.filter-sep { width: 1px; height: 16px; background: var(--border2); flex-shrink: 0; }
+.filter-count {
+  font-family: 'Space Mono', monospace; font-size: 9px;
+  color: var(--dim); white-space: nowrap; flex-shrink: 0; margin-left: auto; padding-left: 8px;
+}
+
+/* ── MAIN ─────────────────────────────────────────────── */
+.main {
+  max-width: 1400px; margin: 0 auto;
+  padding: 32px 20px 80px;
+  position: relative; z-index: 1;
+}
+
+/* ── SECTION ──────────────────────────────────────────── */
+.section { margin-bottom: 60px; }
+.section + .section { border-top: 1px solid var(--border); padding-top: 48px; }
+
+.section-head {
+  display: flex; align-items: center; gap: 0;
+  margin-bottom: 24px;
+}
+.section-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem; line-height: 1;
+  color: rgba(245,240,232,0.06);
+  margin-right: -4px;
+  user-select: none;
+}
+.section-title-wrap { flex: 1; padding-left: 16px; border-left: 2px solid var(--neon); }
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.9rem; letter-spacing: 3px;
+  color: var(--white); line-height: 1;
+}
+.section-title .sec-icon { font-size: 1.2rem; margin-right: 6px; }
+.section-meta {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--dim); margin-top: 3px;
+}
+.section-meta strong { color: var(--neon); }
+
+/* ── GRID ─────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 3px;
+}
+
+/* ── CARD ─────────────────────────────────────────────── */
+.card {
+  position: relative;
+  background: var(--ink);
+  border: 1px solid rgba(245,240,232,0.07);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color .2s, transform .2s;
+  aspect-ratio: 2/3;
+  display: flex; flex-direction: column;
+}
+.card:hover {
+  border-color: var(--neon);
+  transform: scale(1.02);
+  z-index: 2;
+}
+.card:hover .card-overlay { opacity: 1; }
+.card:hover .card-info { transform: translateY(0); }
+.card.hidden { display: none; }
+
+/* cover image */
+.card-cover {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.card-cover img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .35s;
+}
+.card:hover .card-cover img { transform: scale(1.08); }
+
+/* generated cover (no image) */
+.card-gen {
+  position: absolute; inset: 0;
+  display: flex; align-items: flex-end; justify-content: flex-start;
+  padding: 10px;
+  overflow: hidden;
+}
+.card-gen::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--gen-bg, #111118);
+}
+/* halftone on no-cover cards */
+.card-gen::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(245,240,232,0.07) 1px, transparent 1px);
+  background-size: 8px 8px;
+  mix-blend-mode: overlay;
+}
+.card-gen-title {
+  position: relative; z-index: 1;
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(245,240,232,0.5);
+  line-height: 1.3;
+  word-break: keep-all;
+}
+
+/* +18 chip */
+.adult-chip {
+  position: absolute; top: 7px; right: 7px; z-index: 10;
+  background: var(--neon2);
+  color: #1a0010;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 10px; letter-spacing: 1px;
+  padding: 1px 6px;
+  border-radius: 1px;
+}
+.card.adult-blurred .card-cover img,
+.card.adult-blurred .card-gen::before { filter: blur(14px); }
+.card.adult-blurred .adult-chip::after { content: '🔞 OCULT'; }
+.card.adult-blurred .adult-chip { background: rgba(255,71,163,0.4); color: var(--neon2); }
+
+/* estado corner */
+.card-estado {
+  position: absolute; top: 7px; left: 7px; z-index: 10;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 2px 6px; border-radius: 1px;
+}
+.e-fin { background: rgba(71,255,224,0.2); color: var(--neon3); }
+.e-cont { background: rgba(232,255,71,0.2); color: var(--neon); }
+.e-hiatus { background: rgba(255,200,71,0.2); color: #ffc847; }
+.e-cancel { background: rgba(255,71,71,0.18); color: #ff6b6b; }
+
+/* hover overlay */
+.card-overlay {
+  position: absolute; inset: 0; z-index: 5;
+  background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.92) 70%);
+  opacity: 0;
+  transition: opacity .22s;
+}
+
+/* info panel */
+.card-info {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 6;
+  padding: 12px 10px 10px;
+  transform: translateY(6px);
+  transition: transform .22s;
+}
+.card-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 12px; line-height: 1.35;
+  color: var(--white);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  margin-bottom: 6px;
+}
+.card-tags { display: flex; flex-wrap: wrap; gap: 2px; }
+.ctag {
+  font-size: 8px; letter-spacing: .5px;
+  padding: 1px 5px;
+  background: rgba(245,240,232,0.1);
+  color: rgba(245,240,232,0.6);
+  border-radius: 1px;
+  font-family: 'DM Sans', sans-serif;
+  white-space: nowrap;
+}
+.ctag.adult { background: rgba(255,71,163,0.15); color: var(--neon2); }
+
+/* subido badges */
+.card-subido {
+  position: absolute; bottom: 7px; right: 7px; z-index: 10;
+  display: flex; gap: 2px;
+}
+.sbadge {
+  font-size: 7px; letter-spacing: .8px;
+  padding: 2px 5px;
+  border-radius: 1px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+.sbib { background: rgba(71,255,224,0.15); color: var(--neon3); border: 1px solid rgba(71,255,224,0.3); }
+.sfiles { background: rgba(232,255,71,0.12); color: var(--neon); border: 1px solid rgba(232,255,71,0.25); }
+
+/* ── EMPTY ────────────────────────────────────────────── */
+.empty {
+  display: none; text-align: center; padding: 80px 20px;
+  color: var(--dim);
+}
+.empty.show { display: block; }
+.empty-big {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem; opacity: .08; line-height: 1;
+  margin-bottom: 12px;
+}
+.empty p { font-size: 13px; }
+
+/* ── MODAL ────────────────────────────────────────────── */
+.modal-wrap {
+  position: fixed; inset: 0; z-index: 400;
+  background: rgba(0,0,0,.87);
+  backdrop-filter: blur(8px);
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal-wrap.open { display: flex; }
+
+.modal {
+  background: #13131e;
+  border: 1px solid rgba(232,255,71,0.2);
+  border-radius: 2px;
+  max-width: 680px; width: 100%;
+  max-height: 90vh; overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(232,255,71,0.2) transparent;
+  position: relative;
+}
+/* neon top bar on modal */
+.modal::before {
+  content: '';
+  position: sticky; top: 0;
+  display: block; height: 2px;
+  background: linear-gradient(90deg, var(--neon), var(--neon2));
+}
+
+.modal-x {
+  position: absolute; top: 14px; right: 14px;
+  width: 28px; height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  transition: all .15s; z-index: 1;
+}
+.modal-x:hover { border-color: var(--neon2); color: var(--neon2); }
+
+.modal-body { padding: 20px 24px 28px; }
+
+.modal-top {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.modal-cover img {
+  width: 120px; height: 180px;
+  object-fit: cover; border-radius: 1px;
+  border: 1px solid var(--border);
+}
+.modal-cover-gen {
+  width: 120px; height: 180px;
+  background: #1c1c28;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 1px;
+}
+.modal-cover-gen span { font-size: 2.5rem; opacity: .2; }
+
+.modal-sec {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--neon); margin-bottom: 8px;
+  font-family: 'DM Sans', sans-serif;
+}
+.modal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem; letter-spacing: 2px;
+  line-height: 1.05; margin-bottom: 10px;
+}
+.modal-meta { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+.mbadge {
+  font-size: 9px; letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 1px;
+  font-family: 'DM Sans', sans-serif; font-weight: 500;
+}
+.mb-fin { background: rgba(71,255,224,0.12); color: var(--neon3); border: 1px solid rgba(71,255,224,0.25); }
+.mb-cont { background: rgba(232,255,71,0.1); color: var(--neon); border: 1px solid rgba(232,255,71,0.2); }
+.mb-hiatus { background: rgba(255,200,71,0.1); color: #ffc847; border: 1px solid rgba(255,200,71,0.2); }
+.mb-cancel { background: rgba(255,71,71,0.1); color: #ff6b6b; border: 1px solid rgba(255,71,71,0.2); }
+.mb-bib { background: rgba(71,255,224,0.08); color: var(--neon3); border: 1px solid rgba(71,255,224,0.18); }
+.mb-files { background: rgba(232,255,71,0.07); color: var(--neon); border: 1px solid rgba(232,255,71,0.15); }
+.mb-adult { background: rgba(255,71,163,0.12); color: var(--neon2); border: 1px solid rgba(255,71,163,0.25); }
+
+.modal-adult-warn {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,71,163,0.07);
+  border: 1px solid rgba(255,71,163,0.2);
+  padding: 8px 12px; border-radius: 1px;
+  font-size: 11px; color: var(--neon2);
+  margin-bottom: 12px;
+}
+
+.modal-desc {
+  font-size: 13px; color: rgba(245,240,232,0.65);
+  line-height: 1.75; margin-bottom: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+.modal-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.mtag {
+  font-size: 10px; padding: 3px 9px;
+  border: 1px solid rgba(245,240,232,0.12);
+  border-radius: 1px;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: .3px;
+}
+.mtag.adult { border-color: rgba(255,71,163,0.25); color: var(--neon2); }
+
+/* ── SCROLL TOP ───────────────────────────────────────── */
+.scroll-top {
+  position: fixed; bottom: 20px; right: 20px; z-index: 250;
+  width: 36px; height: 36px;
+  border: 1px solid var(--neon);
+  border-radius: 2px;
+  background: rgba(232,255,71,0.08);
+  color: var(--neon);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px; letter-spacing: 1px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; opacity: 0; transition: opacity .25s;
+}
+.scroll-top.vis { opacity: 1; }
+.scroll-top:hover { background: rgba(232,255,71,0.18); }
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: row; flex-wrap: wrap; }
+  .hstat { border-bottom: none; padding: 4px 12px; border-right: 1px solid var(--border); }
+}
+@media (max-width: 640px) {
+  .topbar-center { display: none; }
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .modal-top { grid-template-columns: 90px 1fr; }
+  .modal-cover img, .modal-cover-gen { width: 90px; height: 135px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="logo">
+    <span class="logo-main">GL PANELS</span>
+    <span class="logo-jp">カタログ</span>
+    <span class="logo-dot"></span>
+  </div>
+  <div class="topbar-center">
+    <span class="search-icon">⌕</span>
+    <input class="search-box" type="search" id="srch" placeholder="Buscar título, género, descripción…" autocomplete="off">
+  </div>
+  <div class="topbar-right">
+    <button class="adult-btn" id="adultBtn">
+      <span class="pill"></span>
+      <span id="adultLbl">+18 visible</span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Girls Love · Yuri · GL</div>
+      <div class="hero-h1">
+        <span class="accent">GL</span><br>
+        PAN<span class="accent2">ELS</span>
+      </div>
+      <div class="hero-jp">ガールズラブ・カタログ</div>
+    </div>
+    <div class="hero-stats" id="heroStats"></div>
+  </div>
+</div>
+
+<!-- FILTER STRIP: row 1 = category tabs, row 2 = secondary filters -->
+<div class="filter-strip">
+  <!-- ROW 1: category pills (static fallback + JS fills counts) -->
+  <div class="cat-tabs" id="catTabs">
+    <button class="ctab on" data-sec="all"><span class="ctab-icon">✦</span> Todas <span class="ctab-count" id="tc-all">—</span></button>
+    <button class="ctab" data-sec="Manhwa"><span class="ctab-icon">🇰🇷</span> Manhwa <span class="ctab-count" id="tc-Manhwa">—</span></button>
+    <button class="ctab" data-sec="Manga"><span class="ctab-icon">🇯🇵</span> Manga <span class="ctab-count" id="tc-Manga">—</span></button>
+    <button class="ctab" data-sec="Manhua"><span class="ctab-icon">🇨🇳</span> Manhua <span class="ctab-count" id="tc-Manhua">—</span></button>
+    <button class="ctab" data-sec="Webtoon"><span class="ctab-icon">📱</span> Webtoon <span class="ctab-count" id="tc-Webtoon">—</span></button>
+    <button class="ctab" data-sec="Sin Clasificación"><span class="ctab-icon">📂</span> Sin Clasificación <span class="ctab-count" id="tc-SinClasificacion">—</span></button>
+    <button class="ctab" data-sec="Cómic"><span class="ctab-icon">💥</span> Cómic <span class="ctab-count" id="tc-Comic">—</span></button>
+    <button class="ctab" data-sec="Novela Gráfica"><span class="ctab-icon">📗</span> Novela Gráfica <span class="ctab-count" id="tc-NovelaGrafica">—</span></button>
+  </div>
+
+  <!-- ROW 2: dropdown filters all in one line -->
+  <div class="filter-row" id="filterRow">
+    <!-- Estado dropdown -->
+    <div class="fdrop" id="dropEstado">
+      <span class="fval" id="valEstado">Estado</span>
+      <span class="arrow">▼</span>
+      <div class="drop-panel" id="panelEstado">
+        <div class="dopt on" data-f="estado" data-v="all">Todas</div>
+        <div class="dopt" data-f="estado" data-v="Continúa"><span class="dopt-dot"></span>Continúa</div>
+        <div class="dopt" data-f="estado" data-v="Finalizado"><span class="dopt-dot"></span>Finalizado</div>
+        <div class="dopt" data-f="estado" data-v="Hiatus"><span class="dopt-dot"></span>Hiatus</div>
+        <div class="dopt" data-f="estado" data-v="Cancelado"><span class="dopt-dot"></span>Cancelado</div>
+      </div>
+    </div>
+
+    <!-- Ubicación dropdown -->
+    <div class="fdrop" id="dropSub">
+      <span class="fval" id="valSub">Ubicación</span>
+      <span class="arrow">▼</span>
+      <div class="drop-panel" id="panelSub">
+        <div class="dopt on-teal" data-f="sub" data-v="all">Todas</div>
+        <div class="dopt" data-f="sub" data-v="bib">📚 Biblioteca</div>
+        <div class="dopt" data-f="sub" data-v="files">📁 FILES</div>
+        <div class="dopt" data-f="sub" data-v="both">Ambos</div>
+      </div>
+    </div>
+
+    <!-- Género dropdown -->
+    <div class="fdrop" id="dropTag">
+      <span class="fval" id="valTag">Género</span>
+      <span class="arrow">▼</span>
+      <div class="drop-panel" id="panelTag">
+        <div class="dopt on-pink" data-f="tag" data-v="all">Todos</div>
+        <div class="dopt" data-f="tag" data-v="Drama">Drama</div>
+        <div class="dopt" data-f="tag" data-v="Comedia">Comedia</div>
+        <div class="dopt" data-f="tag" data-v="Fantasia">Fantasía</div>
+        <div class="dopt" data-f="tag" data-v="Escolar">Escolar</div>
+        <div class="dopt" data-f="tag" data-v="Historica">Histórica</div>
+        <div class="dopt" data-f="tag" data-v="Thriller">Thriller</div>
+        <div class="dopt" data-f="tag" data-v="SciFi">Sci-Fi</div>
+        <div class="dopt" data-f="tag" data-v="Horror">Horror</div>
+        <div class="dopt" data-f="tag" data-v="Slice_of_Life">Slice of Life</div>
+        <div class="dopt" data-f="tag" data-v="Psicologico">Psicológico</div>
+        <div class="dopt" data-f="tag" data-v="Accion">Acción</div>
+        <div class="dopt" data-f="tag" data-v="Misterio">Misterio</div>
+        <div class="dopt" data-f="tag" data-v="Supernatural">Sobrenatural</div>
+        <div class="dopt" data-f="tag" data-v="Oficina">Oficina</div>
+      </div>
+    </div>
+
+    <div class="filter-sep"></div>
+
+    <!-- +18 toggle -->
+    <button class="adult-pill-btn" id="adultPillBtn">
+      <span class="tog"></span>
+      <span id="adultPillLbl">Ocultar +18</span>
+    </button>
+
+    <span class="filter-count" id="filterCount"></span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main" id="mainContent">
+  <div class="empty" id="emptyState">
+    <div class="empty-big">空</div>
+    <p>Sin resultados con los filtros actuales.</p>
+  </div>
+</main>
+
+<!-- MODAL -->
+<div class="modal-wrap" id="modalWrap">
+  <div class="modal" id="modal">
+    <button class="modal-x" id="modalX">✕</button>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<button class="scroll-top" id="stBtn">▲</button>
+
+<script>
+const DATA = 'manga_data.json';
+
+const SECTION_ORDER = ['Manhwa','Manga','Manhua','Webtoon','Sin Clasificación','Cómic','Novela Gráfica'];
+const SECTION_ICONS = {Manhwa:'🇰🇷',Manga:'🇯🇵',Manhua:'🇨🇳',Webtoon:'📱','Sin Clasificación':'📂','Cómic':'💥','Novela Gráfica':'📗'};
+
+// palette for generated covers — one per section
+const GEN_PALETTES = {
+  Manhwa:    ['#1a0a2e','#2e0a1a','#0a1a2e'],
+  Manga:     ['#0a1a0a','#1a0a0a','#0a0a1a'],
+  Manhua:    ['#1a1a0a','#0a1a1a','#1a0a1a'],
+  Webtoon:   ['#0a1a2e','#1a2e0a','#2e0a1a'],
+  'Sin Clasificación': ['#1a1a1a','#0f0f1a','#1a0f0f'],
+  'Cómic':   ['#1a0a0a','#0a0a1a','#1a1a0a'],
+  'Novela Gráfica': ['#0a1a1a','#1a0a1a','#0a1a0a'],
+};
+
+const ESTADO_CLS = {Finalizado:'e-fin',Continúa:'e-cont',Hiatus:'e-hiatus',Cancelado:'e-cancel'};
+const ESTADO_MCLS = {Finalizado:'mb-fin',Continúa:'mb-cont',Hiatus:'mb-hiatus',Cancelado:'mb-cancel'};
+const ESTADO_ICONS = {Finalizado:'✓',Continúa:'▶',Hiatus:'⏸',Cancelado:'✗'};
+
+let allData = [];
+let hideAdult = false;
+let fEstado = 'all', fSub = 'all', fTag = 'all', fQ = '';
+let activeSec = 'all'; // active category tab
+
+async function init() {
+  const r = await fetch(DATA);
+  allData = await r.json();
+  buildStats();
+  buildCatTabs();
+  renderSections();
+  bindEvents();
+}
+
+/* ── STATS ─────────────────────────────────────────────── */
+function buildStats() {
+  const total = allData.length;
+  const bib = allData.filter(e => e.in_biblioteca).length;
+  const files = allData.filter(e => e.in_files).length;
+  const adult = allData.filter(e => e.adult).length;
+  document.getElementById('heroStats').innerHTML = [
+    [total, 'HISTORIAS'],
+    [bib, 'BIBLIOTECA'],
+    [files, 'FILES'],
+    [adult, '+18'],
+  ].map(([n,l]) => `<div class="hstat"><div class="hstat-n">${n}</div><div class="hstat-l">${l}</div></div>`).join('');
+}
+
+/* ── CATEGORY TABS ──────────────────────────────────────── */
+function buildCatTabs() {
+  const groups = groupBy(allData);
+  const container = document.getElementById('catTabs');
+
+  const allTab = document.createElement('button');
+  allTab.className = 'ctab on';
+  allTab.dataset.sec = 'all';
+  allTab.innerHTML = `<span class="ctab-icon">✦</span> Todas <span class="ctab-count">${allData.length}</span>`;
+  container.appendChild(allTab);
+
+  SECTION_ORDER.filter(s => groups[s]).forEach(s => {
+    const btn = document.createElement('button');
+    btn.className = 'ctab';
+    btn.dataset.sec = s;
+    btn.innerHTML = `<span class="ctab-icon">${SECTION_ICONS[s]||''}</span> ${s} <span class="ctab-count" id="tc-${sl(s)}">${groups[s].length}</span>`;
+    container.appendChild(btn);
+  });
+}
+
+/* ── RENDER ─────────────────────────────────────────────── */
+function renderSections() {
+  const groups = groupBy(allData);
+  const main = document.getElementById('mainContent');
+  main.querySelectorAll('.section').forEach(s => s.remove());
+
+  let totalVis = 0;
+  const empty = document.getElementById('emptyState');
+
+  const sectionsToShow = activeSec === 'all'
+    ? SECTION_ORDER.filter(s => groups[s])
+    : SECTION_ORDER.filter(s => s === activeSec && groups[s]);
+
+  sectionsToShow.forEach((s, si) => {
+    const entries = groups[s];
+    const sec = document.createElement('div');
+    sec.className = 'section';
+    sec.id = `sec-${sl(s)}`;
+
+    const gridId = `grid-${sl(s)}`;
+    const showNum = activeSec === 'all';
+    sec.innerHTML = `
+      <div class="section-head">
+        ${showNum ? `<div class="section-num">0${si+1}</div>` : ''}
+        <div class="section-title-wrap" style="${activeSec !== 'all' ? 'border-left-color:var(--neon2)' : ''}">
+          <div class="section-title"><span class="sec-icon">${SECTION_ICONS[s]||''}</span>${s}</div>
+          <div class="section-meta" id="meta-${sl(s)}"></div>
+        </div>
+      </div>
+      <div class="grid" id="${gridId}"></div>`;
+    main.insertBefore(sec, empty);
+
+    const grid = sec.querySelector(`#${gridId}`);
+    const meta = sec.querySelector(`#meta-${sl(s)}`);
+    let vis = 0;
+    const palList = GEN_PALETTES[s] || ['#111118'];
+
+    entries.forEach((e, idx) => {
+      const show = matches(e);
+      if (show) vis++;
+      totalVis += show ? 1 : 0;
+      grid.appendChild(buildCard(e, show, palList[idx % palList.length]));
+    });
+    sec.style.display = vis === 0 && fQ ? 'none' : '';
+
+    const adultCount = entries.filter(e => e.adult).length;
+    meta.innerHTML = `<strong>${vis}</strong> de ${entries.length}${adultCount ? ` · <span style="color:var(--neon2)">${adultCount} +18</span>` : ''}`;
+
+    const tc = document.getElementById(`tc-${sl(s)}`);
+    if (tc) tc.textContent = vis;
+  });
+
+  empty.classList.toggle('show', totalVis === 0);
+  const fc = document.getElementById('filterCount');
+  if (fc) fc.textContent = `${totalVis} historias`;
+}
+
+/* ── CARD ───────────────────────────────────────────────── */
+function buildCard(e, visible, bgColor) {
+  const d = document.createElement('div');
+  d.className = 'card' + (visible ? '' : ' hidden') + (e.adult && hideAdult ? ' adult-blurred' : '');
+  d.dataset.id = e.id;
+
+  const tags = (e.tags||[]).slice(0,3).map(t =>
+    `<span class="ctag${t.toLowerCase()==='erotica'?' adult':''}">${esc(t)}</span>`).join('');
+
+  const coverHtml = e.imagen
+    ? `<div class="card-cover"><img src="${esc(e.imagen)}" alt="${esc(e.titulo)}" loading="lazy"
+        onerror="this.closest('.card-cover').outerHTML='<div class=card-gen style=--gen-bg:${bgColor}><div class=card-gen-title>${esc(e.titulo.slice(0,30))}</div></div>'"></div>`
+    : `<div class="card-gen" style="--gen-bg:${bgColor}">
+        <div class="card-gen-title">${esc(e.titulo.slice(0,40))}</div>
+       </div>`;
+
+  const ec = ESTADO_CLS[e.estado] || 'e-fin';
+  const ei = ESTADO_ICONS[e.estado] || '';
+
+  d.innerHTML = `
+    ${coverHtml}
+    ${e.adult ? `<span class="adult-chip">+18</span>` : ''}
+    <span class="card-estado ${ec}">${ei}</span>
+    <div class="card-overlay"></div>
+    <div class="card-info">
+      <div class="card-title">${esc(e.titulo)}</div>
+      <div class="card-tags">${tags}</div>
+    </div>
+    <div class="card-subido">
+      ${e.in_biblioteca ? '<span class="sbadge sbib">BIB</span>' : ''}
+      ${e.in_files ? '<span class="sbadge sfiles">FILE</span>' : ''}
+    </div>`;
+
+  d.addEventListener('click', () => openModal(e));
+  return d;
+}
+
+/* ── MODAL ──────────────────────────────────────────────── */
+function openModal(e) {
+  const mc = ESTADO_MCLS[e.estado] || 'mb-fin';
+  const ei = ESTADO_ICONS[e.estado] || '';
+  const tags = (e.tags||[]).map(t =>
+    `<span class="mtag${t.toLowerCase()==='erotica'?' adult':''}">${esc(t)}</span>`).join('');
+  const coverHtml = e.imagen
+    ? `<img src="${esc(e.imagen)}" alt="${esc(e.titulo)}" onerror="this.outerHTML='<div class=modal-cover-gen><span>📖</span></div>'">`
+    : `<div class="modal-cover-gen"><span>📖</span></div>`;
+
+  document.getElementById('modalBody').innerHTML = `
+    <div class="modal-top">
+      <div class="modal-cover">${coverHtml}</div>
+      <div>
+        <div class="modal-sec">${esc(e.seccion)}</div>
+        <div class="modal-title">${esc(e.titulo)}</div>
+        ${e.adult ? `<div class="modal-adult-warn">🔞 Contenido para mayores de 18 años</div>` : ''}
+        <div class="modal-meta">
+          <span class="mbadge ${mc}">${ei} ${esc(e.estado)}</span>
+          ${e.in_biblioteca ? '<span class="mbadge mb-bib">📚 Biblioteca</span>' : ''}
+          ${e.in_files ? '<span class="mbadge mb-files">📁 FILES</span>' : ''}
+          ${e.adult ? '<span class="mbadge mb-adult">+18</span>' : ''}
+        </div>
+      </div>
+    </div>
+    ${e.desc ? `<div class="modal-desc">${esc(e.desc)}</div>` : '<div class="modal-desc" style="opacity:.35;font-style:italic">Sin descripción.</div>'}
+    <div class="modal-tags">${tags}</div>`;
+
+  document.getElementById('modalWrap').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modalWrap').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ── FILTERS ────────────────────────────────────────────── */
+function matches(e) {
+  if (hideAdult && e.adult) return false;
+  if (fEstado !== 'all' && e.estado !== fEstado) return false;
+  if (fSub === 'bib' && !e.in_biblioteca) return false;
+  if (fSub === 'files' && !e.in_files) return false;
+  if (fSub === 'both' && !(e.in_biblioteca && e.in_files)) return false;
+  if (fTag !== 'all' && !(e.tags||[]).some(t => t.toLowerCase() === fTag.toLowerCase())) return false;
+  if (fQ) {
+    const q = fQ.toLowerCase();
+    if (!e.titulo.toLowerCase().includes(q) &&
+        !(e.desc||'').toLowerCase().includes(q) &&
+        !(e.tags||[]).join(' ').toLowerCase().includes(q)) return false;
+  }
+  return true;
+}
+
+/* ── EVENTS ─────────────────────────────────────────────── */
+function bindEvents() {
+  // Search
+  document.getElementById('srch').addEventListener('input', ev => {
+    fQ = ev.target.value.trim();
+    renderSections();
+  });
+
+  // Topbar adult toggle — syncs with pill
+  document.getElementById('adultBtn').addEventListener('click', () => {
+    toggleAdult();
+  });
+
+  // Filter bar adult pill
+  document.getElementById('adultPillBtn').addEventListener('click', () => {
+    toggleAdult();
+  });
+
+  // Category tabs
+  document.getElementById('catTabs').addEventListener('click', e => {
+    const tab = e.target.closest('[data-sec]');
+    if (!tab) return;
+    activeSec = tab.dataset.sec;
+    document.querySelectorAll('.ctab').forEach(t => t.classList.remove('on'));
+    tab.classList.add('on');
+    scrollTo({ top: 0, behavior: 'smooth' });
+    renderSections();
+  });
+
+  // Dropdown toggles — open/close
+  document.querySelectorAll('.fdrop').forEach(drop => {
+    drop.addEventListener('click', e => {
+      // don't close if clicking inside panel
+      if (e.target.closest('.drop-panel')) return;
+      const wasOpen = drop.classList.contains('open');
+      // close all
+      document.querySelectorAll('.fdrop.open').forEach(d => d.classList.remove('open'));
+      if (!wasOpen) drop.classList.add('open');
+      e.stopPropagation();
+    });
+  });
+
+  // Dropdown option selection
+  document.querySelectorAll('.dopt').forEach(opt => {
+    opt.addEventListener('click', e => {
+      e.stopPropagation();
+      const f = opt.dataset.f, v = opt.dataset.v;
+      const panel = opt.closest('.drop-panel');
+      const drop = opt.closest('.fdrop');
+
+      // deselect all in this panel, select clicked
+      panel.querySelectorAll('.dopt').forEach(o => o.classList.remove('on','on-teal','on-pink'));
+
+      let cls = 'on';
+      if (f === 'sub') cls = 'on-teal';
+      if (f === 'tag') cls = 'on-pink';
+      opt.classList.add(cls);
+
+      // update state
+      if (f === 'estado') { fEstado = v; updateDropLabel('dropEstado','valEstado', v === 'all' ? 'Estado' : v, v !== 'all', 'on'); }
+      if (f === 'sub')    { fSub = v;    updateDropLabel('dropSub','valSub', v === 'all' ? 'Ubicación' : (v === 'bib' ? '📚 Biblioteca' : v === 'files' ? '📁 FILES' : 'Ambos'), v !== 'all', 'on-teal'); }
+      if (f === 'tag')    { fTag = v;    updateDropLabel('dropTag','valTag', v === 'all' ? 'Género' : v.replace('_',' '), v !== 'all', 'on-pink'); }
+
+      drop.classList.remove('open');
+      renderSections();
+    });
+  });
+
+  // Close dropdowns on outside click
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.fdrop.open').forEach(d => d.classList.remove('open'));
+  });
+
+  // Modal
+  document.getElementById('modalX').addEventListener('click', closeModal);
+  document.getElementById('modalWrap').addEventListener('click', e => {
+    if (e.target === document.getElementById('modalWrap')) closeModal();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); document.querySelectorAll('.fdrop.open').forEach(d => d.classList.remove('open')); } });
+
+  // Scroll top
+  const stBtn = document.getElementById('stBtn');
+  window.addEventListener('scroll', () => stBtn.classList.toggle('vis', scrollY > 500));
+  stBtn.addEventListener('click', () => scrollTo({top:0,behavior:'smooth'}));
+}
+
+function toggleAdult() {
+  hideAdult = !hideAdult;
+  // sync topbar btn
+  const ab = document.getElementById('adultBtn');
+  ab.classList.toggle('active', hideAdult);
+  document.getElementById('adultLbl').textContent = hideAdult ? '+18 oculto' : '+18 visible';
+  // sync filter pill
+  const pb = document.getElementById('adultPillBtn');
+  pb.classList.toggle('on', hideAdult);
+  document.getElementById('adultPillLbl').textContent = hideAdult ? '+18 oculto' : 'Ocultar +18';
+  renderSections();
+}
+
+function updateDropLabel(dropId, valId, label, active, activeCls) {
+  const drop = document.getElementById(dropId);
+  document.getElementById(valId).textContent = label;
+  drop.classList.remove('on','on-teal','on-pink');
+  if (active) drop.classList.add(activeCls);
+}
+
+function groupBy(arr) {
+  const g = {};
+  arr.forEach(e => { (g[e.seccion] = g[e.seccion]||[]).push(e); });
+  return g;
+}
+function sl(s) { return s.replace(/\s+/g,'_').replace(/[^a-zA-Z0-9_]/g,''); }
+function esc(s) {
+  return String(s||'')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+init();
+</script>
+</body>
+</html>
