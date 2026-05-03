@@ -412,7 +412,7 @@ function saveEntry(){
   };
   if(editingId){const i=allData.findIndex(x=>x.id===editingId);if(i>=0)allData[i]=entry;}
   else allData.unshift(entry);
-  closeMod('editWrap');buildStats();applyFilters();
+  const _savedPage=page; closeMod('editWrap'); buildStats(); applyFilters(); page=_savedPage; renderTable();
   toast(editingId?'Historia actualizada ✓':'Historia añadida ✓','ok');
 }
 function openDel(id){
@@ -420,7 +420,7 @@ function openDel(id){
   document.getElementById('delTitle').textContent=`"${e?.titulo||id}"`;openMod('delWrap');
 }
 function confirmDelete(){
-  allData=allData.filter(x=>x.id!==deletingId);closeMod('delWrap');buildStats();applyFilters();toast('Eliminada','ok');
+  allData=allData.filter(x=>x.id!==deletingId);const _p2=page;closeMod('delWrap');buildStats();applyFilters();page=Math.min(_p2,Math.ceil(filtered.length/perPage)||1);renderTable();toast('Eliminada','ok');
 }
 
 function renderPills(){

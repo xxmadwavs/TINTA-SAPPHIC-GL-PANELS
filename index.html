@@ -842,6 +842,34 @@ body::after {
   .section-num { display: none; }
   .section-title-wrap { border-left-width: 2px; }
 }
+
+/* ── PAGINATION ───────────────────────────────────────── */
+.pag-wrap {
+  display: flex; align-items: center; justify-content: center;
+  gap: 4px; padding: 24px 0 8px;
+  flex-wrap: wrap;
+}
+.pag-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  font-size: 11px; cursor: pointer;
+  transition: all .15s;
+}
+.pag-btn:hover { border-color: var(--neon); color: var(--neon); }
+.pag-btn.on  { background: rgba(232,255,71,.12); border-color: rgba(232,255,71,.5); color: var(--neon); }
+.pag-btn:disabled { opacity: .25; pointer-events: none; }
+.pag-btn.wide { width: auto; padding: 0 10px; }
+.pag-info-sec {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px; color: var(--dim);
+  text-align: center; padding-bottom: 4px;
+  letter-spacing: 1px; text-transform: uppercase;
+}
 </style>
 </head>
 <body>
@@ -1006,13 +1034,15 @@ let allData = [];
 let hideAdult = false;
 let fEstado = 'all', fSub = 'all', fTag = 'all', fQ = '';
 let activeSec = 'all'; // active category tab
+const PER_PAGE = 25;
+const secPages = {}; // current page per section key
 
 async function init() {
   const r = await fetch(DATA);
   allData = await r.json();
   buildStats();
   buildCatTabs();
-  renderSections();
+  renderSections(true);
   bindEvents();
 }
 
@@ -1046,7 +1076,7 @@ function buildCatTabs() {
 }
 
 /* ── RENDER ─────────────────────────────────────────────── */
-function renderSections() {
+function renderSections(resetPages) {
   const groups = groupBy(allData);
   const main = document.getElementById('mainContent');
   main.querySelectorAll('.section').forEach(s => s.remove());
@@ -1059,42 +1089,42 @@ function renderSections() {
     : SECTION_ORDER.filter(s => s === activeSec && groups[s]);
 
   sectionsToShow.forEach((s, si) => {
+    const key = sl(s);
+    if (resetPages) secPages[key] = 1;
+    if (!secPages[key]) secPages[key] = 1;
+
     const entries = groups[s];
+    const allMatched = entries.filter(e => matches(e));
+    totalVis += allMatched.length;
+
     const sec = document.createElement('div');
     sec.className = 'section';
-    sec.id = `sec-${sl(s)}`;
+    sec.id = `sec-${key}`;
 
-    const gridId = `grid-${sl(s)}`;
     const showNum = activeSec === 'all';
     sec.innerHTML = `
       <div class="section-head">
         ${showNum ? `<div class="section-num">0${si+1}</div>` : ''}
         <div class="section-title-wrap" style="${activeSec !== 'all' ? 'border-left-color:var(--neon2)' : ''}">
           <div class="section-title"><span class="sec-icon">${SECTION_ICONS[s]||''}</span>${s}</div>
-          <div class="section-meta" id="meta-${sl(s)}"></div>
+          <div class="section-meta" id="meta-${key}"></div>
         </div>
       </div>
-      <div class="grid" id="${gridId}"></div>`;
+      <div class="grid" id="grid-${key}"></div>
+      <div class="pag-info-sec" id="paginfo-${key}"></div>
+      <div class="pag-wrap" id="pag-${key}"></div>`;
     main.insertBefore(sec, empty);
 
-    const grid = sec.querySelector(`#${gridId}`);
-    const meta = sec.querySelector(`#meta-${sl(s)}`);
-    let vis = 0;
-    const palList = GEN_PALETTES[s] || ['#111118'];
+    renderSecPage(s, allMatched);
 
-    entries.forEach((e, idx) => {
-      const show = matches(e);
-      if (show) vis++;
-      totalVis += show ? 1 : 0;
-      grid.appendChild(buildCard(e, show, palList[idx % palList.length]));
-    });
-    sec.style.display = vis === 0 && fQ ? 'none' : '';
+    sec.style.display = allMatched.length === 0 && fQ ? 'none' : '';
 
     const adultCount = entries.filter(e => e.adult).length;
-    meta.innerHTML = `<strong>${vis}</strong> de ${entries.length}${adultCount ? ` · <span style="color:var(--neon2)">${adultCount} +18</span>` : ''}`;
+    const meta = sec.querySelector(`#meta-${key}`);
+    meta.innerHTML = `<strong>${allMatched.length}</strong> de ${entries.length}${adultCount ? ` · <span style="color:var(--neon2)">${adultCount} +18</span>` : ''}`;
 
-    const tc = document.getElementById(`tc-${sl(s)}`);
-    if (tc) tc.textContent = vis;
+    const tc = document.getElementById(`tc-${key}`);
+    if (tc) tc.textContent = allMatched.length;
   });
 
   empty.classList.toggle('show', totalVis === 0);
@@ -1102,10 +1132,87 @@ function renderSections() {
   if (fc) fc.textContent = `${totalVis} historias`;
 }
 
+function renderSecPage(s, matched) {
+  const key = sl(s);
+  const page = secPages[key] || 1;
+  const total = matched.length;
+  const pages = Math.max(1, Math.ceil(total / PER_PAGE));
+  const safePage = Math.min(page, pages);
+  secPages[key] = safePage;
+
+  const start = (safePage - 1) * PER_PAGE;
+  const pageItems = matched.slice(start, start + PER_PAGE);
+  const palList = GEN_PALETTES[s] || ['#111118'];
+
+  const grid = document.getElementById(`grid-${key}`);
+  if (!grid) return;
+  grid.innerHTML = '';
+  pageItems.forEach((e, idx) => {
+    grid.appendChild(buildCard(e, palList[(start + idx) % palList.length]));
+  });
+
+  // pagination info
+  const infoEl = document.getElementById(`paginfo-${key}`);
+  if (infoEl) {
+    if (total > PER_PAGE) {
+      const from = start + 1, to = Math.min(start + PER_PAGE, total);
+      infoEl.textContent = `${from}–${to} de ${total}`;
+    } else {
+      infoEl.textContent = '';
+    }
+  }
+
+  // pagination buttons
+  const pagEl = document.getElementById(`pag-${key}`);
+  if (!pagEl) return;
+  pagEl.innerHTML = '';
+  if (pages <= 1) return;
+
+  const prev = mkBtn('‹', safePage <= 1, () => { secPages[key]--; renderSecPage(s, matched); scrollToSection(key); });
+  pagEl.appendChild(prev);
+
+  pagRange(safePage, pages).forEach(p => {
+    if (p === '…') {
+      const sp = document.createElement('span');
+      sp.style.cssText = 'display:flex;align-items:center;padding:0 4px;color:var(--dim);font-size:11px';
+      sp.textContent = '…'; pagEl.appendChild(sp);
+    } else {
+      const b = mkBtn(p, false, () => { secPages[key] = p; renderSecPage(s, matched); scrollToSection(key); });
+      if (p === safePage) b.classList.add('on');
+      pagEl.appendChild(b);
+    }
+  });
+
+  const next = mkBtn('›', safePage >= pages, () => { secPages[key]++; renderSecPage(s, matched); scrollToSection(key); });
+  pagEl.appendChild(next);
+}
+
+function mkBtn(label, disabled, onClick) {
+  const b = document.createElement('button');
+  b.className = 'pag-btn' + (typeof label === 'number' ? '' : ' wide');
+  b.textContent = label; b.disabled = disabled;
+  if (!disabled) b.addEventListener('click', onClick);
+  return b;
+}
+
+function scrollToSection(key) {
+  const sec = document.getElementById(`sec-${key}`);
+  if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function pagRange(cur, total) {
+  if (total <= 7) return Array.from({length: total}, (_, i) => i + 1);
+  const r = [1];
+  if (cur > 3) r.push('…');
+  for (let i = Math.max(2, cur - 1); i <= Math.min(total - 1, cur + 1); i++) r.push(i);
+  if (cur < total - 2) r.push('…');
+  r.push(total); return r;
+}
+
 /* ── CARD ───────────────────────────────────────────────── */
-function buildCard(e, visible, bgColor) {
+function buildCard(e, bgColor) {
   const d = document.createElement('div');
-  d.className = 'card' + (visible ? '' : ' hidden') + (e.adult && hideAdult ? ' adult-blurred' : '');
+  d.className = 'card' + (e.adult && hideAdult ? ' adult-blurred' : '');
   d.dataset.id = e.id;
 
   const tags = (e.tags||[]).slice(0,3).map(t =>
@@ -1195,7 +1302,7 @@ function matches(e) {
 /* ── EVENTS ─────────────────────────────────────────────── */
 function bindEvents() {
   // Search — both desktop and mobile inputs
-  const syncSearch = val => { fQ = val; renderSections(); };
+  const syncSearch = val => { fQ = val; renderSections(true); };
   document.getElementById('srch').addEventListener('input', e => {
     syncSearch(e.target.value.trim());
     const mob = document.getElementById('srchMobile');
@@ -1225,7 +1332,7 @@ function bindEvents() {
     document.querySelectorAll('.ctab').forEach(t => t.classList.remove('on'));
     tab.classList.add('on');
     scrollTo({ top: 0, behavior: 'smooth' });
-    renderSections();
+    renderSections(true);
   });
 
   // Dropdown toggles — open/close on button click (not on panel clicks)
@@ -1243,7 +1350,7 @@ function bindEvents() {
         if (f === 'sub')    { fSub = v;    updateDropLabel('dropSub','valSub', v === 'all' ? 'Ubicación' : (v === 'bib' ? 'Biblioteca' : v === 'files' ? 'FILES' : 'Ambos'), v !== 'all', 'on-teal'); }
         if (f === 'tag')    { fTag = v;    updateDropLabel('dropTag','valTag', v === 'all' ? 'Género' : v.replace(/_/g,' '), v !== 'all', 'on-pink'); }
         drop.classList.remove('open');
-        renderSections();
+        renderSections(true);
       } else {
         // toggle the dropdown open/closed
         const wasOpen = drop.classList.contains('open');
@@ -1282,7 +1389,7 @@ function toggleAdult() {
   const pb = document.getElementById('adultPillBtn');
   pb.classList.toggle('on', hideAdult);
   document.getElementById('adultPillLbl').textContent = hideAdult ? '+18 oculto' : 'Ocultar +18';
-  renderSections();
+  renderSections(true);
 }
 
 function updateDropLabel(dropId, valId, label, active, activeCls) {
