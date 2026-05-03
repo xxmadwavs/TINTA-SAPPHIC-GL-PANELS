@@ -2417,6 +2417,9 @@
   {
     "id": "even_a_dog_might_stumble_upon_a_princess_144",
     "titulo": "Even a Dog Might Stumble Upon a Princess",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://static.comix.to/3a59/i/e/a4/69a8d6fee9f2d.jpg",
     "desc": "Soy Shiori Inumata, una editora fiel que no puede negarse a los escritores. Hoy me han llevado a un cabaret para una entrevista… Al sentarme, la anfitriona número uno, Miyu, se sienta frente a mí y sus dulces y encantadoras palabras y su toque juguetón me aceleran el corazón. Es tan amable con alguien tan aburrido como yo. Ya me estoy enamorando de ella... o eso creía. Después de unas copas más de las que suelo tomar, cometo un error catastrófico. Desconcertada, me pregunta: \"¿Pagarías tres millones de yenes por una relación conmigo? Platónica, romántica o lo que sea, me da igual\". ¡¿Qué clase de acuerdo es ese?!",
     "tags": [
       "Comedia",
@@ -2424,13 +2427,10 @@
       "Oficina",
       "Slice_of_Life"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
-    "adult": false,
-    "imagen": "",
-    "seccion": "Manga"
+    "adult": true,
+    "subido": "Subido biblioteca"
   },
   {
     "id": "friend_girl_friend_145",
@@ -2602,6 +2602,9 @@
   {
     "id": "love_only_the_body_155",
     "titulo": "Love Only the Body",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://static.comix.to/3207/i/5/39/68de98dd890d4.jpg",
     "desc": "Haruka Tohgoh, a quien los demás temen por ser estricta en el trabajo, ha estado ocultando que en realidad es lesbiana. Se está sintiendo atraída por Sayama, que es la única compañera de trabajo que está siendo amistosa con ella, pero establece un límite al sentirse un poco incómoda cerca de ella. Todo se complica cuando Sayama descubre que Haruka es lesbiana y...",
     "tags": [
       "Comedia",
@@ -2609,13 +2612,10 @@
       "Oficina",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "love_live____my_adorable_bride_156",
@@ -2635,6 +2635,9 @@
   {
     "id": "mahou_shoujo_ni_akogarete_157",
     "titulo": "Mahou Shoujo ni Akogarete",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/04/lovecountdown-1-1.png",
     "desc": "Hiiragi Utena, una chica que ama a las Chicas Mágicas, vive su vida cotidiana y desea ser como ellas. Un día aparece un personaje curioso frente a ella y le ofrece el poder de hacer realidad sus deseos, pero ... Magical Girls vs. The Forces of Evil, ¡comienza la feroz batalla!",
     "tags": [
       "Accion",
@@ -2643,13 +2646,10 @@
       "Fantasia",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "makoto_senpai_no_mae_de_wa_kakko_tsukera_158",
@@ -2735,19 +2735,19 @@
   {
     "id": "office_sweet_365_163",
     "titulo": "Office Sweet 365",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/81mAOVcNU1S._UF1000,1000_QL80_.jpg",
     "desc": "",
     "tags": [
       "Drama",
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "ouji_sama_nante_iranai_164",
@@ -3004,6 +3004,9 @@
   {
     "id": "utsushicha_dame_na_kao_179",
     "titulo": "Utsushicha Dame-na Kao",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://static.comix.to/a199/i/8/05/68e11a2a8fc6a.jpg",
     "desc": "Una chica llamada Misa, trabaja en un lugar del bajo mundo sin ningún interés en especial, a excepción de cierto lugar donde solo se encuentran mujeres, donde cierto día conoció a una chica tímida, después de algunos tragos y acontecimientos pasa la noche a su lado cuidándola donde fue la última vez que se vieron hasta que cierto día un encuentro inesperado sucede, ¿Qué sucederá a partir de ahora o en el Futuro...?",
     "tags": [
       "Drama",
@@ -3011,30 +3014,27 @@
       "Psicologico",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "warikitta_kankei_desukara_180",
     "titulo": "Warikitta Kankei desukara",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/3804/i/e/13/68de891b03c83.jpg",
     "desc": "Es la historia de una estudiante de preparatoria y una maestra de preparatoria que se conocen mediante una app similar a Tinder. El nombre de la estudiante es Kaburagi Aya, una chica introvertida de 16 años que se registra en la ya mencionada app pretendiendo ser una estudiante universitaria, y de esa manera conoce a una mujer un poco mayor que ella llamada Kurosaki.",
     "tags": [
       "Drama",
       "Erotica",
       "Escolar"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "whisper_me_a_love_song__sasayaku_you_ni__181",
@@ -3222,19 +3222,19 @@
   {
     "id": "breath_supreme_yuri_fetish_anthology_192",
     "titulo": "Breath Supreme Yuri Fetish Anthology",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/5974/i/2/2f/6998846c2d091.jpg",
     "desc": "BREATH es una revista yuri creativa y colaborativa con el tema de \"tu idea del yuri más sexy\" y está repleta de las obsesiones y gustos de cada artista. Explorando la sensualidad a través de los ojos de cada uno de ellos y ofreciendo todos los matices del erotismo, ¡este volumen supremo seguramente te dejará satisfecho!",
     "tags": [
       "Drama",
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "citrus__saburouta__193",
@@ -3492,18 +3492,18 @@
   {
     "id": "hibike__euphonium___i_scream__208",
     "titulo": "Hibike! Euphonium - I Scream.",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://img.novelcool.com/logo/202002/4a/Hibike_Euphonium_I_Scream_Happy_I_Scream_Doujinshi7404.jpg",
     "desc": "Una versión alternativa de Liz y el pájaro azul. ¿Será Nozomi capaz de transmitir sus sentimientos…?",
     "tags": [
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "himitsu_no_recipe_209",
@@ -3705,6 +3705,9 @@
   {
     "id": "netsuzou_trap_221",
     "titulo": "Netsuzou Trap",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/0c34/i/b/c1/68dede874b502.jpg",
     "desc": "Yuma y Hotaro son amigas de la infancia y vecinas, a pesar de que las dos tienen novio Hotaru besa y seduce a Yuma con frecuencia, haciéndolo pasar por una broma. Mientras tienen que mantener lo que pasa entre ellas en secreto, Yuma se sentirá confundida por sus sentimientos.",
     "tags": [
       "Drama",
@@ -3712,13 +3715,10 @@
       "Romance",
       "Vida_Escolar"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "nettaigyo_wa_yuki_ni_kogareru_222",
@@ -3740,36 +3740,36 @@
   {
     "id": "not_black__not_white_223",
     "titulo": "Not Black, Not White",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/7232/i/5/9f/68e854fe40f58.jpg",
     "desc": "Yuka Matsuno, una profesora de escuela de 25 años, está preocupada por el estado y el significado de su relación con Risa Yoshioka, otra profesora de 25 años de la misma institución. Finalmente, tienen la oportunidad de hablar, y la conclusión es inesperada.",
     "tags": [
       "Drama",
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "octave_224",
     "titulo": "Octave",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/3fe3/i/c/a8/68e48ce5b97dd.jpg",
     "desc": "Yukino, una joven ex-idol de 18 años, tiene una vida distinta a la que soñó, aunque vive en Tokio, su sueño de tener un esposo que la mantenga se ve más y más lejos, sobre todo por el hecho de ser virgen. Luego conoce a Setsuko, una mujer de 22, compositora, y que vive con su hermano gemelo, empieza una relación con ella mientras aumenta su amor y dependencia mutua.",
     "tags": [
       "Drama",
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "run_away_with_me__girl_225",
@@ -3809,19 +3809,19 @@
   {
     "id": "sei_kaihou_sorezore_no_ai_no_katachi_227",
     "titulo": "Sei Kaihou Sorezore No Ai No Katachi",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/fe06/i/f/9d/68dfc2b014ca8.jpg",
     "desc": "Mio es una empleada contratada en una compañía de seguros. Ella tiene la edad suficiente para casarse, pero padece de un trauma debido a una relación que tuvo anteriormente por lo que le aterrorizan los hombres. Luego se ve asignada al equipo con el rendimiento de ventas más alto y se encuentra con su jefa allí, quien gradualmente le abrirá el corazón y liberará lo que está enterrado en lo profundo de Mio.",
     "tags": [
       "Drama",
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "shimanami_tasogare_228",
@@ -3987,17 +3987,17 @@
   {
     "id": "watashi_no_shumi_tte_hen_desu_ka__237",
     "titulo": "Watashi no Shumi tte Hen Desu ka?",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/6fad/i/e/5f/68e5fe32abc8a.jpg",
     "desc": "Todos poseemos gustos variados y con eso pasatiempos, pero para Fujiyama Maiko su pasatiempo término convirtiéndose de algo más que eso, ya que su hobby es; mirar el trasero de otras chicas. Clasificarlos de acorde a sus gustos era una de sus rutinas mañaneras debido a que el tren que ella toma es exclusiva para mujeres, pero ¿Que pasara el día en el que la chica con el mejor trasero que haya visto en su vida descubra su extraño pasatiempo?",
     "tags": [
       "Erotica"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "yasuko_endo_acecha_en_la_noche_238",
@@ -4066,18 +4066,18 @@
   {
     "id": "my_echo_242",
     "titulo": "My Echo",
+    "seccion": "Manhua",
+    "estado": "Finalizado",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/03/my-echo.jpg",
     "desc": "Esta es la historia de dos chicas completamente diferentes desde que se conocieron hasta que se enamoraron. La una para la otra son como el cálido viento de verano, que trae el palpitar de la juventud y el coraje para enfrentarse a todo al final. Quizás después de muchos años, cuando se tomen de la mano y el viento se levante, se mirarán y recordaran que en ese año y ese verano queda para siempre.",
     "tags": [
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manhua"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "no_kissing_tonight__esta_noche_no_hay_be_243",
@@ -4118,6 +4118,9 @@
   {
     "id": "miss_forensics_245",
     "titulo": "Miss Forensics",
+    "seccion": "Manhua",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/03/544577653_122106447896995862_6678158374305518280_n.png",
     "desc": "\"La fría y arrogante dama forense\" Lin Yan se encuentra con la \"honesta y astuta mujer detective\" Song Yuhang. A medida que su historia se desarrolla, pasan de tener una relación conflictiva a encontrarse y conocerse mutuamente, juntas, presencian las vidas de numerosas personas comunes: una joven que muere injustamente a pesar de sus esfuerzos por vivir, una madre anciana que espera el regreso de su hijo criminal en las montañas, una valiente policía que se enfrenta a un delincuente armado a pesar de su miedo... Todas estas mujeres luchan por los derechos de los vivos, hablan por los muertos y se comprometen a revelar la verdad que ha sido silenciada durante muchos años.",
     "tags": [
       "Crimen",
@@ -4125,13 +4128,10 @@
       "Misterio",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manhua"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "yumian_246",
@@ -4947,6 +4947,9 @@
   {
     "id": "dormant_desires_294",
     "titulo": "Dormant Desires",
+    "seccion": "Manhua",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/e86f/i/8/ab/68e4918dd4d11.jpg",
     "desc": "Luo Yi es una oficial de policía entrenada para investigar y atrapar a los criminales más duros, ¡pero no puede entender por qué tiene estos sueños con la misma dominatrix sexy noche tras noche! Hasta que un día se encuentra con su seductora, la Sra Shi Xiao Man, en la sala de interrogatorios. ¿Quien es ella? La tensión sexual entre los dos es evidente. Luo se siente atraída por Xiao Man, cada vez más apretada por la química entre ellas. ¡Necesita saber más! Mucho más...",
     "tags": [
       "Drama",
@@ -4954,13 +4957,10 @@
       "Misterio",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manhua"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "a_story_concerning_sweets_295",
@@ -5378,192 +5378,195 @@
   {
     "id": "between_red___white_320",
     "titulo": "Between Red & White",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-auMFsd8S_OPEHhggkp6ZRHFDAX_6lTIP2g&s",
     "desc": "Después de que Yuna le confesara sus sentimientos a su mejor amiga y fuera rechazada, fue a la playa con una bebida alcohólica en la mano. Cuando estaba a punto de irse, una ola la arrastró de repente al mar y se ahogó. Cuando Yuna abrió los ojos, se encontró dentro del libro que había leído por última vez. ¡Y ella era solo un personaje secundario que moriría al final! ¿Qué debería hacer?",
     "tags": [
       "Drama"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
-    "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "adult": true,
+    "subido": "Subido biblioteca"
   },
   {
     "id": "carmes___escuela_para_se_oritas_321",
     "titulo": "Carmesí: escuela para señoritas",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://swebtoon-phinf.pstatic.net/20250702_138/1751418519367mPvsH_JPEG/thumbnail.jpg",
     "desc": "Es el primer día de Vera en su nueva escuela, el día va mal ¡sus compañeras deciden evitarla! Pero todo cambia cuando Nieve le revela el gran secreto de este lugar ¡Es una escuela para vampiras!",
     "tags": [
       "Romance",
       "Vamipiras"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "cartas_en_la_pared_322",
     "titulo": "Cartas en la pared",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRjKuRj5hHbPd0BTd3tDC3lNcbrkajl83dVQ&s",
     "desc": "Después de vivir 5 años en España, Tara regresa a la ciudad de su infancia para obtener su licenciatura en artes. Al reencontrarse con sus viejos amigos y con Emma, su mejor amiga cuando eran niñas, ella descubrirá que todos han avanzado con su vida y que ella parece haberse quedado atrás. Con un nuevo romance oculto en el pasado entre Emma y Tara, ella tendrá que descubrir la verdadera razón por la que regresó a Manchester.",
     "tags": [
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "cinderelle_323",
     "titulo": "Cinderelle",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://swebtoon-phinf.pstatic.net/20241025_219/17298100358556Tm87_JPEG/6Cinderelle_LandingPage_Mobile_241022.jpg?type=crop540_540",
     "desc": "Giselle debería apoyar el compromiso real: al fin y al cabo, es la mejor amiga de la princesa. Pero es duro ver cómo tu amor se casa con otra persona. ¿Qué puede hacer una chica? Formar equipo con la única persona del reino que no celebra la boda: un apuesto granuja que quiere matar al prometido de la princesa. Cuando Giselle se entera de que el compromiso no es lo que parece, está dispuesta a ensuciarse las manos. ¿Podrán una noble dama y una rata callejera impedir que este noviazgo zarpe?",
     "tags": [
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "deep_sea_324",
     "titulo": "Deep Sea",
+    "seccion": "Webtoon",
+    "estado": "Finalizado",
+    "imagen": "https://swebtoon-phinf.pstatic.net/20250415_237/1744676557844lJjgn_JPEG/thumbnail.jpg",
     "desc": "Atarah está convencida: no está hecha para ser princesa. Y cuando su padre le dice que ha llegado el momento de casarse, el mundo de la joven princesa se desmorona: ¡su corazón sueña con aventuras, y no con un matrimonio concertado! Por eso, en el peor momento, Atarah conoce a Robin, un pirata de moral cuestionable y pasado tumultuoso. Pero, ¿adónde conducirá a su corazón este alocado encuentro?",
     "tags": [
       "Fantasia",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "don_t_look_at_the_sky_325",
     "titulo": "Don't Look at the Sky",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://us-a.tapas.io/sa/6b/d99a5b46-14c1-49ce-8a76-960e969b13c6_z.jpg",
     "desc": "Helena es una estudiante normal, con buenas notas y un futuro planeado, así ha sido toda su vida, hasta que una fatídica noche, una criatura demoníaca la salva de un desafortunado suceso y su mundo se pone patas arriba. ¿Será capaz Wangari de adaptarse al mundo humano? Los draconianos tienen muchos secretos, ¿será Helena capaz de desentrañarlos?",
     "tags": [
       "Fantasia",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "do_you_like_tomboys__326",
     "titulo": "Do You Like Tomboys?",
+    "seccion": "Webtoon",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/M/MV5BN2IyYjUxZGItYmZlZC00ZTE1LTg3ODktY2ExY2VmNGNmMGU3XkEyXkFqcGc@._V1_.jpg",
     "desc": "Shaye siempre ha tenido un sueño muy noble: salir con una chica extremadamente atractiva. Sin embargo, después de conocer a la chica de sus sueños, la linda Charlie, resulta ser más difícil de lo esperado ... Únete a Shaye y Charlie en su lindo, tonto, incómodo y (¿con suerte?) sexy intento de citas.",
     "tags": [
       "Comedia",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "girlfriend_manual_327",
     "titulo": "Girlfriend manual",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://scontent-mad2-1.xx.fbcdn.net/v/t39.30808-6/480358223_122199791210149703_3838253569604593157_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd6889&_nc_ohc=RKJ1pbVEjQwQ7kNvwHKXoP5&_nc_oc=Adr0NEY_3k0059swPWZ4CzPdCVDD8-122G5bLLCfpkDEGMgjzea6qSau1bdvpGRaC4_sl79iLujJfKxWJWcEwLsc&_nc_zt=23&_nc_ht=scontent-mad2-1.xx&_nc_gid=QJUkr_k0D8tbXUjMeGJxFA&_nc_ss=7b289&oh=00_Af75V4SJdYT1Cd-YAmNLoD5Vp-YWYzCkAw2tus-rsD21CQ&oe=69FD7804",
     "desc": "Athena está desesperada. ¿Por qué es tan difícil salir con chicas? Aunque está haciendo todo lo posible para convertirse en la chica \"de moda\" (cuidado de la piel, ejercicio e incluso la universidad a la que va), nada funciona. ¿Dónde está la historia de amor de Athena? Cada flechazo termina en desastre, cada cita es un fracaso y su confianza se está agotando. Pero entonces conoce a Levi, la apuesta pero misteriosa barista. ¡Athena no puede apartar los ojos de ella! Sabe que no puede arruinar esto y sus amigos tienen la solución. Athena necesita... el Manual de la Novia.",
     "tags": [
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "hate_that_i_like_you_328",
     "titulo": "Hate That I Like You",
+    "seccion": "Webtoon",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/71Mx1xTa-gL._AC_UF1000,1000_QL80_.jpg",
     "desc": "Hace 10 años, una adolescente, Kim Jisoo, fue rechazada por su primer amor, Jung Aerin...",
     "tags": [
       "Drama",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
-    "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "adult": true,
+    "subido": "Subido biblioteca"
   },
   {
     "id": "i_like_my_best_friend_329",
     "titulo": "I LIKE MY BEST-FRIEND",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://swebtoon-phinf.pstatic.net/20250604_86/1749009476036RPLzA_PNG/thumbnail.jpg",
     "desc": "Eunjoo y Sena han sido mejores amigas desde la cuarta temporada. Pero Eunjoo tiene sentimientos más profundos por Sena y ha mantenido sus sentimientos en secreto durante más de 12 años. ¿Cuánto tiempo más permanecerán en silencio estos sentimientos, especialmente cuando nuevos y atractivos intereses amorosos se mezclan con su amor prohibido...?",
     "tags": [
       "Drama",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "kiss_it_goodbye_330",
     "titulo": "Kiss It Goodbye",
+    "seccion": "Webtoon",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/81aFbPFld7L._AC_UF1000,1000_QL80_.jpg",
     "desc": "Un webcomic Slice of life wlw de dos chicas llegando a la mayoría de edad en Japón, Aruka y Yukimi.",
     "tags": [
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "love_and_other_wicked_things_331",
     "titulo": "Love and Other Wicked Things",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://preview.redd.it/new-witch-yuri-love-and-other-wicked-things-v0-alqvu5677u5e1.jpeg?auto=webp&s=080a63a845efe5a0ebde0bd4e1c5311ec412b36f",
     "desc": "Rhia Greenbrook es una bruja de una larga estirpe de brujas de la tierra en la tranquila ciudad de Oakriver. Aunque no puede practicar la adivinación como el resto de su familia, siempre ha abrazado las tradiciones del mundo mágico secreto en el que ha crecido. Hasta que Valerie, una guapa y atrevida bruja de fuego que destaca en la adivinación, llega al pueblo en busca de respuestas sobre la desaparición de su madre. Con sus destinos entrelazados, una oscura presencia se cierne sobre Oakriver, y depende de Rhia aprovechar todo el potencial de su magia para salvar la ciudad que ama.",
     "tags": [
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "mage___demon_queen__ser_s_mi_reina__332",
     "titulo": "Mage & Demon Queen (Serás mi reina)",
+    "seccion": "Webtoon",
+    "estado": "Finalizado",
+    "imagen": "https://preview.redd.it/curious-question-if-mage-demon-queen-gets-an-anime-v0-vm7sv6dpi8md1.jpeg?width=640&crop=smart&auto=webp&s=62032e1ef1a216c1bb4c6f2075916838eb29b8d1",
     "desc": "Todos los aventureros luchan por cortarle la cabeza a la reina demoníaca, pero esta joven maga enamorada solo quiere pedir su mano. Acompáñanos en esta atrevida historia de amor y perseverancia que transcurre en el entramado de un juego de rol.",
     "tags": [
       "Aventura",
@@ -5571,204 +5574,201 @@
       "Fantasia",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
-    "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "adult": true,
+    "subido": "Subido biblioteca"
   },
   {
     "id": "muted_333",
     "titulo": "Muted",
+    "seccion": "Webtoon",
+    "estado": "Finalizado",
+    "imagen": "https://swebtoon-phinf.pstatic.net/20200508_226/1588896989775Igrew_JPEG/04_EC9E91ED9288EC8381EC84B8_mobile.jpg?type=crop540_540",
     "desc": "En la primera luna llena de sus 21 años, la joven bruja Camila Severín tiene que realizar el tradicional ritual de invocar un demonio alado. Se supone que el ritual trae éxito y prosperidad, pero cuando sale mal, se revela una verdad terrible sobre Camila y salen a la luz secretos que podrían llegar a destruir a su familia.",
     "tags": [
       "Fantasia",
       "Supernatural"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "nevermore_334",
     "titulo": "Nevermore",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://swebtoon-phinf.pstatic.net/20250130_27/1738244672498tljEx_JPEG/3Nevermore_LandingPage_Mobile_250127.jpg?type=crop540_540",
     "desc": "No hay nada definitivo sobre la vida después de la muerte, excepto la inscripción involuntaria en la misteriosa Academia Nevermore. Ahora Lenore y Annabel Lee deben comenzar su plan de estudios para recuperar los recuerdos de su trágica desaparición. Entre la macabra conducta del decano y los peligros reveladores de los exámenes finales, ambas chicas deben aprender a confiar una en la otra y en sus formas fantasmales recién adquiridas, o Espectros, no solo para graduarse de la academia... sino para ganarse una segunda oportunidad en la vida.",
     "tags": [
       "Supernatural"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "not_so_shoujo_love_story_335",
     "titulo": "Not so shoujo love story",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://m.media-amazon.com/images/I/81-zvuDi+cL._AC_UF1000,1000_QL80_.jpg",
     "desc": "Rei, es fan del Shoujo y quiere tener su primer novio siguiendo los esquemas del manga.  El candidato perfecto es Hansum . Pero su historia de amor perfecta se desencanja cuando Hanna, la chica más popular de la escuela, está interesada por ella.",
     "tags": [
       "Comedia",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "pinky_promise_336",
     "titulo": "Pinky Promise",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlIFpIJU6MUXugItYTVQ4vLJbymEyVVzC1zg&s",
     "desc": "Eva y Hallie hicieron una promesa de ser mejores amigas para siempre. Pero a medida que transcurre su último año de universidad, algo comienza a cambiar. Una nueva presencia entra en sus vidas, y lo que antes se sentía familiar empieza a parecer incierto. A medida que la tensión crece y la verdad se oculta en el silencio, una pregunta permanece: ¿Seguirán siendo las amigas que prometieron ser o se convertirán en algo que ninguna de las dos esperaba?",
     "tags": [
       "Drama",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "shadows_of_the_heart_337",
     "titulo": "Shadows Of The Heart",
+    "seccion": "Webtoon",
+    "estado": "Hiatus",
+    "imagen": "https://us-a.tapas.io/sa/6a/62503fc2-9695-4979-a2e6-a285d291f390_z.jpg",
     "desc": "En un mundo donde los secretos prosperan y los corazones se entrelazan, esta serie de GL sigue el viaje de dos chicas que descubren el amor en medio de deseos ocultos, mientras enfrentan las sombras dentro de sus propios corazones y aprenden a abrazar la luz de sus verdaderos sentimientos.",
     "tags": [
       "Drama",
       "Romance"
     ],
-    "estado": "Hiatus",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "she_s_a_keeper_338",
     "titulo": "She's A Keeper",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://us-a.tapas.io/sa/4e/000ad260-dd88-405c-bc15-42d9567f9808_z.jpg",
     "desc": "La tasa de secuestros en Phili se ha disparado. Clara del Samson, hija de un empresario multimillonario, se ha convertido en un objetivo prioritario. En respuesta, Keeper Corp, famosa por sus protectores de élite conocidos como \"Keepers\", ha asignado a Keeper Elle para proteger a Clara.",
     "tags": [
       "Drama",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "surprise_you_re_gay__339",
     "titulo": "Surprise You're Gay!",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://swebtoon-phinf.pstatic.net/20221231_226/16724396798999FwIC_JPEG/thumbnail.jpg",
     "desc": "Algunos nacen gays, otros alcanzan la homosexualidad y a otros se la imponen. Sebastián ya ha suspendido dos veces su asignatura de Introducción a la Informática y ahora sólo le queda una oportunidad para aprobar. ¿Qué puede hacer sino pedirle a Bianca, una estafadora universitaria local, que le sustituya durante todo el semestre? ¿Será capaz de engañar a un profesor que ya conoce a Sebastian? Por no hablar de lo que ocurrirá cuando una chica llamada Chandler empiece a enamorarse de \"Sebastian\", alias Bianca. La vida de Bianca pronto se llenará de drama, pero ella no tiene tiempo para eso. No, Bianca sólo tiene un objetivo: que no la pillen. (Una adaptación de la obra clásica de Shakespeare, Noche de Reyes).",
     "tags": [
       "Comedia",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "the_princess_is_now_the_duke_340",
     "titulo": "The Princess is Now the Duke",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://cdn.thestorygraph.com/oyvf6pfhffgo12nax3pncs5er2m6",
     "desc": "La princesa Amara finge su propia muerte para escapar de un matrimonio no deseado y se reinventa como el duque Alexander, el pretendiente perfecto para casarse con Lady Elaine, la mujer que realmente ama. Pero Elaine, ignorante de la verdad, está preparada para casarse con el príncipe Edgars, el hermano de Amara. Cuando el Emperador convoca un torneo por la mano de Elaine y por el trono, Alexander debe superar a los pretendientes rivales y ganarse la confianza de Elaine, manteniendo en secreto su verdadera identidad",
     "tags": [
       "Drama",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "the_siren_s_light_341",
     "titulo": "The Siren's Light",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://globalcomix.com/img/processed/comic-cover/49b7002f09e3756bf592b85eaaee3f9e/33239_5cd0d9096df935d0d187827215d46c0d_large.webp",
     "desc": "\"Jaena, agobiada por el dolor de una reciente ruptura, tropieza con un encuentro místico que cambia su vida para siempre. Mientras las profundidades del mar amenazan con tragársela entera, una seductora belleza emerge de las profundidades, seguida de un beso que enciende un vínculo entre dos mundos: el de un humano y el de una molesta y coqueta sirena.",
     "tags": [
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "unnie__i_like_you__342",
     "titulo": "Unnie, I Like You!",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKNYUG_PEhdh20S4M11kyX8yX1qHK1DSzcvQ&s",
     "desc": "Park Chanmi recuerda vívidamente su vida pasada, donde albergaba sentimientos profundos por la bella Hanbyeol, cuya vida terminó trágicamente demasiado pronto. En su vida actual, Chanmi se sorprende al descubrir que su amor perdido ha regresado como profesor universitario, pero no recuerda su vida pasada. Temiendo que la historia se repita, Chanmi está decidida a proteger a la única persona que más aprecia.",
     "tags": [
       "Comedia",
       "Drama",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "utmost_passionate_343",
     "titulo": "Utmost passionate",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://swebtoon-phinf.pstatic.net/20231117_223/1700226470558FBJgt_PNG/dcfa908f-b43f-4f78-8169-313cd2a0e0cb4257505842884805562.png",
     "desc": "La joven y bonita Yu Sarang necesita dinero para pagar su enorme deuda y decidió convertirse en modelo desnuda del ilustre artista Lee Yepa con un gran sueldo.",
     "tags": [
       "Drama",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
-    "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "adult": true,
+    "subido": "Subido biblioteca"
   },
   {
     "id": "winter_before_spring_344",
     "titulo": "Winter Before Spring",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://static.wikia.nocookie.net/yuripedia/images/5/50/Winter_Before_Spring_%28cover%29.jpg/revision/latest?cb=20260228061405",
     "desc": "Hana se encuentra lidiando con una emoción inesperada cuando se da cuenta de que se ha enamorado de su mejor amiga, que resulta ser una chica. Temiendo ser rechazada, su mejor amiga inesperadamente le corresponde, y se embarcan en un nuevo viaje romántico juntas. Hana se siente repentinamente abatida, su mundo se derrumba mientras comienzan a formarse grietas en lo que parecía ser su visión perfecta del amor cuando se enfrenta a la desagradable verdad sobre su nueva novia. Pero cuando las cosas parecen más sombrías y Hana ha renunciado al amor, una nueva cara llega a la escuela que tiene el potencial de cambiarlo todo...",
     "tags": [
       "Drama",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "murder_girlband_345",
@@ -5786,33 +5786,33 @@
   {
     "id": "night_owls___summer_skies_346",
     "titulo": "Night Owls & Summer Skies",
+    "seccion": "Webtoon",
+    "estado": "Finalizado",
+    "imagen": "https://img.wattpad.com/b3211e1e3454797dd2255623a801e9190d04a07f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f4251466d525573637643302d4f513d3d2d313237303932323132352e313731373038636235333536343735353838353639383739303039392e6a7067",
     "desc": "A pesar de su apariencia dura, Emma Lane, de diecisiete años, nunca ha sido una chica a la que le gusten las actividades al aire libre. Por eso, cuando su madre la abandona sin contemplaciones en el Campamento Mapplewood para pasar el verano, está decidida a que la echen rápidamente. Sin embargo, cuando llama la atención de Vivian Black, una misteriosa y hermosa consejera asistente, descubre que en este campamento puede haber algo más que chicas malas y mosquitos. Puede que incluso haya amor.",
     "tags": [
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "the_girlfriend_project_347",
     "titulo": "The Girlfriend Project",
+    "seccion": "Webtoon",
+    "estado": "Finalizado",
+    "imagen": "https://us-a.tapas.io/sa/60/c2cd516c-b9c3-4314-b703-b105a6cc1586_z.jpg",
     "desc": "Cuando le quitan la beca escolar a Julia, se queda sin opciones. Un rescate sorpresa llega cuando su compañera del proyecto, Ryn, se ofrece a pagarle a Julia para que pretenda ser su novia durante las vacaciones. Pero hay un problema: Ryn es la persona más extraña que Julia conoce. Además de eso, la sucia familia rica de Ryn desaira a las ovejas negras como Ryn y a la gente de clase trabajadora como Julia. Mientras Julia trabaja para ganarse los corazones de la familia de Ryn, se da cuenta de que podría ser más que su orgullo lo que está en juego: su propio corazón también puede estar en peligro.",
     "tags": [
       "Escolar",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Webtoon"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "backstage___like_it_when_you_are_in_love_348",
