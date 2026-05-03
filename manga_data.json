@@ -5817,53 +5817,56 @@
   {
     "id": "backstage___like_it_when_you_are_in_love_348",
     "titulo": "Backstage - Like It When You Are in Love",
+    "seccion": "Sin Clasificación",
+    "estado": "Finalizado",
+    "imagen": "https://img.novelcool.com/logo/202112/77/Backstage_LIKE9131.jpg",
     "desc": "Rein Ratshut, una ex estudiante de medicina, busca a su cantante favorita, \"Queen Pakini\", quien de repente detuvo su carrera y desapareció sin dejar rastro. Pero nadie sabía que se encontrarían como colegas y se causarían mutuamente emoción y amor.",
     "tags": [
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Sin Clasificación"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "drizzling_night_349",
     "titulo": "Drizzling Night",
+    "seccion": "Sin Clasificación",
+    "estado": "Finalizado",
+    "imagen": "https://m440.in/uploads/manga/will-be-my-best-memory/cover/cover_250x350.jpg",
     "desc": "",
     "tags": [
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
-    "adult": false,
-    "imagen": "",
-    "seccion": "Sin Clasificación"
+    "adult": true,
+    "subido": "Subido biblioteca"
   },
   {
     "id": "flower_of_youth_350",
     "titulo": "Flower of Youth",
+    "seccion": "Sin Clasificación",
+    "estado": "Continúa",
+    "imagen": "https://img.novelcool.com/logo/202406/69/Flor_De_Juventud6834.jpg",
     "desc": "Phop Phoppanas, es una cantante famosa, nunca ha tenido escándalos. Pero en el fondo de su corazón, Phop siempre está pensando en su primer amor que desapareció hace muchos años. Y ese amor es Kan Kanthiwa, quien una vez prometió que serían cantantes juntas. Pero un día, Phop se topa con Kan otra vez... ahora ¿como dueña de una tienda de flores y madre soltera?",
     "tags": [
       "Drama",
       "Romance",
       "Slice_of_Life"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Sin Clasificación"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "level_one_dreamers_351",
     "titulo": "Level One Dreamers",
+    "seccion": "Sin Clasificación",
+    "estado": "Continúa",
+    "imagen": "https://img.novelcool.com/logo/202409/75/Level_One_Dreamers3160.jpg",
     "desc": "Aunque el Capitán es guapa, tiene buen carácter, es bueno en los deportes, también es una gran gamer. Esa es la razón por la que Kiss decidió empezar a aprender a jugar videojuegos, con la esperanza de conquistar el corazón del senior que le gusta en secreto. Sin embargo, eso resultó ser el comienzo de una relación a través de la barrera del mundo en línea entre Kiss y mika, quien en realidad es la jugadora profesional número uno del mundo.",
     "tags": [
       "Drama",
@@ -5871,17 +5874,17 @@
       "Romance",
       "Slice_of_Life"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Sin Clasificación"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "my_honey_she_is_the_best__352",
     "titulo": "My Honey She is The Best!",
+    "seccion": "Sin Clasificación",
+    "estado": "Continúa",
+    "imagen": "https://preview.redd.it/my-honey-%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B8%84%E0%B8%99%E0%B8%99-%E0%B8%94-%E0%B8%97-%E0%B8%AA-%E0%B8%94-translations-v0-4sme2150opnd1.jpg?width=312&format=pjpg&auto=webp&s=13c4c9aef6f279d95e693e0888396db8bd60aa17",
     "desc": "Poco después de romper con su ex, 'Honey' está experimentando un nuevo amor con 'Ikkyu', el genio representante de la clase con una belleza desbordante y un cerebro a juego. Pero con una diferencia enorme en su estatus social, tratar de acercarse a Ikkyu sería como tratar de resolver una ecuación casi imposible. ¿Podrá la tonta Honey desenredar esta fórmula?",
     "tags": [
       "Comedia",
@@ -5889,13 +5892,10 @@
       "Romance",
       "Slice_of_Life"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "https://mangadex.org/covers/210559af-e1f9-4df7-a1b1-0869db2fa424/2e9b5078-a6c4-4783-be46-3bce2d9a720d.jpg",
-    "seccion": "Sin Clasificación"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "pastel_love_353",
@@ -6096,328 +6096,328 @@
   {
     "id": "heavy_vinyl_vol__1_365",
     "titulo": "Heavy Vinyl Vol. 1",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/815x-ECKteL._SL1500_.jpg",
     "desc": "La despistada de Chris acaba de empezar el mejor trabajo que cualquier adolescente solitaria podrían desear: trabajar en Vinyl Destination. Es tan guay como imaginaba, su jefa es la ama y sus compañeras pasan el rato hablando de música y luchando contra el patriarcado.... pero cuando Rosie Riot, su cantante favorita, desaparece misteriosamente, Chris descubre que sus compañeras hacen mucho mas que organizar discos... ¡La tienda es también la guarida de un grupo de heroínas adolescentes!",
     "tags": [
       "Musica"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "heavy_vinyl__y2k_o__366",
     "titulo": "Heavy Vinyl: Y2K-O!",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/81IYAK69nqL._SL1500_.jpg",
     "desc": "Es 1999 y Chris vive su sueño: trabajar en Vinyl Destination de día y luchar por la justicia (musical) de noche (bueno, quizás también de día) en el club de lucha de justicieras adolescentes más genial del mundo. Pero cuando las chicas de Vinyl Destination entran en una Batalla de Bandas para investigar y, por supuesto, ganar, descubren que los oscuros amos corporativos de la industria musical planean destruir el incipiente mundo de la música digital y culpar al Y2K. ¡Ahora es el momento de que Chris y sus amigos consigan 56k (o más, por favor) de justicia para poder salvar el día una vez más!",
     "tags": [
       "Musica"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "sunstone_vol_6_367",
     "titulo": "Sunstone vol.6",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/61OyAvfpekL._SL1050_.jpg",
     "desc": "¿Cómo puedes enseñar a un corazón roto a confiar de nuevo? ¿Cómo puedes abrazarte con las manos aferradas a tu pasado? Anne y Alan tienen unas pocas preguntas que responder a medida que expandimos la historia de Sunstone con esta nueva historia. Sólo para adultos.",
     "tags": [
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "sunstone_vol_7_368",
     "titulo": "Sunstone vol.7",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/61Dmi6CBT-L._SL1050_.jpg",
     "desc": "Ally y Alan suben a su montaña rusa de exploración sexual. Mientras tanto, Anne y Laura disfrutan de su pequeña relación. Buenos tiempos para todos. Sería una pena que el comportamiento adictivo y los problemas de confianza arruinaran toda esa diversión. Sólo para adultos.",
     "tags": [
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "sunstone_vol_8_369",
     "titulo": "Sunstone vol.8",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/71VhHFrJgwL._SL1500_.jpg",
     "desc": "Amar a alguien significa construir un santuario dentro de tu corazón dedicado a esa persona. Un santuario hecho de buenos recuerdos y momentos preciados. A medida que el arco de la misericordia llega a su tercer volumen, Anne está a punto de encontrar el santuario de su corazón saqueado por nadie menos que la persona a la que estaba dedicado. En cuanto a Ally y Alan, se encuentran en una situación tensa a medida que un pasatiempo arriesgado se convierte en una obsesión y amenaza con destruir todos los demás aspectos de sus vidas. Una amistad está a punto de ser puesta a prueba y puede terminar fracasando.",
     "tags": [
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "harley_quinn__come__dispara__mata__la_gi_370",
     "titulo": "Harley Quinn: Come, dispara, mata: la gira Vol. 1",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/71+t9pZkbxL._SL1500_.jpg",
     "desc": "¿Quieres ver a Harley y a Hiedra de viaje y enrolladas? Tras la segunda temporada de la serie de animación Harley Quinn de HBO Max, nuestras protagonistas se han dado a la fuga en plan Thelma y Louise... y nada va a salir bien. ¡He aquí el viaje del siglo! Tras una boda catastrófica, Harley Quinn y Hiedra Venenosa tienen que huir del comisario Gordon y de la policía de Gotham City. Pero por divertido que suene todo esto, a Hiedra aún le pesa el haber dejado al Hombre Cometa tirado en el altar. ¡Por suerte, su amiga tiene el plan perfecto para que se le pase la depresión!",
     "tags": [
       "Fantasia",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "hiedra_venenosa_1__el_c_rculo_virtuoso_371",
     "titulo": "Hiedra Venenosa 1. El círculo virtuoso",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/61vTXUUsoAL._AC_UF1000,1000_QL80_.jpg",
     "desc": "La humanidad ya tuvo su oportunidad. Ahora es el turno de Hiedra Venenosa, en una emocionante etapa en solitario ideada por G. Willow Wilson y Marcio Takara. El historial de Pamela Isley está lleno de sus muchos méritos y estados: diosa encarnada, activista, científica… y fallecida. Habitando un nuevo cuerpo sin haberlo deseado y con una nueva razón de ser, Hiedra abandona Gotham y se propone completar su mayor obra, un obsequio al mundo que sanará el daño que le ha sido infligido… eliminando a la humanidad",
     "tags": [
       "SciFi"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "hiedra_venenosa_2__consumo_poco__tico_372",
     "titulo": "Hiedra Venenosa 2: Consumo poco ético",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://www.jokercomics.es/imagenes_grandes/9791370/979137013151.webp",
     "desc": "¿Cómo? ¿Que Hiedra Venenosa se ha vendido a las petroleras? Con una nueva misión, una nueva manera de ver la vida y un nuevo sentido de propósito, Hiedra Venenosa se siente de vuelta... y mejor que nunca.",
     "tags": [
       "SciFi"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "sunstone_vol_1_373",
     "titulo": "Sunstone vol.1",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/61SMwiQJVjL._SL1050_.jpg",
     "desc": "Los gustos de Lisa siempre fueron... únicos. Anhelaba ser restringida, sin restricciones. Lisa siempre sintió que algo faltaba en su vida amorosa... hasta que conoció a Ally. Ally era implacablemente común: un trabajo exitoso, una casa bonita, una infancia normal... excepto por su preferencia por dominar en el dormitorio.",
     "tags": [
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "sunstone_vol_2_374",
     "titulo": "Sunstone vol.2",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/61t8qV8fosL._SL1050_.jpg",
     "desc": "Ally y Lisa son la típica pareja: juegan videojuegos, tienen citas y practican sexo BDSM extremo mientras evitan torpemente hablar de sus sentimientos y deseos más profundos. Vale, tal vez la última parte no sea tan típica. De todos modos, a medida que los dos se alejan del ámbito de la amistad y se adentran más en el embriagador mundo del S&M, los lazos entre ellos se estrechan aún más, pero un secreto del pasado de Ally amenaza con separarlos aún más. En el calor de cada relación se esconden verdades no dichas, pero para Ally y Lisa, las líneas entre el amor y la lujuria, la amistad y el dolor, se difuminan constantemente. En un romance definido por el poder, decir la verdad puede ser tan arriesgado como guardar secretos.",
     "tags": [
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "sunstone_vol_3_375",
     "titulo": "Sunstone vol.3",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/6181UDMeqZL._SL1024_.jpg",
     "desc": "A medida que la relación incipiente entre la dominatriz Ally y la sumisa Lisa comienza a florecer, a ambas les queda claro que no se trata solo de BSDM. Un círculo cada vez más amplio de amigos, incluidos los practicantes Tom y Cassie y la escéptica tatuadora Anne, se forma alrededor de la pareja, que parece pasar cada segundo libre juntos. Pero con los mundos de Ally y Lisa cada vez más entrelazados, ¿su relación es más fuerte que nunca? ¿O simplemente tienen más que perder?",
     "tags": [
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "sunstone_vol_4_376",
     "titulo": "Sunstone vol.4",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/61itqlrlv9L._SL1050_.jpg",
     "desc": "Aun así, el romance entre Ally y Lisa se basa en más de una fantasía, incluida la infame mentira de los \"amigos con derechos\". Cuando un personaje de los cuentos eróticos de Lisa encuentra representaciones reales en su nueva amiga Anne, ¿serán algunas señales pasadas por alto más estrés del que este romance de fantasía puede soportar?",
     "tags": [
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "sunstone_vol_5_377",
     "titulo": "Sunstone vol.5",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/61nJOFogEhL._SL1311_.jpg",
     "desc": "El romance BDSM de Ally y Lisa, que parece sacado de un libro de cuentos, ha llegado a su fin. Las dos mujeres son demasiado testarudas para admitir la profundidad de sus sentimientos. Pero, aunque cada una toma su camino por separado, Lisa vuelve a la escritura que la unió a ella y a Ally en un principio. Con un poco de ayuda de sus amigos y mucha introspección mutua, estas historias de amor alegóricas representan una última oportunidad para salvar la relación de Ally y Lisa.",
     "tags": [
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "the_legend_of_korra__ruins_of_the_empire_378",
     "titulo": "The Legend of Korra: Ruins of the Empire #1",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/81QSEsXFM8L._SL1500_.jpg",
     "desc": "¡Korra debe decidir en quién confiar mientras el destino del Reino Tierra pende de un hilo! En vísperas de sus primeras elecciones, el futuro del Reino Tierra se ve amenazado por su pasado. Mientras Kuvira es juzgada por sus crímenes, los vestigios de sus ambiciones imperiales amenazan con socavar las esperanzas democráticas de la nación. Pero cuando Korra, Asami, Mako y Bolin no están de acuerdo en cuanto a la solución, se tomarán medidas drásticas para detener una nueva marcha hacia la guerra.",
     "tags": [
       "Fantasia"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "the_legend_of_korra__ruins_of_the_empire_379",
     "titulo": "The Legend of Korra: Ruins of the Empire #2",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/812LOM0OpGL._SL1500_.jpg",
     "desc": "¿Qué hará falta para detener una guerra?  Los sueños del rey Wu de convertir pacíficamente el Reino Tierra en una democracia corren peligro cuando el comandante Guan se lanza a la política con la esperanza de subvertir el nuevo sistema desde dentro. Pero jugar limpio nunca fue parte de su plan; ¡Guan y el Dr. Sheng están usando una nueva y aterradora tecnología para consolidar la victoria de Guan! En un intento desesperado por salvar al Reino Tierra de volver a caer en los días oscuros de la conquista y el imperio, Korra y Kuvira convencen a un viejo amigo para que regrese y se enfrente al ex comandante en las elecciones. ¿Pero será suficiente?",
     "tags": [
       "Fantasia"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "the_legend_of_korra__ruins_of_the_empire_380",
     "titulo": "The Legend of Korra: Ruins of the Empire #3",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/81zFeYX7IFL._SL1500_.jpg",
     "desc": "¡Se revela la verdadera naturaleza de Kuvira y el Reino Tierra sufrirá las consecuencias!  Gracias a la tecnología de lavado de cerebro del Comandante Guan y el Doctor Sheng, se pierde toda esperanza de una elección justa en el Reino Tierra. Korra trabaja con Toph, Su y Kuvira para planificar un medio para rescatar no solo a Mako, Bolin y Asami, que tienen el cerebro lavado, sino también a todos los demás atrapados en el plan de Guan. Con el Imperio de la Tierra potencialmente en ascenso nuevamente, Kuvira saca otro truco de su manga... pero ¿de qué lado está realmente?",
     "tags": [
       "Fantasia"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "the_legend_of_korra_comics__turf_wars__1_381",
     "titulo": "The Legend of Korra comics: Turf Wars #1",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/81Hpl1noN8L._SL1500_.jpg",
     "desc": "Continuación de la serie \"La Leyenda de Korra\"  Disfrutando de sus nuevos sentimientos mutuos, Korra y Asami abandonan el Mundo Espiritual... ¡pero no encuentran nada en Ciudad República más que travesuras políticas y conflictos entre humanos y espíritus!  Un pomposo desarrollador planea convertir el nuevo portal espiritual en un parque de diversiones, lo que podría cortar una conexión ya tumultuosa con los espíritus. Además, las tríadas se han realineado y están en una brutal pelea en las fronteras de la ciudad, ¡donde se han reubicado cientos de evacuados!  Para superarlo, Korra y Asami prometen cuidarse mutuamente, ¡pero primero deben mejorar en ser un equipo y una pareja!",
     "tags": [
       "Fantasia"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "the_legend_of_korra_comics__turf_wars__2_382",
     "titulo": "The Legend of Korra comics: Turf Wars #2",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/912Pwyv5K-L._SL1500_.jpg",
     "desc": "Continuación de la serie \"La Leyenda de Korra\"  Recuperándose de la pelea y furioso por venganza, Tokuga, miembro de Triple Threats, solidifica sus lazos con el tramposo Wonyong. Mientras tanto, cuando la crisis de vivienda de Ciudad República alcanza su punto máximo, Zhu Li pone sus miras en la figura pública más importante de la ciudad, el presidente Raiko, ¡en un intento por la presidencia! Con el éxito de su amiga, el futuro del portal espiritual y el bienestar de los ciudadanos de Ciudad República en juego, ¿podrá Korra permanecer neutral y cumplir con sus deberes como Avatar?",
     "tags": [
       "Fantasia"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "the_legend_of_korra_comics__turf_wars__3_383",
     "titulo": "The Legend of Korra comics: Turf Wars #3",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/91GOLaro0YL._SL1500_.jpg",
     "desc": "Continuación de la serie \"La Leyenda de Korra\"  Cuando Asami es secuestrada, Korra se dirige a la Selva Espiritual para encontrarla. Ahora, repleta de espíritus oscuros influenciados por Tokuga, un ser mitad espíritu mitad humano, el paisaje es más peligroso que nunca. Las dos mujeres deben confiar la una en la otra y trabajar juntas si quieren salir con vida. ¡Su destino se revela en esta sorprendente y llena de acción conclusión de La leyenda de Korra: Guerras territoriales!",
     "tags": [
       "Fantasia"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "the_princess_and_the_grilled_cheese_sand_384",
     "titulo": "The Princess and the Grilled Cheese Sandwich",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/81-EDLtJqvL._SL1500_.jpg",
     "desc": "Lady Camembert quiere vivir la vida en sus propios términos, sin casarse. Bueno, sin casarse con un hombre, claro. Pero la ley del país es que las mujeres no pueden heredar. Entonces, cuando su padre fallece, ella hace lo único que puede: se disfraza de hombre y se muda a la ciudad capital del Reino de Fromage para comenzar de nuevo como el Conde Camembert. Pero es difícil mantener un perfil bajo cuando la hermosa Princesa Brie, con su feroz activismo y gran sentido de la moda, llama su atención. Camembert no puede resistirse a conocer a la princesa, pero a medida que los dos se acercan, ¿podrá guardar su secreto?",
     "tags": [
       "Fantasia",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "runaways_385",
     "titulo": "Runaways",
+    "seccion": "Cómic",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/61fZGHb6scL._AC_UF1000,1000_QL80_.jpg",
     "desc": "En algún momento de sus vidas, todos los jóvenes creen que tienen algo por lo que huir de casa? Pero, ¿qué pasaría si REALMENTE lo tuvieran? Cuando seis jóvenes amigos descubren que sus padres comparten un profundo y oscuro secreto, los conmocionados adolescentes encuentran fuerza los unos en los otros y juntos huyen de sus casas y se adentran en la aventura de sus vidas",
     "tags": [
       "Fantasia",
       "Superheroe"
     ],
-    "estado": "Finalizado",
-    "subido": "",
     "in_biblioteca": false,
     "in_files": false,
     "adult": false,
-    "imagen": "",
-    "seccion": "Cómic"
+    "subido": ""
   },
   {
     "id": "bingo_love_386",
