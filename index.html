@@ -217,18 +217,15 @@ body::after {
 }
 
 .hero-stats {
-  display: flex; flex-direction: column;
-  gap: 1px; align-items: flex-end;
-  flex-shrink: 0;
-}
-.hstat {
-  display: flex; align-items: baseline; gap: 8px;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border);
-  width: 100%;
+  display: flex; flex-direction: row;
+  gap: 32px; align-items: flex-end;
+  flex-shrink: 0; flex-wrap: wrap;
   justify-content: flex-end;
 }
-.hstat:last-child { border-bottom: none; }
+.hstat {
+  display: flex; flex-direction: column; align-items: flex-end;
+  padding: 0;
+}
 .hstat-n {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 2.2rem; color: var(--white); line-height: 1;
@@ -678,17 +675,165 @@ body::after {
 .scroll-top.vis { opacity: 1; }
 .scroll-top:hover { background: rgba(232,255,71,0.18); }
 
-/* ── RESPONSIVE ───────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE — TABLET  ≤ 900px
+══════════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-stats { flex-direction: row; flex-wrap: wrap; }
-  .hstat { border-bottom: none; padding: 4px 12px; border-right: 1px solid var(--border); }
+  .hero { padding: 72px 16px 0; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .hero-h1 { font-size: clamp(3.5rem, 12vw, 6rem); }
+  .hero-stats {
+    flex-direction: row; flex-wrap: wrap;
+    gap: 20px; justify-content: flex-start;
+  }
+  .hstat { align-items: flex-start; }
 }
-@media (max-width: 640px) {
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE  ≤ 600px
+══════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+
+  /* ── Topbar ── */
+  .topbar { padding: 0 12px; height: 48px; gap: 8px; }
+  .logo-jp, .logo-dot { display: none; }
+  .logo-main { font-size: 20px; letter-spacing: 2px; }
+  /* Move search below topbar */
   .topbar-center { display: none; }
-  .grid { grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .modal-top { grid-template-columns: 90px 1fr; }
-  .modal-cover img, .modal-cover-gen { width: 90px; height: 135px; }
+  .topbar::after { bottom: -2px; height: 2px; }
+  /* Show a full-width search bar right under topbar */
+  .mobile-search {
+    display: flex !important;
+    position: sticky; top: 48px; z-index: 290;
+    background: var(--screen);
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-search input {
+    width: 100%;
+    background: rgba(245,240,232,0.07);
+    border: 1px solid var(--border2);
+    border-radius: 100px;
+    color: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    padding: 8px 14px 8px 34px;
+    outline: none;
+  }
+  .mobile-search input:focus { border-color: var(--neon); }
+  .mobile-search input::placeholder { color: var(--dim); }
+  .mobile-search .ms-icon {
+    position: absolute; left: 24px; top: 50%; transform: translateY(-50%);
+    font-size: 14px; color: var(--dim); pointer-events: none;
+  }
+
+  /* ── Adult btn — icon only ── */
+  .adult-btn { padding: 5px 8px; }
+  #adultLbl { display: none; }
+
+  /* ── Hero — much smaller ── */
+  .hero { padding: 60px 12px 0; }
+  .hero-inner { gap: 12px; padding-bottom: 16px; }
+  .hero-eyebrow { font-size: 9px; letter-spacing: 3px; }
+  .hero-h1 { font-size: clamp(2.8rem, 18vw, 5rem); letter-spacing: 2px; }
+  .hero-jp { font-size: 11px; letter-spacing: 4px; margin-top: 6px; }
+  .hero-stats {
+    flex-direction: row; flex-wrap: wrap;
+    gap: 16px 24px; justify-content: flex-start;
+  }
+  .hstat-n { font-size: 1.6rem; }
+  .hstat-l { font-size: 8px; letter-spacing: 1.5px; }
+
+  /* ── Filter strip — adjust sticky top ── */
+  .filter-strip { top: 100px; }
+
+  /* ── Category tabs row — full width, wrap allowed, clear separation ── */
+  .cat-tabs {
+    padding: 10px 12px;
+    gap: 6px;
+    flex-wrap: wrap;          /* allow wrapping so no tab gets cut */
+    border-bottom: 1px solid var(--border2);
+  }
+  .ctab {
+    font-size: 11px;
+    padding: 6px 12px; gap: 5px;
+    flex-shrink: 0;
+  }
+  .ctab .ctab-icon { font-size: 12px; }
+  .ctab .ctab-count { font-size: 8px; padding: 1px 5px; }
+
+  /* ── Filter row — own line, no overflow ── */
+  .filter-row {
+    padding: 8px 12px;
+    gap: 6px;
+    flex-wrap: nowrap;        /* stay in one line, scroll if needed */
+    border-top: none;
+  }
+  .fdrop { font-size: 11px; padding: 6px 11px; gap: 4px; }
+  .adult-pill-btn { font-size: 11px; padding: 6px 11px; gap: 5px; }
+  #adultPillLbl { display: none; }
+  .filter-sep { height: 14px; }
+
+  /* ── Drop panels — don't go off-screen ── */
+  .drop-panel { min-width: 140px; border-radius: 10px; }
+  /* Last dropdown opens to the right so it doesn't overflow left */
+  #dropTag .drop-panel { left: auto; right: 0; }
+
+  /* ── Main padding ── */
+  .main { padding: 20px 10px 60px; }
+
+  /* ── Section headers ── */
+  .section { margin-bottom: 36px; }
+  .section + .section { padding-top: 28px; }
+  .section-num { font-size: 2.8rem; }
+  .section-title { font-size: 1.4rem; letter-spacing: 2px; }
+  .section-head { margin-bottom: 14px; }
+
+  /* ── Grid — 2 columns ── */
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 4px; }
+
+  /* ── Card — slightly larger text ── */
+  .card-title { font-size: 11px; }
+  .ctag { font-size: 8px; padding: 1px 4px; }
+  .card-estado { font-size: 7px; padding: 2px 5px; }
+  .adult-chip { font-size: 8px; padding: 1px 5px; }
+  .sbadge { font-size: 6px; padding: 1px 4px; }
+
+  /* ── Modal — full screen ── */
+  .modal-wrap { padding: 0; align-items: flex-end; }
+  .modal {
+    max-width: 100%;
+    border-radius: 16px 16px 0 0;
+    max-height: 92vh;
+    border-left: none; border-right: none; border-bottom: none;
+  }
+  .modal::before { border-radius: 16px 16px 0 0; }
+  .modal-top { grid-template-columns: 80px 1fr; gap: 14px; }
+  .modal-cover img { width: 80px; height: 120px; }
+  .modal-cover-gen { width: 80px; height: 120px; }
+  .modal-title { font-size: 1.5rem; }
+  .modal-body { padding: 14px 16px 20px; }
+
+  /* ── Scroll top ── */
+  .scroll-top { bottom: 14px; right: 14px; width: 32px; height: 32px; font-size: 14px; }
+
+  /* ── Filter count — hide on tiny screens ── */
+  .filter-count { display: none; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE — TINY  ≤ 380px
+══════════════════════════════════════════════════════════ */
+@media (max-width: 380px) {
+  .hero-h1 { font-size: 2.6rem; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 3px; }
+  .ctab { font-size: 10px; padding: 4px 9px; }
+  /* Hide section number on tiny screens */
+  .section-num { display: none; }
+  .section-title-wrap { border-left-width: 2px; }
 }
 </style>
 </head>
@@ -712,6 +857,12 @@ body::after {
     </button>
   </div>
 </header>
+
+<!-- MOBILE SEARCH (hidden on desktop, sticky below topbar on mobile) -->
+<div class="mobile-search" style="display:none; position:relative;">
+  <span class="ms-icon">⌕</span>
+  <input type="search" id="srchMobile" placeholder="Buscar título, género…" autocomplete="off">
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -738,9 +889,9 @@ body::after {
     <button class="ctab" data-sec="Manga"><span class="ctab-icon">🇯🇵</span> Manga <span class="ctab-count" id="tc-Manga">—</span></button>
     <button class="ctab" data-sec="Manhua"><span class="ctab-icon">🇨🇳</span> Manhua <span class="ctab-count" id="tc-Manhua">—</span></button>
     <button class="ctab" data-sec="Webtoon"><span class="ctab-icon">📱</span> Webtoon <span class="ctab-count" id="tc-Webtoon">—</span></button>
-    <button class="ctab" data-sec="Sin Clasificación"><span class="ctab-icon">📂</span> Sin Clasificación <span class="ctab-count" id="tc-SinClasificacion">—</span></button>
+    <button class="ctab" data-sec="Sin Clasificación"><span class="ctab-icon">📂</span> Sin Clasificación <span class="ctab-count" id="tc-Sin_Clasificacion">—</span></button>
     <button class="ctab" data-sec="Cómic"><span class="ctab-icon">💥</span> Cómic <span class="ctab-count" id="tc-Comic">—</span></button>
-    <button class="ctab" data-sec="Novela Gráfica"><span class="ctab-icon">📗</span> Novela Gráfica <span class="ctab-count" id="tc-NovelaGrafica">—</span></button>
+    <button class="ctab" data-sec="Novela Gráfica"><span class="ctab-icon">📗</span> Novela Gráfica <span class="ctab-count" id="tc-Novela_Grafica">—</span></button>
   </div>
 
   <!-- ROW 2: dropdown filters all in one line -->
@@ -875,20 +1026,15 @@ function buildStats() {
 /* ── CATEGORY TABS ──────────────────────────────────────── */
 function buildCatTabs() {
   const groups = groupBy(allData);
-  const container = document.getElementById('catTabs');
-
-  const allTab = document.createElement('button');
-  allTab.className = 'ctab on';
-  allTab.dataset.sec = 'all';
-  allTab.innerHTML = `<span class="ctab-icon">✦</span> Todas <span class="ctab-count">${allData.length}</span>`;
-  container.appendChild(allTab);
-
-  SECTION_ORDER.filter(s => groups[s]).forEach(s => {
-    const btn = document.createElement('button');
-    btn.className = 'ctab';
-    btn.dataset.sec = s;
-    btn.innerHTML = `<span class="ctab-icon">${SECTION_ICONS[s]||''}</span> ${s} <span class="ctab-count" id="tc-${sl(s)}">${groups[s].length}</span>`;
-    container.appendChild(btn);
+  // Just update counts on the static HTML tabs — don't append new ones
+  document.getElementById('tc-all').textContent = allData.length;
+  SECTION_ORDER.forEach(s => {
+    const id = 'tc-' + sl(s);
+    const el = document.getElementById(id);
+    if (el) el.textContent = (groups[s] || []).length;
+    // hide tab if this section has no entries at all
+    const tab = document.querySelector(`.ctab[data-sec="${s}"]`);
+    if (tab) tab.style.display = groups[s] ? '' : 'none';
   });
 }
 
@@ -1041,10 +1187,17 @@ function matches(e) {
 
 /* ── EVENTS ─────────────────────────────────────────────── */
 function bindEvents() {
-  // Search
-  document.getElementById('srch').addEventListener('input', ev => {
-    fQ = ev.target.value.trim();
-    renderSections();
+  // Search — both desktop and mobile inputs
+  const syncSearch = val => { fQ = val; renderSections(); };
+  document.getElementById('srch').addEventListener('input', e => {
+    syncSearch(e.target.value.trim());
+    const mob = document.getElementById('srchMobile');
+    if (mob) mob.value = e.target.value;
+  });
+  const mobSrch = document.getElementById('srchMobile');
+  if (mobSrch) mobSrch.addEventListener('input', e => {
+    syncSearch(e.target.value.trim());
+    document.getElementById('srch').value = e.target.value;
   });
 
   // Topbar adult toggle — syncs with pill
@@ -1068,42 +1221,29 @@ function bindEvents() {
     renderSections();
   });
 
-  // Dropdown toggles — open/close
+  // Dropdown toggles — open/close on button click (not on panel clicks)
   document.querySelectorAll('.fdrop').forEach(drop => {
+    // clicking the button area (not an option) toggles open/close
     drop.addEventListener('click', e => {
-      // don't close if clicking inside panel
-      if (e.target.closest('.drop-panel')) return;
-      const wasOpen = drop.classList.contains('open');
-      // close all
-      document.querySelectorAll('.fdrop.open').forEach(d => d.classList.remove('open'));
-      if (!wasOpen) drop.classList.add('open');
+      const opt = e.target.closest('.dopt');
+      if (opt) {
+        // handle option selection
+        const f = opt.dataset.f, v = opt.dataset.v;
+        drop.querySelectorAll('.dopt').forEach(o => o.classList.remove('on','on-teal','on-pink'));
+        const cls = f === 'sub' ? 'on-teal' : f === 'tag' ? 'on-pink' : 'on';
+        opt.classList.add(cls);
+        if (f === 'estado') { fEstado = v; updateDropLabel('dropEstado','valEstado', v === 'all' ? 'Estado' : v, v !== 'all', 'on'); }
+        if (f === 'sub')    { fSub = v;    updateDropLabel('dropSub','valSub', v === 'all' ? 'Ubicación' : (v === 'bib' ? 'Biblioteca' : v === 'files' ? 'FILES' : 'Ambos'), v !== 'all', 'on-teal'); }
+        if (f === 'tag')    { fTag = v;    updateDropLabel('dropTag','valTag', v === 'all' ? 'Género' : v.replace(/_/g,' '), v !== 'all', 'on-pink'); }
+        drop.classList.remove('open');
+        renderSections();
+      } else {
+        // toggle the dropdown open/closed
+        const wasOpen = drop.classList.contains('open');
+        document.querySelectorAll('.fdrop.open').forEach(d => d.classList.remove('open'));
+        if (!wasOpen) drop.classList.add('open');
+      }
       e.stopPropagation();
-    });
-  });
-
-  // Dropdown option selection
-  document.querySelectorAll('.dopt').forEach(opt => {
-    opt.addEventListener('click', e => {
-      e.stopPropagation();
-      const f = opt.dataset.f, v = opt.dataset.v;
-      const panel = opt.closest('.drop-panel');
-      const drop = opt.closest('.fdrop');
-
-      // deselect all in this panel, select clicked
-      panel.querySelectorAll('.dopt').forEach(o => o.classList.remove('on','on-teal','on-pink'));
-
-      let cls = 'on';
-      if (f === 'sub') cls = 'on-teal';
-      if (f === 'tag') cls = 'on-pink';
-      opt.classList.add(cls);
-
-      // update state
-      if (f === 'estado') { fEstado = v; updateDropLabel('dropEstado','valEstado', v === 'all' ? 'Estado' : v, v !== 'all', 'on'); }
-      if (f === 'sub')    { fSub = v;    updateDropLabel('dropSub','valSub', v === 'all' ? 'Ubicación' : (v === 'bib' ? '📚 Biblioteca' : v === 'files' ? '📁 FILES' : 'Ambos'), v !== 'all', 'on-teal'); }
-      if (f === 'tag')    { fTag = v;    updateDropLabel('dropTag','valTag', v === 'all' ? 'Género' : v.replace('_',' '), v !== 'all', 'on-pink'); }
-
-      drop.classList.remove('open');
-      renderSections();
     });
   });
 
@@ -1150,7 +1290,10 @@ function groupBy(arr) {
   arr.forEach(e => { (g[e.seccion] = g[e.seccion]||[]).push(e); });
   return g;
 }
-function sl(s) { return s.replace(/\s+/g,'_').replace(/[^a-zA-Z0-9_]/g,''); }
+function sl(s) {
+  return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/\s+/g,'_').replace(/[^a-zA-Z0-9_]/g,'');
+}
 function esc(s) {
   return String(s||'')
     .replace(/&/g,'&amp;').replace(/</g,'&lt;')
