@@ -278,9 +278,16 @@ body::after {
   max-width: 1400px; margin: 0 auto;
   display: flex; align-items: center;
   gap: 6px; padding: 8px 20px;
-  overflow-x: auto; scrollbar-width: none;
+  overflow: visible;        /* never clip drop-panels */
 }
-.filter-row::-webkit-scrollbar { display: none; }
+/* scroll wrapper that doesn't clip */
+.filter-row-scroll {
+  display: flex; align-items: center;
+  gap: 6px;
+  overflow-x: auto; scrollbar-width: none;
+  padding-bottom: 2px;     /* avoid clipping bottom of panels */
+}
+.filter-row-scroll::-webkit-scrollbar { display: none; }
 
 .fdrop {
   display: inline-flex; align-items: center; gap: 5px;
