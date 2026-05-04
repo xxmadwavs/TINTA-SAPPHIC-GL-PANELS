@@ -1642,77 +1642,107 @@ function buildCatTabs() {
 }
 
 /* ── RENDER ─────────────────────────────────────────────── */
+function sortItems(items) {
+  if (activeSort === 'recent') {
+    // IDs start with gl_TIMESTAMP — higher = more recent; items at start of JSON are newest
+    return items.slice(); // JSON order = already newest first
+  } else if (activeSort === 'rating') {
+    return items.slice().sort((a, b) => {
+      const ra = ratingsMap[a.id], rb = ratingsMap[b.id];
+      if (!ra && !rb) return 0; if (!ra) return 1; if (!rb) return -1;
+      return (rb.avg * Math.log1p(rb.count)) - (ra.avg * Math.log1p(ra.count));
+    });
+  } else {
+    return items.slice().sort((a, b) => a.titulo.localeCompare(b.titulo, 'es'));
+  }
+}
+
 function renderSections(resetPages) {
   const groups = groupBy(allData);
-  const main = document.getElementById('mainContent');
+  const main   = document.getElementById('mainContent');
   main.querySelectorAll('.section').forEach(s => s.remove());
 
-  let totalVis = 0;
   const empty = document.getElementById('emptyState');
 
-  const sectionsToShow = activeSec === 'all'
-    ? SECTION_ORDER.filter(s => groups[s])
-    : SECTION_ORDER.filter(s => s === activeSec && groups[s]);
-
-  sectionsToShow.forEach((s, si) => {
-    const key = sl(s);
+  // ── TAB "Todas": single merged grid ──────────────────────
+  if (activeSec === 'all') {
+    const key = 'all';
     if (resetPages) secPages[key] = 1;
     if (!secPages[key]) secPages[key] = 1;
 
-    const entries = groups[s];
-    let allMatched = entries.filter(e => matches(e));
-    // apply sort within each section
-    if (activeSort === 'recent') {
-      allMatched = allMatched.slice().reverse();
-    } else if (activeSort === 'rating') {
-      allMatched = allMatched.slice().sort((a, b) => {
-        const ra = ratingsMap[a.id], rb = ratingsMap[b.id];
-        if (!ra && !rb) return 0; if (!ra) return 1; if (!rb) return -1;
-        return (rb.avg * Math.log1p(rb.count)) - (ra.avg * Math.log1p(ra.count));
-      });
-    } else {
-      allMatched = allMatched.slice().sort((a, b) => a.titulo.localeCompare(b.titulo, 'es'));
-    }
-    totalVis += allMatched.length;
+    const allMatched = sortItems(allData.filter(e => matches(e)));
+    const totalVis   = allMatched.length;
 
     const sec = document.createElement('div');
     sec.className = 'section';
-    sec.id = `sec-${key}`;
-
-    const showNum = activeSec === 'all';
+    sec.id = 'sec-all';
     sec.innerHTML = `
-      <div class="section-head">
-        ${showNum ? `<div class="section-num">0${si+1}</div>` : ''}
-        <div class="section-title-wrap" style="${activeSec !== 'all' ? 'border-left-color:var(--neon2)' : ''}">
-          <div class="section-title"><span class="sec-icon">${SECTION_ICONS[s]||''}</span>${s}</div>
-          <div class="section-meta" id="meta-${key}"></div>
-        </div>
-      </div>
-      <div class="grid" id="grid-${key}"></div>
-      <div class="pag-info-sec" id="paginfo-${key}"></div>
-      <div class="pag-wrap" id="pag-${key}"></div>`;
+      <div class="grid" id="grid-all"></div>
+      <div class="pag-info-sec" id="paginfo-all"></div>
+      <div class="pag-wrap" id="pag-all"></div>`;
     main.insertBefore(sec, empty);
 
-    renderSecPage(s, allMatched);
+    renderSecPage('__all__', allMatched);
 
-    sec.style.display = allMatched.length === 0 && fQ ? 'none' : '';
+    empty.classList.toggle('show', totalVis === 0);
+    const fc = document.getElementById('filterCount');
+    if (fc) fc.textContent = `${totalVis} historia${totalVis !== 1 ? 's' : ''}`;
 
-    const adultCount = entries.filter(e => e.adult).length;
-    const meta = sec.querySelector(`#meta-${key}`);
-    meta.innerHTML = `<strong>${allMatched.length}</strong> de ${entries.length}${adultCount ? ` · <span style="color:var(--neon2)">${adultCount} +18</span>` : ''}`;
+    // update "Todas" tab count
+    const tcAll = document.getElementById('tc-all');
+    if (tcAll) tcAll.textContent = totalVis;
 
-    const tc = document.getElementById(`tc-${key}`);
-    if (tc) tc.textContent = allMatched.length;
-  });
+  // ── Specific section tab: normal per-section view ────────
+  } else {
+    let totalVis = 0;
+    const sectionsToShow = SECTION_ORDER.filter(s => s === activeSec && groups[s]);
 
-  empty.classList.toggle('show', totalVis === 0);
-  const fc = document.getElementById('filterCount');
-  if (fc) fc.textContent = `${totalVis} historias`;
+    sectionsToShow.forEach((s) => {
+      const key = sl(s);
+      if (resetPages) secPages[key] = 1;
+      if (!secPages[key]) secPages[key] = 1;
+
+      const entries    = groups[s];
+      const allMatched = sortItems(entries.filter(e => matches(e)));
+      totalVis += allMatched.length;
+
+      const sec = document.createElement('div');
+      sec.className = 'section';
+      sec.id = `sec-${key}`;
+      sec.innerHTML = `
+        <div class="section-head">
+          <div class="section-title-wrap" style="border-left-color:var(--neon2)">
+            <div class="section-title"><span class="sec-icon">${SECTION_ICONS[s]||''}</span>${s}</div>
+            <div class="section-meta" id="meta-${key}"></div>
+          </div>
+        </div>
+        <div class="grid" id="grid-${key}"></div>
+        <div class="pag-info-sec" id="paginfo-${key}"></div>
+        <div class="pag-wrap" id="pag-${key}"></div>`;
+      main.insertBefore(sec, empty);
+
+      renderSecPage(s, allMatched);
+
+      sec.style.display = allMatched.length === 0 && fQ ? 'none' : '';
+
+      const adultCount = entries.filter(e => e.adult).length;
+      const meta = sec.querySelector(`#meta-${key}`);
+      meta.innerHTML = `<strong>${allMatched.length}</strong> de ${entries.length}${adultCount ? ` · <span style="color:var(--neon2)">${adultCount} +18</span>` : ''}`;
+
+      const tc = document.getElementById(`tc-${key}`);
+      if (tc) tc.textContent = allMatched.length;
+    });
+
+    empty.classList.toggle('show', totalVis === 0);
+    const fc = document.getElementById('filterCount');
+    if (fc) fc.textContent = `${totalVis} historia${totalVis !== 1 ? 's' : ''}`;
+  }
+
   pushState();
 }
 
 function renderSecPage(s, matched) {
-  const key = sl(s);
+  const key = s === '__all__' ? 'all' : sl(s);
   const page = secPages[key] || 1;
   const total = matched.length;
   const pages = Math.max(1, Math.ceil(total / PER_PAGE));
