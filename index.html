@@ -6,7 +6,7 @@
 <title>GL PANELS — カタログ</title>
 <!-- ⚠️ REEMPLAZA con los datos de tu nuevo proyecto Supabase -->
 <meta name="sb-url" content="https://zspzauuebkmrxqwzxuut.supabase.co">
-<meta name="sb-key" content="sb_publishable_Xcag6HZYu-4ph54bTjy22w_qs3ZYahl">
+<meta name="sb-key" content="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpzcHphdXVlYmttcnhxd3p4dXV0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc5MTQyMTcsImV4cCI6MjA5MzQ5MDIxN30.bJpUwhZs2Z9-h8pzT1ZmzjOG4ldXRHR8i8n_mK8ZcWM">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1082,7 +1082,7 @@ body::after {
   </div>
   <div class="topbar-center">
     <span class="search-icon">⌕</span>
-    <input class="search-box" type="search" id="srch" placeholder="Buscar título, género, descripción…" autocomplete="off">
+    <input class="search-box" type="text" id="srch" placeholder="Buscar título, género, descripción…" autocomplete="nope" autocorrect="off" autocapitalize="off" spellcheck="false">
   </div>
   <div class="topbar-right">
     <div id="authArea"></div>
@@ -1103,6 +1103,9 @@ body::after {
       <div class="auth-title-m" id="authTitleM">ACCEDER</div>
       <p class="auth-sub-m" id="authSubM">Inicia sesión para valorar y ver tu ranking personal.</p>
       <div class="auth-fields">
+        <div id="telegramWrap" style="display:none">
+          <input type="text" id="authTelegram" placeholder="@usuario_telegram" autocomplete="off" autocapitalize="none" spellcheck="false" oninput="this.value=this.value.replace(/[^a-zA-Z0-9_@]/g,'')">
+        </div>
         <input type="email" id="authEmail" placeholder="Email" autocomplete="email">
         <input type="password" id="authPass" placeholder="Contraseña (mín. 6 caracteres)" autocomplete="current-password" onkeydown="if(event.key==='Enter')handleAuth()">
         <button class="btn-auth-submit" id="authSubmitBtn" onclick="handleAuth()">ENTRAR</button>
@@ -1119,7 +1122,7 @@ body::after {
 <!-- MOBILE SEARCH (hidden on desktop, sticky below topbar on mobile) -->
 <div class="mobile-search" style="display:none; position:relative;">
   <span class="ms-icon">⌕</span>
-  <input type="search" id="srchMobile" placeholder="Buscar título, género…" autocomplete="off">
+  <input type="text" id="srchMobile" placeholder="Buscar título, género…" autocomplete="nope" autocorrect="off" autocapitalize="off" spellcheck="false">
 </div>
 
 <!-- HERO -->
@@ -1277,14 +1280,16 @@ function handleAuthBgClick(e) {
 }
 function toggleAuthMode() {
   authModeState = authModeState === 'login' ? 'register' : 'login';
-  document.getElementById('authTitleM').textContent    = authModeState === 'login' ? 'ACCEDER' : 'REGISTRO';
-  document.getElementById('authSubM').textContent      = authModeState === 'login'
-    ? 'Inicia sesión para valorar y ver tu ranking personal.'
-    : 'Crea tu cuenta para empezar a votar.';
-  document.getElementById('authSubmitBtn').textContent = authModeState === 'login' ? 'ENTRAR' : 'REGISTRARSE';
-  document.getElementById('authToggleM').innerHTML     = authModeState === 'login'
-    ? '¿No tienes cuenta? <a onclick="toggleAuthMode()">Regístrate aquí</a>'
-    : '¿Ya tienes cuenta? <a onclick="toggleAuthMode()">Inicia sesión</a>';
+  const isReg = authModeState === 'register';
+  document.getElementById('authTitleM').textContent    = isReg ? 'REGISTRO' : 'ACCEDER';
+  document.getElementById('authSubM').textContent      = isReg
+    ? 'Crea tu cuenta para empezar a votar.'
+    : 'Inicia sesión para valorar y ver tu ranking personal.';
+  document.getElementById('authSubmitBtn').textContent = isReg ? 'REGISTRARSE' : 'ENTRAR';
+  document.getElementById('authToggleM').innerHTML     = isReg
+    ? '¿Ya tienes cuenta? <a onclick="toggleAuthMode()">Inicia sesión</a>'
+    : '¿No tienes cuenta? <a onclick="toggleAuthMode()">Regístrate aquí</a>';
+  document.getElementById('telegramWrap').style.display = isReg ? 'block' : 'none';
   document.getElementById('authErrorM').textContent = '';
 }
 async function handleAuth() {
@@ -1295,9 +1300,11 @@ async function handleAuth() {
   const btn   = document.getElementById('authSubmitBtn');
   if (!email || !pass) { errEl.textContent = 'Rellena email y contraseña.'; return; }
   btn.disabled = true; btn.textContent = '…';
+  const telegram = (document.getElementById('authTelegram')?.value || '').trim().replace(/^@/, '');
+  if (authModeState === 'register' && !telegram) { errEl.textContent = 'Introduce tu usuario de Telegram.'; btn.disabled = false; btn.textContent = 'REGISTRARSE'; return; }
   const { error } = authModeState === 'login'
     ? await sb.auth.signInWithPassword({ email, password: pass })
-    : await sb.auth.signUp({ email, password: pass });
+    : await sb.auth.signUp({ email, password: pass, options: { data: { telegram } } });
   btn.disabled = false;
   btn.textContent = authModeState === 'login' ? 'ENTRAR' : 'REGISTRARSE';
   if (error) { errEl.textContent = error.message; return; }
@@ -1454,7 +1461,34 @@ let activeSec = 'all'; // active category tab
 const PER_PAGE = 25;
 const secPages = {}; // current page per section key
 
+// ── URL STATE ─────────────────────────────────────────────
+function pushState() {
+  const p = new URLSearchParams();
+  if (activeSec !== 'all')  p.set('sec', activeSec);
+  if (fEstado   !== 'all')  p.set('estado', fEstado);
+  if (fSub      !== 'all')  p.set('sub', fSub);
+  if (fTag      !== 'all')  p.set('tag', fTag);
+  if (fQ)                   p.set('q', fQ);
+  if (hideAdult)            p.set('adult', '1');
+  Object.entries(secPages).forEach(([k, v]) => { if (v > 1) p.set('p_' + k, v); });
+  const qs = p.toString();
+  history.replaceState(null, '', qs ? '?' + qs : location.pathname);
+}
+
+function loadState() {
+  const p = new URLSearchParams(location.search);
+  if (p.has('sec'))   activeSec  = p.get('sec');
+  if (p.has('estado')) fEstado   = p.get('estado');
+  if (p.has('sub'))   fSub       = p.get('sub');
+  if (p.has('tag'))   fTag       = p.get('tag');
+  if (p.has('q'))     fQ         = p.get('q');
+  if (p.get('adult') === '1') hideAdult = true;
+  // restore per-section pages
+  p.forEach((v, k) => { if (k.startsWith('p_')) secPages[k.slice(2)] = parseInt(v) || 1; });
+}
+
 async function init() {
+  loadState();
   if (SB_READY) {
     const { data: { session } } = await sb.auth.getSession();
     if (session) currentUser = session.user;
@@ -1475,8 +1509,51 @@ async function init() {
 
   buildStats();
   buildCatTabs();
-  renderSections(true);
+  applyStateToUI();
+  renderSections(false);  // false = don't reset pages, we restored them
   bindEvents();
+}
+
+function applyStateToUI() {
+  // active section tab
+  document.querySelectorAll('.ctab').forEach(t => {
+    t.classList.toggle('on', t.dataset.sec === activeSec);
+  });
+  // search box
+  if (fQ) {
+    document.getElementById('srch').value = fQ;
+    const mob = document.getElementById('srchMobile');
+    if (mob) mob.value = fQ;
+  }
+  // adult toggle
+  if (hideAdult) {
+    document.getElementById('adultBtn').classList.add('active');
+    document.getElementById('adultLbl').textContent = '+18 oculto';
+    document.getElementById('adultPillBtn').classList.add('on');
+    document.getElementById('adultPillLbl').textContent = '+18 oculto';
+  }
+  // dropdowns
+  if (fEstado !== 'all') {
+    updateDropLabel('dropEstado','valEstado', fEstado, true, 'on');
+    document.querySelectorAll('#panelEstado .dopt').forEach(o => {
+      o.classList.toggle('on', o.dataset.v === fEstado);
+    });
+  }
+  if (fSub !== 'all') {
+    const label = fSub === 'bib' ? 'Biblioteca' : fSub === 'files' ? 'FILES' : 'Ambos';
+    updateDropLabel('dropSub','valSub', label, true, 'on-teal');
+    document.querySelectorAll('#panelSub .dopt').forEach(o => {
+      o.classList.toggle('on-teal', o.dataset.v === fSub);
+      o.classList.toggle('on', false);
+    });
+  }
+  if (fTag !== 'all') {
+    updateDropLabel('dropTag','valTag', fTag.replace(/_/g,' '), true, 'on-pink');
+    document.querySelectorAll('#panelTag .dopt').forEach(o => {
+      o.classList.toggle('on-pink', o.dataset.v === fTag);
+      o.classList.toggle('on', false);
+    });
+  }
 }
 
 /* ── STATS ─────────────────────────────────────────────── */
@@ -1563,6 +1640,7 @@ function renderSections(resetPages) {
   empty.classList.toggle('show', totalVis === 0);
   const fc = document.getElementById('filterCount');
   if (fc) fc.textContent = `${totalVis} historias`;
+  pushState();
 }
 
 function renderSecPage(s, matched) {
@@ -1601,7 +1679,7 @@ function renderSecPage(s, matched) {
   pagEl.innerHTML = '';
   if (pages <= 1) return;
 
-  const prev = mkBtn('‹', safePage <= 1, () => { secPages[key]--; renderSecPage(s, matched); scrollToSection(key); });
+  const prev = mkBtn('‹', safePage <= 1, () => { secPages[key]--; renderSecPage(s, matched); scrollToSection(key); pushState(); });
   pagEl.appendChild(prev);
 
   pagRange(safePage, pages).forEach(p => {
@@ -1610,13 +1688,13 @@ function renderSecPage(s, matched) {
       sp.style.cssText = 'display:flex;align-items:center;padding:0 4px;color:var(--dim);font-size:11px';
       sp.textContent = '…'; pagEl.appendChild(sp);
     } else {
-      const b = mkBtn(p, false, () => { secPages[key] = p; renderSecPage(s, matched); scrollToSection(key); });
+      const b = mkBtn(p, false, () => { secPages[key] = p; renderSecPage(s, matched); scrollToSection(key); pushState(); });
       if (p === safePage) b.classList.add('on');
       pagEl.appendChild(b);
     }
   });
 
-  const next = mkBtn('›', safePage >= pages, () => { secPages[key]++; renderSecPage(s, matched); scrollToSection(key); });
+  const next = mkBtn('›', safePage >= pages, () => { secPages[key]++; renderSecPage(s, matched); scrollToSection(key); pushState(); });
   pagEl.appendChild(next);
 }
 
@@ -1772,10 +1850,12 @@ function bindEvents() {
     const tab = e.target.closest('[data-sec]');
     if (!tab) return;
     activeSec = tab.dataset.sec;
+    // reset all section pages when switching category
+    Object.keys(secPages).forEach(k => secPages[k] = 1);
     document.querySelectorAll('.ctab').forEach(t => t.classList.remove('on'));
     tab.classList.add('on');
     scrollTo({ top: 0, behavior: 'smooth' });
-    renderSections(true);
+    renderSections(false);
   });
 
   // Dropdown toggles — open/close on button click (not on panel clicks)
