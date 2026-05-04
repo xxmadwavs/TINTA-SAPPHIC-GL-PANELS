@@ -123,6 +123,22 @@ body::after {
   background: rgba(232,255,71,0.04);
 }
 .search-box::placeholder { color: var(--dim); font-size: 11px; letter-spacing: .5px; }
+/* contenteditable search box */
+div.search-box {
+  cursor: text;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1.5;
+  caret-color: var(--neon);
+}
+div.search-box:empty::before {
+  content: attr(data-placeholder);
+  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: .5px;
+  pointer-events: none;
+}
+div.search-box:focus { outline: none; }
 .search-icon {
   position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
   font-size: 13px; color: var(--dim); pointer-events: none;
@@ -1082,7 +1098,7 @@ body::after {
   </div>
   <div class="topbar-center">
     <span class="search-icon">⌕</span>
-    <input class="search-box" type="text" id="srch" placeholder="Buscar título, género, descripción…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <div class="search-box" id="srch" contenteditable="true" role="searchbox" aria-label="Buscar" data-placeholder="Buscar título, género, descripción…" spellcheck="false"></div>
   </div>
   <div class="topbar-right">
     <div id="authArea"></div>
@@ -1122,7 +1138,7 @@ body::after {
 <!-- MOBILE SEARCH (hidden on desktop, sticky below topbar on mobile) -->
 <div class="mobile-search" style="display:none; position:relative;">
   <span class="ms-icon">⌕</span>
-  <input type="text" id="srchMobile" placeholder="Buscar título, género…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <div class="search-box" id="srchMobile" contenteditable="true" role="searchbox" aria-label="Buscar" data-placeholder="Buscar título, género…" spellcheck="false"></div>
 </div>
 
 <!-- HERO -->
@@ -1530,9 +1546,10 @@ function applyStateToUI() {
   });
   // search box
   if (fQ) {
-    document.getElementById('srch').value = fQ;
-    const mob = document.getElementById('srchMobile');
-    if (mob) mob.value = fQ;
+    const srchEl = document.getElementById('srch');
+    const srchMob = document.getElementById('srchMobile');
+    if (srchEl) srchEl.innerText = fQ;
+    if (srchMob) srchMob.innerText = fQ;
   }
   // adult toggle
   if (hideAdult) {
@@ -1831,18 +1848,29 @@ function matches(e) {
 
 /* ── EVENTS ─────────────────────────────────────────────── */
 function bindEvents() {
-  // Search — both desktop and mobile inputs
+  // Search — contenteditable divs (immune to Chrome autofill)
+  const getSearchText = el => el.innerText.replace(/\n/g, '').trim();
+  const setSearchText = (el, val) => { if (el && el.innerText.trim() !== val) { el.innerText = val; } };
   const syncSearch = val => { fQ = val; renderSections(true); };
-  document.getElementById('srch').addEventListener('input', e => {
-    syncSearch(e.target.value.trim());
-    const mob = document.getElementById('srchMobile');
-    if (mob) mob.value = e.target.value;
+
+  const srchEl  = document.getElementById('srch');
+  const srchMob = document.getElementById('srchMobile');
+
+  srchEl.addEventListener('input', () => {
+    const val = getSearchText(srchEl);
+    syncSearch(val);
+    setSearchText(srchMob, val);
   });
-  const mobSrch = document.getElementById('srchMobile');
-  if (mobSrch) mobSrch.addEventListener('input', e => {
-    syncSearch(e.target.value.trim());
-    document.getElementById('srch').value = e.target.value;
-  });
+  srchEl.addEventListener('keydown', e => { if (e.key === 'Enter') e.preventDefault(); });
+
+  if (srchMob) {
+    srchMob.addEventListener('input', () => {
+      const val = getSearchText(srchMob);
+      syncSearch(val);
+      setSearchText(srchEl, val);
+    });
+    srchMob.addEventListener('keydown', e => { if (e.key === 'Enter') e.preventDefault(); });
+  }
 
   // Topbar adult toggle — syncs with pill
   document.getElementById('adultBtn').addEventListener('click', () => {
