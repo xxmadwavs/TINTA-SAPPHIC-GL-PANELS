@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GL PANELS — 管理</title>
+<!-- mismas credenciales que index.html -->
+<meta name="sb-url" content="TU_SUPABASE_URL_AQUI">
+<meta name="sb-key" content="TU_SUPABASE_ANON_KEY_AQUI">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Serif+JP:wght@300;400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -302,9 +306,23 @@ const ECLS={Finalizado:'b-fin',Continúa:'b-cont',Hiatus:'b-hiatus',Cancelado:'b
 const EICO={Finalizado:'✓',Continúa:'▶',Hiatus:'⏸',Cancelado:'✗'};
 let allData=[],filtered=[],editingId=null,deletingId=null,page=1,perPage=25,tagsList=[];
 
+// ── SUPABASE ──────────────────────────────────────────────
+const SUPABASE_URL = document.querySelector('meta[name="sb-url"]')?.content || '';
+const SUPABASE_KEY = document.querySelector('meta[name="sb-key"]')?.content || '';
+const SB_READY = SUPABASE_URL && !SUPABASE_URL.startsWith('TU_');
+const sb = SB_READY ? supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+let totalRatings = 0;
+
+async function loadRatingsCount() {
+  if (!SB_READY) return;
+  const { count } = await sb.from('ratings').select('id', { count: 'exact', head: true });
+  totalRatings = count || 0;
+}
+
 async function init(){
   try{const r=await fetch(DATA_URL);allData=await r.json();}
   catch{allData=[];toast('No se pudo cargar manga_data.json','err');}
+  await loadRatingsCount();
   buildStats();applyFilters();bindEvents();
 }
 
@@ -315,7 +333,8 @@ function buildStats(){
   document.getElementById('statsRow').innerHTML=[
     {n:t,l:'Total',c:'var(--neon)'},{n:cont,l:'En curso',c:'var(--neon)'},
     {n:fin,l:'Finalizadas',c:'var(--neon3)'},{n:bib,l:'Biblioteca',c:'var(--neon3)'},
-    {n:files,l:'FILES',c:'var(--neon)'},{n:adult,l:'+18',c:'var(--neon2)'}
+    {n:files,l:'FILES',c:'var(--neon)'},{n:adult,l:'+18',c:'var(--neon2)'},
+    {n:totalRatings,l:'Valoraciones',c:'#c9975a'}
   ].map(s=>`<div class="stat-card" style="--sc-c:${s.c}"><div class="stat-n">${s.n}</div><div class="stat-l">${s.l}</div></div>`).join('');
 }
 
