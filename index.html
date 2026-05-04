@@ -1082,7 +1082,7 @@ body::after {
   </div>
   <div class="topbar-center">
     <span class="search-icon">⌕</span>
-    <input class="search-box" type="text" id="srch" placeholder="Buscar título, género, descripción…" autocomplete="nope" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <input style="display:none" type="text" name="email" autocomplete="email"><input class="search-box" type="text" id="srch" placeholder="Buscar título, género, descripción…" autocomplete="off" readonly onfocus="this.removeAttribute('readonly')" autocorrect="off" autocapitalize="off" spellcheck="false" name="search_gl">
   </div>
   <div class="topbar-right">
     <div id="authArea"></div>
@@ -1122,7 +1122,7 @@ body::after {
 <!-- MOBILE SEARCH (hidden on desktop, sticky below topbar on mobile) -->
 <div class="mobile-search" style="display:none; position:relative;">
   <span class="ms-icon">⌕</span>
-  <input type="text" id="srchMobile" placeholder="Buscar título, género…" autocomplete="nope" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <input type="text" id="srchMobile" placeholder="Buscar título, género…" autocomplete="off" readonly onfocus="this.removeAttribute('readonly')" autocorrect="off" autocapitalize="off" spellcheck="false" name="search_gl_m">
 </div>
 
 <!-- HERO -->
