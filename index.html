@@ -1493,7 +1493,6 @@ function pushState() {
   if (fEstado   !== 'all')  p.set('estado', fEstado);
   if (fSub      !== 'all')  p.set('sub', fSub);
   if (fTag      !== 'all')  p.set('tag', fTag);
-  if (fQ)                   p.set('q', fQ);
   if (hideAdult)            p.set('adult', '1');
   Object.entries(secPages).forEach(([k, v]) => { if (v > 1) p.set('p_' + k, v); });
   const qs = p.toString();
@@ -1506,7 +1505,6 @@ function loadState() {
   if (p.has('estado')) fEstado   = p.get('estado');
   if (p.has('sub'))   fSub       = p.get('sub');
   if (p.has('tag'))   fTag       = p.get('tag');
-  if (p.has('q'))     fQ         = p.get('q');
   if (p.get('adult') === '1') hideAdult = true;
   // restore per-section pages
   p.forEach((v, k) => { if (k.startsWith('p_')) secPages[k.slice(2)] = parseInt(v) || 1; });
