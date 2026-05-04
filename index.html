@@ -1082,7 +1082,7 @@ body::after {
   </div>
   <div class="topbar-center">
     <span class="search-icon">⌕</span>
-    <input style="display:none" type="text" name="email" autocomplete="email"><input class="search-box" type="text" id="srch" placeholder="Buscar título, género, descripción…" autocomplete="off" readonly onfocus="this.removeAttribute('readonly')" autocorrect="off" autocapitalize="off" spellcheck="false" name="search_gl">
+    <input class="search-box" type="text" id="srch" placeholder="Buscar título, género, descripción…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
   </div>
   <div class="topbar-right">
     <div id="authArea"></div>
@@ -1122,7 +1122,7 @@ body::after {
 <!-- MOBILE SEARCH (hidden on desktop, sticky below topbar on mobile) -->
 <div class="mobile-search" style="display:none; position:relative;">
   <span class="ms-icon">⌕</span>
-  <input type="text" id="srchMobile" placeholder="Buscar título, género…" autocomplete="off" readonly onfocus="this.removeAttribute('readonly')" autocorrect="off" autocapitalize="off" spellcheck="false" name="search_gl_m">
+  <input type="text" id="srchMobile" placeholder="Buscar título, género…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 </div>
 
 <!-- HERO -->
@@ -1236,6 +1236,15 @@ body::after {
 <button class="scroll-top" id="stBtn">▲</button>
 
 <script>
+// ── KILL AUTOFILL ON SEARCH ──────────────────────────────
+(function() {
+  const rnd = Math.random().toString(36).slice(2);
+  ['srch','srchMobile'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.setAttribute('name', 'nosuggest_' + rnd); el.setAttribute('autocomplete', 'off'); }
+  });
+})();
+
 // ── SUPABASE ──────────────────────────────────────────────
 const SUPABASE_URL = document.querySelector('meta[name="sb-url"]').content;
 const SUPABASE_KEY = document.querySelector('meta[name="sb-key"]').content;
