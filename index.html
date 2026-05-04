@@ -1082,7 +1082,7 @@ div.search-box:focus { outline: none; }
   font-family: 'DM Sans', sans-serif;
   font-size: 10px; font-weight: 700;
   color: #0a0a0a; display: flex; align-items: center; gap: 3px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 8px rgba(0,0,0,0.6);
 }
 .card-avg .cstar { font-size: 9px; }
 </style>
@@ -1849,7 +1849,8 @@ function buildCard(e, bgColor) {
     <div class="card-subido">
       ${e.in_biblioteca ? '<span class="sbadge sbib">BIB</span>' : ''}
       ${e.in_files ? '<span class="sbadge sfiles">FILE</span>' : ''}
-    </div>`;
+    </div>
+    ${ratingsMap[e.id] ? `<div class="card-avg"><span class="cstar">★</span>${ratingsMap[e.id].avg}</div>` : ''}`;
 
   d.addEventListener('click', () => openModal(e));
   return d;
