@@ -1159,11 +1159,16 @@ div.search-box:focus { outline: none; }
 
 <!-- FILTER STRIP: row 1 = category tabs, row 2 = secondary filters -->
 <div class="filter-strip">
-  <!-- ROW 1: sort tabs -->
+  <!-- ROW 1: category pills (static fallback + JS fills counts) -->
   <div class="cat-tabs" id="catTabs">
-    <button class="ctab on" data-sort="recent"><span class="ctab-icon">✦</span> Recientes <span class="ctab-count" id="tc-all">—</span></button>
-    <button class="ctab" data-sort="rating"><span class="ctab-icon">★</span> Más valorados</button>
-    <button class="ctab" data-sort="az"><span class="ctab-icon">Az</span> A–Z</button>
+    <button class="ctab on" data-sec="all"><span class="ctab-icon">✦</span> Todas <span class="ctab-count" id="tc-all">—</span></button>
+    <button class="ctab" data-sec="Manhwa"><span class="ctab-icon">🇰🇷</span> Manhwa <span class="ctab-count" id="tc-Manhwa">—</span></button>
+    <button class="ctab" data-sec="Manga"><span class="ctab-icon">🇯🇵</span> Manga <span class="ctab-count" id="tc-Manga">—</span></button>
+    <button class="ctab" data-sec="Manhua"><span class="ctab-icon">🇨🇳</span> Manhua <span class="ctab-count" id="tc-Manhua">—</span></button>
+    <button class="ctab" data-sec="Webtoon"><span class="ctab-icon">📱</span> Webtoon <span class="ctab-count" id="tc-Webtoon">—</span></button>
+    <button class="ctab" data-sec="Sin Clasificación"><span class="ctab-icon">📂</span> Sin Clasificación <span class="ctab-count" id="tc-Sin_Clasificacion">—</span></button>
+    <button class="ctab" data-sec="Cómic"><span class="ctab-icon">💥</span> Cómic <span class="ctab-count" id="tc-Comic">—</span></button>
+    <button class="ctab" data-sec="Novela Gráfica"><span class="ctab-icon">📗</span> Novela Gráfica <span class="ctab-count" id="tc-Novela_Grafica">—</span></button>
   </div>
 
   <!-- ROW 2: dropdown filters all in one line -->
@@ -1216,12 +1221,28 @@ div.search-box:focus { outline: none; }
       </div>
     </div>
 
+    <!-- Orden dropdown -->
+    <div class="fdrop" id="dropSort">
+      <span class="fval" id="valSort">Recientes</span>
+      <span class="arrow">▼</span>
+      <div class="drop-panel" id="panelSort">
+        <div class="dopt on" data-f="sort" data-v="recent">✦ Recientes</div>
+        <div class="dopt" data-f="sort" data-v="rating">★ Más valorados</div>
+        <div class="dopt" data-f="sort" data-v="az">Az A–Z</div>
+      </div>
+    </div>
+
     <div class="filter-sep"></div>
 
-    <!-- +18 toggle -->
+    <!-- +18 toggle (ocultar) -->
     <button class="adult-pill-btn" id="adultPillBtn">
       <span class="tog"></span>
       <span id="adultPillLbl">Ocultar +18</span>
+    </button>
+
+    <!-- Solo +18 toggle -->
+    <button class="adult-pill-btn" id="onlyAdultBtn" style="border-color:rgba(255,71,163,0.3)">
+      <span id="onlyAdultLbl">Solo +18</span>
     </button>
 
     <span class="filter-count" id="filterCount"></span>
@@ -1476,7 +1497,9 @@ const ESTADO_ICONS = {Finalizado:'✓',Continúa:'▶',Hiatus:'⏸',Cancelado:'�
 
 let allData = [];
 let hideAdult = false;
+let fOnlyAdult = false; // solo +18
 let fEstado = 'all', fSub = 'all', fTag = 'all', fQ = '';
+let activeSec = 'all'; // active category tab
 let activeSort = 'recent'; // recent | rating | az
 const PER_PAGE = 25;
 const secPages = {}; // current page per section key
@@ -1484,25 +1507,29 @@ const secPages = {}; // current page per section key
 // ── URL STATE ─────────────────────────────────────────────
 function pushState() {
   const p = new URLSearchParams();
-  if (activeSort !== 'recent') p.set('sort', activeSort);
+  if (activeSec !== 'all')  p.set('sec', activeSec);
   if (fEstado   !== 'all')  p.set('estado', fEstado);
   if (fSub      !== 'all')  p.set('sub', fSub);
   if (fTag      !== 'all')  p.set('tag', fTag);
   if (hideAdult)            p.set('adult', '1');
-  if ((secPages['all'] || 1) > 1) p.set('page', secPages['all']);
+  if (activeSort !== 'recent') p.set('sort', activeSort);
+  if (fOnlyAdult)             p.set('only18', '1');
+  Object.entries(secPages).forEach(([k, v]) => { if (v > 1) p.set('p_' + k, v); });
   const qs = p.toString();
   history.replaceState(null, '', qs ? '?' + qs : location.pathname);
 }
 
 function loadState() {
   const p = new URLSearchParams(location.search);
-  if (p.has('sort'))  activeSort = p.get('sort');
+  if (p.has('sec'))   activeSec  = p.get('sec');
   if (p.has('estado')) fEstado   = p.get('estado');
   if (p.has('sub'))   fSub       = p.get('sub');
   if (p.has('tag'))   fTag       = p.get('tag');
   if (p.get('adult') === '1') hideAdult = true;
+  if (p.has('sort'))  activeSort = p.get('sort');
+  if (p.get('only18') === '1') fOnlyAdult = true;
   // restore per-section pages
-  if (p.has('page')) secPages['all'] = parseInt(p.get('page')) || 1;
+  p.forEach((v, k) => { if (k.startsWith('p_')) secPages[k.slice(2)] = parseInt(v) || 1; });
 }
 
 async function init() {
@@ -1533,9 +1560,9 @@ async function init() {
 }
 
 function applyStateToUI() {
-  // active sort tab
+  // active section tab
   document.querySelectorAll('.ctab').forEach(t => {
-    t.classList.toggle('on', t.dataset.sort === activeSort);
+    t.classList.toggle('on', t.dataset.sec === activeSec);
   });
   // search box
   if (fQ) {
@@ -1550,6 +1577,16 @@ function applyStateToUI() {
     document.getElementById('adultLbl').textContent = '+18 oculto';
     document.getElementById('adultPillBtn').classList.add('on');
     document.getElementById('adultPillLbl').textContent = '+18 oculto';
+  }
+  if (fOnlyAdult) {
+    document.getElementById('onlyAdultBtn').classList.add('on');
+  }
+  if (activeSort !== 'recent') {
+    const label = activeSort === 'rating' ? '★ Más valorados' : 'Az A–Z';
+    updateDropLabel('dropSort', 'valSort', label, true, 'on');
+    document.querySelectorAll('#panelSort .dopt').forEach(o => {
+      o.classList.toggle('on', o.dataset.v === activeSort);
+    });
   }
   // dropdowns
   if (fEstado !== 'all') {
@@ -1591,104 +1628,143 @@ function buildStats() {
 
 /* ── CATEGORY TABS ──────────────────────────────────────── */
 function buildCatTabs() {
-  const el = document.getElementById('tc-all');
-  if (el) el.textContent = allData.length;
+  const groups = groupBy(allData);
+  // Just update counts on the static HTML tabs — don't append new ones
+  document.getElementById('tc-all').textContent = allData.length;
+  SECTION_ORDER.forEach(s => {
+    const id = 'tc-' + sl(s);
+    const el = document.getElementById(id);
+    if (el) el.textContent = (groups[s] || []).length;
+    // hide tab if this section has no entries at all
+    const tab = document.querySelector(`.ctab[data-sec="${s}"]`);
+    if (tab) tab.style.display = groups[s] ? '' : 'none';
+  });
 }
 
 /* ── RENDER ─────────────────────────────────────────────── */
 function renderSections(resetPages) {
-  const main  = document.getElementById('mainContent');
-  const empty = document.getElementById('emptyState');
+  const groups = groupBy(allData);
+  const main = document.getElementById('mainContent');
   main.querySelectorAll('.section').forEach(s => s.remove());
 
-  if (resetPages) secPages['all'] = 1;
-  if (!secPages['all']) secPages['all'] = 1;
+  let totalVis = 0;
+  const empty = document.getElementById('emptyState');
 
-  // Filter
-  let items = allData.filter(e => matches(e));
+  const sectionsToShow = activeSec === 'all'
+    ? SECTION_ORDER.filter(s => groups[s])
+    : SECTION_ORDER.filter(s => s === activeSec && groups[s]);
 
-  // Sort
-  if (activeSort === 'recent') {
-    // JSON order = insertion order (newest last → reverse)
-    items = items.slice().reverse();
-  } else if (activeSort === 'rating') {
-    items = items.slice().sort((a, b) => {
-      const ra = ratingsMap[a.id], rb = ratingsMap[b.id];
-      if (!ra && !rb) return 0; if (!ra) return 1; if (!rb) return -1;
-      const wa = ra.avg * Math.log1p(ra.count), wb = rb.avg * Math.log1p(rb.count);
-      return wb - wa;
-    });
-  } else {
-    items = items.slice().sort((a, b) => a.titulo.localeCompare(b.titulo, 'es'));
-  }
+  sectionsToShow.forEach((s, si) => {
+    const key = sl(s);
+    if (resetPages) secPages[key] = 1;
+    if (!secPages[key]) secPages[key] = 1;
 
-  const totalVis = items.length;
+    const entries = groups[s];
+    let allMatched = entries.filter(e => matches(e));
+    // apply sort within each section
+    if (activeSort === 'recent') {
+      allMatched = allMatched.slice().reverse();
+    } else if (activeSort === 'rating') {
+      allMatched = allMatched.slice().sort((a, b) => {
+        const ra = ratingsMap[a.id], rb = ratingsMap[b.id];
+        if (!ra && !rb) return 0; if (!ra) return 1; if (!rb) return -1;
+        return (rb.avg * Math.log1p(rb.count)) - (ra.avg * Math.log1p(ra.count));
+      });
+    } else {
+      allMatched = allMatched.slice().sort((a, b) => a.titulo.localeCompare(b.titulo, 'es'));
+    }
+    totalVis += allMatched.length;
 
-  // Build single section
-  const sec = document.createElement('div');
-  sec.className = 'section';
-  sec.id = 'sec-all';
-  sec.innerHTML = `
-    <div class="grid" id="grid-all"></div>
-    <div class="pag-info-sec" id="paginfo-all"></div>
-    <div class="pag-wrap" id="pag-all"></div>`;
-  main.insertBefore(sec, empty);
+    const sec = document.createElement('div');
+    sec.className = 'section';
+    sec.id = `sec-${key}`;
 
-  renderFlatPage(items);
+    const showNum = activeSec === 'all';
+    sec.innerHTML = `
+      <div class="section-head">
+        ${showNum ? `<div class="section-num">0${si+1}</div>` : ''}
+        <div class="section-title-wrap" style="${activeSec !== 'all' ? 'border-left-color:var(--neon2)' : ''}">
+          <div class="section-title"><span class="sec-icon">${SECTION_ICONS[s]||''}</span>${s}</div>
+          <div class="section-meta" id="meta-${key}"></div>
+        </div>
+      </div>
+      <div class="grid" id="grid-${key}"></div>
+      <div class="pag-info-sec" id="paginfo-${key}"></div>
+      <div class="pag-wrap" id="pag-${key}"></div>`;
+    main.insertBefore(sec, empty);
+
+    renderSecPage(s, allMatched);
+
+    sec.style.display = allMatched.length === 0 && fQ ? 'none' : '';
+
+    const adultCount = entries.filter(e => e.adult).length;
+    const meta = sec.querySelector(`#meta-${key}`);
+    meta.innerHTML = `<strong>${allMatched.length}</strong> de ${entries.length}${adultCount ? ` · <span style="color:var(--neon2)">${adultCount} +18</span>` : ''}`;
+
+    const tc = document.getElementById(`tc-${key}`);
+    if (tc) tc.textContent = allMatched.length;
+  });
 
   empty.classList.toggle('show', totalVis === 0);
   const fc = document.getElementById('filterCount');
-  if (fc) fc.textContent = `${totalVis} historia${totalVis !== 1 ? 's' : ''}`;
+  if (fc) fc.textContent = `${totalVis} historias`;
   pushState();
 }
 
-function renderFlatPage(items) {
-  const page  = secPages['all'] || 1;
-  const total = items.length;
+function renderSecPage(s, matched) {
+  const key = sl(s);
+  const page = secPages[key] || 1;
+  const total = matched.length;
   const pages = Math.max(1, Math.ceil(total / PER_PAGE));
   const safePage = Math.min(page, pages);
-  secPages['all'] = safePage;
+  secPages[key] = safePage;
 
-  const start     = (safePage - 1) * PER_PAGE;
-  const pageItems = items.slice(start, start + PER_PAGE);
-  const palList   = ['#111118','#0a1a2e','#1a0a2e','#0a1a0a','#1a1a0a'];
+  const start = (safePage - 1) * PER_PAGE;
+  const pageItems = matched.slice(start, start + PER_PAGE);
+  const palList = GEN_PALETTES[s] || ['#111118'];
 
-  const grid = document.getElementById('grid-all');
+  const grid = document.getElementById(`grid-${key}`);
   if (!grid) return;
   grid.innerHTML = '';
   pageItems.forEach((e, idx) => {
     grid.appendChild(buildCard(e, palList[(start + idx) % palList.length]));
   });
 
-  const infoEl = document.getElementById('paginfo-all');
+  // pagination info
+  const infoEl = document.getElementById(`paginfo-${key}`);
   if (infoEl) {
-    infoEl.textContent = total > PER_PAGE
-      ? `${start + 1}–${Math.min(start + PER_PAGE, total)} de ${total}`
-      : '';
+    if (total > PER_PAGE) {
+      const from = start + 1, to = Math.min(start + PER_PAGE, total);
+      infoEl.textContent = `${from}–${to} de ${total}`;
+    } else {
+      infoEl.textContent = '';
+    }
   }
 
-  const pagEl = document.getElementById('pag-all');
+  // pagination buttons
+  const pagEl = document.getElementById(`pag-${key}`);
   if (!pagEl) return;
   pagEl.innerHTML = '';
   if (pages <= 1) return;
 
-  const prev = mkBtn('‹', safePage <= 1, () => { secPages['all']--; renderFlatPage(items); window.scrollTo({top:0,behavior:'smooth'}); pushState(); });
+  const prev = mkBtn('‹', safePage <= 1, () => { secPages[key]--; renderSecPage(s, matched); scrollToSection(key); pushState(); });
   pagEl.appendChild(prev);
+
   pagRange(safePage, pages).forEach(p => {
     if (p === '…') {
       const sp = document.createElement('span');
       sp.style.cssText = 'display:flex;align-items:center;padding:0 4px;color:var(--dim);font-size:11px';
       sp.textContent = '…'; pagEl.appendChild(sp);
     } else {
-      const b = mkBtn(p, false, () => { secPages['all'] = p; renderFlatPage(items); window.scrollTo({top:0,behavior:'smooth'}); pushState(); });
+      const b = mkBtn(p, false, () => { secPages[key] = p; renderSecPage(s, matched); scrollToSection(key); pushState(); });
       if (p === safePage) b.classList.add('on');
       pagEl.appendChild(b);
     }
   });
-  const next = mkBtn('›', safePage >= pages, () => { secPages['all']++; renderFlatPage(items); window.scrollTo({top:0,behavior:'smooth'}); pushState(); });
+
+  const next = mkBtn('›', safePage >= pages, () => { secPages[key]++; renderSecPage(s, matched); scrollToSection(key); pushState(); });
   pagEl.appendChild(next);
 }
-
 
 function mkBtn(label, disabled, onClick) {
   const b = document.createElement('button');
@@ -1798,6 +1874,7 @@ function closeModal() {
 /* ── FILTERS ────────────────────────────────────────────── */
 function matches(e) {
   if (hideAdult && e.adult) return false;
+  if (fOnlyAdult && !e.adult) return false;
   if (fEstado !== 'all' && e.estado !== fEstado) return false;
   if (fSub === 'bib' && !e.in_biblioteca) return false;
   if (fSub === 'files' && !e.in_files) return false;
@@ -1847,13 +1924,25 @@ function bindEvents() {
   document.getElementById('adultPillBtn').addEventListener('click', () => {
     toggleAdult();
   });
+  document.getElementById('onlyAdultBtn').addEventListener('click', () => {
+    fOnlyAdult = !fOnlyAdult;
+    if (fOnlyAdult) hideAdult = false; // can't hide and show-only at same time
+    document.getElementById('onlyAdultBtn').classList.toggle('on', fOnlyAdult);
+    // sync hideAdult UI
+    document.getElementById('adultBtn').classList.toggle('active', hideAdult);
+    document.getElementById('adultLbl').textContent = hideAdult ? '+18 oculto' : '+18 visible';
+    document.getElementById('adultPillBtn').classList.toggle('on', hideAdult);
+    document.getElementById('adultPillLbl').textContent = hideAdult ? '+18 oculto' : 'Ocultar +18';
+    renderSections(true);
+  });
 
-  // Sort tabs
+  // Category tabs
   document.getElementById('catTabs').addEventListener('click', e => {
-    const tab = e.target.closest('[data-sort]');
+    const tab = e.target.closest('[data-sec]');
     if (!tab) return;
-    activeSort = tab.dataset.sort;
-    secPages['all'] = 1;
+    activeSec = tab.dataset.sec;
+    // reset all section pages when switching category
+    Object.keys(secPages).forEach(k => secPages[k] = 1);
     document.querySelectorAll('.ctab').forEach(t => t.classList.remove('on'));
     tab.classList.add('on');
     scrollTo({ top: 0, behavior: 'smooth' });
@@ -1874,6 +1963,7 @@ function bindEvents() {
         if (f === 'estado') { fEstado = v; updateDropLabel('dropEstado','valEstado', v === 'all' ? 'Estado' : v, v !== 'all', 'on'); }
         if (f === 'sub')    { fSub = v;    updateDropLabel('dropSub','valSub', v === 'all' ? 'Ubicación' : (v === 'bib' ? 'Biblioteca' : v === 'files' ? 'FILES' : 'Ambos'), v !== 'all', 'on-teal'); }
         if (f === 'tag')    { fTag = v;    updateDropLabel('dropTag','valTag', v === 'all' ? 'Género' : v.replace(/_/g,' '), v !== 'all', 'on-pink'); }
+        if (f === 'sort')   { activeSort = v; const sl = {'recent':'Recientes','rating':'★ Más valorados','az':'Az A–Z'}; updateDropLabel('dropSort','valSort', sl[v], v !== 'recent', 'on'); }
         drop.classList.remove('open');
         renderSections(true);
       } else {
@@ -1906,6 +1996,7 @@ function bindEvents() {
 
 function toggleAdult() {
   hideAdult = !hideAdult;
+  if (hideAdult) { fOnlyAdult = false; document.getElementById('onlyAdultBtn').classList.remove('on'); }
   // sync topbar btn
   const ab = document.getElementById('adultBtn');
   ab.classList.toggle('active', hideAdult);
