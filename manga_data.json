@@ -1,5 +1,21 @@
 [
   {
+    "id": "gl_1777928221413_wmt",
+    "titulo": "G.G",
+    "seccion": "Manhua",
+    "estado": "Hiatus",
+    "imagen": "https://static.comix.to/b758/i/4/e2/68dec4ed3aae6.jpg",
+    "desc": "Esta es una historia que narra cómo una chica se enamora de otra chica, e intenta todas las maneras posibles de ir tras ella.",
+    "tags": [
+      "Romance",
+      "Escolar"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
     "id": "gl_1777838544910_11h",
     "titulo": "She Seems to Be Teasing Me",
     "seccion": "Manhua",
@@ -178,68 +194,68 @@
   {
     "id": "distorted_love_4",
     "titulo": "Distorted Love",
+    "seccion": "Manhwa",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/04/dist.webp",
     "desc": "En prisión, Nam se acostumbra cada vez más al toque violento y dominante de Hyun-A. ¿Es simple instinto de supervivencia... o es un amor retorcido?",
     "tags": [
       "Crimen",
       "Erotica",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manhwa"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "drunken_my_boss_5",
     "titulo": "Drunken My Boss",
+    "seccion": "Manhwa",
+    "estado": "Continúa",
+    "imagen": "https://static.comix.to/364b/i/0/12/68e08d619f2b1.jpg",
     "desc": "Cha Iseul es una chica que nació en cuna de oro. Dedicaba sus días a entregarse a los placeres de la bebida, el sexo y el despilfarro de dinero, hasta que su madre le quitó la tarjeta de crédito y decidió no darle ni un centavo más. En plena crisis conoce a Kang Sori, una chica de cabello despeinado y aspecto pasado de moda que parece ser todo lo contrario a ella...",
     "tags": [
       "Erotica",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manhwa"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "fall_falling_6",
     "titulo": "Fall/Falling",
+    "seccion": "Manhwa",
+    "estado": "Continúa",
+    "imagen": "https://static.comix.to/97ec/i/1/95/68de8db76ff2b.jpg",
     "desc": "Dos mujeres con pasados turbulentos se cruzan en el mundo del contrabando. Seungji, una veterana traicionada por su jefe en una organización violenta, busca empezar de nuevo en otra red ilegal mientras planea su escape. Yeongwon, quien creció sin familia, hereda la dirección de una oficina de contrabando en Busan gracias a su tía. Aunque Seungji desconfía de todos y Yeongwon promete nunca traicionar a quienes ama, ambas se ayudan mutuamente y, poco a poco, comienzan a derribar las barreras que las separan, descubriendo por primera vez el amor.",
     "tags": [
       "Drama",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
-    "adult": false,
-    "imagen": "",
-    "seccion": "Manhwa"
+    "adult": true,
+    "subido": "Subido biblioteca"
   },
   {
     "id": "goodnight__cinderella_7",
     "titulo": "Goodnight, Cinderella",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/e33d/i/c/c7/68e114c582595.jpg",
     "desc": "¿Quién es esa modelo de lencería? Recientemente mi atención parece estar atraída hacia esta chica tranquila en el salón de clases...",
     "tags": [
       "Drama",
       "Erotica",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "imagen": "",
-    "seccion": "Manhwa"
+    "subido": "Subido biblioteca"
   },
   {
     "id": "happines_rides_a_broomstick_8",
@@ -2229,55 +2245,58 @@
   {
     "id": "white_angels_have_no_rest_126",
     "titulo": "White Angels Have No Rest",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/5f2e/i/d/1e/68df5f436741e.jpg",
     "desc": "Dahye todavía está atormentada por el abuso que recibió de Yeonhwa. El destino quiere que Dahye pueda llevar a cabo su venganza después de tantos años. ¿De qué manera se vengará Dahye? ¿Yeonhwa se verá afectada por ello?",
     "tags": [
       "Psicologico",
       "Romance",
       "Escolar"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manhwa"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "words___kisses_127",
     "titulo": "Words & Kisses",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/e14a/i/1/e4/68e0d23b6c3b1.jpg",
     "desc": "No me interesaba salir con nadie... hasta que la conocí. Justo cuando estaba a punto de iniciar otra relación ambigua y poco entusiasta, la conocí. Hyunjin Go, no podía apartar la mirada de ella. Había estado recorriendo un camino aburrido y ella me dejó fuera de combate. Entonces lo sentí: un pequeño pedazo de mi corazón se desprendía y se alejaba. \"Es tan bonita...\"",
     "tags": [
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manhwa"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "would_you__could_you__128",
     "titulo": "Would you? Could you?",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/bbc2/i/2/78/68e508d02c549.jpg",
     "desc": "¿Por qué no aceptaste mi ramo? preguntó ella años después como si fuera la cosa más simple. El azar trajo a Juna de vuelta a la vida de Yunseo, pero las cosas son mucho más complicadas ahora. Ya no están en la universidad, donde el único obstáculo entre ellas era la verdad que nunca se dijo. Juna estaba casada y tenía un hijo, ¿qué podía hacer Yunseo? Mientras Saeha persigue a Yunseo, Yunseo descubre que incluso después de todos estos años todavía amaría a Juna de un momento a otro. Las tres mujeres navegan a través de sus sentimientos por la otra, cada una desesperada y anhelando una oportunidad de ser aceptada.",
     "tags": [
       "Drama",
       "Romance",
       "Slice_of_Life"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manhwa"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "your_reason_for_living_129",
     "titulo": "Your Reason for Living",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/77d0/i/f/e1/68e49542f0b06.jpg",
     "desc": "Felicidades por tu nacimiento. Cuando abrí mis ojos, me encontraba en un frío laboratorio. No nací realmente porque no era humana, y sin embargo ella me felicitó. Tomamos café juntas, sentimos los aromas, escuchamos el sonido de la campanilla moviéndose por el viento y aprendimos a convivir con el conejo que venía a visitarnos al jardín. Pero... \"La verdad es que moriré en una semana\". Ella, quien nunca se queja del dolor ni lo demuestra, está tranquila como siempre. ¿Pero por qué duele tanto mi corazón? \"¿Por qué me creaste?\", \"¿por qué hiciste que te quisiera?\"",
     "tags": [
       "Drama",
@@ -2285,79 +2304,76 @@
       "Romance",
       "SciFi"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manhwa"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "45_seconds_130",
     "titulo": "45 Seconds",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/1b86/i/3/ca/68deae96eb2b6.jpg",
     "desc": "Siyeon, quien regresa a casa después de estudiar en el extranjero para la universidad, se entera del curso 'Comprensión del vino' que su hermana menor ha elegido para ella. Es muy popular porque se trata de probar el vino, ¡pero Sihyeon es un peso ligero que no puede beber alcohol! Cuando decide corregir el curso y asistió a él, se reencuentra con su amiga del instituto Eunha ...!?",
     "tags": [
       "Escolar",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido FILES, Subido biblioteca",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manhwa"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "after_the_curtain_call_131",
     "titulo": "After the Curtain Call",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/6414/i/c/13/68e0abc25652b.jpg",
     "desc": "Soyoung queda devastada cuando su actor musical favorito es absorbido por el mundo de la televisión. Justo después de dejar de apoyarlo, descubre a la carismática actriz Jaeyi en una representación teatral de \"Macbeth\" y se convierte en su fan a primera vista. Al conocer a Jaeyi después de sus shows e incluso hacerle un favor, Soyoung pasa de ser una simple fan a su buena amiga. Pero cuando Jaeyi tiene que trabajar con la actriz famosa Hyesun, con quien tiene un pasado problemático, inesperadamente se agria su amistad. Todo lo que Soyoung quería era apoyar a su actriz favorita... entonces, ¿por qué este nuevo acontecimiento la molesta tanto?",
     "tags": [
       "Drama",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido FILES, Subido biblioteca",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manhwa"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "a_joyful_life_132",
     "titulo": "A Joyful Life",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/e88b/i/5/8f/68df7839a5a5b.jpg",
     "desc": "Joy ha vivido una vida complaciente durante 23 años, priorizando la felicidad de otros sobre su propio bienestar emocional. Atrapada en su vecindario y hogar, los problemas familiares, laborales y personales la han consumido en silencio. Su única vía de escape es empacar una bolsa para un \"último viaje\", pero, al igual que esa bolsa guardada bajo su escritorio, se siente atrapada. Tras reencontrarse con Aerie, su enamorada de la secundaria, y enfrentar a su familia y trabajo, Joy toma acción. Finalmente, comienza a buscar independencia. ¿Podrá encontrar su camino y resolver sus problemas?",
     "tags": [
       "Drama",
       "Psicologico",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido FILES, Subido biblioteca",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manhwa"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "a_model_advisory_133",
     "titulo": "A Model Advisory",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/0365/i/b/52/68df5deb8d5cd.jpg",
     "desc": "\"¡Se ve igual que el tipo ideal en mi imaginación!\" Una flor en plena floración primavera, una en la que estaba solo en el arte vacío, los estudiantes con problemas dibujan un personaje ficticio en el cuadro de sus exámenes finales, dos figuras en la imaginación, la hermosa prueba de práctica de eda en todo el país, mi tipo ideal, alta y buena en el ejercicio. Me sorprende saber que se ve igual que el 'Haeyoon' de último año. Hae-yoon aparece frente a Bo-mi, quien está preocupada por la violación de el derecho de retrato. Más tarde Bomi está encantada con la solicitud de Hae-yoon de continuar dibujándola....",
     "tags": [
       "Comedia",
       "Romance",
       "Escolar"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido FILES, Subido biblioteca",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manhwa"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "nengan_no_akuyaku_reijou_no_karada_wo_te_134",
@@ -3394,19 +3410,22 @@
   {
     "id": "falling_in_love_in_one_night_196",
     "titulo": "Falling In Love in One Night",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/1052/i/5/18/68def1f0aff31.jpg",
     "desc": "Hoy podría ser un día de suerte. Ema, que trabaja en un bar de lesbianas, se ha enamorado de una hermosa clienta (Kazusa). Ema sigue insistiendo y, finalmente, terminan teniendo una aventura de una noche. A la mañana siguiente, después de pasar una noche muy satisfactoria, Ema se despierta y se sorprende al ver la sorprendente apariencia diferente de Kazusa.",
     "tags": [],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "fragtime_197",
     "titulo": "Fragtime",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/df57/i/2/38/68dec82ec44f3.jpg",
     "desc": "¿Qué harías si pudieras parar el tiempo? Moritani posee un inusual poder mediante el cual puede parar el tiempo durante 3 minutos al día, el cual emplea en observar a la gente detenidamente. Un día, cambia su rutina y va un poco más allá: Su nuevo objetivo son las braguitas de Murakami.",
     "tags": [
       "Comedia",
@@ -3415,67 +3434,67 @@
       "Romance",
       "Supernatural"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "gakuen_police_198",
     "titulo": "Gakuen Police",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/4e28/i/b/cf/68e0a1e1b588c.jpg",
     "desc": "Desde que Sasami era una niña, admira a aquellos que defienden la justicia. Han pasado los años y Sasami se ha convertido en agente de policía. Su primera tarea es ir de incógnito y actuar como estudiante en Hanagaki All-Girls High School para asegurarse de que no haya maestros o estudiantes corruptos allí.",
     "tags": [
       "Comedia",
       "Escolar"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "girl_friends_199",
     "titulo": "Girl Friends",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/75ca/i/7/af/68de77a5470c0.jpg",
     "desc": "Mari Kumakura es una estudiante tímida que se hace amiga de la popular Akko Oohashi. Lo que empieza como una simple amistad se convierte en algo más complejo cuando Mari empieza a darse cuenta de que sus sentimientos hacia Akko pueden ser románticos. El manga sigue su relación mientras intentan comprenderse a sí mismas y sus emociones.",
     "tags": [
       "Romance",
       "Escolar",
       "Slice_of_Life"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "goukaku_no_tame_no__yasashii_sankaku_kan_200",
     "titulo": "Goukaku no Tame no! Yasashii Sankaku Kankei Nyuumon",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/03b5/i/f/91/68de93e8b547a.jpg",
     "desc": "La estudiante de secundaria Mayuki quiere ingresar a la escuela secundaria de Ohtomo para reunirse con su amada senpai Akira. El problema es que sus calificaciones son tan terribles que no hay forma de que pueda llegar a una escuela de tan alto nivel. Por lo tanto, su madre contrata a una chica de esa secundaria llamada Rin como maestra particular para ayudar a su hija. Al ver cómo la chica se ve mucho más madura que ella, Mayuki termina pidiéndole a Rin que le enseñe más que solo materias escolares ...",
     "tags": [
       "Drama",
       "Escolar",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "gunbured___sisters_201",
     "titulo": "Gunbured × Sisters",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/92ef/i/b/cf/68e46a06f1cd5.jpg",
     "desc": "La historia se desarrolla en un mundo donde, comenzando con los vampiros, el mundo sobrenatural ha sido expuesto al público. Dorothy, miembro del grupo de clérigos de las Hermanas Rojas que caza seres sobrenaturales, tiene un fatídico encuentro con una mujer bañada en sangre llamada María.",
     "tags": [
       "Accion",
@@ -3484,66 +3503,66 @@
       "Romance",
       "Supernatural"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "hana_ni_arashi_202",
     "titulo": "Hana ni Arashi",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://i1.whakoom.com/large/2c/22/ec1dd78ecb464aa58337084225191806.jpg",
     "desc": "Nanoha y Chidori son mejores amigas... También están saliendo, pero es un secreto, ¡Así que no se lo digas a nadie!",
     "tags": [
       "Romance",
       "Escolar"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "hana_to_hoshi_203",
     "titulo": "Hana to Hoshi",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/e27e/i/e/f5/68dea7fc56ce3.jpg",
     "desc": "Hanai-san, una estrella del ping pong se retira tras ser vencida por Hoshino-san. Se va a una escuela muy normal, para su sorpresa se encuentra con su gran rival pero... Hoshnoi ve a Hanai como rival??? O como algo más?",
     "tags": [
       "Comedia",
       "Drama",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "handsome_girl_and_sheltered_girl_204",
     "titulo": "Handsome Girl and Sheltered Girl",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/2405/i/2/b9/68e11afa47447.jpg",
     "desc": "Es un nuevo manga, la protagonista es Oogami Satomi que es una chica universitaria ordinaria pero que se termina fijando en alguien... y por cosas del destino surgirá un malentendido que cambiará su relación de forma inesperada.",
     "tags": [
       "Comedia",
       "Romance"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "happy_sugar_life_205",
     "titulo": "Happy Sugar Life",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/ac6c/i/8/06/68dee77587914.jpg",
     "desc": "Satou Matsuzaka es una estudiante de secundaria que cree haber encontrado el verdadero amor cuando comienza a vivir con una niña llamada Shio. Sin embargo, su obsesivo amor por Shio la lleva a cometer actos horribles para proteger su \"felicidad\", explorando una relación compleja y tóxica.",
     "tags": [
       "Romance",
@@ -3552,46 +3571,43 @@
       "Escolar",
       "Misterio"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "hayama_sensei_to_terano_sensei_wa_tsukia_206",
     "titulo": "Hayama Sensei to Terano Sensei wa Tsukiatteiru",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/c37e/i/5/dc/68e0bd230664a.jpg",
     "desc": "Trabajan en la misma escuela... ¡y acaban de empezar a salir! Son un poco tímidos acerca de su incipiente relación, pero sus compañeros de trabajo, e incluso sus estudiantes, los apoyan mientras se abren camino a través del amor.",
     "tags": [
       "Romance",
       "Slice_of_Life"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "hello__melancholic__207",
     "titulo": "Hello, Melancholic!",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/503c/i/7/5e/68dea4a042730.jpg",
     "desc": "Asano Minato ama tocar el trombón, pero esta pasión ha sido apagada por el bullying. Su vida cambiará cuando una senpai la una a un club de música.",
     "tags": [
       "Escolar",
       "Romance",
       "Slice_of_Life"
     ],
-    "estado": "Finalizado",
-    "subido": "Subido biblioteca, Subido FILES",
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "imagen": "",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca, Subido FILES"
   },
   {
     "id": "hibike__euphonium___i_scream__208",
