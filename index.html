@@ -378,6 +378,148 @@ div.search-box:focus { outline: none; }
   color: var(--dim); white-space: nowrap; flex-shrink: 0; margin-left: auto; padding-left: 8px;
 }
 
+/* ── TOP 10 RANKING ───────────────────────────────────── */
+.top10-section {
+  max-width: 1400px; margin: 0 auto;
+  padding: 36px 20px 0;
+  position: relative; z-index: 1;
+}
+.top10-header {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 22px;
+}
+.top10-eyebrow {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem; letter-spacing: 3px;
+  color: var(--white); line-height: 1;
+}
+.top10-eyebrow .t10-star { color: var(--neon); }
+.top10-sub {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--dim); margin-top: 2px;
+}
+.top10-badge {
+  display: inline-flex; align-items: center;
+  padding: 4px 10px;
+  border: 1px solid rgba(232,255,71,0.35);
+  border-radius: 2px;
+  background: rgba(232,255,71,0.07);
+  font-family: 'DM Sans', sans-serif; font-size: 9px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--neon); flex-shrink: 0;
+}
+
+.top10-track {
+  display: flex; gap: 6px;
+  overflow-x: auto; scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.top10-track::-webkit-scrollbar { display: none; }
+
+.t10-card {
+  flex: 0 0 130px;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgba(245,240,232,0.07);
+  overflow: hidden;
+  transition: border-color .2s, transform .2s;
+  aspect-ratio: 2/3;
+  background: var(--ink);
+}
+.t10-card:hover {
+  border-color: var(--neon);
+  transform: scale(1.04);
+  z-index: 5;
+}
+
+/* rank number — big behind */
+.t10-rank {
+  position: absolute; bottom: -8px; right: 2px; z-index: 1;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5.5rem; line-height: 1;
+  color: rgba(232,255,71,0.12);
+  user-select: none;
+  pointer-events: none;
+  transition: color .2s;
+}
+.t10-card:nth-child(1) .t10-rank { color: rgba(232,255,71,0.22); font-size: 6rem; }
+.t10-card:nth-child(2) .t10-rank { color: rgba(200,200,210,0.16); }
+.t10-card:nth-child(3) .t10-rank { color: rgba(205,127,50,0.16); }
+.t10-card:hover .t10-rank { color: rgba(232,255,71,0.06); }
+
+/* medal badge top-left */
+.t10-medal {
+  position: absolute; top: 6px; left: 6px; z-index: 10;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 9px; letter-spacing: 1px;
+  padding: 2px 7px;
+  border-radius: 1px;
+}
+.t10-medal.gold   { background: rgba(255,215,0,0.25);   color: #ffd700; border: 1px solid rgba(255,215,0,0.4); }
+.t10-medal.silver { background: rgba(192,192,192,0.2);  color: #c0c0c0; border: 1px solid rgba(192,192,192,0.35); }
+.t10-medal.bronze { background: rgba(205,127,50,0.2);   color: #cd7f32; border: 1px solid rgba(205,127,50,0.35); }
+.t10-medal.normal { background: rgba(245,240,232,0.08); color: var(--muted); border: 1px solid rgba(245,240,232,0.12); }
+
+/* cover */
+.t10-cover {
+  position: absolute; inset: 0;
+  overflow: hidden;
+}
+.t10-cover img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .35s;
+}
+.t10-card:hover .t10-cover img { transform: scale(1.08); }
+
+/* gradient overlay always visible (not just hover) */
+.t10-overlay {
+  position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.95) 80%);
+}
+
+/* info at bottom */
+.t10-info {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 6;
+  padding: 10px 8px 8px;
+}
+.t10-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px; font-weight: 500; line-height: 1.3;
+  color: var(--white);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  margin-bottom: 5px;
+}
+.t10-score {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px; color: var(--neon);
+}
+.t10-score .t10s { font-size: 9px; }
+.t10-votes {
+  font-size: 8px; color: var(--dim); letter-spacing: .5px;
+  margin-left: 5px;
+}
+
+/* no-cover generated card */
+.t10-gen {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.t10-gen::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--gen-bg, #111118);
+}
+.t10-gen::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(245,240,232,0.07) 1px, transparent 1px);
+  background-size: 8px 8px; mix-blend-mode: overlay;
+}
+
+.top10-divider {
+  max-width: 1400px; margin: 32px auto 0;
+  border: none; border-top: 1px solid var(--border);
+}
+
 /* ── MAIN ─────────────────────────────────────────────── */
 .main {
   max-width: 1400px; margin: 0 auto;
@@ -1249,6 +1391,21 @@ div.search-box:focus { outline: none; }
   </div>
 </div>
 
+<!-- TOP 10 RANKING -->
+<div class="top10-section" id="top10Section">
+  <div class="top10-header">
+    <div>
+      <div class="top10-eyebrow"><span class="t10-star">★</span> TOP 10</div>
+      <div class="top10-sub">Las más valoradas · Comunidad</div>
+    </div>
+    <span class="top10-badge">Global</span>
+  </div>
+  <div class="top10-track" id="top10Track">
+    <!-- filled by JS -->
+  </div>
+</div>
+<hr class="top10-divider">
+
 <!-- MAIN -->
 <main class="main" id="mainContent">
   <div class="empty" id="emptyState">
@@ -1555,6 +1712,7 @@ async function init() {
   buildStats();
   buildCatTabs();
   applyStateToUI();
+  renderTop10();
   renderSections(false);  // false = don't reset pages, we restored them
   bindEvents();
 }
@@ -2059,6 +2217,79 @@ function esc(s) {
   return String(s||'')
     .replace(/&/g,'&amp;').replace(/</g,'&lt;')
     .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ── TOP 10 ─────────────────────────────────────────────── */
+function renderTop10() {
+  const track = document.getElementById('top10Track');
+  if (!track) return;
+
+  // Build ranked list: items with at least 1 rating, sorted by avg desc, ties broken by count
+  const ranked = allData
+    .filter(e => ratingsMap[e.id] && ratingsMap[e.id].count > 0)
+    .sort((a, b) => {
+      const ra = ratingsMap[a.id], rb = ratingsMap[b.id];
+      if (rb.avg !== ra.avg) return rb.avg - ra.avg;
+      return rb.count - ra.count;
+    })
+    .slice(0, 10);
+
+  // If no ratings at all yet, hide the section gracefully
+  const section = document.getElementById('top10Section');
+  const divider = document.querySelector('.top10-divider');
+  if (ranked.length === 0) {
+    if (section) section.style.display = 'none';
+    if (divider) divider.style.display = 'none';
+    return;
+  }
+  if (section) section.style.display = '';
+  if (divider) divider.style.display = '';
+
+  const PALETTES = {
+    Manhwa: ['#1a0a2e','#2e0a1a'], Manga: ['#0a1a0a','#1a0a0a'],
+    Manhua: ['#1a1a0a','#0a1a1a'], Webtoon: ['#0a1a2e','#1a2e0a'],
+    'Sin Clasificación': ['#1a1a1a','#0f0f1a'],
+    'Cómic': ['#1a0a0a','#0a0a1a'], 'Novela Gráfica': ['#0a1a1a','#1a0a1a'],
+  };
+
+  const MEDALS = [
+    { cls: 'gold',   lbl: '🥇 #1' },
+    { cls: 'silver', lbl: '🥈 #2' },
+    { cls: 'bronze', lbl: '🥉 #3' },
+  ];
+
+  track.innerHTML = ranked.map((e, i) => {
+    const r = ratingsMap[e.id];
+    const medal = i < 3 ? MEDALS[i] : { cls: 'normal', lbl: `#${i + 1}` };
+    const pal = (PALETTES[e.seccion] || ['#111118','#1a1a1a']);
+    const genBg = pal[i % pal.length];
+
+    const coverHtml = e.imagen
+      ? `<div class="t10-cover"><img src="${esc(e.imagen)}" alt="${esc(e.titulo)}" loading="lazy" onerror="this.closest('.t10-cover').outerHTML='<div class=t10-gen style=--gen-bg:${genBg}></div>'"></div>`
+      : `<div class="t10-gen" style="--gen-bg:${genBg}"></div>`;
+
+    return `
+      <div class="t10-card" data-id="${e.id}" title="${esc(e.titulo)}">
+        ${coverHtml}
+        <div class="t10-overlay"></div>
+        <div class="t10-rank">${i + 1}</div>
+        <div class="t10-medal ${medal.cls}">${medal.lbl}</div>
+        <div class="t10-info">
+          <div class="t10-title">${esc(e.titulo)}</div>
+          <div>
+            <span class="t10-score"><span class="t10s">★</span>${r.avg}</span>
+            <span class="t10-votes">${r.count}v</span>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+
+  // Click to open modal
+  track.querySelectorAll('.t10-card').forEach(card => {
+    const id = card.dataset.id;
+    const item = allData.find(e => String(e.id) === String(id));
+    if (item) card.addEventListener('click', () => openModal(item));
+  });
 }
 
 init();
