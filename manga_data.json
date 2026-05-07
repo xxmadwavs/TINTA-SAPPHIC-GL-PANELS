@@ -1,5 +1,187 @@
 [
   {
+    "id": "gl_1778185412037_gl7",
+    "titulo": "Aquel verano",
+    "seccion": "Novela Gráfica",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1408910760i/23014139.jpg",
+    "desc": "Rose y sus padres han veraneado en Awago Beach desde que ella era una niña. Es su escapada anual, su refugio. Su amiga Windy también está allí siempre, la hermana pequeña que nunca tuvo, completando su familia de verano.\nPero este verano es diferente.\nLa madre de Rose y su padre no dejan de discutir, y Rose y Windy se han visto envueltas en una tragedia que se cierne sobre el pequeño pueblo costero. Es un verano de secretos y angustias, pero al menos se tienen la una a la otra.\nEn Aquel verano, las primas Mariko y Jillian Tamaki, autoras de la galardonada Skim (Ediciones La Cúpula), redefinen la novela gráfica adolescente. Espléndida, desgarradora y en última instancia un soplo de esperanza, esta obra es una mirada vibrante a la juventud y la madurez.",
+    "tags": [
+      "YA"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778185382876_vc4",
+    "titulo": "Skim",
+    "seccion": "Novela Gráfica",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1328770750i/2418888.jpg",
+    "desc": "Desconsoladamente gracioso, emocionante y vibrantemente dibujado, “Skim” es un libro extraordinario (una novela gráfica inteligente y sensible con la más alta calidad literaria y artística), de y sobre mujeres jóvenes.\n“Skim” es Kimberly Keiko Cameron, una gótica regordeta que quiere ser una bruja y que va a un instituto privado para chicas. Cuando a su compañera de clase Katie Matthews la deja su novio que luego se suicida, todo el instituto entra de lleno en duelo. Cuando los consejeros escolares, preocupados por el asunto, empiezan a dar charlas sobre el duelo y el luto y la chica más popular del instituto inaugura un nuevo club\n(¡Las chicas celebran la vida!) para levantar el ánimo del instituto, Skim se hunde en una profundísima depresión.\nY enamorarse sólo empeora las cosas…",
+    "tags": [
+      "YA"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778185350878_xwi",
+    "titulo": "Is it Normal to Raise a Yandere Heroine as a Villainess ?!",
+    "seccion": "Manhua",
+    "estado": "Continúa",
+    "imagen": "https://static.comix.to/4e48/i/0/2e/68de9441c12f9.jpg",
+    "desc": "Jiang Yang, una directora de arte de videojuegos que había transmigrado a un mundo de cultivo, es arrastrada accidentalmente a un nuevo mundo de magia basado en un juego otome justo antes de poder volver a casa. Allí se convierte en la protectora de la heroína, Xing Lu, a quien decide ayudar enseñándole artes marciales y alejándola de pretendientes tóxicos para evitar que sufra el destino cruel del guion original. Sin embargo, a medida que su relación se vuelve más íntima, Jiang Yang descubre que el vínculo místico que las une es mucho más complejo y profundo de lo que pensaba.",
+    "tags": [
+      "Drama",
+      "Fantasia",
+      "Romance"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778185321184_ik1",
+    "titulo": "Border of love colors",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/04/IMG-20260409-WA00311.jpg",
+    "desc": "Reimu y Marisa han pasado años juntas, enfrentando incidentes y compartiendo tardes en el santuario. Sin embargo, hay una línea invisible entre la amistad y algo más profundo que ninguna se ha atrevido a cruzar… hasta ahora. Una historia cálida y mágica sobre cómo los colores de su relación empiezan a cambiar.",
+    "tags": [
+      "Comedia",
+      "Fantasia",
+      "Romance"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778185292064_bni",
+    "titulo": "Yoiko no Shouzou",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/05/Portada.png",
+    "desc": "Hana es una universitaria sin grandes ambiciones ni motivaciones, hasta que conoce a una mujer hermosa llamada Yoiko, quien se presenta como un “espíritu vengativo” y le advierte: “Estás maldita, y vas a morir. ” Para romper la maldición, Hana debe investigar el misterio detrás de este fantasma tan enigmático, y su única pista es una pintura.\nPero cuanto más se adentra en el pasado de Yoiko, más cae bajo el hechizo de su inquietante encanto.",
+    "tags": [
+      "Drama",
+      "Fantasia",
+      "Misterio",
+      "Romance",
+      "Supernatural"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778185248638_58u",
+    "titulo": "Women At Work: Love Extraction",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/81ef/i/0/73/68e498757d366.jpg",
+    "desc": "Chanhee es una gánster implacable a la que, de forma inesperada, le empieza a doler la muela del juicio tras dar una paliza a una banda rival. Cuando acude a una clínica dental para que se la extraigan, se enamora perdidamente de Hajin, la guapa dentista que casualmente está de guardia esa noche. Aunque Hajin rechaza a Chanhee cuando esta le pide una cita, eso no impide que Chanhee le lleve almuerzos de lujo y regalos para conquistarla. Una cosa lleva a la otra y acaban liándose en la clínica, pero ¿podrá durar su nueva relación cuando provienen de dos mundos completamente diferentes?",
+    "tags": [
+      "Romance"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": true,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778185223047_s8x",
+    "titulo": "Drown in the Angel’s Swamp",
+    "seccion": "Manhwa",
+    "estado": "Continúa",
+    "imagen": "https://static.comix.to/a553/i/1/3d/68df94c96d6ac.jpg",
+    "desc": "Rebecca se infiltra como espía para desmantelar a la mafia, acercándose intencionalmente a Daniela, la única hija del jefe mafioso.\n\nSin embargo, a medida que Daniela crece, el afecto que Rebecca siente por ella también se vuelve más profundo, hasta el punto de empezar a perder de vista su propósito. Por ello, decide alejarse.\n\nLo que no imagina es el deseo oculto que arde en lo más profundo del corazón de Daniela.\n\nY tras ejecutar la operación, la vida de Rebecca comienza a enredarse sin remedio...",
+    "tags": [
+      "Drama",
+      "Romance"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": true,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778185186358_im4",
+    "titulo": "Snow White's Doorbell",
+    "seccion": "Manhwa",
+    "estado": "Continúa",
+    "imagen": "https://static.comix.to/a553/i/1/3d/68df94c96d6ac.jpg",
+    "desc": "Nuevo GL que trata sobre Blancanieves y la Bruja, ¿Será que tendremos una nueva historia Toxica? ¿O quizás una historia de dulzura? lee para descubrirlo~",
+    "tags": [
+      "Drama",
+      "Fantasia",
+      "Horror"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778185161223_qle",
+    "titulo": "Common and Widespread",
+    "seccion": "Manhwa",
+    "estado": "Continúa",
+    "imagen": "https://static.comix.to/5b6f/i/9/ff/68df972da1015.jpg",
+    "desc": "Una tranquila historia de amor con mi compañero mudo durante el trayecto matutino al trabajo",
+    "tags": [
+      "Romance"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778185139556_hg8",
+    "titulo": "Her pet",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://static.comix.to/9dc2/i/c/09/68df7ca235d52.jpg",
+    "desc": "La historia nos relata la nueva vida escolar de Seo Ga-Yun, una chica tímida y de carácter reservado la cual por temas de bullying decide cambiarse de escuela para volver a estar con la chica que antes la había defendido, a la cual Ga-Yun denomina “El sol”, Lee So-ha.\nPero lo que nunca pensó y tampoco cruzo por su mente era que el motivo por el cual Lee So-Ha la defendiera fuera a causa de que le recordara a su antiguo perro…",
+    "tags": [
+      "Comedia",
+      "Drama",
+      "Romance"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778185100353_sqf",
+    "titulo": "Urasekai Picnic",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/05/Manga_Cover_1_Japanese.webp",
+    "desc": "La historia se sitúa en el mundo moderno, donde existe una puerta que puede llevar a las personas al otro lado, cuya existencia es afirmada en leyendas urbanas e historias de internet. La universitaria Sorawo Kamikoshi se adentra en una de estas puertas y casi muere en el intento, pero es rescatada por otra chica llamada Toriko Nishina. Toriko es una chica misteriosa, pero habilidosa con las armas, que parece estar buscando a alguien en aquel mundo. De esta forma, ambas se adentraran en dichas puertas para explorar el otro lado.La historia se sitúa en el mundo moderno, donde existe una puerta que puede llevar a las personas al otro lado, cuya existencia es afirmada en leyendas urbanas e historias de internet. La universitaria Sorawo Kamikoshi se adentra en una de estas puertas y casi muere en el intento, pero es rescatada por otra chica llamada Toriko Nishina. Toriko es una chica misteriosa, pero habilidosa con las armas, que parece estar buscando a alguien en aquel mundo. De esta forma, ambas se adentraran en dichas puertas para explorar el otro lado.",
+    "tags": [
+      "Aventura",
+      "Drama",
+      "Fantasia",
+      "Misterio",
+      "Supernatural"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
     "id": "gl_1778059815704_6u7",
     "titulo": "Sickening Pleasure",
     "seccion": "Webtoon",
