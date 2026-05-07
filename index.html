@@ -24,9 +24,55 @@
   --muted: rgba(245,240,232,0.45);
   --dim: rgba(245,240,232,0.2);
   --border: rgba(245,240,232,0.12);
+  --border2: rgba(245,240,232,0.18);
   --dot-size: 2px;
   --dot-space: 18px;
+  /* surfaces for filter panels */
+  --surface: #17171f;
+  --surface2: #1e1e28;
 }
+
+/* ── LIGHT MODE ────────────────────────────────────────── */
+body.light {
+  --ink: #f5f0e8;
+  --paper: #1a1a2e;
+  --screen: #f0ebe0;
+  --white: #0a0a0a;
+  --muted: rgba(20,20,40,0.55);
+  --dim: rgba(20,20,40,0.35);
+  --border: rgba(20,20,40,0.12);
+  --border2: rgba(20,20,40,0.2);
+  --surface: #e8e2d4;
+  --surface2: #ddd7c9;
+}
+body.light .drop-panel { background: #e8e2d4; border-color: rgba(20,20,40,0.2); }
+body.light .dopt:hover { background: rgba(20,20,40,0.07); }
+body.light .modal { background: #ede8de; border-color: rgba(232,255,71,0.35); }
+body.light .modal::before { background: linear-gradient(90deg, #b8cc00, var(--neon2)); }
+body.light .card { border-color: rgba(20,20,40,0.1); background: #e8e2d4; }
+body.light .card:hover { border-color: #b8cc00; }
+body.light .card-title { color: #1a1a2e; }
+body.light .ctab.on { background: rgba(184,204,0,0.15); border-color: rgba(184,204,0,0.5); color: #7a8800; }
+body.light .filter-strip { background: rgba(240,235,224,0.97); }
+body.light .topbar { background: #f0ebe0; }
+body.light .hero { background: transparent; }
+body.light body::before { background-image: radial-gradient(circle, rgba(20,20,40,0.06) var(--dot-size), transparent var(--dot-size)); }
+body.light .fsheet { background: #ede8de; }
+body.light .top10-section { color: var(--paper); }
+body.light .ink-section { background: #e8e2d4; }
+
+/* ── THEME TOGGLE BTN ─────────────────────────────────── */
+.theme-btn {
+  display: flex; align-items: center; gap: 5px;
+  padding: 5px 10px; border-radius: 2px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px; letter-spacing: .5px;
+  cursor: pointer; transition: all .2s;
+}
+.theme-btn:hover { border-color: var(--neon); color: var(--neon); }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -376,6 +422,93 @@ div.search-box:focus { outline: none; }
 .filter-count {
   font-family: 'Space Mono', monospace; font-size: 9px;
   color: var(--dim); white-space: nowrap; flex-shrink: 0; margin-left: auto; padding-left: 8px;
+}
+
+/* ── INK CLUB SECTION ────────────────────────────────── */
+.ink-section {
+  max-width: 1400px; margin: 0 auto;
+  padding: 36px 20px 0;
+  position: relative; z-index: 1;
+  display: none;
+}
+.ink-section.visible { display: block; }
+.ink-header {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 22px; flex-wrap: wrap;
+}
+.ink-eyebrow {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem; letter-spacing: 3px;
+  color: var(--white); line-height: 1;
+}
+.ink-eyebrow .ink-accent { color: var(--neon2); }
+.ink-sub {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--dim); margin-top: 2px;
+}
+.ink-badge {
+  display: inline-flex; align-items: center;
+  padding: 4px 10px;
+  border: 1px solid rgba(255,71,163,0.35);
+  border-radius: 2px;
+  background: rgba(255,71,163,0.07);
+  font-family: 'DM Sans', sans-serif; font-size: 9px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--neon2); flex-shrink: 0;
+}
+.ink-cat-tabs {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.ink-ctab {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border-radius: 100px;
+  border: 1px solid var(--border);
+  background: transparent; color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; font-weight: 500;
+  cursor: pointer; white-space: nowrap;
+  transition: all .18s;
+}
+.ink-ctab:hover { color: var(--paper); border-color: rgba(245,240,232,0.3); background: rgba(245,240,232,0.05); }
+.ink-ctab.on { background: rgba(255,71,163,0.12); border-color: rgba(255,71,163,0.5); color: var(--neon2); }
+.ink-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 3px;
+  margin-bottom: 32px;
+}
+.ink-card {
+  position: relative;
+  background: var(--ink);
+  border: 1px solid rgba(255,71,163,0.12);
+  cursor: pointer; overflow: hidden;
+  transition: border-color .2s, transform .2s;
+  aspect-ratio: 2/3;
+  display: flex; flex-direction: column;
+}
+.ink-card:hover {
+  border-color: var(--neon2);
+  transform: scale(1.02);
+  z-index: 2;
+}
+.ink-card:hover .card-overlay { opacity: 1; }
+.ink-card:hover .card-info { transform: translateY(0); }
+.ink-club-badge {
+  position: absolute; top: 7px; left: 7px; z-index: 10;
+  background: rgba(255,71,163,0.85);
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 9px; letter-spacing: 1px;
+  padding: 2px 7px; border-radius: 1px;
+}
+.ink-divider {
+  border: none; border-top: 1px solid var(--border);
+  margin: 28px 0 0;
+}
+.ink-empty {
+  padding: 48px 20px; text-align: center; color: var(--dim);
+  font-size: 13px;
 }
 
 /* ── TOP 10 RANKING ───────────────────────────────────── */
@@ -1448,15 +1581,315 @@ div.search-box:focus { outline: none; }
   box-shadow: 0 1px 8px rgba(0,0,0,0.6);
 }
 .card-avg .cstar { font-size: 9px; }
+
+/* ── HOME VIEW ───────────────────────────────────────────── */
+#homeView {
+  display: none;
+  position: relative; z-index: 1;
+}
+#homeView.active { display: block; }
+
+/* ocultar el catálogo cuando el home está activo */
+body.home-active .filter-strip,
+body.home-active .hero,
+body.home-active .mobile-search,
+body.home-active #top10Section,
+body.home-active .top10-divider,
+body.home-active #mainContent,
+body.home-active #inkSection,
+body.home-active .mob-filter-bar,
+body.home-active .fsheet,
+body.home-active .fsheet-overlay,
+body.home-active .ts-watermark,
+body.home-active .scroll-top { display: none !important; }
+
+body.home-active .topbar-center { display: none; }
+
+/* Home hero */
+.hv-hero {
+  padding: 80px 24px 56px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.hv-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: conic-gradient(
+    from 270deg at 50% 100%,
+    transparent 0deg,
+    rgba(232,255,71,0.025) 1deg,
+    transparent 2deg,
+    transparent 5deg,
+    rgba(255,71,163,0.015) 6deg,
+    transparent 7deg
+  );
+  pointer-events: none;
+}
+.hv-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
+  color: var(--neon); margin-bottom: 20px;
+}
+.hv-eyebrow::before, .hv-eyebrow::after {
+  content: ''; display: inline-block;
+  width: 36px; height: 1px; background: currentColor;
+}
+.hv-h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4.5rem, 13vw, 11rem);
+  letter-spacing: 6px; line-height: .88;
+  color: var(--white); margin-bottom: 24px;
+}
+.hv-h1 .a1 { color: var(--neon); }
+.hv-h1 .a2 { color: var(--neon2); }
+.hv-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 11px; letter-spacing: 8px;
+  color: var(--dim); margin-bottom: 36px;
+}
+.hv-desc {
+  max-width: 540px; margin: 0 auto 44px;
+  font-size: 15px; color: var(--muted); line-height: 1.75;
+}
+.hv-ctas {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+.hv-cta {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 12px 26px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.05rem; letter-spacing: 2px;
+  border-radius: 2px; text-decoration: none; cursor: pointer; border: none;
+  transition: all .2s;
+}
+.hv-cta-main { background: var(--neon); color: #0a0a0a; }
+.hv-cta-main:hover { background: #d4f03c; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,255,71,.25); }
+.hv-cta-ink { background: rgba(255,71,163,0.12); color: var(--neon2); border: 1px solid rgba(255,71,163,0.35); }
+.hv-cta-ink:hover { background: rgba(255,71,163,0.22); transform: translateY(-2px); }
+.hv-cta-sec { background: transparent; color: var(--paper); border: 1px solid var(--border2); }
+.hv-cta-sec:hover { border-color: var(--neon); color: var(--neon); transform: translateY(-2px); }
+
+/* Stats band */
+.hv-stats-band {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px;
+  display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
+}
+.hv-stat {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 0 36px;
+  border-right: 1px solid var(--border);
+}
+.hv-stat:last-child { border-right: none; }
+.hv-stat-n {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem; line-height: 1; color: var(--neon);
+}
+.hv-stat-l {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--dim); margin-top: 2px;
+}
+
+/* Feature grid */
+.hv-features {
+  max-width: 1200px; margin: 0 auto;
+  padding: 64px 24px 0;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.hv-feat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 32px 28px;
+  position: relative; overflow: hidden;
+  cursor: default;
+}
+.hv-feat-card::before {
+  content: attr(data-n);
+  position: absolute; bottom: -12px; right: 8px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5.5rem; color: rgba(245,240,232,.03);
+  line-height: 1; pointer-events: none;
+}
+.hv-feat-card.clickable { cursor: pointer; transition: border-color .2s; }
+.hv-feat-card.clickable:hover { border-color: var(--neon); }
+.hv-feat-card.clickable.ink:hover { border-color: var(--neon2); }
+.hv-feat-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+.hv-feat-h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.35rem; letter-spacing: 2px;
+  color: var(--white); margin-bottom: 10px;
+}
+.hv-feat-p { font-size: 13px; color: var(--muted); line-height: 1.75; }
+.hv-feat-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  margin-top: 16px;
+  font-family: 'Bebas Neue', sans-serif; font-size: .9rem; letter-spacing: 2px;
+  color: var(--neon); text-decoration: none; border: none; background: none;
+  cursor: pointer; padding: 0; transition: opacity .15s;
+}
+.hv-feat-link:hover { opacity: .7; }
+.hv-feat-link.pink { color: var(--neon2); }
+
+/* INK CLUB feature (full width) */
+.hv-ink-block {
+  max-width: 1200px; margin: 2px auto 0;
+  background: var(--surface);
+  border: 1px solid rgba(255,71,163,.2);
+  position: relative; overflow: hidden;
+  cursor: pointer; transition: border-color .2s;
+}
+.hv-ink-block:hover { border-color: rgba(255,71,163,.45); }
+.hv-ink-block::before {
+  content: ''; display: block; height: 2px;
+  background: linear-gradient(90deg, var(--neon2), var(--neon));
+}
+.hv-ink-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; padding: 40px;
+}
+.hv-ink-left { padding-right: 40px; border-right: 1px solid var(--border); }
+.hv-ink-right { padding-left: 40px; display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+.hv-ink-eyebrow {
+  font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--neon2); margin-bottom: 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.hv-ink-badge {
+  padding: 3px 8px; border: 1px solid rgba(255,71,163,.35);
+  background: rgba(255,71,163,.08);
+  font-size: 8px; letter-spacing: 2px;
+}
+.hv-ink-h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem; letter-spacing: 3px; line-height: 1;
+  color: var(--white); margin-bottom: 16px;
+}
+.hv-ink-h2 span { color: var(--neon2); }
+.hv-ink-p { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
+.hv-ink-steps { display: flex; flex-direction: column; gap: 10px; }
+.hv-ink-step { display: flex; gap: 10px; font-size: 12px; color: var(--muted); align-items: flex-start; }
+.hv-ink-step-n {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(255,71,163,.15); color: var(--neon2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+}
+/* Category demo cards */
+.hv-cat-demo { display: flex; flex-direction: column; gap: 7px; }
+.hv-cat-row {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 9px 13px;
+  transition: border-color .2s;
+}
+.hv-cat-row:hover { border-color: rgba(255,71,163,.3); }
+.hv-cat-row-icon { font-size: 1rem; }
+.hv-cat-row-name { flex: 1; font-size: 12px; font-weight: 500; color: var(--paper); }
+.hv-cat-row-count { font-size: 9px; color: var(--dim); font-family: 'Space Mono', monospace; }
+.hv-cat-badge {
+  font-size: 8px; letter-spacing: 1px; padding: 2px 7px;
+  border: 1px solid rgba(255,71,163,.3); color: var(--neon2);
+  white-space: nowrap;
+}
+
+/* How it works */
+.hv-how {
+  max-width: 1200px; margin: 64px auto 0;
+  padding: 0 24px 72px;
+}
+.hv-how-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem; letter-spacing: 3px;
+  color: var(--white); text-align: center; margin-bottom: 6px;
+}
+.hv-how-sub {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--dim); text-align: center; margin-bottom: 40px;
+}
+.hv-how-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.hv-how-card {
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 28px 24px; position: relative; overflow: hidden;
+}
+.hv-how-card::before {
+  content: attr(data-n);
+  position: absolute; bottom: -12px; right: 8px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem; color: rgba(245,240,232,.03); line-height: 1; pointer-events: none;
+}
+.hv-how-icon { font-size: 1.7rem; margin-bottom: 12px; display: block; }
+.hv-how-h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem; letter-spacing: 2px; color: var(--white); margin-bottom: 8px;
+}
+.hv-how-p { font-size: 12px; color: var(--muted); line-height: 1.75; }
+
+/* Footer row inside home view */
+.hv-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 32px 24px;
+  text-align: center;
+}
+.hv-footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem; letter-spacing: 4px;
+  color: var(--white); margin-bottom: 4px;
+}
+.hv-footer-logo span { color: var(--neon); }
+.hv-footer-sub {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 10px; letter-spacing: 6px;
+  color: var(--dim); margin-bottom: 20px;
+}
+.hv-footer-copy { font-size: 10px; color: var(--dim); }
+
+/* light mode tweaks for home */
+body.light .hv-feat-card,
+body.light .hv-how-card,
+body.light .hv-ink-block,
+body.light .hv-stats-band { background: var(--surface); }
+body.light .hv-cat-row { background: var(--surface2); }
+
+/* Mobile home responsive */
+@media (max-width: 768px) {
+  .hv-features { grid-template-columns: 1fr; }
+  .hv-ink-inner { grid-template-columns: 1fr; padding: 28px 20px; }
+  .hv-ink-left { padding-right: 0; border-right: none; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .hv-ink-right { padding-left: 0; padding-top: 20px; }
+  .hv-how-grid { grid-template-columns: 1fr; }
+  .hv-stat { padding: 10px 20px; border-right: none; border-bottom: 1px solid var(--border); }
+  .hv-stat:last-child { border-bottom: none; }
+  .hv-stats-band { flex-direction: column; }
+  .hv-hero { padding: 56px 20px 40px; }
+}
+/* Home nav button in topbar */
+.home-nav-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 12px; border-radius: 2px;
+  border: 1px solid var(--border);
+  background: transparent; color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: .5px;
+  cursor: pointer; transition: all .15s; white-space: nowrap;
+}
+.home-nav-btn:hover { color: var(--paper); border-color: rgba(245,240,232,.35); }
+.home-nav-btn.active { background: rgba(232,255,71,.08); border-color: rgba(232,255,71,.35); color: var(--neon); }
 </style>
 </head>
 <body>
-
 <!-- TOPBAR -->
 <header class="topbar">
   <div class="logo">
-    <span class="logo-main">GL PANELS</span>
-    <span class="logo-jp">カタログ</span>
+    <button onclick="showHome()" style="text-decoration:none;display:flex;align-items:baseline;gap:10px;background:none;border:none;cursor:pointer;padding:0">
+      <span class="logo-main">GL PANELS</span>
+      <span class="logo-jp">カタログ</span>
+    </button>
     <span class="logo-dot"></span>
   </div>
   <div class="topbar-center">
@@ -1465,12 +1898,185 @@ div.search-box:focus { outline: none; }
   </div>
   <div class="topbar-right">
     <div id="authArea"></div>
+    <button class="home-nav-btn" id="homeNavBtn" onclick="showHome()">⌂ Inicio</button>
+    <button class="theme-btn" id="themeBtn" title="Cambiar tema">☀︎</button>
     <button class="adult-btn" id="adultBtn">
       <span class="pill"></span>
       <span id="adultLbl">+18 visible</span>
     </button>
   </div>
 </header>
+
+<!-- ══════════════════════════════════════════════════════════
+     HOME VIEW — se muestra/oculta según activeSec === 'home'
+══════════════════════════════════════════════════════════ -->
+<div id="homeView">
+
+  <!-- HERO -->
+  <div class="hv-hero">
+    <div class="hv-eyebrow">Girls Love · Yuri · GL</div>
+    <h1 class="hv-h1">
+      <span class="a1">GL</span><br>PAN<span class="a2">ELS</span>
+    </h1>
+    <div class="hv-jp">ガールズラブ・カタログ</div>
+    <p class="hv-desc">
+      El catálogo comunitario de Girls Love de <strong style="color:var(--paper)">Tinta Sapphic</strong>.
+      Explora cientos de títulos — manga, manhwa, manhua, webtoons y más — organizados, valorados y
+      curados por el club de lectura.
+    </p>
+    <div class="hv-ctas">
+      <button class="hv-cta hv-cta-main" onclick="showCatalog()">✦ Ver el catálogo</button>
+      <button class="hv-cta hv-cta-ink" onclick="showCatalog('ink_club')">📖 Lecturas del club</button>
+      <a class="hv-cta hv-cta-sec" href="#hv-how">¿Cómo funciona?</a>
+    </div>
+  </div>
+
+  <!-- STATS BAND -->
+  <div class="hv-stats-band">
+    <div class="hv-stat"><div class="hv-stat-n" id="hvStatTotal">—</div><div class="hv-stat-l">Historias</div></div>
+    <div class="hv-stat"><div class="hv-stat-n" id="hvStatBib">—</div><div class="hv-stat-l">Biblioteca</div></div>
+    <div class="hv-stat"><div class="hv-stat-n" id="hvStatFiles">—</div><div class="hv-stat-l">FILES</div></div>
+    <div class="hv-stat"><div class="hv-stat-n" id="hvStatInk">—</div><div class="hv-stat-l">INK CLUB</div></div>
+  </div>
+
+  <!-- FEATURE CARDS -->
+  <div class="hv-features">
+    <div class="hv-feat-card clickable" data-n="01" onclick="showCatalog()">
+      <span class="hv-feat-icon">✦</span>
+      <h3 class="hv-feat-h3">Explora el catálogo</h3>
+      <p class="hv-feat-p">
+        Todos los títulos GL organizados por sección — Manga, Manhwa, Manhua, Webtoon y más.
+        Filtra por estado, ubicación y género, y ordénalos por fecha o valoración.
+      </p>
+      <button class="hv-feat-link" onclick="showCatalog()">→ Abrir catálogo</button>
+    </div>
+    <div class="hv-feat-card" data-n="02">
+      <span class="hv-feat-icon">⊟</span>
+      <h3 class="hv-feat-h3">Multi-tag y géneros normalizados</h3>
+      <p class="hv-feat-p">
+        Los géneros están normalizados y unificados. Puedes seleccionar
+        <strong style="color:var(--paper)">varios géneros a la vez</strong> — acumula los tags
+        que quieras para filtrar con precisión.
+      </p>
+    </div>
+    <div class="hv-feat-card" data-n="03">
+      <span class="hv-feat-icon">★</span>
+      <h3 class="hv-feat-h3">Valora y descubre el Top 10</h3>
+      <p class="hv-feat-p">
+        Regístrate para votar de 1 a 5 estrellas. Las valoraciones de la comunidad
+        aparecen en cada portada y alimentan el <strong style="color:var(--paper)">Top 10</strong> en directo.
+      </p>
+    </div>
+  </div>
+
+  <!-- INK CLUB BLOCK -->
+  <div class="hv-ink-block" onclick="showCatalog('ink_club')" style="margin: 2px 24px 0; max-width: calc(100% - 48px);">
+    <div class="hv-ink-inner">
+      <div class="hv-ink-left">
+        <div class="hv-ink-eyebrow">
+          Lecturas del Club <span class="hv-ink-badge">INK CLUB</span>
+        </div>
+        <h2 class="hv-ink-h2">📖 LAS LECTURAS<br>DEL <span>CLUB</span></h2>
+        <p class="hv-ink-p">
+          La sección <strong style="color:var(--neon2)">INK CLUB</strong> reúne todos los títulos que se han
+          leído en el club de Tinta Sapphic. Organizados por categorías — meses, sesiones,
+          temáticas — para repasar el historial del club.
+        </p>
+        <div class="hv-ink-steps">
+          <div class="hv-ink-step">
+            <div class="hv-ink-step-n">1</div>
+            <div>Pulsa el tab <strong style="color:var(--paper)">INK CLUB</strong> arriba o este bloque para ir directo.</div>
+          </div>
+          <div class="hv-ink-step">
+            <div class="hv-ink-step-n">2</div>
+            <div>Navega por <strong style="color:var(--paper)">categorías</strong> — cada sesión tiene su propio grupo.</div>
+          </div>
+          <div class="hv-ink-step">
+            <div class="hv-ink-step-n">3</div>
+            <div>Pulsa cualquier portada para ver la ficha completa y valorarla.</div>
+          </div>
+        </div>
+      </div>
+      <div class="hv-ink-right">
+        <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--neon2);text-transform:uppercase;margin-bottom:10px">Ejemplo de categorías</div>
+        <div class="hv-cat-demo" id="hvCatDemo">
+          <!-- filled by JS with real ink club categories -->
+          <div class="hv-cat-row"><div class="hv-cat-row-icon">📚</div><div class="hv-cat-row-name">Enero 2025</div><div class="hv-cat-row-count">3 lecturas</div><div class="hv-cat-badge">INK</div></div>
+          <div class="hv-cat-row"><div class="hv-cat-row-icon">💖</div><div class="hv-cat-row-name">Romance</div><div class="hv-cat-row-count">7 lecturas</div><div class="hv-cat-badge">INK</div></div>
+          <div class="hv-cat-row"><div class="hv-cat-row-icon">⚡</div><div class="hv-cat-row-name">Favoritas</div><div class="hv-cat-row-count">5 lecturas</div><div class="hv-cat-badge">INK</div></div>
+        </div>
+        <div style="margin-top:12px;font-size:11px;color:var(--dim);font-style:italic">
+          Las categorías las define el administrador al marcar cada título.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="hv-how" id="hv-how">
+    <h2 class="hv-how-title">¿CÓMO FUNCIONA?</h2>
+    <div class="hv-how-sub">Guía rápida del catálogo</div>
+    <div class="hv-how-grid">
+      <div class="hv-how-card" data-n="01">
+        <span class="hv-how-icon">🔍</span>
+        <h3 class="hv-how-h3"><span style="color:var(--neon)">Busca</span> y filtra</h3>
+        <p class="hv-how-p">
+          Usa la barra de búsqueda o combina filtros de estado, ubicación y múltiples géneros.
+          El número de página y los filtros activos se guardan en la URL para poder compartir la vista.
+        </p>
+      </div>
+      <div class="hv-how-card" data-n="02">
+        <span class="hv-how-icon">⭐</span>
+        <h3 class="hv-how-h3"><span style="color:var(--neon2)">Valora</span> tus favoritas</h3>
+        <p class="hv-how-p">
+          Regístrate o inicia sesión para votar de 1 a 5 estrellas. Las valoraciones se agregan
+          en tiempo real y aparecen en el Top 10. Puedes actualizar o borrar tu voto cuando quieras.
+        </p>
+      </div>
+      <div class="hv-how-card" data-n="03">
+        <span class="hv-how-icon">📖</span>
+        <h3 class="hv-how-h3"><span style="color:var(--neon3)">INK CLUB</span> lecturas</h3>
+        <p class="hv-how-p">
+          El tab INK CLUB muestra todas las lecturas del club. Divididas por categorías.
+          En «Todas» aparece un bloque de INK CLUB al inicio para tenerlas siempre a mano.
+        </p>
+      </div>
+      <div class="hv-how-card" data-n="04">
+        <span class="hv-how-icon">📚</span>
+        <h3 class="hv-how-h3"><span style="color:var(--neon)">Biblioteca</span> y FILES</h3>
+        <p class="hv-how-p">
+          Cada título puede estar en <strong style="color:var(--neon3)">Biblioteca</strong> o en
+          <strong style="color:var(--neon)">FILES</strong>. Filtra por ubicación para ver solo lo
+          que tienes disponible.
+        </p>
+      </div>
+      <div class="hv-how-card" data-n="05">
+        <span class="hv-how-icon">🌙</span>
+        <h3 class="hv-how-h3"><span style="color:var(--neon2)">Modo claro</span> y oscuro</h3>
+        <p class="hv-how-p">
+          Cambia entre modo oscuro y claro con el botón ☀︎/🌙 de la barra superior.
+          Tu preferencia se guarda automáticamente en el navegador.
+        </p>
+      </div>
+      <div class="hv-how-card" data-n="06">
+        <span class="hv-how-icon">⚙️</span>
+        <h3 class="hv-how-h3"><span style="color:var(--neon3)">Admin</span> panel</h3>
+        <p class="hv-how-p">
+          El panel de administración permite añadir, editar y eliminar títulos,
+          marcar historias como INK CLUB con categorías, normalizar tags y exportar el JSON.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="hv-footer">
+    <div class="hv-footer-logo">GL <span>PANELS</span></div>
+    <div class="hv-footer-sub">ガールズラブ・カタログ · Tinta Sapphic</div>
+    <div class="hv-footer-copy">Catálogo comunitario · Girls Love · Yuri · GL</div>
+  </div>
+
+</div><!-- /homeView -->
 
 <!-- AUTH MODAL -->
 <div class="auth-modal-wrap" id="authModalWrap" onclick="handleAuthBgClick(event)">
@@ -1525,6 +2131,7 @@ div.search-box:focus { outline: none; }
   <!-- ROW 1: category pills (static fallback + JS fills counts) -->
   <div class="cat-tabs" id="catTabs">
     <button class="ctab on" data-sec="all"><span class="ctab-icon">✦</span> Todas <span class="ctab-count" id="tc-all">—</span></button>
+    <button class="ctab" data-sec="ink_club" style="border-color:rgba(255,71,163,0.3);color:var(--neon2)"><span class="ctab-icon">📖</span> INK CLUB <span class="ctab-count" id="tc-ink_club">—</span></button>
     <button class="ctab" data-sec="Manhwa"><span class="ctab-icon">🇰🇷</span> Manhwa <span class="ctab-count" id="tc-Manhwa">—</span></button>
     <button class="ctab" data-sec="Manga"><span class="ctab-icon">🇯🇵</span> Manga <span class="ctab-count" id="tc-Manga">—</span></button>
     <button class="ctab" data-sec="Manhua"><span class="ctab-icon">🇨🇳</span> Manhua <span class="ctab-count" id="tc-Manhua">—</span></button>
@@ -1561,26 +2168,12 @@ div.search-box:focus { outline: none; }
       </div>
     </div>
 
-    <!-- Género dropdown -->
+    <!-- Género dropdown (populated dynamically) -->
     <div class="fdrop" id="dropTag">
       <span class="fval" id="valTag">Género</span>
       <span class="arrow">▼</span>
       <div class="drop-panel" id="panelTag">
-        <div class="dopt on-pink" data-f="tag" data-v="all">Todos</div>
-        <div class="dopt" data-f="tag" data-v="Drama">Drama</div>
-        <div class="dopt" data-f="tag" data-v="Comedia">Comedia</div>
-        <div class="dopt" data-f="tag" data-v="Fantasia">Fantasía</div>
-        <div class="dopt" data-f="tag" data-v="Escolar">Escolar</div>
-        <div class="dopt" data-f="tag" data-v="Historica">Histórica</div>
-        <div class="dopt" data-f="tag" data-v="Thriller">Thriller</div>
-        <div class="dopt" data-f="tag" data-v="SciFi">Sci-Fi</div>
-        <div class="dopt" data-f="tag" data-v="Horror">Horror</div>
-        <div class="dopt" data-f="tag" data-v="Slice_of_Life">Slice of Life</div>
-        <div class="dopt" data-f="tag" data-v="Psicologico">Psicológico</div>
-        <div class="dopt" data-f="tag" data-v="Accion">Acción</div>
-        <div class="dopt" data-f="tag" data-v="Misterio">Misterio</div>
-        <div class="dopt" data-f="tag" data-v="Supernatural">Sobrenatural</div>
-        <div class="dopt" data-f="tag" data-v="Oficina">Oficina</div>
+        <div class="dopt on-pink" data-f="tag" data-v="__all__">Todos</div>
       </div>
     </div>
 
@@ -1653,23 +2246,9 @@ div.search-box:focus { outline: none; }
     </div>
     <!-- Género -->
     <div class="fsheet-section">
-      <div class="fsheet-sec-label">Género</div>
+      <div class="fsheet-sec-label">Género <span style="font-size:9px;color:var(--dim);letter-spacing:0">(multi-selección)</span></div>
       <div class="fsheet-opts" id="fsTagOpts">
-        <button class="fsopt on-pink" data-f="tag" data-v="all">Todos</button>
-        <button class="fsopt" data-f="tag" data-v="Drama">Drama</button>
-        <button class="fsopt" data-f="tag" data-v="Comedia">Comedia</button>
-        <button class="fsopt" data-f="tag" data-v="Fantasia">Fantasía</button>
-        <button class="fsopt" data-f="tag" data-v="Escolar">Escolar</button>
-        <button class="fsopt" data-f="tag" data-v="Historica">Histórica</button>
-        <button class="fsopt" data-f="tag" data-v="Thriller">Thriller</button>
-        <button class="fsopt" data-f="tag" data-v="SciFi">Sci-Fi</button>
-        <button class="fsopt" data-f="tag" data-v="Horror">Horror</button>
-        <button class="fsopt" data-f="tag" data-v="Slice_of_Life">Slice of Life</button>
-        <button class="fsopt" data-f="tag" data-v="Psicologico">Psicológico</button>
-        <button class="fsopt" data-f="tag" data-v="Accion">Acción</button>
-        <button class="fsopt" data-f="tag" data-v="Misterio">Misterio</button>
-        <button class="fsopt" data-f="tag" data-v="Supernatural">Sobrenatural</button>
-        <button class="fsopt" data-f="tag" data-v="Oficina">Oficina</button>
+        <button class="fsopt on-pink" data-f="tag" data-v="__all__">Todos</button>
       </div>
     </div>
     <!-- Orden -->
@@ -1699,6 +2278,23 @@ div.search-box:focus { outline: none; }
       </div>
     </div>
   </div>
+</div>
+
+<!-- INK CLUB LECTURAS -->
+<div class="ink-section" id="inkSection">
+  <div class="ink-header">
+    <div>
+      <div class="ink-eyebrow">📖 INK <span class="ink-accent">CLUB</span></div>
+      <div class="ink-sub">Lecturas del club · Organizadas por categoría</div>
+    </div>
+    <span class="ink-badge">Club Tinta Sapphic</span>
+  </div>
+  <div class="ink-cat-tabs" id="inkCatTabs">
+    <button class="ink-ctab on" data-inkcat="all">✦ Todas</button>
+  </div>
+  <div class="ink-grid" id="inkGrid"></div>
+  <div class="ink-empty" id="inkEmpty" style="display:none">Sin lecturas del club aún.</div>
+  <hr class="ink-divider">
 </div>
 
 <!-- TOP 10 RANKING -->
@@ -1951,6 +2547,61 @@ const DATA = 'manga_data.json';
 const SECTION_ORDER = ['Manhwa','Manga','Manhua','Webtoon','Sin Clasificación','Cómic','Novela Gráfica'];
 const SECTION_ICONS = {Manhwa:'🇰🇷',Manga:'🇯🇵',Manhua:'🇨🇳',Webtoon:'📱','Sin Clasificación':'📂','Cómic':'💥','Novela Gráfica':'📗'};
 
+// ── TAG NORMALIZATION MAP ──────────────────────────────────
+// Maps variant spellings → canonical tag
+const TAG_NORMALIZE = {
+  'slice of life': 'Slice_of_Life',
+  'slice_of_life': 'Slice_of_Life',
+  'vida_escolar': 'Escolar',
+  'vida escolar': 'Escolar',
+  'historico': 'Historica',
+  'histórico': 'Historica',
+  'histórica': 'Historica',
+  'horro': 'Horror',
+  'vamipiras': 'Vampiras',
+  'vampiras': 'Vampiras',
+  'psicologico': 'Psicologico',
+  'psicológico': 'Psicologico',
+  'accion': 'Accion',
+  'acción': 'Accion',
+  'fantasia': 'Fantasia',
+  'fantasía': 'Fantasia',
+  'magia': 'Fantasia',
+  'sci-fi': 'SciFi',
+  'scifi': 'SciFi',
+  'sobrenatural': 'Supernatural',
+  'supernatural': 'Supernatural',
+  'reencarnacion': 'Reencarnacion',
+  'reencarnación': 'Reencarnacion',
+  'viaje_tiempo': 'Viaje_Tiempo',
+  'viaje tiempo': 'Viaje_Tiempo',
+  'misterio': 'Misterio',
+  'erotica': 'Erotica',
+  'erótica': 'Erotica',
+  'erotic': 'Erotica',
+  'zombie': 'Horror',
+  'drama.': 'Drama',
+};
+
+// Labels for display (key = canonical tag)
+const TAG_LABELS = {
+  'Slice_of_Life': 'Slice of Life',
+  'Psicologico': 'Psicológico',
+  'Accion': 'Acción',
+  'Fantasia': 'Fantasía',
+  'SciFi': 'Sci-Fi',
+  'Supernatural': 'Sobrenatural',
+  'Historica': 'Histórica',
+  'Reencarnacion': 'Reencarnación',
+  'Viaje_Tiempo': 'Viaje en el Tiempo',
+};
+
+function normalizeTag(t) {
+  const lower = t.toLowerCase().trim();
+  return TAG_NORMALIZE[lower] || (t.charAt(0).toUpperCase() + t.slice(1).trim().replace(/\.$/, ''));
+}
+function tagLabel(t) { return TAG_LABELS[t] || t.replace(/_/g, ' '); }
+
 // palette for generated covers — one per section
 const GEN_PALETTES = {
   Manhwa:    ['#1a0a2e','#2e0a1a','#0a1a2e'],
@@ -1969,19 +2620,24 @@ const ESTADO_ICONS = {Finalizado:'✓',Continúa:'▶',Hiatus:'⏸',Cancelado:'�
 let allData = [];
 let hideAdult = false;
 let fOnlyAdult = false; // solo +18
-let fEstado = 'all', fSub = 'all', fTag = 'all', fQ = '';
+let fEstado = 'all', fSub = 'all', fTags = [], fQ = ''; // fTags is now an array
 let activeSec = 'all'; // active category tab
 let activeSort = 'recent'; // recent | rating | az
+let homeActive = false; // home view state
 const PER_PAGE = 25;
 const secPages = {}; // current page per section key
 
+// INK CLUB state
+let inkCat = 'all'; // active ink club category
+
 // ── URL STATE ─────────────────────────────────────────────
 function pushState() {
+  if (homeActive) return; // home view manages its own URL
   const p = new URLSearchParams();
   if (activeSec !== 'all')  p.set('sec', activeSec);
   if (fEstado   !== 'all')  p.set('estado', fEstado);
   if (fSub      !== 'all')  p.set('sub', fSub);
-  if (fTag      !== 'all')  p.set('tag', fTag);
+  if (fTags.length > 0)     p.set('tags', fTags.join(','));
   if (hideAdult)            p.set('adult', '1');
   if (activeSort !== 'recent') p.set('sort', activeSort);
   if (fOnlyAdult)             p.set('only18', '1');
@@ -1992,10 +2648,14 @@ function pushState() {
 
 function loadState() {
   const p = new URLSearchParams(location.search);
+  // Home view
+  if (p.get('view') === 'home') { homeActive = true; return; }
   if (p.has('sec'))   activeSec  = p.get('sec');
   if (p.has('estado')) fEstado   = p.get('estado');
   if (p.has('sub'))   fSub       = p.get('sub');
-  if (p.has('tag'))   fTag       = p.get('tag');
+  if (p.has('tags'))  fTags      = p.get('tags').split(',').filter(Boolean);
+  // legacy single tag support
+  if (p.has('tag') && !p.has('tags')) fTags = [p.get('tag')];
   if (p.get('adult') === '1') hideAdult = true;
   if (p.has('sort'))  activeSort = p.get('sort');
   if (p.get('only18') === '1') fOnlyAdult = true;
@@ -2003,8 +2663,25 @@ function loadState() {
   p.forEach((v, k) => { if (k.startsWith('p_')) secPages[k.slice(2)] = parseInt(v) || 1; });
 }
 
+function normalizeAllTags() {
+  allData.forEach(e => {
+    if (e.tags) {
+      e.tags = [...new Set(e.tags.map(normalizeTag))];
+    }
+  });
+}
+
 async function init() {
   loadState();
+  initTheme();
+
+  // If home view requested, show it immediately (skeleton)
+  if (homeActive) {
+    document.getElementById('homeView').classList.add('active');
+    document.body.classList.add('home-active');
+    document.getElementById('homeNavBtn').classList.add('active');
+  }
+
   if (SB_READY) {
     const { data: { session } } = await sb.auth.getSession();
     if (session) currentUser = session.user;
@@ -2017,22 +2694,304 @@ async function init() {
   }
   renderAuthArea();
 
-  const fetches = [fetch(DATA)];
-  if (SB_READY) fetches.push(loadRatings());
-  const [dataResp] = await Promise.all(fetches);
-  allData = await dataResp.json();
+  try {
+    const fetches = [fetch(DATA)];
+    if (SB_READY) fetches.push(loadRatings());
+    const [dataResp] = await Promise.all(fetches);
+    allData = await dataResp.json();
+    normalizeAllTags();
+  } catch(e) {
+    console.warn('No se pudo cargar manga_data.json:', e.message);
+    allData = [];
+  }
   if (SB_READY && currentUser) await loadMyRatings();
 
   buildStats();
   buildCatTabs();
+  buildTagFilter();
   applyStateToUI();
-  renderTop10();
-  renderTop10Mobile();
-  renderSections(false);  // false = don't reset pages, we restored them
+
+  // Render home stats once data is ready
+  if (homeActive) {
+    renderHomeStats();
+  } else {
+    renderTop10();
+    renderTop10Mobile();
+    renderInkClub();
+    renderSections(false);
+  }
+
   bindEvents();
   bindFsheetEvents();
   bindModalSwipe();
   updateMobBar();
+
+  // Handle browser back/forward
+  window.addEventListener('popstate', () => {
+    const p = new URLSearchParams(location.search);
+    if (p.get('view') === 'home') {
+      if (!homeActive) {
+        homeActive = true;
+        document.getElementById('homeView').classList.add('active');
+        document.body.classList.add('home-active');
+        document.getElementById('homeNavBtn').classList.add('active');
+        renderHomeStats();
+      }
+    } else if (homeActive) {
+      homeActive = false;
+      document.getElementById('homeView').classList.remove('active');
+      document.body.classList.remove('home-active');
+      document.getElementById('homeNavBtn').classList.remove('active');
+      loadState();
+      applyStateToUI();
+      renderTop10();
+      renderTop10Mobile();
+      renderInkClub();
+      renderSections(false);
+    }
+  });
+}
+
+// ── THEME ─────────────────────────────────────────────────
+function initTheme() {
+  const saved = localStorage.getItem('glp_theme');
+  if (saved === 'light') document.body.classList.add('light');
+  updateThemeBtn();
+}
+function toggleTheme() {
+  document.body.classList.toggle('light');
+  const isLight = document.body.classList.contains('light');
+  localStorage.setItem('glp_theme', isLight ? 'light' : 'dark');
+  updateThemeBtn();
+}
+function updateThemeBtn() {
+  const btn = document.getElementById('themeBtn');
+  if (!btn) return;
+  const isLight = document.body.classList.contains('light');
+  btn.textContent = isLight ? '🌙' : '☀︎';
+  btn.title = isLight ? 'Modo oscuro' : 'Modo claro';
+}
+
+// ── HOME VIEW ─────────────────────────────────────────────
+
+function showHome() {
+  homeActive = true;
+  document.getElementById('homeView').classList.add('active');
+  document.body.classList.add('home-active');
+  document.getElementById('homeNavBtn').classList.add('active');
+  // Update URL
+  history.pushState(null, '', '?view=home');
+  // Populate real stats and INK CLUB categories if data is loaded
+  if (allData.length) renderHomeStats();
+}
+
+function showCatalog(sec) {
+  homeActive = false;
+  document.getElementById('homeView').classList.remove('active');
+  document.body.classList.remove('home-active');
+  document.getElementById('homeNavBtn').classList.remove('active');
+  if (sec) {
+    activeSec = sec;
+    Object.keys(secPages).forEach(k => secPages[k] = 1);
+    document.querySelectorAll('.ctab').forEach(t => t.classList.toggle('on', t.dataset.sec === sec));
+    renderInkClub();
+    renderSections(false);
+  }
+  // Push state back
+  pushState();
+  scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function renderHomeStats() {
+  const el = id => document.getElementById(id);
+  if (el('hvStatTotal')) el('hvStatTotal').textContent = allData.length;
+  if (el('hvStatBib'))   el('hvStatBib').textContent   = allData.filter(e => e.in_biblioteca).length;
+  if (el('hvStatFiles')) el('hvStatFiles').textContent = allData.filter(e => e.in_files).length;
+  const inkData = allData.filter(e => e.ink_club);
+  if (el('hvStatInk')) el('hvStatInk').textContent = inkData.length;
+
+  // Populate real INK CLUB category demo
+  if (inkData.length > 0) {
+    const cats = {};
+    inkData.forEach(e => (e.ink_categories || ['Sin categoría']).forEach(c => {
+      cats[c] = (cats[c] || 0) + 1;
+    }));
+    const icons = ['📚','💖','⚡','🌙','✨','🎯'];
+    const sortedCats = Object.entries(cats).sort((a, b) => b[1] - a[1]).slice(0, 4);
+    const demo = document.getElementById('hvCatDemo');
+    if (demo && sortedCats.length) {
+      demo.innerHTML = sortedCats.map(([cat, count], i) =>
+        `<div class="hv-cat-row">
+          <div class="hv-cat-row-icon">${icons[i % icons.length]}</div>
+          <div class="hv-cat-row-name">${esc(cat)}</div>
+          <div class="hv-cat-row-count">${count} lectura${count !== 1 ? 's' : ''}</div>
+          <div class="hv-cat-badge">INK</div>
+        </div>`
+      ).join('');
+    }
+  }
+}
+
+// ── TAG FILTER (dynamic, multi-select) ────────────────────
+function buildTagFilter() {
+  // Collect all unique normalized tags and sort by frequency
+  const tagCount = {};
+  allData.forEach(e => (e.tags||[]).forEach(t => { tagCount[t] = (tagCount[t]||0) + 1; }));
+  const sortedTags = Object.entries(tagCount)
+    .filter(([t]) => t.toLowerCase() !== 'erotica')
+    .sort((a, b) => b[1] - a[1])
+    .map(([t]) => t);
+
+  // Build desktop dropdown panel
+  const panel = document.getElementById('panelTag');
+  if (panel) {
+    panel.innerHTML = `<div class="dopt on-pink" data-f="tag" data-v="__all__">Todos</div>` +
+      sortedTags.map(t =>
+        `<div class="dopt" data-f="tag" data-v="${esc(t)}">${tagLabel(t)}</div>`
+      ).join('');
+    // re-bind click events on panel
+    panel.querySelectorAll('.dopt').forEach(opt => {
+      opt.addEventListener('click', () => {
+        const v = opt.dataset.v;
+        if (v === '__all__') {
+          fTags = [];
+        } else {
+          const idx = fTags.indexOf(v);
+          if (idx >= 0) fTags.splice(idx, 1);
+          else fTags.push(v);
+        }
+        updateTagDropUI();
+        onFsheetChange();
+      });
+    });
+  }
+
+  // Build mobile fsheet opts
+  const fsOpts = document.getElementById('fsTagOpts');
+  if (fsOpts) {
+    fsOpts.innerHTML = `<button class="fsopt on-pink" data-f="tag" data-v="__all__">Todos</button>` +
+      sortedTags.map(t =>
+        `<button class="fsopt" data-f="tag" data-v="${esc(t)}">${tagLabel(t)}</button>`
+      ).join('');
+    fsOpts.addEventListener('click', e => {
+      const opt = e.target.closest('.fsopt');
+      if (!opt) return;
+      const v = opt.dataset.v;
+      if (v === '__all__') {
+        fTags = [];
+      } else {
+        const idx = fTags.indexOf(v);
+        if (idx >= 0) fTags.splice(idx, 1);
+        else fTags.push(v);
+      }
+      updateTagDropUI();
+      onFsheetChange();
+    });
+  }
+}
+
+function updateTagDropUI() {
+  // Desktop dropdown label
+  const hasTag = fTags.length > 0;
+  const lbl = hasTag
+    ? fTags.length === 1 ? tagLabel(fTags[0]) : `${fTags.length} géneros`
+    : 'Género';
+  updateDropLabel('dropTag', 'valTag', lbl, hasTag, 'on-pink');
+  // Active state on desktop opts
+  const panel = document.getElementById('panelTag');
+  if (panel) panel.querySelectorAll('.dopt').forEach(o => {
+    if (o.dataset.v === '__all__') o.classList.toggle('on-pink', fTags.length === 0);
+    else o.classList.toggle('on-pink', fTags.includes(o.dataset.v));
+  });
+  // Active state on mobile fsheet
+  const fsOpts = document.getElementById('fsTagOpts');
+  if (fsOpts) fsOpts.querySelectorAll('.fsopt').forEach(o => {
+    if (o.dataset.v === '__all__') o.classList.toggle('on-pink', fTags.length === 0);
+    else o.classList.toggle('on-pink', fTags.includes(o.dataset.v));
+  });
+}
+
+// ── INK CLUB ──────────────────────────────────────────────
+function getInkData() {
+  return allData.filter(e => e.ink_club);
+}
+function getInkCategories() {
+  const cats = new Set();
+  getInkData().forEach(e => { (e.ink_categories||[e.seccion]).forEach(c => cats.add(c)); });
+  return [...cats].sort();
+}
+
+function renderInkClub() {
+  const inkData = getInkData();
+  const section = document.getElementById('inkSection');
+
+  // Only show inkSection when on ink_club tab or all tab (with ink items)
+  if (activeSec === 'ink_club') {
+    section.classList.add('visible');
+  } else if (inkData.length > 0 && activeSec === 'all') {
+    section.classList.add('visible');
+  } else {
+    section.classList.remove('visible');
+  }
+
+  const cats = getInkCategories();
+  const tabsEl = document.getElementById('inkCatTabs');
+  tabsEl.innerHTML = `<button class="ink-ctab on" data-inkcat="all">✦ Todas <span style="opacity:.5;font-size:10px">${inkData.length}</span></button>` +
+    cats.map(c => {
+      const count = inkData.filter(e => (e.ink_categories||[e.seccion]).includes(c)).length;
+      return `<button class="ink-ctab" data-inkcat="${esc(c)}">${c} <span style="opacity:.5;font-size:10px">${count}</span></button>`;
+    }).join('');
+  tabsEl.querySelectorAll('.ink-ctab').forEach(btn => {
+    btn.classList.toggle('on', btn.dataset.inkcat === inkCat);
+    btn.addEventListener('click', () => {
+      inkCat = btn.dataset.inkcat;
+      tabsEl.querySelectorAll('.ink-ctab').forEach(b => b.classList.toggle('on', b.dataset.inkcat === inkCat));
+      renderInkGrid();
+    });
+  });
+
+  renderInkGrid();
+
+  // Update tab count
+  const tcInk = document.getElementById('tc-ink_club');
+  if (tcInk) tcInk.textContent = inkData.length;
+}
+
+function renderInkGrid() {
+  const inkData = getInkData();
+  const filtered = inkCat === 'all' ? inkData :
+    inkData.filter(e => (e.ink_categories||[e.seccion]).includes(inkCat));
+  const grid = document.getElementById('inkGrid');
+  const empty = document.getElementById('inkEmpty');
+  if (!filtered.length) {
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  grid.innerHTML = '';
+  filtered.forEach(e => {
+    const d = document.createElement('div');
+    d.className = 'card ink-card';
+    const coverHtml = e.imagen
+      ? `<div class="card-cover"><img src="${esc(e.imagen)}" alt="${esc(e.titulo)}" loading="lazy" onerror="this.closest('.card-cover').outerHTML='<div class=card-gen style=--gen-bg:#2e0a1a><div class=card-gen-title>${esc(e.titulo.slice(0,30))}</div></div>'"></div>`
+      : `<div class="card-gen" style="--gen-bg:#2e0a1a"><div class="card-gen-title">${esc(e.titulo.slice(0,40))}</div></div>`;
+    const ec = ESTADO_CLS[e.estado] || 'e-fin';
+    const ei = ESTADO_ICONS[e.estado] || '';
+    d.innerHTML = `
+      ${coverHtml}
+      <span class="ink-club-badge">INK</span>
+      ${e.adult ? `<span class="adult-chip">+18</span>` : ''}
+      <span class="card-estado ${ec}">${ei}</span>
+      <div class="card-overlay"></div>
+      <div class="card-info">
+        <div class="card-title">${esc(e.titulo)}</div>
+        <div class="card-tags">${(e.tags||[]).slice(0,3).map(t=>`<span class="ctag">${tagLabel(t)}</span>`).join('')}</div>
+      </div>
+      ${ratingsMap[e.id] ? `<div class="card-avg"><span class="cstar">★</span>${ratingsMap[e.id].avg}</div>` : ''}`;
+    d.addEventListener('click', () => openModal(e));
+    grid.appendChild(d);
+  });
 }
 
 function applyStateToUI() {
@@ -2079,12 +3038,8 @@ function applyStateToUI() {
       o.classList.toggle('on', false);
     });
   }
-  if (fTag !== 'all') {
-    updateDropLabel('dropTag','valTag', fTag.replace(/_/g,' '), true, 'on-pink');
-    document.querySelectorAll('#panelTag .dopt').forEach(o => {
-      o.classList.toggle('on-pink', o.dataset.v === fTag);
-      o.classList.toggle('on', false);
-    });
+  if (fTags.length > 0) {
+    updateTagDropUI();
   }
 }
 
@@ -2139,6 +3094,21 @@ function renderSections(resetPages) {
   main.querySelectorAll('.section').forEach(s => s.remove());
 
   const empty = document.getElementById('emptyState');
+
+  // Always restore visibility first, then override for specific tabs
+  main.style.display = '';
+  document.getElementById('top10Section').style.display = '';
+
+  // ── TAB "INK CLUB" ───────────────────────────────────────
+  if (activeSec === 'ink_club') {
+    document.getElementById('top10Section').style.display = 'none';
+    renderInkClub();
+    empty.classList.remove('show');
+    main.style.display = 'none';
+    pushState();
+    updateMobBar();
+    return;
+  }
 
   // ── TAB "Todas": single merged grid ──────────────────────
   if (activeSec === 'all') {
@@ -2387,7 +3357,11 @@ function matches(e) {
   if (fSub === 'bib' && !e.in_biblioteca) return false;
   if (fSub === 'files' && !e.in_files) return false;
   if (fSub === 'both' && !(e.in_biblioteca && e.in_files)) return false;
-  if (fTag !== 'all' && !(e.tags||[]).some(t => t.toLowerCase() === fTag.toLowerCase())) return false;
+  // Multi-tag: entry must have ALL selected tags
+  if (fTags.length > 0) {
+    const entryTags = (e.tags||[]).map(t => t.toLowerCase());
+    if (!fTags.every(ft => entryTags.includes(ft.toLowerCase()))) return false;
+  }
   if (fQ) {
     const q = fQ.toLowerCase();
     if (!e.titulo.toLowerCase().includes(q) &&
@@ -2470,8 +3444,8 @@ function bindEvents() {
         opt.classList.add(cls);
         if (f === 'estado') { fEstado = v; updateDropLabel('dropEstado','valEstado', v === 'all' ? 'Estado' : v, v !== 'all', 'on'); }
         if (f === 'sub')    { fSub = v;    updateDropLabel('dropSub','valSub', v === 'all' ? 'Ubicación' : (v === 'bib' ? 'Biblioteca' : v === 'files' ? 'FILES' : 'Ambos'), v !== 'all', 'on-teal'); }
-        if (f === 'tag')    { fTag = v;    updateDropLabel('dropTag','valTag', v === 'all' ? 'Género' : v.replace(/_/g,' '), v !== 'all', 'on-pink'); }
         if (f === 'sort')   { activeSort = v; const sl = {'recent':'Recientes','rating':'★ Más valorados','az':'Az A–Z'}; updateDropLabel('dropSort','valSort', sl[v], v !== 'recent', 'on'); }
+        // tag handled by buildTagFilter (multi-select)
         drop.classList.remove('open');
         renderSections(true);
       } else {
@@ -2638,12 +3612,17 @@ function syncFsheetState() {
   };
   applyOpts(document.getElementById('fsEstadoOpts'), 'estado', fEstado, 'on');
   applyOpts(document.getElementById('fsSubOpts'), 'sub', fSub, 'on-teal');
-  applyOpts(document.getElementById('fsTagOpts'), 'tag', fTag, 'on-pink');
+  // Multi-tag sync on fsheet
+  const fsTagOpts = document.getElementById('fsTagOpts');
+  if (fsTagOpts) fsTagOpts.querySelectorAll('.fsopt').forEach(o => {
+    if (o.dataset.v === '__all__') o.className = 'fsopt' + (fTags.length === 0 ? ' on-pink' : '');
+    else o.className = 'fsopt' + (fTags.includes(o.dataset.v) ? ' on-pink' : '');
+  });
   applyOpts(document.getElementById('fsSortOpts'), 'sort', activeSort, 'on');
   document.getElementById('fsAdultHideTog').classList.toggle('on', hideAdult);
   document.getElementById('fsAdultOnlyTog').classList.toggle('on', fOnlyAdult);
   // Reset button enabled/disabled
-  const hasFilter = fEstado !== 'all' || fSub !== 'all' || fTag !== 'all' || hideAdult || fOnlyAdult || activeSort !== 'recent';
+  const hasFilter = fEstado !== 'all' || fSub !== 'all' || fTags.length > 0 || hideAdult || fOnlyAdult || activeSort !== 'recent';
   document.getElementById('fsheetReset').disabled = !hasFilter;
 }
 
@@ -2654,7 +3633,7 @@ function updateMobBar() {
   const dot = document.getElementById('mobActiveDot');
 
   const chips = [];
-  const hasFilter = fEstado !== 'all' || fSub !== 'all' || fTag !== 'all' || hideAdult || fOnlyAdult || activeSort !== 'recent';
+  const hasFilter = fEstado !== 'all' || fSub !== 'all' || fTags.length > 0 || hideAdult || fOnlyAdult || activeSort !== 'recent';
 
   btn.classList.toggle('has-active', hasFilter);
   dot.style.display = hasFilter ? 'block' : 'none';
@@ -2664,7 +3643,7 @@ function updateMobBar() {
     const l = fSub === 'bib' ? '📚 Biblioteca' : fSub === 'files' ? '📁 FILES' : 'Ambos';
     chips.push({ cls: 'mob-chip-sub', label: l, clear: () => { fSub='all'; onFsheetChange(); } });
   }
-  if (fTag !== 'all') chips.push({ cls: 'mob-chip-tag', label: fTag.replace(/_/g,' '), clear: () => { fTag='all'; onFsheetChange(); } });
+  fTags.forEach(t => chips.push({ cls: 'mob-chip-tag', label: tagLabel(t), clear: () => { fTags = fTags.filter(x=>x!==t); onFsheetChange(); } }));
   if (hideAdult) chips.push({ cls: 'mob-chip-adult', label: 'Ocultar +18', clear: () => { hideAdult=false; onFsheetChange(); } });
   if (fOnlyAdult) chips.push({ cls: 'mob-chip-adult', label: 'Solo +18', clear: () => { fOnlyAdult=false; onFsheetChange(); } });
   if (activeSort !== 'recent') {
@@ -2685,7 +3664,7 @@ function onFsheetChange() {
   const sl2 = fSub === 'bib' ? 'Biblioteca' : fSub === 'files' ? 'FILES' : 'Ambos';
   updateDropLabel('dropEstado','valEstado', fEstado === 'all' ? 'Estado' : fEstado, fEstado !== 'all', 'on');
   updateDropLabel('dropSub','valSub', fSub === 'all' ? 'Ubicación' : sl2, fSub !== 'all', 'on-teal');
-  updateDropLabel('dropTag','valTag', fTag === 'all' ? 'Género' : fTag.replace(/_/g,' '), fTag !== 'all', 'on-pink');
+  updateTagDropUI();
   const sl3 = {'recent':'Recientes','rating':'★ Más valorados','az':'Az A–Z'};
   updateDropLabel('dropSort','valSort', sl3[activeSort], activeSort !== 'recent', 'on');
   // adult UI sync
@@ -2703,18 +3682,17 @@ function bindFsheetEvents() {
   document.getElementById('mobFilterOpenBtn').addEventListener('click', openFsheet);
   document.getElementById('fsheetOverlay').addEventListener('click', closeFsheet);
 
-  // Option buttons
-  ['fsEstadoOpts','fsSubOpts','fsTagOpts','fsSortOpts'].forEach(id => {
+  // Option buttons (estado, sub, sort — tag is handled by buildTagFilter)
+  ['fsEstadoOpts','fsSubOpts','fsSortOpts'].forEach(id => {
     document.getElementById(id).addEventListener('click', e => {
       const opt = e.target.closest('.fsopt');
       if (!opt) return;
       const f = opt.dataset.f, v = opt.dataset.v;
-      const clsMap = { estado: 'on', sub: 'on-teal', tag: 'on-pink', sort: 'on' };
+      const clsMap = { estado: 'on', sub: 'on-teal', sort: 'on' };
       document.getElementById(id).querySelectorAll('.fsopt').forEach(o => o.className = 'fsopt');
       opt.classList.add(clsMap[f]);
       if (f === 'estado') fEstado = v;
       if (f === 'sub')    fSub    = v;
-      if (f === 'tag')    fTag    = v;
       if (f === 'sort')   activeSort = v;
       onFsheetChange();
     });
@@ -2734,10 +3712,14 @@ function bindFsheetEvents() {
 
   // Reset
   document.getElementById('fsheetReset').addEventListener('click', () => {
-    fEstado = 'all'; fSub = 'all'; fTag = 'all';
+    fEstado = 'all'; fSub = 'all'; fTags = [];
     hideAdult = false; fOnlyAdult = false; activeSort = 'recent';
     onFsheetChange();
   });
+
+  // Theme button
+  const themeBtn = document.getElementById('themeBtn');
+  if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
 }
 
 /* swipe down to close bottom sheet */

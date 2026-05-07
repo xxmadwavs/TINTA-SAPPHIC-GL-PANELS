@@ -19,6 +19,44 @@
   --border:rgba(245,240,232,0.1);--border2:rgba(245,240,232,0.18);
   --fin:#47ffe0;--cont:#e8ff47;--hiatus:#ffc847;--cancel:#ff6b6b;
 }
+/* ── LIGHT MODE ── */
+body.light {
+  --screen:#f0ebe0;--surface:#e8e2d4;--surface2:#ddd7c9;--surface3:#d4cec0;
+  --paper:#1a1a2e;--muted:rgba(20,20,40,0.55);--dim:rgba(20,20,40,0.35);--dimmer:rgba(20,20,40,0.18);
+  --border:rgba(20,20,40,0.1);--border2:rgba(20,20,40,0.2);
+}
+body.light .topbar,.light .topbar-inner{background:var(--screen);}
+body.light .ag-card,.light .modal{background:var(--surface);}
+body.light table tbody tr:hover{background:var(--surface2);}
+.theme-btn{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:2px;border:1px solid var(--border2);background:transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:11px;cursor:pointer;transition:all .2s;}
+.theme-btn:hover{border-color:var(--neon);color:var(--neon);}
+
+/* ── INK CLUB ADMIN SECTION ── */
+.ink-admin-section{margin-top:32px;background:var(--surface);border:1px solid rgba(255,71,163,0.2);position:relative;overflow:hidden}
+.ink-admin-section::before{content:'';display:block;height:2px;background:linear-gradient(90deg,var(--neon2),var(--neon))}
+.ink-admin-head{padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--border)}
+.ink-admin-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;color:#fff}
+.ink-admin-title span{color:var(--neon2)}
+.ink-admin-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-top:2px}
+.ink-admin-body{padding:16px 20px}
+.ink-cats-list{display:flex;flex-direction:column;gap:20px}
+.ink-cat-group{border:1px solid var(--border);background:var(--surface2)}
+.ink-cat-head{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--border)}
+.ink-cat-name{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--neon2)}
+.ink-cat-count{font-size:10px;color:var(--dim);font-family:'Space Mono',monospace}
+.ink-cat-items{display:flex;flex-wrap:wrap;gap:8px;padding:12px 14px}
+.ink-item{display:flex;align-items:center;gap:8px;background:var(--surface3);border:1px solid rgba(255,71,163,0.15);padding:6px 10px;font-size:12px;color:var(--paper)}
+.ink-item img{width:30px;height:45px;object-fit:cover;flex-shrink:0;border:1px solid var(--border)}
+.ink-item-info{flex:1;min-width:0}
+.ink-item-title{font-size:11px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:120px}
+.ink-item-sec{font-size:9px;color:var(--dim);letter-spacing:1px;text-transform:uppercase}
+.ink-item-remove{background:none;border:none;color:var(--dim);cursor:pointer;font-size:14px;padding:0;transition:color .15s}
+.ink-item-remove:hover{color:var(--neon2)}
+.ink-empty-cat{padding:20px;text-align:center;color:var(--dim);font-size:12px}
+/* ink club checkbox in edit modal */
+.ink-club-form{margin-top:8px;padding:10px 12px;background:rgba(255,71,163,0.05);border:1px solid rgba(255,71,163,0.2)}
+.ink-club-cats-inp{width:100%;padding:6px 10px;background:var(--surface2);border:1px solid var(--border2);color:var(--paper);font-family:'DM Sans',sans-serif;font-size:12px;outline:none;border-radius:1px;transition:border-color .2s}
+.ink-club-cats-inp:focus{border-color:var(--neon2)}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--screen);color:var(--paper);font-family:'DM Sans',system-ui,sans-serif;font-size:14px;line-height:1.5;min-height:100vh;overflow-x:hidden;cursor:crosshair}
 body::before{content:'';position:fixed;inset:0;z-index:0;background-image:radial-gradient(circle,rgba(245,240,232,0.04) 2px,transparent 2px);background-size:18px 18px;pointer-events:none}
@@ -298,6 +336,8 @@ td{padding:9px 14px;vertical-align:middle;font-size:13px}
       <span class="admin-email" id="adminEmail">—</span>
       <button class="admin-logout" onclick="doAdminLogout()">salir</button>
     </div>
+    <button class="theme-btn" id="themeBtn" title="Cambiar tema">☀︎</button>
+    
     <a href="index.html" class="tb-btn">← Catálogo</a>
     <label class="tb-btn" style="cursor:pointer">📂 Importar<input type="file" accept=".json" id="importFile" style="display:none"></label>
     <button class="tb-btn tb-neon" id="exportBtn">💾 Exportar JSON</button>
@@ -333,6 +373,11 @@ td{padding:9px 14px;vertical-align:middle;font-size:13px}
       <option value="adult">Solo +18</option>
       <option value="safe">Solo no +18</option>
     </select>
+    <select class="sel" id="fInk">
+      <option value="all">Todo el catálogo</option>
+      <option value="ink">Solo INK CLUB</option>
+      <option value="noink">Sin INK CLUB</option>
+    </select>
     <select class="sel" id="perPage">
       <option value="25">25 / pág</option><option value="50">50 / pág</option><option value="100">100 / pág</option>
     </select>
@@ -353,6 +398,25 @@ td{padding:9px 14px;vertical-align:middle;font-size:13px}
   <div class="pagination">
     <div class="pag-info" id="pagInfo"></div>
     <div class="pag-btns" id="pagBtns"></div>
+  </div>
+
+  <!-- INK CLUB ADMIN SECTION -->
+  <div class="ink-admin-section">
+    <div class="ink-admin-head">
+      <div>
+        <div class="ink-admin-title">📖 INK <span>CLUB</span></div>
+        <div class="ink-admin-sub">Lecturas leídas en el club · <span id="inkAdminCount">0</span> historias</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <input type="text" id="inkNewCat" class="ink-club-cats-inp" placeholder="Nueva categoría…" style="width:160px">
+        <button class="tb-btn tb-pink" id="inkAddCatBtn">+ Categoría</button>
+      </div>
+    </div>
+    <div class="ink-admin-body">
+      <div class="ink-cats-list" id="inkCatsList">
+        <div class="ink-empty-cat">Ninguna historia marcada como INK CLUB todavía.<br>Edita una historia y activa la opción INK CLUB.</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -414,6 +478,19 @@ td{padding:9px 14px;vertical-align:middle;font-size:13px}
             <input type="checkbox" id="fAdult"> 🔞 Contenido +18
           </label>
         </div>
+        <div class="form-full fg">
+          <label class="flbl" style="color:var(--neon2)">📖 INK CLUB</label>
+          <div class="ink-club-form">
+            <label class="chk" style="margin-bottom:8px">
+              <input type="checkbox" id="fInkClub" style="accent-color:var(--neon2)">
+              <span style="color:var(--neon2)">Marcar como lectura del club INK CLUB</span>
+            </label>
+            <div id="inkCatField" style="display:none">
+              <div class="fhint" style="margin-bottom:5px">Categorías del club (separadas por coma):</div>
+              <input type="text" id="fInkCats" class="ink-club-cats-inp" placeholder="Ej: Enero 2025, Romance, Favoritas…">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="m-footer">
@@ -451,6 +528,46 @@ const ADULT_TAGS=new Set(['erotica','erotic','erótica']);
 const ECLS={Finalizado:'b-fin',Continúa:'b-cont',Hiatus:'b-hiatus',Cancelado:'b-cancel'};
 const EICO={Finalizado:'✓',Continúa:'▶',Hiatus:'⏸',Cancelado:'✗'};
 let allData=[],filtered=[],editingId=null,deletingId=null,page=1,perPage=25,tagsList=[];
+
+// ── TAG NORMALIZATION ─────────────────────────────────────
+const TAG_NORMALIZE_MAP = {
+  'slice of life':'Slice_of_Life','slice_of_life':'Slice_of_Life',
+  'vida_escolar':'Escolar','vida escolar':'Escolar',
+  'historico':'Historica','histórico':'Historica','histórica':'Historica',
+  'horro':'Horror','vamipiras':'Vampiras','vampiras':'Vampiras',
+  'psicologico':'Psicologico','psicológico':'Psicologico',
+  'accion':'Accion','acción':'Accion','fantasia':'Fantasia','fantasía':'Fantasia',
+  'magia':'Fantasia','sci-fi':'SciFi','scifi':'SciFi',
+  'sobrenatural':'Supernatural','supernatural':'Supernatural',
+  'reencarnacion':'Reencarnacion','reencarnación':'Reencarnacion',
+  'viaje_tiempo':'Viaje_Tiempo','viaje tiempo':'Viaje_Tiempo',
+  'erotica':'Erotica','erótica':'Erotica','erotic':'Erotica',
+  'zombie':'Horror','drama.':'Drama','historico':'Historica',
+};
+function normalizeTag(t){
+  const l=t.toLowerCase().trim();
+  return TAG_NORMALIZE_MAP[l]||(t.charAt(0).toUpperCase()+t.slice(1).trim().replace(/\.$/,''));
+}
+function normalizeAllTags(){
+  allData.forEach(e=>{if(e.tags)e.tags=[...new Set(e.tags.map(normalizeTag))];});
+}
+
+// ── THEME ─────────────────────────────────────────────────
+function initTheme(){
+  const saved=localStorage.getItem('glp_theme');
+  if(saved==='light')document.body.classList.add('light');
+  updateThemeBtn();
+}
+function toggleTheme(){
+  document.body.classList.toggle('light');
+  localStorage.setItem('glp_theme',document.body.classList.contains('light')?'light':'dark');
+  updateThemeBtn();
+}
+function updateThemeBtn(){
+  const btn=document.getElementById('themeBtn');
+  if(!btn)return;
+  btn.textContent=document.body.classList.contains('light')?'🌙':'☀︎';
+}
 
 // ── SUPABASE ──────────────────────────────────────────────
 const SUPABASE_URL = document.querySelector('meta[name="sb-url"]')?.content || '';
@@ -566,6 +683,7 @@ function showApp(user) {
     emailEl.textContent = user.email;
   }
 
+  initTheme();
   // Boot the actual app
   initApp();
 }
@@ -579,8 +697,9 @@ async function loadRatingsCount() {
 async function initApp(){
   try{const r=await fetch(DATA_URL);allData=await r.json();}
   catch{allData=[];toast('No se pudo cargar manga_data.json','err');}
+  normalizeAllTags();
   await loadRatingsCount();
-  buildStats();applyFilters();bindEvents();
+  buildStats();applyFilters();renderInkAdmin();bindEvents();
 }
 
 // Boot: auth first, app second
@@ -601,12 +720,14 @@ function buildStats(){
 function applyFilters(){
   const q=document.getElementById('adminSearch').value.toLowerCase(),
     sec=document.getElementById('fSec').value,est=document.getElementById('fEst').value,
-    adv=document.getElementById('fAdv').value;
+    adv=document.getElementById('fAdv').value,ink=document.getElementById('fInk').value;
   filtered=allData.filter(e=>{
     if(sec!=='all'&&e.seccion!==sec)return false;
     if(est!=='all'&&e.estado!==est)return false;
     if(adv==='adult'&&!e.adult)return false;
     if(adv==='safe'&&e.adult)return false;
+    if(ink==='ink'&&!e.ink_club)return false;
+    if(ink==='noink'&&e.ink_club)return false;
     if(q){const t=e.titulo.toLowerCase(),d=(e.desc||'').toLowerCase(),tg=(e.tags||[]).join(' ').toLowerCase();if(!t.includes(q)&&!d.includes(q)&&!tg.includes(q))return false;}
     return true;
   });
@@ -619,9 +740,10 @@ function renderTable(){
     const ec=ECLS[e.estado]||'b-fin',ei=EICO[e.estado]||'';
     const tags=(e.tags||[]).slice(0,4).map(t=>`<span class="ttag${t.toLowerCase()==='erotica'?' adult':''}">${esc(t)}</span>`).join('');
     const cov=e.imagen?`<img src="${esc(e.imagen)}" loading="lazy" onerror="this.outerHTML='<div class=no-cov>📖</div>'">`:'<div class="no-cov">📖</div>';
+    const inkBadge=e.ink_club?`<span class="badge" style="background:rgba(255,71,163,.15);color:var(--neon2);border:1px solid rgba(255,71,163,.3)">📖 INK</span>`:'';
     return `<tr>
       <td class="td-cov">${cov}</td>
-      <td class="td-tit"><div class="td-titulo">${esc(e.titulo)}</div>${e.adult?'<span class="adult-flag">+18</span>':''}</td>
+      <td class="td-tit"><div class="td-titulo">${esc(e.titulo)}</div>${e.adult?'<span class="adult-flag">+18</span>':''}${inkBadge}</td>
       <td class="td-sec">${esc(e.seccion)}</td>
       <td class="td-tags"><div class="tag-row">${tags}</div></td>
       <td><span class="badge ${ec}">${ei} ${esc(e.estado)}</span></td>
@@ -667,6 +789,9 @@ function openEdit(id){
   document.getElementById('fBib').checked=!!e.in_biblioteca;
   document.getElementById('fFiles').checked=!!e.in_files;
   document.getElementById('fAdult').checked=!!e.adult;
+  document.getElementById('fInkClub').checked=!!e.ink_club;
+  document.getElementById('fInkCats').value=(e.ink_categories||[]).join(', ');
+  document.getElementById('inkCatField').style.display=e.ink_club?'block':'none';
   updateAdultLbl();updateCov(e.imagen||'');renderPills();openMod('editWrap');
 }
 function openAdd(){
@@ -675,6 +800,9 @@ function openAdd(){
   document.getElementById('fTitulo').value='';document.getElementById('fImagen').value='';
   document.getElementById('fDesc').value='';document.getElementById('fBib').checked=false;
   document.getElementById('fFiles').checked=false;document.getElementById('fAdult').checked=false;
+  document.getElementById('fInkClub').checked=false;
+  document.getElementById('fInkCats').value='';
+  document.getElementById('inkCatField').style.display='none';
   updateAdultLbl();document.getElementById('covThumb').style.display='none';renderPills();openMod('editWrap');
 }
 function saveEntry(){
@@ -683,15 +811,22 @@ function saveEntry(){
   const bib=document.getElementById('fBib').checked,files=document.getElementById('fFiles').checked;
   const adult=document.getElementById('fAdult').checked||tagsList.some(t=>ADULT_TAGS.has(t.toLowerCase()));
   const subido=bib&&files?'Subido biblioteca, Subido FILES':bib?'Subido biblioteca':files?'Subido FILES':'';
+  const inkClub=document.getElementById('fInkClub').checked;
+  const inkCatsRaw=document.getElementById('fInkCats').value.trim();
+  const inkCategories=inkClub&&inkCatsRaw?inkCatsRaw.split(',').map(s=>s.trim()).filter(Boolean):[];
+  // Normalize tags before saving
+  const normalizedTags=[...new Set(tagsList.map(normalizeTag))];
   const entry={
     id:editingId||('gl_'+Date.now()+'_'+Math.random().toString(36).slice(2,5)),
     titulo,seccion:document.getElementById('fSeccion').value,estado:document.getElementById('fEstado').value,
     imagen:document.getElementById('fImagen').value.trim(),desc:document.getElementById('fDesc').value.trim(),
-    tags:tagsList,in_biblioteca:bib,in_files:files,adult,subido,
+    tags:normalizedTags,in_biblioteca:bib,in_files:files,adult,subido,
+    ink_club:inkClub,ink_categories:inkCategories,
   };
+  if(!inkClub){delete entry.ink_club;delete entry.ink_categories;}
   if(editingId){const i=allData.findIndex(x=>x.id===editingId);if(i>=0)allData[i]=entry;}
   else allData.unshift(entry);
-  const _savedPage=page; closeMod('editWrap'); buildStats(); applyFilters(); page=_savedPage; renderTable();
+  const _savedPage=page; closeMod('editWrap'); buildStats(); applyFilters(); renderInkAdmin(); page=_savedPage; renderTable();
   toast(editingId?'Historia actualizada ✓':'Historia añadida ✓','ok');
 }
 function openDel(id){
@@ -699,7 +834,7 @@ function openDel(id){
   document.getElementById('delTitle').textContent=`"${e?.titulo||id}"`;openMod('delWrap');
 }
 function confirmDelete(){
-  allData=allData.filter(x=>x.id!==deletingId);const _p2=page;closeMod('delWrap');buildStats();applyFilters();page=Math.min(_p2,Math.ceil(filtered.length/perPage)||1);renderTable();toast('Eliminada','ok');
+  allData=allData.filter(x=>x.id!==deletingId);const _p2=page;closeMod('delWrap');buildStats();applyFilters();renderInkAdmin();page=Math.min(_p2,Math.ceil(filtered.length/perPage)||1);renderTable();toast('Eliminada','ok');
 }
 
 function renderPills(){
@@ -738,9 +873,50 @@ function exportJSON(){
 }
 function importJSON(file){
   const r=new FileReader();
-  r.onload=e=>{try{const d=JSON.parse(e.target.result);if(!Array.isArray(d))throw 0;allData=d;buildStats();applyFilters();toast(`${d.length} entradas importadas ✓`,'ok');}catch{toast('JSON inválido','err');}};
+  r.onload=e=>{try{const d=JSON.parse(e.target.result);if(!Array.isArray(d))throw 0;allData=d;normalizeAllTags();buildStats();applyFilters();renderInkAdmin();toast(`${d.length} entradas importadas ✓`,'ok');}catch{toast('JSON inválido','err');}};
   r.readAsText(file);
 }
+
+function renderInkAdmin(){
+  const inkData=allData.filter(e=>e.ink_club);
+  document.getElementById('inkAdminCount').textContent=inkData.length;
+  // Group by categories
+  const allCats=new Set();
+  inkData.forEach(e=>(e.ink_categories||['Sin categoría']).forEach(c=>allCats.add(c)));
+  if(allCats.size===0)allCats.add('Sin categoría');
+  const list=document.getElementById('inkCatsList');
+  if(!inkData.length){
+    list.innerHTML='<div class="ink-empty-cat">Ninguna historia marcada como INK CLUB todavía.<br>Edita una historia y activa la opción INK CLUB.</div>';
+    return;
+  }
+  list.innerHTML=[...allCats].sort().map(cat=>{
+    const items=inkData.filter(e=>(e.ink_categories||['Sin categoría']).includes(cat));
+    const itemsHtml=items.map(e=>{
+      const cov=e.imagen?`<img src="${esc(e.imagen)}" onerror="this.style.display='none'">`:'<div style="width:30px;height:45px;background:var(--surface3);display:flex;align-items:center;justify-content:center;font-size:.9rem;opacity:.3">📖</div>';
+      return `<div class="ink-item">
+        ${cov}
+        <div class="ink-item-info">
+          <div class="ink-item-title" title="${esc(e.titulo)}">${esc(e.titulo)}</div>
+          <div class="ink-item-sec">${esc(e.seccion)}</div>
+        </div>
+        <button class="ink-item-remove" onclick="removeFromInk('${e.id}')" title="Quitar del INK CLUB">✕</button>
+      </div>`;
+    }).join('');
+    return `<div class="ink-cat-group">
+      <div class="ink-cat-head">
+        <span class="ink-cat-name">${esc(cat)}</span>
+        <span class="ink-cat-count">${items.length} historia${items.length!==1?'s':''}</span>
+      </div>
+      <div class="ink-cat-items">${itemsHtml}</div>
+    </div>`;
+  }).join('');
+}
+window.removeFromInk=function(id){
+  const e=allData.find(x=>x.id===id);
+  if(!e)return;
+  e.ink_club=false;delete e.ink_categories;
+  renderInkAdmin();toast('Quitada del INK CLUB','ok');
+};
 
 function bindEvents(){
   document.getElementById('addBtn').addEventListener('click',openAdd);
@@ -748,7 +924,7 @@ function bindEvents(){
   document.getElementById('confirmDel').addEventListener('click',confirmDelete);
   [document.getElementById('exportBtn'),document.getElementById('exportBtn2')].forEach(b=>b?.addEventListener('click',exportJSON));
   [document.getElementById('importFile'),document.getElementById('importFile2')].forEach(inp=>inp?.addEventListener('change',e=>{if(e.target.files[0])importJSON(e.target.files[0]);}));
-  ['adminSearch','fSec','fEst','fAdv'].forEach(id=>document.getElementById(id).addEventListener('input',applyFilters));
+  ['adminSearch','fSec','fEst','fAdv','fInk'].forEach(id=>document.getElementById(id)?.addEventListener('input',applyFilters));
   document.getElementById('perPage').addEventListener('change',e=>{perPage=+e.target.value;page=1;renderTable();});
   document.getElementById('tagInp').addEventListener('keydown',e=>{
     if(e.key==='Enter'||e.key===','){e.preventDefault();addTag(e.target.value);e.target.value='';}
@@ -756,6 +932,10 @@ function bindEvents(){
   });
   document.getElementById('fImagen').addEventListener('input',e=>updateCov(e.target.value.trim()));
   document.getElementById('fAdult').addEventListener('change',updateAdultLbl);
+  document.getElementById('fInkClub').addEventListener('change',e=>{
+    document.getElementById('inkCatField').style.display=e.target.checked?'block':'none';
+  });
+  document.getElementById('themeBtn')?.addEventListener('click',toggleTheme);
   document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>closeMod(b.dataset.close)));
   document.querySelectorAll('.mwrap').forEach(w=>w.addEventListener('click',e=>{if(e.target===w)closeMod(w.id);}));
   document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.mwrap.open').forEach(m=>closeMod(m.id));});
