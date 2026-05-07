@@ -2760,7 +2760,7 @@ let fOnlyAdult = false; // solo +18
 let fEstado = 'all', fSub = 'all', fTags = [], fQ = ''; // fTags is now an array
 let activeSec = 'all'; // active category tab
 let activeSort = 'recent'; // recent | rating | az
-let homeActive = true; // home view state — default to HOME
+let homeActive = false; // home view state — set by init()
 const PER_PAGE = 25;
 const secPages = {}; // current page per section key
 
@@ -2785,8 +2785,8 @@ function pushState() {
 
 function loadState() {
   const p = new URLSearchParams(location.search);
-  // Home view — default if no URL params
-  if (p.get('view') === 'home' || (!p.has('sec') && !p.has('estado') && !p.has('sub') && !p.has('tags') && !p.has('tag') && !p.has('sort') && p.get('only18') !== '1' && p.get('adult') !== '1')) {
+  // Home view — ONLY when explicitly requested via ?view=home
+  if (p.get('view') === 'home') {
     homeActive = true; return;
   }
   homeActive = false;
@@ -2812,14 +2812,18 @@ function normalizeAllTags() {
 }
 
 async function init() {
+  // Default to HOME only on fresh load (no URL params at all)
+  if (!location.search) homeActive = true;
   loadState();
   initTheme();
 
-  // If home view requested, show it immediately (skeleton)
+  // If home view, show it immediately (skeleton)
   if (homeActive) {
     document.getElementById('homeView').classList.add('active');
     document.body.classList.add('home-active');
     document.getElementById('homeNavBtn').classList.add('active');
+    // Push ?view=home so refresh stays on home
+    if (!location.search) history.replaceState(null, '', '?view=home');
   }
 
   if (SB_READY) {
@@ -2851,12 +2855,13 @@ async function init() {
   buildTagFilter();
   applyStateToUI();
 
-  // Render home stats once data is ready
+  // Always render Top 10 (needed for catalog)
+  renderTop10();
+  renderTop10Mobile();
+
   if (homeActive) {
     renderHomeStats();
   } else {
-    renderTop10();
-    renderTop10Mobile();
     renderInkClub();
     renderSections(false);
   }
