@@ -422,20 +422,18 @@ div.search-box:focus { outline: none; }
   border-bottom: 1px solid var(--border);
 }
 
-/* Right fade hint for tab scroll */
+/* Right fade hint - not needed with wrap */
 .cat-tabs-wrap {
   position: relative;
-  -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
-  mask-image: linear-gradient(to right, black 85%, transparent 100%);
 }
 
 /* ROW 1 — category pills */
 .cat-tabs {
-  display: flex; overflow-x: scroll; scrollbar-width: none;
-  padding: 10px 20px; gap: 6px;
+  max-width: 1400px; margin: 0 auto;
+  display: flex; flex-wrap: wrap;
+  padding: 8px 20px; gap: 6px;
   border-bottom: 1px solid var(--border);
   align-items: center;
-  -webkit-overflow-scrolling: touch;
 }
 .cat-tabs::-webkit-scrollbar { display: none; }
 
@@ -664,19 +662,13 @@ div.search-box:focus { outline: none; }
 }
 
 .top10-track {
-  display: flex; gap: 6px;
-  overflow-x: scroll; scrollbar-width: none;
+  display: flex; flex-wrap: wrap; gap: 6px;
   padding: 0 20px 12px;
-  -webkit-overflow-scrolling: touch;
 }
 .top10-track::-webkit-scrollbar { display: none; }
-/* Wrap for fade effect */
 .top10-track-wrap {
-  position: relative;
-  -webkit-mask-image: linear-gradient(to right, black 88%, transparent 100%);
-  mask-image: linear-gradient(to right, black 88%, transparent 100%);
+  max-width: 1400px; margin: 0 auto;
 }
-.top10-track-wrap::after { display: none; }
 
 .t10-card {
   flex: 0 0 130px;
@@ -687,6 +679,7 @@ div.search-box:focus { outline: none; }
   transition: border-color .2s, transform .2s;
   aspect-ratio: 2/3;
   background: var(--ink);
+  min-width: 0;
 }
 .t10-card:hover {
   border-color: var(--neon);
@@ -1200,7 +1193,7 @@ div.search-box:focus { outline: none; }
   .filter-row { display: none !important; }
   .mob-filter-bar { display: flex !important; }
 
-  /* ── Top10: hide horizontal scroll, show vertical list ── */
+  /* ── Top10: on mobile show vertical list instead ── */
   .top10-track { display: none !important; }
   .top10-mob-list { display: flex !important; }
   .top10-section { padding: 24px 12px 0; }
@@ -1208,16 +1201,14 @@ div.search-box:focus { outline: none; }
   /* ── Modal drag handle visible on mobile ── */
   .modal-drag-handle { display: block; }
 
-  /* ── Category tabs row — full width, wrap allowed, clear separation ── */
+  /* ── Category tabs row — compact on mobile ── */
   .cat-tabs {
-    padding: 10px 12px;
-    gap: 6px;
-    flex-wrap: wrap;          /* allow wrapping so no tab gets cut */
-    border-bottom: 1px solid var(--border2);
+    padding: 8px 12px;
+    gap: 5px;
   }
   .ctab {
     font-size: 11px;
-    padding: 6px 12px; gap: 5px;
+    padding: 5px 10px; gap: 4px;
     flex-shrink: 0;
   }
   .ctab .ctab-icon { font-size: 12px; }
