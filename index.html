@@ -34,32 +34,145 @@
 
 /* ── LIGHT MODE ────────────────────────────────────────── */
 body.light {
-  --ink: #f5f0e8;
+  --ink: #e8e3db;
   --paper: #1a1a2e;
   --screen: #f0ebe0;
   --white: #0a0a0a;
-  --muted: rgba(20,20,40,0.55);
-  --dim: rgba(20,20,40,0.35);
-  --border: rgba(20,20,40,0.12);
-  --border2: rgba(20,20,40,0.2);
+  --muted: rgba(20,20,40,0.65);
+  --dim: rgba(20,20,40,0.45);
+  --border: rgba(20,20,40,0.15);
+  --border2: rgba(20,20,40,0.22);
   --surface: #e8e2d4;
   --surface2: #ddd7c9;
+  --neon: #7a8800;
+  --neon2: #c0006a;
+  --neon3: #007a6a;
 }
 body.light .drop-panel { background: #e8e2d4; border-color: rgba(20,20,40,0.2); }
-body.light .dopt:hover { background: rgba(20,20,40,0.07); }
-body.light .modal { background: #ede8de; border-color: rgba(232,255,71,0.35); }
-body.light .modal::before { background: linear-gradient(90deg, #b8cc00, var(--neon2)); }
+body.light .dopt { color: rgba(20,20,40,0.7); }
+body.light .dopt:hover { background: rgba(20,20,40,0.07); color: #0a0a0a; }
+body.light .dopt.on { color: #7a8800; background: rgba(122,136,0,0.08); }
+body.light .dopt.on-teal { color: #007a6a; background: rgba(0,122,106,0.06); }
+body.light .dopt.on-pink { color: #c0006a; background: rgba(192,0,106,0.07); }
+body.light .modal { background: #ede8de; border-color: rgba(122,136,0,0.35); }
+body.light .modal::before { background: linear-gradient(90deg, #7a8800, #c0006a); }
 body.light .card { border-color: rgba(20,20,40,0.1); background: #e8e2d4; }
-body.light .card:hover { border-color: #b8cc00; }
+body.light .card:hover { border-color: #7a8800; }
 body.light .card-title { color: #1a1a2e; }
-body.light .ctab.on { background: rgba(184,204,0,0.15); border-color: rgba(184,204,0,0.5); color: #7a8800; }
-body.light .filter-strip { background: rgba(240,235,224,0.97); }
-body.light .topbar { background: #f0ebe0; }
+body.light .card-gen-title { color: rgba(20,20,40,0.6); }
+body.light .ctab { color: rgba(20,20,40,0.6); border-color: rgba(20,20,40,0.2); }
+body.light .ctab:hover { color: #0a0a0a; background: rgba(20,20,40,0.05); }
+body.light .ctab.on { background: rgba(122,136,0,0.15); border-color: rgba(122,136,0,0.5); color: #7a8800; }
+body.light .ctab.on .ctab-count { background: rgba(122,136,0,0.2); color: #7a8800; }
+body.light .filter-strip { background: rgba(240,235,224,0.97); border-bottom-color: rgba(20,20,40,0.15); }
+body.light .topbar { background: #f0ebe0; border-bottom-color: rgba(20,20,40,0.15); }
+body.light .topbar::after { background: linear-gradient(90deg, #7a8800, #c0006a, #007a6a); }
 body.light .hero { background: transparent; }
 body.light body::before { background-image: radial-gradient(circle, rgba(20,20,40,0.06) var(--dot-size), transparent var(--dot-size)); }
 body.light .fsheet { background: #ede8de; }
 body.light .top10-section { color: var(--paper); }
 body.light .ink-section { background: #e8e2d4; }
+body.light .ink-eyebrow { color: #0a0a0a; }
+body.light .ink-sub { color: rgba(20,20,40,0.5); }
+body.light .ink-ctab { color: rgba(20,20,40,0.6); border-color: rgba(20,20,40,0.2); }
+body.light .ink-ctab:hover { color: #0a0a0a; }
+body.light .ink-ctab.on { background: rgba(192,0,106,0.1); border-color: rgba(192,0,106,0.4); color: #c0006a; }
+body.light .search-box { color: #0a0a0a; background: rgba(20,20,40,0.06); border-color: rgba(20,20,40,0.2); }
+body.light .search-box:focus { border-color: #7a8800; background: rgba(122,136,0,0.04); }
+body.light .fdrop { color: rgba(20,20,40,0.65); border-color: rgba(20,20,40,0.22); background: rgba(20,20,40,0.04); }
+body.light .fdrop:hover { color: #0a0a0a; }
+body.light .fdrop.on { background: rgba(122,136,0,0.1); border-color: rgba(122,136,0,0.45); color: #7a8800; }
+body.light .fdrop.on-teal { background: rgba(0,122,106,0.08); border-color: rgba(0,122,106,0.4); color: #007a6a; }
+body.light .fdrop.on-pink { background: rgba(192,0,106,0.1); border-color: rgba(192,0,106,0.45); color: #c0006a; }
+body.light .adult-pill-btn { color: rgba(20,20,40,0.65); border-color: rgba(20,20,40,0.22); background: rgba(20,20,40,0.04); }
+body.light .adult-pill-btn:hover { color: #c0006a; border-color: rgba(192,0,106,.4); }
+body.light .adult-pill-btn.on { background: rgba(192,0,106,0.12); border-color: rgba(192,0,106,0.5); color: #c0006a; }
+body.light .filter-count { color: rgba(20,20,40,0.45); }
+body.light .section-title { color: #0a0a0a; }
+body.light .section-meta { color: rgba(20,20,40,0.5); }
+body.light .section-num { color: rgba(20,20,40,0.06); }
+body.light .section-title-wrap { border-left-color: #7a8800; }
+body.light .hero-eyebrow { color: #7a8800; }
+body.light .hero-h1 { color: #0a0a0a; }
+body.light .hero-h1 .accent { color: #7a8800; }
+body.light .hero-h1 .accent2 { color: #c0006a; }
+body.light .hero-jp { color: rgba(20,20,40,0.5); }
+body.light .hstat-n { color: #0a0a0a; }
+body.light .hstat-l { color: rgba(20,20,40,0.45); }
+body.light .logo-main { color: #0a0a0a; }
+body.light .logo-jp { color: #7a8800; }
+body.light .logo-dot { background: #7a8800; }
+body.light .home-nav-btn { color: rgba(20,20,40,0.6); border-color: rgba(20,20,40,0.2); }
+body.light .home-nav-btn:hover { color: #0a0a0a; border-color: rgba(20,20,40,0.35); }
+body.light .home-nav-btn.active { background: rgba(122,136,0,.08); border-color: rgba(122,136,0,.35); color: #7a8800; }
+body.light .adult-btn { color: rgba(20,20,40,0.6); border-color: rgba(20,20,40,0.2); }
+body.light .adult-btn:hover { color: #c0006a; border-color: rgba(192,0,106,.4); }
+body.light .adult-btn.active { background: rgba(192,0,106,0.12); border-color: rgba(192,0,106,0.5); color: #c0006a; }
+body.light .theme-btn { color: rgba(20,20,40,0.6); border-color: rgba(20,20,40,0.2); }
+body.light .theme-btn:hover { color: #7a8800; border-color: #7a8800; }
+body.light .ts-watermark { color: rgba(20,20,40,0.07); }
+body.light .modal-sec { color: rgba(20,20,40,0.5); }
+body.light .modal-title { color: #0a0a0a; }
+body.light .modal-desc { color: rgba(20,20,40,0.75); }
+body.light .fsheet-title { color: #0a0a0a; }
+body.light .fsheet-sec-label { color: rgba(20,20,40,0.5); }
+body.light .fsopt { color: rgba(20,20,40,0.65); background: rgba(20,20,40,0.05); border-color: rgba(20,20,40,0.15); }
+body.light .fsopt:hover { background: rgba(20,20,40,0.1); color: #0a0a0a; }
+body.light .fsopt.on { background: rgba(122,136,0,0.12); border-color: rgba(122,136,0,0.4); color: #7a8800; }
+body.light .fsopt.on-teal { background: rgba(0,122,106,0.1); border-color: rgba(0,122,106,0.35); color: #007a6a; }
+body.light .fsopt.on-pink { background: rgba(192,0,106,0.1); border-color: rgba(192,0,106,0.35); color: #c0006a; }
+body.light .fsheet-toggle-lbl { color: #0a0a0a; }
+body.light .fsheet-toggle-sub { color: rgba(20,20,40,0.5); }
+body.light .empty-big { color: rgba(20,20,40,0.07); }
+body.light .empty p { color: rgba(20,20,40,0.5); }
+body.light .pag-btn { background: rgba(20,20,40,0.06); border-color: rgba(20,20,40,0.15); color: rgba(20,20,40,0.65); }
+body.light .pag-btn:hover:not(:disabled) { border-color: rgba(20,20,40,0.3); color: #0a0a0a; }
+body.light .pag-btn.on { background: rgba(122,136,0,0.12); border-color: rgba(122,136,0,0.4); color: #7a8800; }
+body.light .card-avg { background: rgba(122,136,0,0.15); color: #7a8800; }
+body.light .cstar { color: #7a8800; }
+body.light .hv-h1 { color: #0a0a0a; }
+body.light .hv-h1 .a1 { color: #7a8800; }
+body.light .hv-h1 .a2 { color: #c0006a; }
+body.light .hv-eyebrow { color: #7a8800; }
+body.light .hv-jp { color: rgba(20,20,40,0.45); }
+body.light .hv-desc { color: rgba(20,20,40,0.7); }
+body.light .hv-feat-card { background: var(--surface); }
+body.light .hv-feat-h3 { color: #0a0a0a; }
+body.light .hv-feat-p { color: rgba(20,20,40,0.65); }
+body.light .hv-feat-icon { color: #7a8800; }
+body.light .hv-how-card { background: var(--surface); }
+body.light .hv-how-h3 { color: #0a0a0a; }
+body.light .hv-how-p { color: rgba(20,20,40,0.65); }
+body.light .hv-how-icon { filter: none; }
+body.light .hv-how-title { color: #0a0a0a; }
+body.light .hv-how-sub { color: rgba(20,20,40,0.5); }
+body.light .hv-ink-block { background: var(--surface); }
+body.light .hv-ink-inner { background: transparent; }
+body.light .hv-ink-h2 { color: #0a0a0a; }
+body.light .hv-ink-p { color: rgba(20,20,40,0.65); }
+body.light .hv-ink-step-n { color: #c0006a; }
+body.light .hv-cat-row { background: var(--surface2); }
+body.light .hv-cat-row-name { color: #0a0a0a; }
+body.light .hv-cat-row-count { color: rgba(20,20,40,0.5); }
+body.light .hv-stats-band { background: var(--surface); }
+body.light .hv-stat-n { color: #0a0a0a; }
+body.light .hv-stat-l { color: rgba(20,20,40,0.5); }
+body.light .hv-footer { background: var(--surface); border-top-color: rgba(20,20,40,0.15); }
+body.light .hv-footer-logo { color: #0a0a0a; }
+body.light .hv-footer-logo span { color: #7a8800; }
+body.light .hv-footer-sub { color: rgba(20,20,40,0.45); }
+body.light .hv-footer-copy { color: rgba(20,20,40,0.45); }
+body.light .auth-modal { background: #ede8de; }
+body.light .auth-logo-m { color: rgba(20,20,40,0.5); }
+body.light .auth-brand-m { color: #0a0a0a; }
+body.light .auth-title-m { color: #0a0a0a; }
+body.light .auth-sub-m { color: rgba(20,20,40,0.6); }
+body.light .auth-fields input { background: rgba(20,20,40,0.06); border-color: rgba(20,20,40,0.2); color: #0a0a0a; }
+body.light .auth-toggle-m { color: rgba(20,20,40,0.6); }
+body.light .card-subido .sbib { background: rgba(0,122,106,0.15); color: #007a6a; }
+body.light .card-subido .sfiles { background: rgba(122,136,0,0.15); color: #7a8800; }
+body.light .mob-filter-btn { background: #e8e2d4; border-color: rgba(20,20,40,0.2); color: rgba(20,20,40,0.7); }
+body.light .scroll-top { background: rgba(20,20,40,0.1); border-color: rgba(20,20,40,0.2); color: rgba(20,20,40,0.6); }
 
 /* ── THEME TOGGLE BTN ─────────────────────────────────── */
 .theme-btn {
@@ -2058,14 +2171,7 @@ body.light .hv-cat-row { background: var(--surface2); }
           Tu preferencia se guarda automáticamente en el navegador.
         </p>
       </div>
-      <div class="hv-how-card" data-n="06">
-        <span class="hv-how-icon">⚙️</span>
-        <h3 class="hv-how-h3"><span style="color:var(--neon3)">Admin</span> panel</h3>
-        <p class="hv-how-p">
-          El panel de administración permite añadir, editar y eliminar títulos,
-          marcar historias como INK CLUB con categorías, normalizar tags y exportar el JSON.
-        </p>
-      </div>
+
     </div>
   </div>
 
@@ -2623,7 +2729,7 @@ let fOnlyAdult = false; // solo +18
 let fEstado = 'all', fSub = 'all', fTags = [], fQ = ''; // fTags is now an array
 let activeSec = 'all'; // active category tab
 let activeSort = 'recent'; // recent | rating | az
-let homeActive = false; // home view state
+let homeActive = true; // home view state — default to HOME
 const PER_PAGE = 25;
 const secPages = {}; // current page per section key
 
@@ -2648,8 +2754,11 @@ function pushState() {
 
 function loadState() {
   const p = new URLSearchParams(location.search);
-  // Home view
-  if (p.get('view') === 'home') { homeActive = true; return; }
+  // Home view — default if no URL params
+  if (p.get('view') === 'home' || (!p.has('sec') && !p.has('estado') && !p.has('sub') && !p.has('tags') && !p.has('tag') && !p.has('sort') && p.get('only18') !== '1' && p.get('adult') !== '1')) {
+    homeActive = true; return;
+  }
+  homeActive = false;
   if (p.has('sec'))   activeSec  = p.get('sec');
   if (p.has('estado')) fEstado   = p.get('estado');
   if (p.has('sub'))   fSub       = p.get('sub');
@@ -3097,11 +3206,14 @@ function renderSections(resetPages) {
 
   // Always restore visibility first, then override for specific tabs
   main.style.display = '';
-  document.getElementById('top10Section').style.display = '';
+  // Top 10: only show on ink_club tab — hide everywhere else
+  document.getElementById('top10Section').style.display = 'none';
+
+  // INK CLUB section: only show on 'all' and 'ink_club' tabs
+  // (handled inside renderInkClub)
 
   // ── TAB "INK CLUB" ───────────────────────────────────────
   if (activeSec === 'ink_club') {
-    document.getElementById('top10Section').style.display = 'none';
     renderInkClub();
     empty.classList.remove('show');
     main.style.display = 'none';
