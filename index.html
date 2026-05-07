@@ -65,6 +65,7 @@ body.light .ctab:hover { color: #0a0a0a; background: rgba(20,20,40,0.05); }
 body.light .ctab.on { background: rgba(122,136,0,0.15); border-color: rgba(122,136,0,0.5); color: #7a8800; }
 body.light .ctab.on .ctab-count { background: rgba(122,136,0,0.2); color: #7a8800; }
 body.light .filter-strip { background: rgba(240,235,224,0.97); border-bottom-color: rgba(20,20,40,0.15); }
+body.light .cat-tabs-wrap::after { background: linear-gradient(to left, rgba(240,235,224,0.97) 20%, transparent 100%); }
 body.light .topbar { background: #f0ebe0; border-bottom-color: rgba(20,20,40,0.15); }
 body.light .topbar::after { background: linear-gradient(90deg, #7a8800, #c0006a, #007a6a); }
 body.light .hero { background: transparent; }
@@ -421,6 +422,18 @@ div.search-box:focus { outline: none; }
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
+/* Right fade hint for tab scroll — on the wrap, not filter-strip */
+.cat-tabs-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.cat-tabs-wrap::after {
+  content: '';
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: 48px;
+  background: linear-gradient(to left, rgba(17,17,24,0.97) 20%, transparent 100%);
+  pointer-events: none; z-index: 10;
+}
 
 /* ROW 1 — category pills */
 .cat-tabs {
@@ -429,6 +442,7 @@ div.search-box:focus { outline: none; }
   padding: 10px 20px; gap: 6px;
   border-bottom: 1px solid var(--border);
   align-items: center;
+  -webkit-overflow-scrolling: touch;
 }
 .cat-tabs::-webkit-scrollbar { display: none; }
 
@@ -2235,6 +2249,7 @@ body.light .hv-cat-row { background: var(--surface2); }
 <!-- FILTER STRIP: row 1 = category tabs, row 2 = secondary filters -->
 <div class="filter-strip">
   <!-- ROW 1: category pills (static fallback + JS fills counts) -->
+  <div class="cat-tabs-wrap">
   <div class="cat-tabs" id="catTabs">
     <button class="ctab on" data-sec="all"><span class="ctab-icon">✦</span> Todas <span class="ctab-count" id="tc-all">—</span></button>
     <button class="ctab" data-sec="ink_club" style="border-color:rgba(255,71,163,0.3);color:var(--neon2)"><span class="ctab-icon">📖</span> INK CLUB <span class="ctab-count" id="tc-ink_club">—</span></button>
@@ -2246,6 +2261,7 @@ body.light .hv-cat-row { background: var(--surface2); }
     <button class="ctab" data-sec="Cómic"><span class="ctab-icon">💥</span> Cómic <span class="ctab-count" id="tc-Comic">—</span></button>
     <button class="ctab" data-sec="Novela Gráfica"><span class="ctab-icon">📗</span> Novela Gráfica <span class="ctab-count" id="tc-Novela_Grafica">—</span></button>
   </div>
+  </div><!-- /cat-tabs-wrap -->
 
   <!-- ROW 2: dropdown filters all in one line -->
   <div class="filter-row" id="filterRow">
@@ -3206,15 +3222,15 @@ function renderSections(resetPages) {
 
   // Always restore visibility first, then override for specific tabs
   main.style.display = '';
-  // Top 10: only show on ink_club tab — hide everywhere else
-  document.getElementById('top10Section').style.display = 'none';
 
-  // INK CLUB section: only show on 'all' and 'ink_club' tabs
-  // (handled inside renderInkClub)
+  // Top 10: show only on 'all' tab, hide on all other tabs
+  document.getElementById('top10Section').style.display = activeSec === 'all' ? '' : 'none';
+
+  // INK CLUB section: show only on 'all' and 'ink_club' — renderInkClub handles visibility
+  renderInkClub();
 
   // ── TAB "INK CLUB" ───────────────────────────────────────
   if (activeSec === 'ink_club') {
-    renderInkClub();
     empty.classList.remove('show');
     main.style.display = 'none';
     pushState();
