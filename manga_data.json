@@ -1,5 +1,73 @@
 [
   {
+    "id": "gl_1778059815704_6u7",
+    "titulo": "Sickening Pleasure",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/04/portada-yuri-online.jpg",
+    "desc": "Un día, Seokyung descubre accidentalmente el secreto más oscuro de Eunha….",
+    "tags": [
+      "Drama",
+      "Romance"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": true,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778059783857_jhq",
+    "titulo": "Omae Gotoki Ga Maou Ni Kateru To Omou Na To Gachizei Ni Yuusha Party Wo Tsuihou Sareta Node Outo De Kimama Ni Kurashitai",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/05/Gotoki.jpg",
+    "desc": "Según la profecía de Dios, Flumm fue elegida para ser uno de los miembros del viaje para derrotar al rey demonio. Todo el mundo era un héroe y poseía un poder de primera clase. Sin embargo, por alguna razón sólo Flumm no poseía el poder de luchar, y todos sus valores eran 0. Mientras se avergonzaba, continuó esforzándose para ser útil para los héroes. Sin embargo, un día, fue engañada por uno de los miembros del grupo, quien le dijo que “ya no era necesaria” y la vendió a un comerciante de esclavos. Flumm se vio obligada a vivir dentro de un ambiente grosero como esclava. Sin embargo, allí se encontró con una “espada maldita”, y se dio cuenta del verdadero valor del poder más débil “inverso”. La chica, que adquirió el poder de luchar, era indiferente al rey demonio y decidió vivir pacíficamente como una aventurera junto a una esclava que conoció. Esta es una historia de una chica que continuó viviendo desde el fondo para recuperar su pacifica vida.",
+    "tags": [
+      "Accion",
+      "Drama",
+      "Fantasia",
+      "Horror",
+      "Aventura"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778059751150_pt1",
+    "titulo": "Yuri ni Hasamaru Otoko wa Shineba Ii?!",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/05/0001.jpg",
+    "desc": "Katagiri era primera trompeta en la banda de su instituto. Pero entonces llegó una nueva alumna, Aikawa, procedente de una potente escuela musical, y ocupó su puesto. Al principio, Katagiri estaba celosa del talento natural de Aikawa. Pero a medida que practicaban, Katagiri empezó a apreciar la alegría y el amor por la música de Aikawa, y empezó a disfrutar tocando con ella, aunque ya no era la trompeta principal. Justo cuando Katagiri pensaba que tenían algo especial juntas, vio a Aikawa pasando el tiempo con un chico…",
+    "tags": [
+      "Drama",
+      "Escolar",
+      "Romance"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778059496628_74d",
+    "titulo": "Hone ni Negai wo, Hoshi ni Noroi wo",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://static.comix.to/7c9c/i/9/97/69d91a5dd3ead.jpg",
+    "desc": "Akane, la hermana gemela de Aoi, mantenía una relación de cuento de hadas con su vecino de al lado y amigo de la infancia, Mashiro.",
+    "tags": [
+      "Drama",
+      "Romance"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
     "id": "gl_1777928221413_wmt",
     "titulo": "G.G",
     "seccion": "Manhua",
@@ -25,7 +93,7 @@
     "tags": [
       "Drama",
       "Romance",
-      "Slice of Life"
+      "Slice_of_Life"
     ],
     "in_biblioteca": true,
     "in_files": false,
@@ -55,7 +123,7 @@
     "titulo": "Flirty Teasing by Your Jade Fingers",
     "seccion": "Manhua",
     "estado": "Continúa",
-    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6qMB0aNjcY7rHsgO9tcdiDLefpPvs_SlNUg&s",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/03/portada-1.jpg",
     "desc": "\"Shen Qingshuang es una \"\"Guanyin\"\" de noble cuna, pero también una bestia enjaulada confinada en las cámaras interiores. Mu Yunzhao es hija de un general, una \"\"Rakshasa\"\" y la loba solitaria de la capital. Desprecia a la Rakshasa por su desafío a las convenciones; aborrece a la Guanyin por su arrogancia y rigidez moral.\n\nSin embargo, ninguna de las dos sabe que, en sus sueños, el Guanyin anhela desgarrar sus vestiduras de seda, quemar las reglas que la atan y caer al abismo junto a ella. Tampoco sabe que, en lo más profundo de su corazón, el Rakshasa teje una red, atrapando himnos sagrados, deseando enredarse con ella hasta el final.\n\n¿Es Guanyin quien somete al demonio, o es el demonio quien vence a Guanyin? La respuesta se oculta en aquel primer encuentro, en plena primavera, cuando el Rakshasa tomó las riendas y los hilos de Guanyin se descontrolaron…\"",
     "tags": [
       "Drama",
@@ -299,7 +367,7 @@
     "imagen": "https://static.comix.to/865c/i/4/e0/68e48dca4a029.jpg",
     "desc": "El secreto de Min-sung y tres años de amor entre dos personas diferentes los lleva a verse envueltos en eventos inesperados.",
     "tags": [
-      "Drama.",
+      "Drama",
       "Misterio",
       "Romance"
     ],
@@ -350,8 +418,7 @@
     "desc": "Un año después del fin del brote zombi que arrasó Corea, 'Doyoung', que perdió a su hermano menor a causa de un zombi, un día conoce accidentalmente a 'Jion', un estudiante que se parece mucho al zombi que mordió a su hermano. Una amistad llena de sospechas entre dos personas que continúa de manera arriesgada. ¿Puede durar esta relación?",
     "tags": [
       "Drama",
-      "Horro",
-      "Zombie"
+      "Horror"
     ],
     "in_biblioteca": true,
     "in_files": false,
@@ -1098,7 +1165,9 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": []
   },
   {
     "id": "become_her_bride_58",
@@ -1510,7 +1579,9 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": []
   },
   {
     "id": "illicit_83",
@@ -2383,8 +2454,8 @@
     "imagen": "https://static.comix.to/0fa8/i/9/86/68e4ab10c8813.jpg",
     "desc": "Elizabeth, una chica enfermiza reencarna como la villana de un juego otome sin saber que esta destinada a ser derrotada por los protagonistas, ¡La chica inconscientemente comienza una vida sin igual! ¡Esta es la historia de una chica que se alegra por tener un cuerpo saludable y sus actividades que rompen las banderas del juego! si se entiende si pongo banderas, que es este concepto de los puntos criticos de un juego otome para avanzar en las rutas verdad?",
     "tags": [
-      "Magia",
-      "Vida_Escolar"
+      "Fantasia",
+      "Escolar"
     ],
     "in_biblioteca": true,
     "in_files": false,
@@ -2464,7 +2535,7 @@
     "desc": "",
     "tags": [
       "Romance",
-      "Vida_Escolar"
+      "Escolar"
     ],
     "in_biblioteca": true,
     "in_files": false,
@@ -2479,7 +2550,7 @@
     "imagen": "https://static.comix.to/4101/i/1/92/68e087d7a8fc7.jpg",
     "desc": "Una historia sobre una chica de 175 cm de altura y su enamorado, una chica de 160 cm de altura.",
     "tags": [
-      "Vida_Escolar"
+      "Escolar"
     ],
     "in_biblioteca": true,
     "in_files": false,
@@ -2782,7 +2853,7 @@
       "Comedia",
       "Romance",
       "Slice_of_Life",
-      "Vida_Escolar"
+      "Escolar"
     ],
     "in_biblioteca": true,
     "in_files": false,
@@ -3833,7 +3904,7 @@
       "Drama",
       "Erotica",
       "Romance",
-      "Vida_Escolar"
+      "Escolar"
     ],
     "in_biblioteca": true,
     "in_files": true,
@@ -4296,7 +4367,7 @@
     "tags": [
       "Comedia",
       "Drama",
-      "Historico",
+      "Historica",
       "Viaje_Tiempo"
     ],
     "in_biblioteca": true,
@@ -4518,7 +4589,7 @@
       "Romance",
       "Supernatural",
       "Slice_of_Life",
-      "Vida_Escolar"
+      "Escolar"
     ],
     "in_biblioteca": true,
     "in_files": false,
@@ -4672,7 +4743,7 @@
     "tags": [
       "Drama",
       "Romance",
-      "Vida_Escolar"
+      "Escolar"
     ],
     "in_biblioteca": true,
     "in_files": false,
@@ -5502,7 +5573,7 @@
     "desc": "Es el primer día de Vera en su nueva escuela, el día va mal ¡sus compañeras deciden evitarla! Pero todo cambia cuando Nieve le revela el gran secreto de este lugar ¡Es una escuela para vampiras!",
     "tags": [
       "Romance",
-      "Vamipiras"
+      "Vampiras"
     ],
     "in_biblioteca": true,
     "in_files": false,
