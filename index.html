@@ -340,7 +340,6 @@ div.search-box:focus { outline: none; }
 .hero {
   position: relative; z-index: 1;
   padding: 100px 20px 0;
-  overflow: hidden;
 }
 
 /* manga speed lines behind hero text */
@@ -421,25 +420,22 @@ div.search-box:focus { outline: none; }
   background: rgba(17,17,24,0.97);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
-  width: 100vw;
-  left: 0;
 }
+
 /* Right fade hint for tab scroll */
 .cat-tabs-wrap {
   position: relative;
   -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
   mask-image: linear-gradient(to right, black 85%, transparent 100%);
 }
-.cat-tabs-wrap::after { display: none; }
 
 /* ROW 1 — category pills */
 .cat-tabs {
-  display: flex; overflow-x: auto; scrollbar-width: none;
+  display: flex; overflow-x: scroll; scrollbar-width: none;
   padding: 10px 20px; gap: 6px;
   border-bottom: 1px solid var(--border);
   align-items: center;
   -webkit-overflow-scrolling: touch;
-  width: 100%;
 }
 .cat-tabs::-webkit-scrollbar { display: none; }
 
@@ -669,10 +665,9 @@ div.search-box:focus { outline: none; }
 
 .top10-track {
   display: flex; gap: 6px;
-  overflow-x: auto; scrollbar-width: none;
+  overflow-x: scroll; scrollbar-width: none;
   padding: 0 20px 12px;
   -webkit-overflow-scrolling: touch;
-  width: 100%;
 }
 .top10-track::-webkit-scrollbar { display: none; }
 /* Wrap for fade effect */
