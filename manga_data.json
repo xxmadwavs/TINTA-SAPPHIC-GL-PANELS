@@ -1167,7 +1167,10 @@
     "adult": true,
     "subido": "Subido biblioteca, Subido FILES",
     "ink_club": true,
-    "ink_categories": []
+    "ink_categories": [
+      "2025",
+      "Manhwa"
+    ]
   },
   {
     "id": "become_her_bride_58",
@@ -1381,7 +1384,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2026",
+      "Manhwa"
+    ]
   },
   {
     "id": "finding_assistant_manager_kim_71",
@@ -1581,7 +1589,10 @@
     "adult": false,
     "subido": "Subido biblioteca, Subido FILES",
     "ink_club": true,
-    "ink_categories": []
+    "ink_categories": [
+      "2025",
+      "Manhwa"
+    ]
   },
   {
     "id": "illicit_83",
@@ -1684,7 +1695,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Manhwa"
+    ]
   },
   {
     "id": "lilith_89",
@@ -1934,7 +1950,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Manhwa"
+    ]
   },
   {
     "id": "outro_103",
@@ -2311,7 +2332,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Manhwa"
+    ]
   },
   {
     "id": "white_angels_have_no_rest_126",
@@ -3408,7 +3434,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Manga"
+    ]
   },
   {
     "id": "breath_supreme_yuri_fetish_anthology_192",
@@ -3476,7 +3507,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2026",
+      "Manga"
+    ]
   },
   {
     "id": "falling_in_love_in_one_night_196",
@@ -3728,7 +3764,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Manga"
+    ]
   },
   {
     "id": "kimi_to_tsuzuru_utakata_211",
@@ -3817,7 +3858,7 @@
   },
   {
     "id": "maitsuki_niwa_tsuki_ooya_tsuki_216",
-    "titulo": "Maitsuki Niwa Tsuki Ooya Tsuki",
+    "titulo": "Maitsuki Niwa Tsuki Ooya Tsuki (Monthly in the Garden with My Landlord)",
     "seccion": "Manga",
     "estado": "Finalizado",
     "imagen": "https://static.comix.to/f039/i/4/c5/68e0c639077c2.jpg",
@@ -3830,7 +3871,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Manga"
+    ]
   },
   {
     "id": "marking_217",
@@ -4136,7 +4182,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Manga"
+    ]
   },
   {
     "id": "the_eternity_for_you_235",
@@ -5183,7 +5234,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2026",
+      "Manhua"
+    ]
   },
   {
     "id": "couple_of_mirrors_298",
@@ -5219,7 +5275,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Manhua"
+    ]
   },
   {
     "id": "half_300",
@@ -5304,7 +5365,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Manhua"
+    ]
   },
   {
     "id": "my_dearest_nemesis_305",
@@ -5322,7 +5388,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Manhua"
+    ]
   },
   {
     "id": "only_need_to_love_once_306",
@@ -5390,7 +5461,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Manhua"
+    ]
   },
   {
     "id": "straight_girl_trap_310",
@@ -5970,7 +6046,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2026",
+      "Webtoon"
+    ]
   },
   {
     "id": "the_girlfriend_project_347",
@@ -5986,7 +6067,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Webtoon"
+    ]
   },
   {
     "id": "backstage___like_it_when_you_are_in_love_348",
@@ -6265,7 +6351,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2026",
+      "Sin Clasificación"
+    ]
   },
   {
     "id": "heavy_vinyl_vol__1_365",
@@ -6359,7 +6450,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2026",
+      "Comic"
+    ]
   },
   {
     "id": "hiedra_venenosa_1__el_c_rculo_virtuoso_371",
@@ -6772,7 +6868,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Novela Gráfica"
+    ]
   },
   {
     "id": "enamorada_398",
@@ -6863,7 +6964,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Novela Gráfica"
+    ]
   },
   {
     "id": "la_aguja_404",
@@ -6892,7 +6998,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Novela Gráfica"
+    ]
   },
   {
     "id": "la_chica_del_mar_406",
@@ -6952,7 +7063,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2026",
+      "Novela Gráfica"
+    ]
   },
   {
     "id": "laura_dean_me_ha_vuelto_a_dejar_410",
@@ -6967,7 +7083,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2025",
+      "Novela Gráfica"
+    ]
   },
   {
     "id": "llevame_contigo_411",
