@@ -263,7 +263,7 @@ body::after {
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.15} }
 
 .topbar-center {
-  flex: 1; max-width: 400px; margin: 0 24px;
+  flex: 1; min-width: 0; max-width: 400px; margin: 0 16px;
   position: relative;
 }
 .search-box {
@@ -304,7 +304,7 @@ div.search-box:focus { outline: none; }
   font-size: 13px; color: var(--dim); pointer-events: none;
 }
 
-.topbar-right { display: flex; align-items: center; gap: 8px; }
+.topbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 
 .adult-btn {
   display: flex; align-items: center; gap: 6px;
@@ -421,19 +421,16 @@ div.search-box:focus { outline: none; }
   background: rgba(17,17,24,0.97);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
+  width: 100vw;
+  left: 0;
 }
 /* Right fade hint for tab scroll */
 .cat-tabs-wrap {
   position: relative;
-  contain: layout;
+  -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  mask-image: linear-gradient(to right, black 85%, transparent 100%);
 }
-.cat-tabs-wrap::after {
-  content: '';
-  position: absolute; top: 0; right: 0; bottom: 0;
-  width: 48px;
-  background: linear-gradient(to left, rgba(17,17,24,0.97) 20%, transparent 100%);
-  pointer-events: none; z-index: 10;
-}
+.cat-tabs-wrap::after { display: none; }
 
 /* ROW 1 — category pills */
 .cat-tabs {
@@ -681,15 +678,10 @@ div.search-box:focus { outline: none; }
 /* Wrap for fade effect */
 .top10-track-wrap {
   position: relative;
-  contain: layout;
+  -webkit-mask-image: linear-gradient(to right, black 88%, transparent 100%);
+  mask-image: linear-gradient(to right, black 88%, transparent 100%);
 }
-.top10-track-wrap::after {
-  content: '';
-  position: absolute; top: 0; right: 0; bottom: 12px;
-  width: 60px;
-  background: linear-gradient(to left, var(--screen) 10%, transparent 100%);
-  pointer-events: none; z-index: 5;
-}
+.top10-track-wrap::after { display: none; }
 
 .t10-card {
   flex: 0 0 130px;
@@ -1134,6 +1126,21 @@ div.search-box:focus { outline: none; }
     gap: 20px; justify-content: flex-start;
   }
   .hstat { align-items: flex-start; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE — MEDIUM (split screen)  ≤ 750px
+══════════════════════════════════════════════════════════ */
+@media (max-width: 750px) {
+  /* Topbar: hide search on medium screens, compress buttons */
+  .topbar-center { display: none; }
+  .logo-jp { display: none; }
+  /* Home nav btn: icon only */
+  .home-nav-btn { padding: 5px 8px; font-size: 10px; }
+  /* Adult btn: hide label */
+  #adultLbl { display: none; }
+  /* Filter strip: wrap tabs */
+  .cat-tabs { flex-wrap: nowrap; }
 }
 
 /* ══════════════════════════════════════════════════════════
