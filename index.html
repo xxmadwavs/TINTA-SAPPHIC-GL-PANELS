@@ -919,6 +919,18 @@ div.search-box:focus { outline: none; }
   /* ── Filter strip — adjust sticky top ── */
   .filter-strip { top: 100px; }
 
+  /* ── On mobile: hide desktop filter row, show mob bar ── */
+  .filter-row { display: none !important; }
+  .mob-filter-bar { display: flex !important; }
+
+  /* ── Top10: hide horizontal scroll, show vertical list ── */
+  .top10-track { display: none !important; }
+  .top10-mob-list { display: flex !important; }
+  .top10-section { padding: 24px 12px 0; }
+
+  /* ── Modal drag handle visible on mobile ── */
+  .modal-drag-handle { display: block; }
+
   /* ── Category tabs row — full width, wrap allowed, clear separation ── */
   .cat-tabs {
     padding: 10px 12px;
@@ -1047,6 +1059,215 @@ div.search-box:focus { outline: none; }
   content: ''; display: inline-block;
   width: 18px; height: 1px;
   background: rgba(232,255,71,0.3);
+}
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE FILTER BOTTOM SHEET
+══════════════════════════════════════════════════════════ */
+.mob-filter-bar {
+  display: none; /* shown in mobile media query */
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(17,17,24,0.97);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto; scrollbar-width: none;
+}
+.mob-filter-bar::-webkit-scrollbar { display: none; }
+
+.mob-filter-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 13px; border-radius: 100px;
+  border: 1px solid var(--border2);
+  background: rgba(245,240,232,0.04); color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500;
+  cursor: pointer; white-space: nowrap; flex-shrink: 0;
+  transition: all .18s;
+}
+.mob-filter-btn:hover { color: var(--paper); border-color: rgba(245,240,232,0.3); }
+.mob-filter-btn.active { background: rgba(232,255,71,0.1); border-color: rgba(232,255,71,0.45); color: var(--neon); }
+.mob-filter-btn .mfb-icon { font-size: 13px; }
+.mob-active-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--neon2); flex-shrink: 0;
+  display: none;
+}
+.mob-filter-btn.has-active .mob-active-dot { display: block; }
+
+/* active filter pills in the mob bar */
+.mob-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 10px; border-radius: 100px;
+  font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+  cursor: pointer; white-space: nowrap; flex-shrink: 0;
+  transition: all .15s;
+}
+.mob-chip-estado { background: rgba(232,255,71,0.1); border: 1px solid rgba(232,255,71,0.4); color: var(--neon); }
+.mob-chip-sub    { background: rgba(71,255,224,0.08); border: 1px solid rgba(71,255,224,0.35); color: var(--neon3); }
+.mob-chip-tag    { background: rgba(255,71,163,0.1); border: 1px solid rgba(255,71,163,0.4); color: var(--neon2); }
+.mob-chip-adult  { background: rgba(255,71,163,0.12); border: 1px solid rgba(255,71,163,0.5); color: var(--neon2); }
+.mob-chip-sort   { background: rgba(245,240,232,0.06); border: 1px solid rgba(245,240,232,0.2); color: var(--muted); }
+.mob-chip .mob-chip-x { font-size: 10px; opacity: .6; margin-left: 1px; }
+
+/* bottom sheet overlay */
+.fsheet-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 480;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+}
+.fsheet-overlay.open { display: block; }
+
+/* bottom sheet panel */
+.fsheet {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 490;
+  background: #16161f;
+  border-top: 1px solid var(--border2);
+  border-radius: 20px 20px 0 0;
+  padding: 0 0 env(safe-area-inset-bottom, 16px);
+  transform: translateY(100%);
+  transition: transform .32s cubic-bezier(0.32, 0.72, 0, 1);
+  max-height: 85vh;
+  display: flex; flex-direction: column;
+}
+.fsheet.open { transform: translateY(0); }
+
+.fsheet-handle {
+  width: 36px; height: 4px; border-radius: 2px;
+  background: rgba(245,240,232,0.18);
+  margin: 12px auto 0;
+  flex-shrink: 0;
+}
+.fsheet-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px 12px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.fsheet-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem; letter-spacing: 2px; color: var(--white);
+}
+.fsheet-reset {
+  font-family: 'DM Sans', sans-serif; font-size: 12px;
+  color: var(--neon2); background: none; border: none; cursor: pointer;
+  padding: 4px 8px;
+}
+.fsheet-reset:disabled { opacity: .3; pointer-events: none; }
+
+.fsheet-body {
+  overflow-y: auto; padding: 4px 0 8px;
+  flex: 1;
+}
+.fsheet-section {
+  padding: 14px 20px 8px;
+  border-bottom: 1px solid var(--border);
+}
+.fsheet-section:last-child { border-bottom: none; }
+.fsheet-sec-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--dim); margin-bottom: 10px;
+}
+.fsheet-opts {
+  display: flex; flex-wrap: wrap; gap: 7px;
+}
+.fsopt {
+  padding: 7px 15px; border-radius: 100px;
+  border: 1px solid var(--border2);
+  background: rgba(245,240,232,0.04); color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: 13px;
+  cursor: pointer; transition: all .15s;
+}
+.fsopt:active { transform: scale(0.95); }
+.fsopt.on       { background: rgba(232,255,71,0.12); border-color: rgba(232,255,71,0.5); color: var(--neon); }
+.fsopt.on-teal  { background: rgba(71,255,224,0.1);  border-color: rgba(71,255,224,0.4); color: var(--neon3); }
+.fsopt.on-pink  { background: rgba(255,71,163,0.12); border-color: rgba(255,71,163,0.5); color: var(--neon2); }
+
+.fsheet-toggles { display: flex; flex-direction: column; gap: 1px; }
+.fsheet-toggle-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 20px;
+  cursor: pointer; transition: background .12s;
+}
+.fsheet-toggle-row:active { background: rgba(245,240,232,0.04); }
+.fsheet-toggle-lbl { font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--paper); }
+.fsheet-toggle-sub { font-size: 11px; color: var(--dim); margin-top: 1px; }
+.ftog {
+  width: 44px; height: 24px; border-radius: 100px;
+  background: rgba(245,240,232,0.12); position: relative;
+  transition: background .2s; flex-shrink: 0;
+}
+.ftog.on { background: var(--neon2); }
+.ftog::after {
+  content: ''; position: absolute; top: 3px; left: 3px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--screen); transition: transform .2s;
+}
+.ftog.on::after { transform: translateX(20px); }
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE TOP 10 — Vertical list
+══════════════════════════════════════════════════════════ */
+.top10-mob-list {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+}
+.t10m-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background .12s;
+}
+.t10m-item:last-child { border-bottom: none; }
+.t10m-item:active { background: rgba(245,240,232,0.03); }
+.t10m-rank-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem; line-height: 1;
+  color: rgba(245,240,232,0.15);
+  width: 28px; text-align: center; flex-shrink: 0;
+}
+.t10m-item:nth-child(1) .t10m-rank-num { color: rgba(255,215,0,0.7); }
+.t10m-item:nth-child(2) .t10m-rank-num { color: rgba(192,192,192,0.6); }
+.t10m-item:nth-child(3) .t10m-rank-num { color: rgba(205,127,50,0.65); }
+.t10m-cover {
+  width: 40px; height: 60px; flex-shrink: 0;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.t10m-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.t10m-cover-gen { width: 100%; height: 100%; background: var(--gen-bg,#111118); }
+.t10m-info { flex: 1; min-width: 0; }
+.t10m-title {
+  font-family: 'DM Sans', sans-serif; font-weight: 500;
+  font-size: 13px; line-height: 1.3; color: var(--white);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+.t10m-meta { display: flex; align-items: center; gap: 8px; }
+.t10m-score {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px; color: var(--neon);
+}
+.t10m-votes { font-size: 10px; color: var(--dim); }
+.t10m-medal { font-size: 13px; }
+.t10m-arrow {
+  font-size: 12px; color: var(--dim);
+  flex-shrink: 0; padding-right: 4px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   SWIPE-TO-CLOSE MODAL
+══════════════════════════════════════════════════════════ */
+.modal-drag-handle {
+  display: none; /* shown on mobile */
+  width: 36px; height: 4px; border-radius: 2px;
+  background: rgba(245,240,232,0.18);
+  margin: 10px auto 0;
+  cursor: grab;
 }
 
 /* ── AUTH BUTTON (topbar) ─────────────────────────────── */
@@ -1391,6 +1612,95 @@ div.search-box:focus { outline: none; }
   </div>
 </div>
 
+<!-- MOBILE FILTER BAR (shown only on mobile) -->
+<div class="mob-filter-bar" id="mobFilterBar" style="display:none">
+  <button class="mob-filter-btn" id="mobFilterOpenBtn">
+    <span class="mfb-icon">⊟</span> Filtros
+    <span class="mob-active-dot" id="mobActiveDot"></span>
+  </button>
+  <div id="mobActiveChips"></div>
+</div>
+
+<!-- FILTER BOTTOM SHEET -->
+<div class="fsheet-overlay" id="fsheetOverlay"></div>
+<div class="fsheet" id="fsheet">
+  <div class="fsheet-handle" id="fsheetHandle"></div>
+  <div class="fsheet-header">
+    <span class="fsheet-title">Filtros</span>
+    <button class="fsheet-reset" id="fsheetReset">Limpiar todo</button>
+  </div>
+  <div class="fsheet-body">
+    <!-- Estado -->
+    <div class="fsheet-section">
+      <div class="fsheet-sec-label">Estado</div>
+      <div class="fsheet-opts" id="fsEstadoOpts">
+        <button class="fsopt on" data-f="estado" data-v="all">Todas</button>
+        <button class="fsopt" data-f="estado" data-v="Continúa">▶ Continúa</button>
+        <button class="fsopt" data-f="estado" data-v="Finalizado">✓ Finalizado</button>
+        <button class="fsopt" data-f="estado" data-v="Hiatus">⏸ Hiatus</button>
+        <button class="fsopt" data-f="estado" data-v="Cancelado">✗ Cancelado</button>
+      </div>
+    </div>
+    <!-- Ubicación -->
+    <div class="fsheet-section">
+      <div class="fsheet-sec-label">Ubicación</div>
+      <div class="fsheet-opts" id="fsSubOpts">
+        <button class="fsopt on-teal" data-f="sub" data-v="all">Todas</button>
+        <button class="fsopt" data-f="sub" data-v="bib">📚 Biblioteca</button>
+        <button class="fsopt" data-f="sub" data-v="files">📁 FILES</button>
+        <button class="fsopt" data-f="sub" data-v="both">Ambos</button>
+      </div>
+    </div>
+    <!-- Género -->
+    <div class="fsheet-section">
+      <div class="fsheet-sec-label">Género</div>
+      <div class="fsheet-opts" id="fsTagOpts">
+        <button class="fsopt on-pink" data-f="tag" data-v="all">Todos</button>
+        <button class="fsopt" data-f="tag" data-v="Drama">Drama</button>
+        <button class="fsopt" data-f="tag" data-v="Comedia">Comedia</button>
+        <button class="fsopt" data-f="tag" data-v="Fantasia">Fantasía</button>
+        <button class="fsopt" data-f="tag" data-v="Escolar">Escolar</button>
+        <button class="fsopt" data-f="tag" data-v="Historica">Histórica</button>
+        <button class="fsopt" data-f="tag" data-v="Thriller">Thriller</button>
+        <button class="fsopt" data-f="tag" data-v="SciFi">Sci-Fi</button>
+        <button class="fsopt" data-f="tag" data-v="Horror">Horror</button>
+        <button class="fsopt" data-f="tag" data-v="Slice_of_Life">Slice of Life</button>
+        <button class="fsopt" data-f="tag" data-v="Psicologico">Psicológico</button>
+        <button class="fsopt" data-f="tag" data-v="Accion">Acción</button>
+        <button class="fsopt" data-f="tag" data-v="Misterio">Misterio</button>
+        <button class="fsopt" data-f="tag" data-v="Supernatural">Sobrenatural</button>
+        <button class="fsopt" data-f="tag" data-v="Oficina">Oficina</button>
+      </div>
+    </div>
+    <!-- Orden -->
+    <div class="fsheet-section">
+      <div class="fsheet-sec-label">Ordenar por</div>
+      <div class="fsheet-opts" id="fsSortOpts">
+        <button class="fsopt on" data-f="sort" data-v="recent">✦ Recientes</button>
+        <button class="fsopt" data-f="sort" data-v="rating">★ Más valorados</button>
+        <button class="fsopt" data-f="sort" data-v="az">A–Z</button>
+      </div>
+    </div>
+    <!-- Toggles +18 -->
+    <div class="fsheet-toggles">
+      <div class="fsheet-toggle-row" id="fsAdultHideRow">
+        <div>
+          <div class="fsheet-toggle-lbl">Ocultar +18</div>
+          <div class="fsheet-toggle-sub">Esconde contenido para adultos</div>
+        </div>
+        <div class="ftog" id="fsAdultHideTog"></div>
+      </div>
+      <div class="fsheet-toggle-row" id="fsAdultOnlyRow">
+        <div>
+          <div class="fsheet-toggle-lbl">Solo +18</div>
+          <div class="fsheet-toggle-sub">Muestra únicamente contenido adulto</div>
+        </div>
+        <div class="ftog" id="fsAdultOnlyTog"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- TOP 10 RANKING -->
 <div class="top10-section" id="top10Section">
   <div class="top10-header">
@@ -1402,6 +1712,9 @@ div.search-box:focus { outline: none; }
   </div>
   <div class="top10-track" id="top10Track">
     <!-- filled by JS -->
+  </div>
+  <div class="top10-mob-list" id="top10MobList">
+    <!-- filled by JS on mobile -->
   </div>
 </div>
 <hr class="top10-divider">
@@ -1417,6 +1730,7 @@ div.search-box:focus { outline: none; }
 <!-- MODAL -->
 <div class="modal-wrap" id="modalWrap">
   <div class="modal" id="modal">
+    <div class="modal-drag-handle" id="modalDragHandle"></div>
     <button class="modal-x" id="modalX">✕</button>
     <div class="modal-body" id="modalBody"></div>
   </div>
@@ -1713,8 +2027,12 @@ async function init() {
   buildCatTabs();
   applyStateToUI();
   renderTop10();
+  renderTop10Mobile();
   renderSections(false);  // false = don't reset pages, we restored them
   bindEvents();
+  bindFsheetEvents();
+  bindModalSwipe();
+  updateMobBar();
 }
 
 function applyStateToUI() {
@@ -1897,6 +2215,7 @@ function renderSections(resetPages) {
   }
 
   pushState();
+  updateMobBar();
 }
 
 function renderSecPage(s, matched) {
@@ -2292,7 +2611,244 @@ function renderTop10() {
   });
 }
 
-init();
-</script>
+/* ══════════════════════════════════════════════════════════
+   MOBILE FILTER BOTTOM SHEET
+══════════════════════════════════════════════════════════ */
+function isMobile() { return window.innerWidth <= 600; }
+
+function openFsheet() {
+  syncFsheetState();
+  document.getElementById('fsheetOverlay').classList.add('open');
+  document.getElementById('fsheet').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  bindFsheetSwipe();
+}
+function closeFsheet() {
+  document.getElementById('fsheetOverlay').classList.remove('open');
+  document.getElementById('fsheet').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function syncFsheetState() {
+  // Sync each group of options
+  const applyOpts = (container, field, activeVal, activeClass) => {
+    container.querySelectorAll('.fsopt').forEach(o => {
+      o.className = 'fsopt' + (o.dataset.v === activeVal ? ' ' + activeClass : '');
+    });
+  };
+  applyOpts(document.getElementById('fsEstadoOpts'), 'estado', fEstado, 'on');
+  applyOpts(document.getElementById('fsSubOpts'), 'sub', fSub, 'on-teal');
+  applyOpts(document.getElementById('fsTagOpts'), 'tag', fTag, 'on-pink');
+  applyOpts(document.getElementById('fsSortOpts'), 'sort', activeSort, 'on');
+  document.getElementById('fsAdultHideTog').classList.toggle('on', hideAdult);
+  document.getElementById('fsAdultOnlyTog').classList.toggle('on', fOnlyAdult);
+  // Reset button enabled/disabled
+  const hasFilter = fEstado !== 'all' || fSub !== 'all' || fTag !== 'all' || hideAdult || fOnlyAdult || activeSort !== 'recent';
+  document.getElementById('fsheetReset').disabled = !hasFilter;
+}
+
+function updateMobBar() {
+  if (!isMobile()) return;
+  const btn = document.getElementById('mobFilterOpenBtn');
+  const chipsWrap = document.getElementById('mobActiveChips');
+  const dot = document.getElementById('mobActiveDot');
+
+  const chips = [];
+  const hasFilter = fEstado !== 'all' || fSub !== 'all' || fTag !== 'all' || hideAdult || fOnlyAdult || activeSort !== 'recent';
+
+  btn.classList.toggle('has-active', hasFilter);
+  dot.style.display = hasFilter ? 'block' : 'none';
+
+  if (fEstado !== 'all') chips.push({ cls: 'mob-chip-estado', label: fEstado, clear: () => { fEstado='all'; onFsheetChange(); } });
+  if (fSub !== 'all') {
+    const l = fSub === 'bib' ? '📚 Biblioteca' : fSub === 'files' ? '📁 FILES' : 'Ambos';
+    chips.push({ cls: 'mob-chip-sub', label: l, clear: () => { fSub='all'; onFsheetChange(); } });
+  }
+  if (fTag !== 'all') chips.push({ cls: 'mob-chip-tag', label: fTag.replace(/_/g,' '), clear: () => { fTag='all'; onFsheetChange(); } });
+  if (hideAdult) chips.push({ cls: 'mob-chip-adult', label: 'Ocultar +18', clear: () => { hideAdult=false; onFsheetChange(); } });
+  if (fOnlyAdult) chips.push({ cls: 'mob-chip-adult', label: 'Solo +18', clear: () => { fOnlyAdult=false; onFsheetChange(); } });
+  if (activeSort !== 'recent') {
+    const l = activeSort === 'rating' ? '★ Valorados' : 'A–Z';
+    chips.push({ cls: 'mob-chip-sort', label: l, clear: () => { activeSort='recent'; onFsheetChange(); } });
+  }
+
+  chipsWrap.innerHTML = chips.map((c, i) =>
+    `<button class="mob-chip ${c.cls}" data-ci="${i}">${c.label} <span class="mob-chip-x">✕</span></button>`
+  ).join('');
+  chipsWrap.querySelectorAll('.mob-chip').forEach((el, i) => {
+    el.addEventListener('click', () => { chips[i].clear(); updateMobBar(); });
+  });
+}
+
+function onFsheetChange() {
+  // Sync desktop dropdowns too
+  const sl2 = fSub === 'bib' ? 'Biblioteca' : fSub === 'files' ? 'FILES' : 'Ambos';
+  updateDropLabel('dropEstado','valEstado', fEstado === 'all' ? 'Estado' : fEstado, fEstado !== 'all', 'on');
+  updateDropLabel('dropSub','valSub', fSub === 'all' ? 'Ubicación' : sl2, fSub !== 'all', 'on-teal');
+  updateDropLabel('dropTag','valTag', fTag === 'all' ? 'Género' : fTag.replace(/_/g,' '), fTag !== 'all', 'on-pink');
+  const sl3 = {'recent':'Recientes','rating':'★ Más valorados','az':'Az A–Z'};
+  updateDropLabel('dropSort','valSort', sl3[activeSort], activeSort !== 'recent', 'on');
+  // adult UI sync
+  document.getElementById('adultBtn').classList.toggle('active', hideAdult);
+  document.getElementById('adultLbl').textContent = hideAdult ? '+18 oculto' : '+18 visible';
+  document.getElementById('adultPillBtn').classList.toggle('on', hideAdult);
+  document.getElementById('adultPillLbl').textContent = hideAdult ? '+18 oculto' : 'Ocultar +18';
+  document.getElementById('onlyAdultBtn').classList.toggle('on', fOnlyAdult);
+  syncFsheetState();
+  updateMobBar();
+  renderSections(true);
+}
+
+function bindFsheetEvents() {
+  document.getElementById('mobFilterOpenBtn').addEventListener('click', openFsheet);
+  document.getElementById('fsheetOverlay').addEventListener('click', closeFsheet);
+
+  // Option buttons
+  ['fsEstadoOpts','fsSubOpts','fsTagOpts','fsSortOpts'].forEach(id => {
+    document.getElementById(id).addEventListener('click', e => {
+      const opt = e.target.closest('.fsopt');
+      if (!opt) return;
+      const f = opt.dataset.f, v = opt.dataset.v;
+      const clsMap = { estado: 'on', sub: 'on-teal', tag: 'on-pink', sort: 'on' };
+      document.getElementById(id).querySelectorAll('.fsopt').forEach(o => o.className = 'fsopt');
+      opt.classList.add(clsMap[f]);
+      if (f === 'estado') fEstado = v;
+      if (f === 'sub')    fSub    = v;
+      if (f === 'tag')    fTag    = v;
+      if (f === 'sort')   activeSort = v;
+      onFsheetChange();
+    });
+  });
+
+  // Toggle rows
+  document.getElementById('fsAdultHideRow').addEventListener('click', () => {
+    hideAdult = !hideAdult;
+    if (hideAdult) fOnlyAdult = false;
+    onFsheetChange();
+  });
+  document.getElementById('fsAdultOnlyRow').addEventListener('click', () => {
+    fOnlyAdult = !fOnlyAdult;
+    if (fOnlyAdult) hideAdult = false;
+    onFsheetChange();
+  });
+
+  // Reset
+  document.getElementById('fsheetReset').addEventListener('click', () => {
+    fEstado = 'all'; fSub = 'all'; fTag = 'all';
+    hideAdult = false; fOnlyAdult = false; activeSort = 'recent';
+    onFsheetChange();
+  });
+}
+
+/* swipe down to close bottom sheet */
+function bindFsheetSwipe() {
+  const sheet = document.getElementById('fsheet');
+  const handle = document.getElementById('fsheetHandle');
+  let startY = 0, dragging = false;
+  const onStart = e => {
+    startY = (e.touches ? e.touches[0].clientY : e.clientY);
+    dragging = true;
+    sheet.style.transition = 'none';
+  };
+  const onMove = e => {
+    if (!dragging) return;
+    const dy = (e.touches ? e.touches[0].clientY : e.clientY) - startY;
+    if (dy > 0) sheet.style.transform = `translateY(${dy}px)`;
+  };
+  const onEnd = e => {
+    if (!dragging) return; dragging = false;
+    sheet.style.transition = '';
+    sheet.style.transform = '';
+    const dy = (e.changedTouches ? e.changedTouches[0].clientY : e.clientY) - startY;
+    if (dy > 80) closeFsheet();
+  };
+  // Bind to handle and header only to avoid blocking scroll inside body
+  [handle, document.querySelector('.fsheet-header')].forEach(el => {
+    if (!el) return;
+    el.addEventListener('touchstart', onStart, { passive: true });
+    el.addEventListener('touchmove', onMove, { passive: true });
+    el.addEventListener('touchend', onEnd);
+  });
+}
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE TOP 10 — Vertical list
+══════════════════════════════════════════════════════════ */
+function renderTop10Mobile() {
+  const list = document.getElementById('top10MobList');
+  if (!list) return;
+
+  const ranked = allData
+    .filter(e => ratingsMap[e.id] && ratingsMap[e.id].count > 0)
+    .sort((a, b) => {
+      const ra = ratingsMap[a.id], rb = ratingsMap[b.id];
+      if (rb.avg !== ra.avg) return rb.avg - ra.avg;
+      return rb.count - ra.count;
+    })
+    .slice(0, 10);
+
+  if (ranked.length === 0) { list.innerHTML = ''; return; }
+
+  const MEDALS = ['🥇','🥈','🥉'];
+  list.innerHTML = ranked.map((e, i) => {
+    const r = ratingsMap[e.id];
+    const coverHtml = e.imagen
+      ? `<div class="t10m-cover"><img src="${esc(e.imagen)}" alt="${esc(e.titulo)}" loading="lazy" onerror="this.outerHTML='<div class=t10m-cover-gen></div>'"></div>`
+      : `<div class="t10m-cover"><div class="t10m-cover-gen"></div></div>`;
+    return `
+      <div class="t10m-item" data-id="${e.id}">
+        <span class="t10m-rank-num">${i < 3 ? MEDALS[i] : i+1}</span>
+        ${coverHtml}
+        <div class="t10m-info">
+          <div class="t10m-title">${esc(e.titulo)}</div>
+          <div class="t10m-meta">
+            <span class="t10m-score">★ ${r.avg}</span>
+            <span class="t10m-votes">${r.count}v</span>
+          </div>
+        </div>
+        <span class="t10m-arrow">›</span>
+      </div>`;
+  }).join('');
+
+  list.querySelectorAll('.t10m-item').forEach(item => {
+    const entry = allData.find(e => String(e.id) === String(item.dataset.id));
+    if (entry) item.addEventListener('click', () => openModal(entry));
+  });
+}
+
+/* ══════════════════════════════════════════════════════════
+   SWIPE-TO-CLOSE MODAL
+══════════════════════════════════════════════════════════ */
+function bindModalSwipe() {
+  const modal = document.getElementById('modal');
+  const handle = document.getElementById('modalDragHandle');
+  if (!handle) return;
+  let startY = 0, dragging = false;
+
+  const onStart = e => {
+    if (!isMobile()) return;
+    startY = e.touches[0].clientY;
+    dragging = true;
+    modal.style.transition = 'none';
+  };
+  const onMove = e => {
+    if (!dragging) return;
+    const dy = e.touches[0].clientY - startY;
+    if (dy > 0) modal.style.transform = `translateY(${dy}px)`;
+  };
+  const onEnd = e => {
+    if (!dragging) return; dragging = false;
+    modal.style.transition = '';
+    modal.style.transform = '';
+    const dy = e.changedTouches[0].clientY - startY;
+    if (dy > 80) closeModal();
+  };
+
+  handle.addEventListener('touchstart', onStart, { passive: true });
+  document.addEventListener('touchmove', e => { if (dragging) onMove(e); }, { passive: true });
+  document.addEventListener('touchend', e => { if (dragging) onEnd(e); });
+}
+
+init();</script>
 </body>
 </html>

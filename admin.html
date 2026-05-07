@@ -142,9 +142,148 @@ td{padding:9px 14px;vertical-align:middle;font-size:13px}
 .toast.ok{border-color:rgba(71,255,224,.4);color:var(--neon3)}
 .toast.err{border-color:rgba(255,71,163,.4);color:var(--neon2)}
 @media(max-width:768px){.form-grid{grid-template-columns:1fr}.form-full{grid-column:1}table td:nth-child(4),table th:nth-child(4),table td:nth-child(5),table th:nth-child(5){display:none}}
+
+/* ── AUTH GATE ─────────────────────────────────────────── */
+#authGate{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--screen);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+}
+#authGate::before{
+  content:'';position:fixed;inset:0;
+  background-image:radial-gradient(circle,rgba(245,240,232,0.04) 2px,transparent 2px);
+  background-size:18px 18px;pointer-events:none;
+}
+#authGate::after{
+  content:'';position:fixed;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 4px);
+  pointer-events:none;
+}
+.ag-card{
+  background:var(--surface);
+  border:1px solid rgba(232,255,71,.2);
+  width:100%;max-width:380px;
+  position:relative;z-index:1;
+  box-shadow:0 24px 80px rgba(0,0,0,.8);
+}
+.ag-card::before{
+  content:'';display:block;height:2px;
+  background:linear-gradient(90deg,var(--neon2),var(--neon),var(--neon3));
+}
+.ag-inner{padding:32px 32px 36px;}
+.ag-brand{
+  font-family:'Noto Serif JP',serif;
+  font-size:10px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--neon2);opacity:.7;margin-bottom:4px;
+}
+.ag-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.2rem;letter-spacing:3px;color:var(--white);
+  line-height:1;margin-bottom:2px;
+}
+.ag-sub{
+  font-family:'Space Mono',monospace;
+  font-size:8px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--dim);margin-bottom:28px;
+}
+.ag-label{
+  font-family:'Space Mono',monospace;
+  font-size:8px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--dim);display:block;margin-bottom:6px;
+}
+.ag-input{
+  width:100%;padding:10px 14px;
+  background:var(--surface2);
+  border:1px solid var(--border2);
+  color:var(--paper);
+  font-family:'DM Sans',sans-serif;font-size:13px;
+  outline:none;transition:border-color .2s;
+  border-radius:1px;margin-bottom:10px;
+}
+.ag-input:focus{border-color:var(--neon);}
+.ag-input::placeholder{color:var(--dimmer);font-size:12px;}
+.ag-btn{
+  width:100%;padding:11px;
+  border:none;border-radius:1px;
+  background:var(--neon);color:var(--screen);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.1rem;letter-spacing:2px;
+  cursor:pointer;transition:all .18s;margin-top:4px;
+}
+.ag-btn:hover{background:#d4f03c;}
+.ag-btn:disabled{opacity:.35;cursor:not-allowed;}
+.ag-err{
+  font-size:11px;color:var(--neon2);
+  min-height:16px;margin-top:8px;text-align:center;
+  font-family:'DM Sans',sans-serif;
+}
+.ag-warn{
+  display:flex;align-items:flex-start;gap:10px;
+  background:rgba(255,71,163,.07);
+  border:1px solid rgba(255,71,163,.2);
+  padding:10px 14px;margin-bottom:20px;
+  font-size:11px;color:var(--neon2);line-height:1.6;
+}
+.ag-warn-icon{font-size:14px;flex-shrink:0;margin-top:1px;}
+
+/* Admin user chip in topbar */
+.admin-user-chip{
+  display:flex;align-items:center;gap:8px;
+  padding:4px 12px 4px 6px;
+  border:1px solid var(--border2);
+  background:rgba(232,255,71,.05);
+}
+.admin-avatar{
+  width:24px;height:24px;
+  background:linear-gradient(135deg,var(--neon),var(--neon3));
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;color:var(--screen);flex-shrink:0;
+  border-radius:1px;
+}
+.admin-email{
+  font-size:11px;color:var(--muted);
+  max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font-family:'DM Sans',sans-serif;
+}
+.admin-logout{
+  background:transparent;border:none;
+  color:var(--dim);cursor:pointer;
+  font-size:10px;padding:1px 3px;
+  font-family:'DM Sans',sans-serif;
+  transition:color .15s;letter-spacing:.3px;
+}
+.admin-logout:hover{color:var(--neon2);}
+
+/* Page content hidden while checking auth */
+#appShell{display:none;}
 </style>
 </head>
 <body>
+
+<!-- AUTH GATE — shown while unauthenticated, hidden once verified -->
+<div id="authGate">
+  <div class="ag-card">
+    <div class="ag-inner">
+      <div class="ag-brand">Tinta Sapphic</div>
+      <div class="ag-title">ADMIN</div>
+      <div class="ag-sub">GL PANELS · Panel de gestión</div>
+      <div class="ag-warn">
+        <span class="ag-warn-icon">🔒</span>
+        Acceso restringido. Solo cuentas autorizadas pueden gestionar el catálogo.
+      </div>
+      <label class="ag-label">Email</label>
+      <input class="ag-input" type="email" id="agEmail" placeholder="admin@ejemplo.com" autocomplete="email">
+      <label class="ag-label">Contraseña</label>
+      <input class="ag-input" type="password" id="agPass" placeholder="••••••••" autocomplete="current-password">
+      <button class="ag-btn" id="agBtn" onclick="doAdminLogin()">ENTRAR</button>
+      <div class="ag-err" id="agErr"></div>
+    </div>
+  </div>
+</div>
+
+<!-- APP SHELL — hidden until auth verified -->
+<div id="appShell">
 
 <div class="topbar-inner" style="position:sticky;top:0;z-index:300">
 <header class="topbar" style="position:relative;z-index:1">
@@ -154,6 +293,11 @@ td{padding:9px 14px;vertical-align:middle;font-size:13px}
     <span class="logo-badge">ADMIN</span>
   </div>
   <div class="tb-right">
+    <div class="admin-user-chip" id="adminUserChip" style="display:none">
+      <div class="admin-avatar" id="adminAvatar">A</div>
+      <span class="admin-email" id="adminEmail">—</span>
+      <button class="admin-logout" onclick="doAdminLogout()">salir</button>
+    </div>
     <a href="index.html" class="tb-btn">← Catálogo</a>
     <label class="tb-btn" style="cursor:pointer">📂 Importar<input type="file" accept=".json" id="importFile" style="display:none"></label>
     <button class="tb-btn tb-neon" id="exportBtn">💾 Exportar JSON</button>
@@ -297,6 +441,8 @@ td{padding:9px 14px;vertical-align:middle;font-size:13px}
   </div>
 </div>
 
+</div><!-- /appShell -->
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -313,18 +459,132 @@ const SB_READY = SUPABASE_URL && !SUPABASE_URL.startsWith('TU_');
 const sb = SB_READY ? supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 let totalRatings = 0;
 
+// ── ADMIN WHITELIST ───────────────────────────────────────
+// Add the emails of people allowed to access this panel.
+// The Supabase session is always verified server-side via the JWT;
+// this list is a client-side second check to show a clear error
+// if a valid-but-non-admin account tries to log in.
+const ADMIN_EMAILS = new Set([
+  // 'xxalittledreamxx@gmail.com',  ← añade aquí los emails autorizados
+]);
+
+// ── AUTH GATE ─────────────────────────────────────────────
+let adminUser = null;
+
+async function initAuth() {
+  if (!SB_READY) {
+    // No Supabase configured — skip auth gate for local dev
+    showApp('local');
+    return;
+  }
+
+  // Check existing session
+  const { data: { session } } = await sb.auth.getSession();
+  if (session) {
+    const ok = await verifyAdminSession(session.user);
+    if (ok) { showApp(session.user); return; }
+    // Session exists but not admin — sign out silently
+    await sb.auth.signOut();
+  }
+
+  // Show login gate
+  document.getElementById('authGate').style.display = 'flex';
+
+  // Enter key on password
+  document.getElementById('agPass').addEventListener('keydown', e => {
+    if (e.key === 'Enter') doAdminLogin();
+  });
+
+  // Listen for auth changes (e.g. another tab signs out)
+  sb.auth.onAuthStateChange((_event, session) => {
+    if (!session && adminUser) {
+      adminUser = null;
+      location.reload();
+    }
+  });
+}
+
+async function verifyAdminSession(user) {
+  // If ADMIN_EMAILS is empty we trust any authenticated Supabase user.
+  // Add emails to the set above to restrict access further.
+  if (ADMIN_EMAILS.size > 0 && !ADMIN_EMAILS.has(user.email)) return false;
+  adminUser = user;
+  return true;
+}
+
+async function doAdminLogin() {
+  if (!SB_READY) return;
+  const email = document.getElementById('agEmail').value.trim();
+  const pass  = document.getElementById('agPass').value;
+  const errEl = document.getElementById('agErr');
+  const btn   = document.getElementById('agBtn');
+
+  errEl.textContent = '';
+  if (!email || !pass) { errEl.textContent = 'Introduce email y contraseña.'; return; }
+
+  btn.disabled = true; btn.textContent = '…';
+
+  const { data, error } = await sb.auth.signInWithPassword({ email, password: pass });
+
+  btn.disabled = false; btn.textContent = 'ENTRAR';
+
+  if (error) {
+    errEl.textContent = error.message === 'Invalid login credentials'
+      ? 'Email o contraseña incorrectos.'
+      : error.message;
+    return;
+  }
+
+  const ok = await verifyAdminSession(data.user);
+  if (!ok) {
+    await sb.auth.signOut();
+    errEl.textContent = 'Tu cuenta no tiene permisos de administrador.';
+    return;
+  }
+
+  showApp(data.user);
+}
+
+async function doAdminLogout() {
+  if (SB_READY) await sb.auth.signOut();
+  adminUser = null;
+  location.reload();
+}
+
+function showApp(user) {
+  // Hide gate, show app
+  document.getElementById('authGate').style.display = 'none';
+  document.getElementById('appShell').style.display = 'block';
+
+  // Show user chip in topbar
+  if (user && user !== 'local') {
+    const chip  = document.getElementById('adminUserChip');
+    const avatar = document.getElementById('adminAvatar');
+    const emailEl = document.getElementById('adminEmail');
+    chip.style.display = 'flex';
+    avatar.textContent = (user.email || '?')[0].toUpperCase();
+    emailEl.textContent = user.email;
+  }
+
+  // Boot the actual app
+  initApp();
+}
+
 async function loadRatingsCount() {
   if (!SB_READY) return;
   const { count } = await sb.from('ratings').select('id', { count: 'exact', head: true });
   totalRatings = count || 0;
 }
 
-async function init(){
+async function initApp(){
   try{const r=await fetch(DATA_URL);allData=await r.json();}
   catch{allData=[];toast('No se pudo cargar manga_data.json','err');}
   await loadRatingsCount();
   buildStats();applyFilters();bindEvents();
 }
+
+// Boot: auth first, app second
+initAuth();
 
 function buildStats(){
   const t=allData.length,bib=allData.filter(e=>e.in_biblioteca).length,
@@ -500,8 +760,6 @@ function bindEvents(){
   document.querySelectorAll('.mwrap').forEach(w=>w.addEventListener('click',e=>{if(e.target===w)closeMod(w.id);}));
   document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.mwrap.open').forEach(m=>closeMod(m.id));});
 }
-
-init();
 </script>
 </body>
 </html>
