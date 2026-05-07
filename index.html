@@ -66,6 +66,7 @@ body.light .ctab.on { background: rgba(122,136,0,0.15); border-color: rgba(122,1
 body.light .ctab.on .ctab-count { background: rgba(122,136,0,0.2); color: #7a8800; }
 body.light .filter-strip { background: rgba(240,235,224,0.97); border-bottom-color: rgba(20,20,40,0.15); }
 body.light .cat-tabs-wrap::after { background: linear-gradient(to left, rgba(240,235,224,0.97) 20%, transparent 100%); }
+body.light .top10-track-wrap::after { background: linear-gradient(to left, var(--screen) 10%, transparent 100%); }
 body.light .topbar { background: #f0ebe0; border-bottom-color: rgba(20,20,40,0.15); }
 body.light .topbar::after { background: linear-gradient(90deg, #7a8800, #c0006a, #007a6a); }
 body.light .hero { background: transparent; }
@@ -425,7 +426,6 @@ div.search-box:focus { outline: none; }
 /* Right fade hint for tab scroll — on the wrap, not filter-strip */
 .cat-tabs-wrap {
   position: relative;
-  overflow: hidden;
 }
 .cat-tabs-wrap::after {
   content: '';
@@ -640,13 +640,14 @@ div.search-box:focus { outline: none; }
 
 /* ── TOP 10 RANKING ───────────────────────────────────── */
 .top10-section {
-  max-width: 1400px; margin: 0 auto;
-  padding: 36px 20px 0;
   position: relative; z-index: 1;
+  padding: 36px 0 0;
 }
 .top10-header {
   display: flex; align-items: center; gap: 14px;
   margin-bottom: 22px;
+  max-width: 1400px; margin-left: auto; margin-right: auto;
+  padding: 0 20px;
 }
 .top10-eyebrow {
   font-family: 'Bebas Neue', sans-serif;
@@ -672,9 +673,21 @@ div.search-box:focus { outline: none; }
 .top10-track {
   display: flex; gap: 6px;
   overflow-x: auto; scrollbar-width: none;
-  padding-bottom: 4px;
+  padding: 0 20px 12px;
+  -webkit-overflow-scrolling: touch;
 }
 .top10-track::-webkit-scrollbar { display: none; }
+/* Wrap for fade effect */
+.top10-track-wrap {
+  position: relative;
+}
+.top10-track-wrap::after {
+  content: '';
+  position: absolute; top: 0; right: 0; bottom: 12px;
+  width: 60px;
+  background: linear-gradient(to left, var(--screen) 10%, transparent 100%);
+  pointer-events: none; z-index: 5;
+}
 
 .t10-card {
   flex: 0 0 130px;
@@ -2428,8 +2441,10 @@ body.light .hv-cat-row { background: var(--surface2); }
     </div>
     <span class="top10-badge">Global</span>
   </div>
+  <div class="top10-track-wrap">
   <div class="top10-track" id="top10Track">
     <!-- filled by JS -->
+  </div>
   </div>
   <div class="top10-mob-list" id="top10MobList">
     <!-- filled by JS on mobile -->
@@ -3050,10 +3065,8 @@ function renderInkClub() {
   const inkData = getInkData();
   const section = document.getElementById('inkSection');
 
-  // Only show inkSection when on ink_club tab or all tab (with ink items)
+  // Only show inkSection when on ink_club tab
   if (activeSec === 'ink_club') {
-    section.classList.add('visible');
-  } else if (inkData.length > 0 && activeSec === 'all') {
     section.classList.add('visible');
   } else {
     section.classList.remove('visible');
