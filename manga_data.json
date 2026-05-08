@@ -1,5 +1,50 @@
 [
   {
+    "id": "gl_1778224342735_ym9",
+    "titulo": "Ladrona",
+    "seccion": "Novela Gráfica",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1655387803i/61299737.jpg",
+    "desc": "Perdón por lo de anoche. ¿Pero…, qué pasó anoche? Ella está obsesionada con Madeleine, a quien observa de lejos con el corazón latiendo mientras intenta obtener la mayor información posible sobre ella sin atreverse a hablarle. Ella aprovecha una fiesta de estudiantes para finalmente acercarse a él, pero toma demasiados tragos para darse consistencia y termina completamente borracha. Al día siguiente, se despierta con resaca y descubre que ha robado varios objetos preciosos el día anterior, sin embargo, sin recordar exactamente cuándo ni por qué; apagón total. ¡Además, Madeleine llama a su puerta! No se trata de admitirle esta repentina crisis de cleptomanía, ¡ella esconde todo lo jodido debajo de su cama! Muy rápidamente, los ojos se encuentran y las manos se rozan... Es imposible retroceder para Ella, dividida entre una vergonzosa culpa y una explosión de alegría y amor.",
+    "tags": [
+      "YA"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778224312720_uim",
+    "titulo": "Las cien noches de Hero",
+    "seccion": "Novela Gráfica",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1504465724i/36175712.jpg",
+    "desc": "¿Con qué os toparéis cuando os internéis en Las cien noches de Hero? Con montones de traiciones, lealtades inquebrantables, muchachas hermosas que se vuelven locas, libros prohibidos que se leen a escondidas, maridos malos, padres horrorosos, amantes infieles, cosas que cuelgan de los árboles, Ligas de Narradoras Secretas, bailes nocturnos, guijarros mágicos, brujas sabias, lunas que bajan del cielo por las noches, instrumentos musicales encantados, salchichas envenenadas, amigas y arpas y pájaros y sobre todo, montones, montones de hermanas.",
+    "tags": [
+      "Fantasia"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778224294242_ci0",
+    "titulo": "Lola Vendetta: Más vale Lola que mal acompañada",
+    "seccion": "Novela Gráfica",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1490043505i/34643017.jpg",
+    "desc": "Lola Vendetta tal vez tenga pelos en las piernas, pero no tiene ni un pelo en la lengua. Es una joven alérgica a las injusticias, irreverente y mordaz, que se enfrenta a todo lo que no le gusta de la vida, empezando por los hombres que no la respetan, no la escuchan o no la divierten. Lola utiliza la sátira con la misma maestría con la que maneja la katana ante las adversidades.\n\nTras librarse de una relación aburrida y monótona, Lola tiene que afrontar su nueva vida como soltera y encontrar dentro de sí misma lo que había buscado en el otro: la aceptación y el amor propio.\n\nDurante este proceso de conocimiento, la afilada y contundente Lola Vendetta ofrecerá al lector momentos tanto para la risa como para la reflexión.",
+    "tags": [
+      "Comedia"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
     "id": "gl_1778222853679_fyj",
     "titulo": "Roaming (La Cupula)",
     "seccion": "Novela Gráfica",
