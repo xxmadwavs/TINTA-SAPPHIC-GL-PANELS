@@ -1,5 +1,35 @@
 [
   {
+    "id": "gl_1778222853679_fyj",
+    "titulo": "Roaming (La Cupula)",
+    "seccion": "Novela Gráfica",
+    "estado": "Finalizado",
+    "imagen": "https://m.media-amazon.com/images/I/61MChpltB6L._SL1028_.jpg",
+    "desc": "Zoe y Dani son íntimas desde hace años. En sus primeras vacaciones como estudiantes universitarias, planean reencontrarse en el lugar que siempre han querido visitar: ¡Nueva York!\n\nA última hora se les une Fiona, un espíritu libre que pronto amenazará con arruinarles el viaje y puede que algo más… El inesperado florecimiento de un romance abrirá fisuras que pondrán a prueba una amistad de largo recorrido, dejando a sus protagonistas atrapadas en ese lío que supone descubrir quién eres cuando aún no estás seguro de a dónde vas.",
+    "tags": [
+      "YA"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
+    "id": "gl_1778222159236_6d3",
+    "titulo": "¡Huyamos juntas!",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://www.milkywayediciones.com/cdn/shop/products/Huyamos_juntas_01.jpg?v=1652452580&width=832",
+    "desc": "Hay alguien a quien la estudiante de posgrado Momo Makimura no puede olvidar: Midori, una chica con un encanto misterioso con la que estuvo saliendo cuando iba con ella al mismo instituto de chicas. Cartas de amor secretas, las uñas pintadas del mismo color...\n\nLa relación que Makimura creía que duraría para siempre terminó el día en que las dos se graduaron del instituto, cuando Midori le puso fin con las palabras “¡A ver quién consigue novio antes!”. Y entonces, diez años después, presa todavía de un amor que no puede sacudirse de encima, ¡Makimura se reencuentra con Midori por casualidad!",
+    "tags": [
+      "Romance"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca"
+  },
+  {
     "id": "gl_1778185412037_gl7",
     "titulo": "Aquel verano",
     "seccion": "Novela Gráfica",
