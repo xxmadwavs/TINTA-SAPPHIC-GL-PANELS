@@ -1127,8 +1127,8 @@ div.search-box:focus { outline: none; }
   .home-nav-btn { padding: 5px 8px; font-size: 10px; }
   /* Adult btn: hide label */
   #adultLbl { display: none; }
-  /* Filter strip: wrap tabs */
-  .cat-tabs { flex-wrap: nowrap; }
+  /* Filter strip: allow tabs to wrap */
+  .cat-tabs { flex-wrap: wrap; }
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1201,10 +1201,11 @@ div.search-box:focus { outline: none; }
   /* ── Modal drag handle visible on mobile ── */
   .modal-drag-handle { display: block; }
 
-  /* ── Category tabs row — compact on mobile ── */
+  /* ── Category tabs row — wrap on mobile ── */
   .cat-tabs {
-    padding: 8px 12px;
+    padding: 6px 12px;
     gap: 5px;
+    flex-wrap: wrap;
   }
   .ctab {
     font-size: 11px;
@@ -1241,8 +1242,8 @@ div.search-box:focus { outline: none; }
   .section-title { font-size: 1.4rem; letter-spacing: 2px; }
   .section-head { margin-bottom: 14px; }
 
-  /* ── Grid — 2 columns ── */
-  .grid { grid-template-columns: repeat(2, 1fr); gap: 4px; }
+  /* ── Grid — 3 columns on mobile ── */
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 3px; }
 
   /* ── Card — slightly larger text ── */
   .card-title { font-size: 11px; }
@@ -1278,7 +1279,7 @@ div.search-box:focus { outline: none; }
 ══════════════════════════════════════════════════════════ */
 @media (max-width: 380px) {
   .hero-h1 { font-size: 2.6rem; }
-  .grid { grid-template-columns: repeat(2, 1fr); gap: 3px; }
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 2px; }
   .ctab { font-size: 10px; padding: 4px 9px; }
   /* Hide section number on tiny screens */
   .section-num { display: none; }
