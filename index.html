@@ -1985,6 +1985,20 @@ body.home-active .topbar-center { display: none; }
   color: var(--dim); margin-bottom: 20px;
 }
 .hv-footer-copy { font-size: 10px; color: var(--dim); }
+.hv-footer-pill {
+  font-size: 11.5px; font-family: 'DM Sans', sans-serif; font-weight: 500;
+  color: var(--muted); background: transparent;
+  border: 1px solid var(--border2); border-radius: 20px;
+  padding: 5px 14px; cursor: pointer;
+  transition: all .18s;
+  letter-spacing: .02em;
+}
+.hv-footer-pill:hover {
+  color: var(--neon); border-color: var(--neon);
+  background: rgba(232,255,71,.06);
+}
+body.light .hv-footer-pill { color: var(--muted); border-color: var(--border2); }
+body.light .hv-footer-pill:hover { color: var(--neon2); border-color: var(--neon2); background: rgba(192,0,106,.06); }
 
 /* light mode tweaks for home */
 body.light .hv-feat-card,
@@ -2203,6 +2217,11 @@ body.light .hv-cat-row { background: var(--surface2); }
     <div class="hv-footer-logo">GL <span>PANELS</span></div>
     <div class="hv-footer-sub">ガールズラブ・カタログ · Tinta Sapphic</div>
     <div class="hv-footer-copy">Catálogo comunitario · Girls Love · Yuri · GL</div>
+    <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:20px">
+      <button onclick="openInfoModal('sobre')" class="hv-footer-pill">Sobre nosotras</button>
+      <button onclick="openInfoModal('privacidad')" class="hv-footer-pill">Política de privacidad</button>
+      <button onclick="openInfoModal('terminos')" class="hv-footer-pill">Términos de uso</button>
+    </div>
   </div>
 
 </div><!-- /homeView -->
@@ -3974,5 +3993,81 @@ function bindModalSwipe() {
 }
 
 init();</script>
+
+
+
+<!-- ═══ INFO MODALS ═══ -->
+<div id="infoModalBg" onclick="if(event.target===this)closeInfoModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(8px)">
+  <div id="infoModalBox" style="background:var(--surface);border:1px solid var(--border2);border-radius:16px;max-width:560px;width:100%;max-height:82vh;overflow-y:auto;position:relative;box-shadow:0 0 60px rgba(232,255,71,0.07),0 24px 60px rgba(0,0,0,0.6)">
+    <button onclick="closeInfoModal()" style="position:sticky;top:1rem;float:right;margin:1rem 1rem 0 0;width:28px;height:28px;border-radius:50%;border:1px solid var(--border2);background:var(--surface2);color:var(--muted);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:all .15s;font-family:'DM Sans',sans-serif">&#10005;</button>
+    <div id="infoModalContent" style="padding:1.75rem 1.75rem 2rem;clear:both"></div>
+  </div>
+</div>
+
+<script>
+(function() {
+
+var MODAL_DATA = {
+  sobre: {
+    tag: '[ PROJECT_INFO ]',
+    title: 'Sobre nosotras',
+    color: 'var(--neon)',
+    gradient: 'var(--neon)',
+    body: [
+      '<p style="font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:1rem"><span style="color:var(--neon);font-weight:700">GL PANELS</span> es un cat\u00e1logo comunitario dedicado al manga y manhwa GL \u2014 Girls Love, Yuri y todo el espectro de historias entre chicas. Naci\u00f3 del proyecto <span style="color:var(--neon2)">Tinta Sapphic</span>, un espacio que lleva tiempo cubriendo series y pel\u00edculas GL desde todos los rincones del mundo.</p>',
+      '<p style="font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:1rem">La idea es simple: que ning\u00fan manga GL quede sin descubrir. Aqu\u00ed encontrar\u00e1s obras de todo tipo \u2014 romance, fantas\u00eda, drama, slice of life \u2014 con filtros por g\u00e9nero, estado, idioma e idioma original para que encuentres exactamente lo que buscas.</p>',
+      '<p style="font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:1.25rem">El cat\u00e1logo se mantiene activo gracias a la comunidad. Si detectas un error, quieres sugerir un t\u00edtulo o simplemente quieres saludar, puedes encontrarnos en X.</p>',
+      '<div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:1.25rem"><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--neon);color:var(--neon);font-weight:600;opacity:.85">&#10022; Hecho con amor</span><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--neon2);color:var(--neon2);font-weight:600;opacity:.85">&#127800; 100% GL &amp; Yuri</span><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--neon3);color:var(--neon3);font-weight:600;opacity:.85">&#128214; Manga &middot; Manhwa &middot; Manhua</span><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--neon);color:var(--neon);font-weight:600;opacity:.85">&#127757; T\u00edtulos de todo el mundo</span></div>'
+    ]
+  },
+  privacidad: {
+    tag: '[ PRIVACY.md ]',
+    title: 'Pol\u00edtica de privacidad',
+    color: 'var(--neon3)',
+    gradient: 'var(--neon3)',
+    body: [
+      '<p style="font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:1.25rem">Tu privacidad es importante. Este cat\u00e1logo est\u00e1 dise\u00f1ado para recopilar el m\u00ednimo de datos posible y ser transparente sobre lo que ocurre con ellos.</p>',
+      '<div style="margin-bottom:1.1rem;padding:12px 14px;background:var(--surface2);border-radius:10px;border-left:2px solid var(--neon3)"><div style="font-size:10.5px;font-weight:700;color:var(--neon3);letter-spacing:.1em;margin-bottom:6px">AUTENTICACI\u00d3N \u2014 SUPABASE AUTH</div><p style="font-size:12.5px;color:var(--muted);line-height:1.75;margin:0">Si te registras o inicias sesi\u00f3n, tu email y contrase\u00f1a son gestionados exclusivamente por <strong style="color:var(--screen);background:var(--neon3);padding:0 4px;border-radius:3px;font-size:11px">Supabase Auth</strong>. Nosotras nunca vemos ni almacenamos tu contrase\u00f1a \u2014 Supabase la gestiona de forma segura con hashing bcrypt. Tu email solo se usa para identificarte y no se comparte con nadie.</p></div>',
+      '<div style="margin-bottom:1.1rem;padding:12px 14px;background:var(--surface2);border-radius:10px;border-left:2px solid var(--neon)"><div style="font-size:10.5px;font-weight:700;color:var(--neon);letter-spacing:.1em;margin-bottom:6px">BASE DE DATOS \u2014 SUPABASE POSTGRES</div><p style="font-size:12.5px;color:var(--muted);line-height:1.75;margin:0">Los datos del cat\u00e1logo (mangas, valoraciones, favoritos) se almacenan en una base de datos PostgreSQL en Supabase. El acceso est\u00e1 protegido mediante <strong style="color:var(--neon)">Row Level Security (RLS)</strong>: cada usuaria solo puede leer y modificar sus propios datos. Nadie puede acceder a los datos de otra persona.</p></div>',
+      '<div style="margin-bottom:1.1rem;padding:12px 14px;background:var(--surface2);border-radius:10px;border-left:2px solid var(--neon2)"><div style="font-size:10.5px;font-weight:700;color:var(--neon2);letter-spacing:.1em;margin-bottom:6px">LO QUE NO HACEMOS</div><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px"><li style="font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:8px"><span style="color:var(--neon2);font-size:10px;flex-shrink:0">&#10005;</span>Vender o ceder tus datos a terceros</li><li style="font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:8px"><span style="color:var(--neon2);font-size:10px;flex-shrink:0">&#10005;</span>Usar cookies de seguimiento o publicidad</li><li style="font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:8px"><span style="color:var(--neon2);font-size:10px;flex-shrink:0">&#10005;</span>Rastrear tu comportamiento fuera de esta web</li><li style="font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:8px"><span style="color:var(--neon2);font-size:10px;flex-shrink:0">&#10005;</span>Enviar emails de marketing sin tu consentimiento</li></ul></div>',
+      '<div style="margin-bottom:1rem;padding:12px 14px;background:var(--surface2);border-radius:10px;border-left:2px solid var(--border2)"><div style="font-size:10.5px;font-weight:700;color:var(--muted);letter-spacing:.1em;margin-bottom:6px">ALMACENAMIENTO LOCAL</div><p style="font-size:12.5px;color:var(--muted);line-height:1.75;margin:0">Se usa <code style="font-size:11px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:4px">localStorage</code> para guardar preferencias de sesi\u00f3n como filtros, tema (oscuro/claro) y tab activa. Estos datos nunca salen de tu navegador.</p></div>',
+      '<p style="font-size:11px;color:var(--dim);margin-top:1rem;padding-top:.75rem;border-top:1px solid var(--border)">&Uacute;ltima actualizaci\u00f3n: mayo 2025 &middot; \u00bfPreguntas? <a href="https://x.com/xxmadwavs" target="_blank" style="color:var(--neon3);text-decoration:none">X (@xxmadwavs)</a></p>'
+    ]
+  },
+  terminos: {
+    tag: '[ TERMS.txt ]',
+    title: 'T\u00e9rminos de uso',
+    color: 'var(--neon2)',
+    gradient: 'var(--neon2)',
+    body: [
+      '<p style="font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:1.25rem">Al usar GL Panels aceptas estas condiciones. Son breves y van al grano.</p>',
+      '<div style="display:flex;flex-direction:column;gap:10px"><div style="padding:11px 14px;background:var(--surface2);border-radius:10px;border-left:2px solid var(--neon)"><div style="font-size:10px;font-weight:700;color:var(--neon);letter-spacing:.1em;margin-bottom:5px">01 \u2014 USO PERSONAL</div><div style="font-size:12.5px;color:var(--muted);line-height:1.7">Este cat\u00e1logo es un recurso gratuito para la comunidad GL. Puedes usarlo libremente para descubrir y organizar lecturas. No est\u00e1 permitido su uso comercial sin autorizaci\u00f3n.</div></div><div style="padding:11px 14px;background:var(--surface2);border-radius:10px;border-left:2px solid var(--neon3)"><div style="font-size:10px;font-weight:700;color:var(--neon3);letter-spacing:.1em;margin-bottom:5px">02 \u2014 CUENTA DE USUARIA</div><div style="font-size:12.5px;color:var(--muted);line-height:1.7">Si creas una cuenta, eres responsable de mantener la seguridad de tus credenciales. No compartas tu acceso con otras personas.</div></div><div style="padding:11px 14px;background:var(--surface2);border-radius:10px;border-left:2px solid var(--neon)"><div style="font-size:10px;font-weight:700;color:var(--neon);letter-spacing:.1em;margin-bottom:5px">03 \u2014 CONTENIDO DEL CAT\u00c1LOGO</div><div style="font-size:12.5px;color:var(--muted);line-height:1.7">La informaci\u00f3n sobre mangas, portadas y plataformas se ofrece con fines informativos. Hacemos lo posible por mantenerla actualizada, pero no garantizamos su exactitud total en todo momento.</div></div><div style="padding:11px 14px;background:var(--surface2);border-radius:10px;border-left:2px solid var(--neon2)"><div style="font-size:10px;font-weight:700;color:var(--neon2);letter-spacing:.1em;margin-bottom:5px">04 \u2014 CONDUCTA EN LA COMUNIDAD</div><div style="font-size:12.5px;color:var(--muted);line-height:1.7">Este es un espacio seguro. No se tolera ning\u00fan tipo de discriminaci\u00f3n, acoso o contenido inapropiado. Nos reservamos el derecho de eliminar cuentas que incumplan esta norma.</div></div><div style="padding:11px 14px;background:var(--surface2);border-radius:10px;border-left:2px solid var(--neon3)"><div style="font-size:10px;font-weight:700;color:var(--neon3);letter-spacing:.1em;margin-bottom:5px">05 \u2014 INFRAESTRUCTURA (SUPABASE)</div><div style="font-size:12.5px;color:var(--muted);line-height:1.7">GL Panels usa <strong style="color:var(--neon3)">Supabase</strong> para base de datos y autenticaci\u00f3n. Al usar la plataforma, tambi\u00e9n est\u00e1s sujeta a los <a href="https://supabase.com/terms" target="_blank" style="color:var(--neon3);text-decoration:none">T\u00e9rminos de Servicio de Supabase</a>.</div></div><div style="padding:11px 14px;background:var(--surface2);border-radius:10px;border-left:2px solid var(--neon2)"><div style="font-size:10px;font-weight:700;color:var(--neon2);letter-spacing:.1em;margin-bottom:5px">06 \u2014 MODIFICACIONES</div><div style="font-size:12.5px;color:var(--muted);line-height:1.7">Podemos actualizar estos t\u00e9rminos en cualquier momento. Los cambios se publicar\u00e1n en esta misma secci\u00f3n.</div></div></div>',
+      '<p style="font-size:11px;color:var(--dim);margin-top:1rem;padding-top:.75rem;border-top:1px solid var(--border)">\u00bfDudas? <a href="https://x.com/xxmadwavs" target="_blank" style="color:var(--neon2);text-decoration:none">X (@xxmadwavs)</a></p>'
+    ]
+  }
+};
+
+window.openInfoModal = function(key) {
+  var data = MODAL_DATA[key];
+  if (!data) return;
+  var header = '<div style="margin-bottom:1.25rem">'
+    + '<div style="font-size:9.5px;font-weight:700;color:' + data.color + ';letter-spacing:.15em;margin-bottom:6px;font-family:DM Sans,sans-serif">' + data.tag + '</div>'
+    + '<h2 style="font-family:Bebas Neue,sans-serif;font-size:1.9rem;letter-spacing:3px;color:var(--ink);line-height:1;margin:0">' + data.title + '</h2>'
+    + '<div style="height:1.5px;background:linear-gradient(90deg,' + data.color + ',transparent);margin-top:10px;border-radius:2px;opacity:.7"></div>'
+    + '</div>';
+  document.getElementById('infoModalContent').innerHTML = header + data.body.join('');
+  document.getElementById('infoModalBg').style.display = 'flex';
+};
+
+window.closeInfoModal = function() {
+  document.getElementById('infoModalBg').style.display = 'none';
+};
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && document.getElementById('infoModalBg').style.display !== 'none') closeInfoModal();
+});
+
+})();
+</script>
 </body>
 </html>
