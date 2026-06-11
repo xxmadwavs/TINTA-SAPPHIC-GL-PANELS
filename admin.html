@@ -454,6 +454,10 @@ tr.row-img-broken:hover{background:rgba(255,60,60,.08)}
             <option>Continúa</option><option>Finalizado</option><option>Hiatus</option><option>Cancelado</option>
           </select>
         </div>
+        <div class="fg" id="capsField" style="display:none">
+          <label class="flbl">Capítulos totales</label>
+          <input type="number" id="fCaps" class="finput" min="1" placeholder="Ej: 48">
+        </div>
         <div class="form-full fg">
           <label class="flbl">URL de portada</label>
           <div class="cov-row">
@@ -802,6 +806,8 @@ function openEdit(id){
   document.getElementById('fInkClub').checked=!!e.ink_club;
   document.getElementById('fInkCats').value=(e.ink_categories||[]).join(', ');
   document.getElementById('inkCatField').style.display=e.ink_club?'block':'none';
+  document.getElementById('fCaps').value=e.capitulos_totales||'';
+  document.getElementById('capsField').style.display=e.estado==='Finalizado'?'':'none';
   updateAdultLbl();updateCov(e.imagen||'');renderPills();openMod('editWrap');
 }
 function openAdd(){
@@ -813,6 +819,8 @@ function openAdd(){
   document.getElementById('fInkClub').checked=false;
   document.getElementById('fInkCats').value='';
   document.getElementById('inkCatField').style.display='none';
+  document.getElementById('fCaps').value='';
+  document.getElementById('capsField').style.display='none';
   updateAdultLbl();document.getElementById('covThumb').style.display='none';renderPills();openMod('editWrap');
 }
 function saveEntry(){
@@ -824,17 +832,25 @@ function saveEntry(){
   const inkClub=document.getElementById('fInkClub').checked;
   const inkCatsRaw=document.getElementById('fInkCats').value.trim();
   const inkCategories=inkClub&&inkCatsRaw?inkCatsRaw.split(',').map(s=>s.trim()).filter(Boolean):[];
+  const estado=document.getElementById('fEstado').value;
+  const capsVal=parseInt(document.getElementById('fCaps').value,10);
   // Normalize tags before saving
   const normalizedTags=[...new Set(tagsList.map(normalizeTag))];
   const entry={
     id:editingId||('gl_'+Date.now()+'_'+Math.random().toString(36).slice(2,5)),
-    titulo,seccion:document.getElementById('fSeccion').value,estado:document.getElementById('fEstado').value,
+    titulo,seccion:document.getElementById('fSeccion').value,estado,
     imagen:document.getElementById('fImagen').value.trim(),desc:document.getElementById('fDesc').value.trim(),
     tags:normalizedTags,in_biblioteca:bib,in_files:files,adult,subido,
     ink_club:inkClub,ink_categories:inkCategories,
   };
+  if(estado==='Finalizado'&&capsVal>0)entry.capitulos_totales=capsVal;
   if(!inkClub){delete entry.ink_club;delete entry.ink_categories;}
-  if(editingId){const i=allData.findIndex(x=>x.id===editingId);if(i>=0)allData[i]=entry;}
+  if(editingId){
+    const i=allData.findIndex(x=>x.id===editingId);
+    if(i>=0)allData[i]=entry;
+    // Si se cambió la imagen, quitar de la lista de rotas
+    if(entry.imagen)brokenIds.delete(editingId);
+  }
   else allData.unshift(entry);
   const _savedPage=page; closeMod('editWrap'); buildStats(); applyFilters(); renderInkAdmin(); page=_savedPage; renderTable();
   toast(editingId?'Historia actualizada ✓':'Historia añadida ✓','ok');
@@ -950,6 +966,11 @@ function bindEvents(){
   });
   document.getElementById('fImagen').addEventListener('input',e=>updateCov(e.target.value.trim()));
   document.getElementById('fAdult').addEventListener('change',updateAdultLbl);
+  document.getElementById('fEstado').addEventListener('change',e=>{
+    const isFin=e.target.value==='Finalizado';
+    document.getElementById('capsField').style.display=isFin?'':'none';
+    if(!isFin)document.getElementById('fCaps').value='';
+  });
   document.getElementById('fInkClub').addEventListener('change',e=>{
     document.getElementById('inkCatField').style.display=e.target.checked?'block':'none';
   });
