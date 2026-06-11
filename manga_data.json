@@ -165,12 +165,15 @@
     "imagen": "https://image-repository-cdn.tappytoon.com/series/1268/69a4cb57-8aba-4772-8f9c-1986e4a9edbc.jpg?size=large",
     "desc": "Chanhee es una gánster implacable a la que, de forma inesperada, le empieza a doler la muela del juicio tras dar una paliza a una banda rival. Cuando acude a una clínica dental para que se la extraigan, se enamora perdidamente de Hajin, la guapa dentista que casualmente está de guardia esa noche. Aunque Hajin rechaza a Chanhee cuando esta le pide una cita, eso no impide que Chanhee le lleve almuerzos de lujo y regalos para conquistarla. Una cosa lleva a la otra y acaban liándose en la clínica, pero ¿podrá durar su nueva relación cuando provienen de dos mundos completamente diferentes?",
     "tags": [
-      "Romance"
+      "Romance",
+      "Crimen",
+      "Psicologico"
     ],
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "capitulos_totales": 10
   },
   {
     "id": "gl_1778185223047_s8x",
@@ -235,7 +238,8 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "capitulos_totales": 73
   },
   {
     "id": "gl_1778185100353_sqf",
@@ -538,7 +542,7 @@
     "titulo": "Drunken My Boss",
     "seccion": "Manhwa",
     "estado": "Continúa",
-    "imagen": "https://static.comix.to/364b/i/0/12/68e08d619f2b1.jpg",
+    "imagen": "https://mangadex.org/covers/257e0e31-e1b1-4f06-8d4e-804e78e6dcf8/7f9dab73-f2b5-4b7c-81fd-f1666531e133.jpg.512.jpg",
     "desc": "Cha Iseul es una chica que nació en cuna de oro. Dedicaba sus días a entregarse a los placeres de la bebida, el sexo y el despilfarro de dinero, hasta que su madre le quitó la tarjeta de crédito y decidió no darle ni un centavo más. En plena crisis conoce a Kang Sori, una chica de cabello despeinado y aspecto pasado de moda que parece ser todo lo contrario a ella...",
     "tags": [
       "Erotica",
@@ -554,7 +558,7 @@
     "titulo": "Fall/Falling",
     "seccion": "Manhwa",
     "estado": "Continúa",
-    "imagen": "https://static.comix.to/97ec/i/1/95/68de8db76ff2b.jpg",
+    "imagen": "https://image-repository-cdn.tappytoon.com/series/1218/0a7fa829-9b22-47b1-bd58-c772e910bbc3.jpg?size=large",
     "desc": "Dos mujeres con pasados turbulentos se cruzan en el mundo del contrabando. Seungji, una veterana traicionada por su jefe en una organización violenta, busca empezar de nuevo en otra red ilegal mientras planea su escape. Yeongwon, quien creció sin familia, hereda la dirección de una oficina de contrabando en Busan gracias a su tía. Aunque Seungji desconfía de todos y Yeongwon promete nunca traicionar a quienes ama, ambas se ayudan mutuamente y, poco a poco, comienzan a derribar las barreras que las separan, descubriendo por primera vez el amor.",
     "tags": [
       "Drama",
@@ -587,7 +591,7 @@
     "titulo": "Happines Rides a Broomstick",
     "seccion": "Manhwa",
     "estado": "Continúa",
-    "imagen": "https://static.comix.to/866c/i/1/a7/68de9a7688f80.jpg",
+    "imagen": "https://mangadex.org/covers/71d51fb0-fc54-400a-8819-c12ae212ed73/69529f9d-5f6d-4072-a8c1-99106b3cdba1.png.512.jpg",
     "desc": "Kim Danjo vive una vida monótona hasta que ve cómo una escoba se transforma en una chica humana que afirma ser una Dookkabei...",
     "tags": [
       "Comedia",
@@ -621,7 +625,7 @@
     "titulo": "How to Draw an Eclipse",
     "seccion": "Manhwa",
     "estado": "Continúa",
-    "imagen": "https://static.comix.to/865c/i/4/e0/68e48dca4a029.jpg",
+    "imagen": "https://mangadex.org/covers/6d6cb3ab-4ded-4697-9e1b-df75b85a19d3/d6851d73-2ab2-4c87-979e-248a4eaa95f3.jpg.512.jpg",
     "desc": "El secreto de Min-sung y tres años de amor entre dos personas diferentes los lleva a verse envueltos en eventos inesperados.",
     "tags": [
       "Drama",
@@ -664,7 +668,8 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "capitulos_totales": 60
   },
   {
     "id": "i_think_you_are___13",
@@ -723,7 +728,7 @@
     "titulo": "Kiss the Coming Apocalypse",
     "seccion": "Manhwa",
     "estado": "Continúa",
-    "imagen": "https://static.comix.to/9de3/i/f/db/68e08b2d778e4.jpg",
+    "imagen": "https://mangadex.org/covers/5da637ef-b363-4d07-97f3-bed2e1a1788c/efa8a3ad-2560-4fe8-9ec4-2a6e84a3e5f3.png.512.jpg",
     "desc": "Debido a un fenómeno desconocido, no nacen varones, lo que sume a la humanidad en una crisis existencial. Mientras el tráfico de varones se vuelve desenfrenado y los gobiernos crean refugios para preservar a los que quedan, la sociedad lucha por adaptarse. En este mundo caótico, Jessica, una popular actriz con una imagen glamurosa, es apadrinada por Valentine, el jefe de un cártel de tráfico de personas. Su vida aparentemente perfecta da un giro dramático cuando un joven llamado Jin, que dice ser su hermano perdido hace mucho tiempo, aparece de repente, desvelando secretos y sacudiendo los cimientos de su mundo cuidadosamente construido...",
     "tags": [
       "Comedia",
@@ -741,7 +746,7 @@
     "titulo": "Lady Black Is Depressed",
     "seccion": "Manhwa",
     "estado": "Continúa",
-    "imagen": "https://static.comix.to/a527/i/9/57/68df132715c77.jpg",
+    "imagen": "https://mangadex.org/covers/9e307121-38f7-4e79-8654-6b5bf9dc5fd5/069f57f7-5534-4a8f-882a-4a4e8bccf34d.jpg.512.jpg",
     "desc": "Margo Lonsdale, la esposa de un empresario exitoso, apuñala a su esposo hasta matarlo un día. Toda la evidencia fue escondida y hasta incriminó a un sirviente masculino. Nadie pensaría que Margo es la asesina; para ellos, ella es la mujer más callada y dócil del mundo. Sin embargo, Margo se encuentra atrapada en su mansión junto con los dolientes debido a una tormenta de nieve que comenzó después del funeral. Para empeorar las cosas, la sombría criada de su cuñada, 'Peggy', descubre evidencia de su asesinato...",
     "tags": [
       "Erotica",
@@ -758,7 +763,7 @@
     "titulo": "Lemon Pie Night",
     "seccion": "Manhwa",
     "estado": "Continúa",
-    "imagen": "https://static.comix.to/05b7/i/7/58/68df6b275af07.jpg",
+    "imagen": "https://mangadex.org/covers/dc48f513-f859-42ad-8eb9-bb508c257e0e/5a43400e-d562-4831-9bea-262107503201.png.512.jpg",
     "desc": "Una joven, Ariel, huye de su hermano y señor, Aryk. Amenazada por un asesino organizado por Aryk, es rescatada por un misterioso caballero llamado Verita y juntos huyen. Para escapar de la sombra siempre amenazante de Aryk, Ariel aprende a valerse por sí misma con la ayuda de Verita. En el camino, Ariel aprende a apoyarse en Verita incluso cuando se siente vulnerable y a ser honesta consigo misma sobre sus sentimientos...",
     "tags": [
       "Historica",
@@ -909,7 +914,7 @@
     "titulo": "MURMUR",
     "seccion": "Manhwa",
     "estado": "Continúa",
-    "imagen": "https://static.comix.to/11be/i/7/d4/694028aa7dceb.jpg",
+    "imagen": "https://preview.redd.it/murmur-my-new-favorite-read-absolutely-recommend-v0-jhq0mtyul9hg1.png?width=400&format=png&auto=webp&s=210bc84181851099bc8bd62d4e2532f980343747",
     "desc": "Jina vive atrapada en un secreto: su insomnio solo desaparece gracias a los vídeos ASMR de una popular YouTuber. Lo que Jina no esperaba es que esa voz perteneciera a la misma persona que arruinó su vida en el instituto. Años después, el destino las reúne en un taller de su empresa, donde el rencor y la obsesión colisionan en un reencuentro cargado de tensión y secretos.",
     "tags": [
       "Erotica"
@@ -957,7 +962,7 @@
     "titulo": "Only to you",
     "seccion": "Manhwa",
     "estado": "Continúa",
-    "imagen": "https://static.comix.to/134e/i/f/1f/693b6b4fbb08c.jpg",
+    "imagen": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSGBok9PFRivHB6mquo07amZiJ19RZndwOG2N9FsREvgMuYgvXE",
     "desc": "Rosie creció en un entorno privilegiado, viviendo como una princesa sin ninguna necesidad. Aunque su comportamiento es a menudo caprichoso e inmaduro, tiene un corazón amable y gentil. En un esfuerzo por llevar una vida normal, continúa teniendo citas mientras finge ser la novia perfecta. Sin embargo, finalmente rompe con su novio, que es terrible en la cama. Por casualidad, entra en un bar solo para mujeres y conoce a Jin, de quien se enamora a primera vista. Este encuentro le abre los ojos al sexo lésbico...",
     "tags": [
       "Comedia",
@@ -1022,7 +1027,7 @@
     "titulo": "Ruthless",
     "seccion": "Manhwa",
     "estado": "Continúa",
-    "imagen": "https://static.comix.to/7aa3/i/1/a7/68fb7c904f1b7.jpg",
+    "imagen": "https://swebtoon-phinf.pstatic.net/20230416_88/16816545936322Qi63_JPEG/thumbnail.jpg",
     "desc": "Seo Jimin evita las relaciones serias para no salir herida, ganándose cierta reputación en la universidad. Sin embargo, sus reglas se ponen a prueba cuando una hermosa mujer se muda a su casa.",
     "tags": [
       "Comedia",
@@ -1112,7 +1117,7 @@
     "titulo": "Sister Prison",
     "seccion": "Manhwa",
     "estado": "Continúa",
-    "imagen": "https://static.comix.to/cc86/i/d/91/68e4dd5f19e91.jpg",
+    "imagen": "https://mangadex.org/covers/bd9bc060-536e-48b5-b174-0fd9fc82e52e/8fe50665-9d9b-40c4-a944-a87194945320.png.512.jpg",
     "desc": "¡Una prisión muy especial solo para mujeres! Ahn Taeseong, uno de los principales conglomerados del mundo, crea una prisión de mujeres muy especial para proteger a su preciosa hija Jiae. Allí, Jiae forma su propio harlem y continúa con su vida libertina. Sin embargo, allí también conoce a Eunha, quien ha sido acusada de intento de asesinato. Intrigada por la otra mujer, Jiae finge ayudar a Eunha en su plan de fuga, pero cae en un mundo de lujuria con ella...",
     "tags": [
       "Drama",
@@ -1143,8 +1148,8 @@
     "id": "swallow_tail_41",
     "titulo": "Swallow Tail",
     "seccion": "Manhwa",
-    "estado": "Continúa",
-    "imagen": "https://static.comix.to/8688/i/7/9c/68de8004015b6.jpg",
+    "estado": "Hiatus",
+    "imagen": "https://mangadex.org/covers/e3a76b2e-aa8d-461e-88da-ec7676ced776/82908c7b-1206-4590-82c1-96773cf1fa7b.jpg.512.jpg",
     "desc": "Swallow (Kang Chaeyeon) es la vocalista principal del grupo femenino \"Berry Wine\". Su vida dará un giro cuando en una sesión de fotos se encuentre con la famosa actriz Sohn Seungha, y ésta resulte ser la misma persona que en 4to grado de primaria tenía una fijación especial por ella.",
     "tags": [
       "Drama",
@@ -1243,8 +1248,8 @@
     "id": "the_montfort_royal_family_s_scandal_47",
     "titulo": "The Montfort Royal Family’s Scandal",
     "seccion": "Manhwa",
-    "estado": "Continúa",
-    "imagen": "https://static.comix.to/02a2/i/7/fb/6942d5f31d1e6.jpg",
+    "estado": "Hiatus",
+    "imagen": "https://cdn.dgmanga.app/general/1766581531009-48798970cfeef1bd-dddndn.jpg",
     "desc": "La princesa Charlotte de Monporte se va a casar con el tercer príncipe del Imperio Gloria, pero sorprende a todos cuando de repente besa al caballero que la ha estado protegiendo, Alex Moltke.",
     "tags": [
       "Fantasia",
@@ -1293,7 +1298,7 @@
     "titulo": "Trash Flower",
     "seccion": "Manhwa",
     "estado": "Continúa",
-    "imagen": "https://static.comix.to/e7fd/i/1/36/68df0f34366e5.jpg",
+    "imagen": "https://lilymanga.net/wp-content/uploads/2024/08/Trash-Flower-GL-Manwa-193x278.webp",
     "desc": "Debido a las deudas familiares, Song Joo-hee no puede vivir su propia vida. Un día, accidentalmente conoce a Kang Se-ra, la hija fugitiva de una familia adinerada, y pasan una noche juntas. Joo-hee queda fascinada por el encanto de Se-ra y acepta su propuesta de vivir juntas...",
     "tags": [
       "Drama",
@@ -1389,7 +1394,8 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "capitulos_totales": 1
   },
   {
     "id": "area_of_x_56",
@@ -1646,7 +1652,8 @@
     "ink_categories": [
       "2026",
       "Manhwa"
-    ]
+    ],
+    "capitulos_totales": 55
   },
   {
     "id": "finding_assistant_manager_kim_71",
@@ -1849,7 +1856,8 @@
     "ink_categories": [
       "2025",
       "Manhwa"
-    ]
+    ],
+    "capitulos_totales": 38
   },
   {
     "id": "illicit_83",
@@ -1866,7 +1874,8 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "capitulos_totales": 139
   },
   {
     "id": "i_love_amy_84",
@@ -2083,7 +2092,8 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "capitulos_totales": 98
   },
   {
     "id": "my_cat_owner_96",
@@ -2118,7 +2128,8 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "capitulos_totales": 45
   },
   {
     "id": "my_love_is_a_gangster___98",
@@ -2135,7 +2146,8 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "capitulos_totales": 30
   },
   {
     "id": "my_princess_charming_99",
@@ -2245,7 +2257,8 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "capitulos_totales": 8
   },
   {
     "id": "program_me_105",

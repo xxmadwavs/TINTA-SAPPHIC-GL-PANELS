@@ -441,6 +441,13 @@ tr.row-img-broken:hover{background:rgba(255,60,60,.08)}
           <label class="flbl">Título <span class="req">*</span></label>
           <input type="text" id="fTitulo" class="finput" placeholder="Título de la historia">
         </div>
+        <div class="form-full fg">
+          <label class="flbl">Títulos alternativos</label>
+          <div class="tags-wrap" id="altWrap" onclick="document.getElementById('altInp').focus()">
+            <input type="text" id="altInp" class="tag-inp" placeholder="Título alternativo, Enter para añadir…">
+          </div>
+          <div class="fhint">Enter o coma para añadir · Backspace elimina el último · Ej: título original japonés, inglés…</div>
+        </div>
         <div class="fg">
           <label class="flbl">Sección <span class="req">*</span></label>
           <select id="fSeccion" class="fsel">
@@ -538,7 +545,7 @@ const DATA_URL='manga_data.json';
 const ADULT_TAGS=new Set(['erotica','erotic','erótica']);
 const ECLS={Finalizado:'b-fin',Continúa:'b-cont',Hiatus:'b-hiatus',Cancelado:'b-cancel'};
 const EICO={Finalizado:'✓',Continúa:'▶',Hiatus:'⏸',Cancelado:'✗'};
-let allData=[],filtered=[],editingId=null,deletingId=null,page=1,perPage=25,tagsList=[];
+let allData=[],filtered=[],editingId=null,deletingId=null,page=1,perPage=25,tagsList=[],altList=[];
 
 // ── TAG NORMALIZATION ─────────────────────────────────────
 const TAG_NORMALIZE_MAP = {
@@ -739,7 +746,7 @@ function applyFilters(){
     if(adv==='safe'&&e.adult)return false;
     if(ink==='ink'&&!e.ink_club)return false;
     if(ink==='noink'&&e.ink_club)return false;
-    if(q){const t=e.titulo.toLowerCase(),d=(e.desc||'').toLowerCase(),tg=(e.tags||[]).join(' ').toLowerCase();if(!t.includes(q)&&!d.includes(q)&&!tg.includes(q))return false;}
+    if(q){const t=e.titulo.toLowerCase(),d=(e.desc||'').toLowerCase(),tg=(e.tags||[]).join(' ').toLowerCase(),alt=(e.titulos_alt||[]).join(' ').toLowerCase();if(!t.includes(q)&&!d.includes(q)&&!tg.includes(q)&&!alt.includes(q))return false;}
     return true;
   });
   page=1;renderTable();
@@ -808,6 +815,7 @@ function openEdit(id){
   document.getElementById('inkCatField').style.display=e.ink_club?'block':'none';
   document.getElementById('fCaps').value=e.capitulos_totales||'';
   document.getElementById('capsField').style.display=e.estado==='Finalizado'?'':'none';
+  altList=[...(e.titulos_alt||[])];renderAltPills();
   updateAdultLbl();updateCov(e.imagen||'');renderPills();openMod('editWrap');
 }
 function openAdd(){
@@ -821,6 +829,7 @@ function openAdd(){
   document.getElementById('inkCatField').style.display='none';
   document.getElementById('fCaps').value='';
   document.getElementById('capsField').style.display='none';
+  altList=[];renderAltPills();
   updateAdultLbl();document.getElementById('covThumb').style.display='none';renderPills();openMod('editWrap');
 }
 function saveEntry(){
@@ -843,6 +852,7 @@ function saveEntry(){
     tags:normalizedTags,in_biblioteca:bib,in_files:files,adult,subido,
     ink_club:inkClub,ink_categories:inkCategories,
   };
+  if(altList.length)entry.titulos_alt=altList; else delete entry.titulos_alt;
   if(estado==='Finalizado'&&capsVal>0)entry.capitulos_totales=capsVal;
   if(!inkClub){delete entry.ink_club;delete entry.ink_categories;}
   if(editingId){
@@ -880,7 +890,19 @@ function addTag(v){
   renderPills();
 }
 function removeTag(t){tagsList=tagsList.filter(x=>x!==t);renderPills();}
-window.removeTag=removeTag;window.openEdit=openEdit;window.openDel=openDel;
+function renderAltPills(){
+  const wrap=document.getElementById('altWrap'),inp=document.getElementById('altInp');
+  wrap.querySelectorAll('.tpill').forEach(p=>p.remove());
+  altList.forEach(t=>{
+    const p=document.createElement('div');
+    p.className='tpill';
+    p.innerHTML=`${esc(t)}<button type="button" onclick="removeAlt('${esc(t)}')">×</button>`;
+    wrap.insertBefore(p,inp);
+  });
+}
+function addAlt(v){const t=v.trim();if(!t||altList.includes(t))return;altList.push(t);renderAltPills();}
+function removeAlt(t){altList=altList.filter(x=>x!==t);renderAltPills();}
+window.removeTag=removeTag;window.removeAlt=removeAlt;window.openEdit=openEdit;window.openDel=openDel;
 
 function updateCov(url){const img=document.getElementById('covThumb');img.style.display=url?'block':'none';if(url)img.src=url;}
 function updateAdultLbl(){document.getElementById('adultLbl').classList.toggle('on',document.getElementById('fAdult').checked);}
@@ -963,6 +985,10 @@ function bindEvents(){
   document.getElementById('tagInp').addEventListener('keydown',e=>{
     if(e.key==='Enter'||e.key===','){e.preventDefault();addTag(e.target.value);e.target.value='';}
     else if(e.key==='Backspace'&&!e.target.value&&tagsList.length){tagsList.pop();renderPills();}
+  });
+  document.getElementById('altInp').addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===','){e.preventDefault();addAlt(e.target.value);e.target.value='';}
+    else if(e.key==='Backspace'&&!e.target.value&&altList.length){altList.pop();renderAltPills();}
   });
   document.getElementById('fImagen').addEventListener('input',e=>updateCov(e.target.value.trim()));
   document.getElementById('fAdult').addEventListener('change',updateAdultLbl);

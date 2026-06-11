@@ -899,7 +899,21 @@ div.search-box:focus { outline: none; }
 .modal-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 2rem; letter-spacing: 2px;
-  line-height: 1.05; margin-bottom: 10px;
+  line-height: 1.05; margin-bottom: 6px;
+}
+.modal-alt-titles {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  margin-bottom: 10px;
+}
+.modal-alt-title {
+  font-size: 11px; color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic; letter-spacing: .2px;
+}
+.modal-alt-title + .modal-alt-title::before {
+  content: '·';
+  margin-right: 4px;
+  opacity: .4;
 }
 .modal-meta { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
 .mbadge {
@@ -3339,6 +3353,7 @@ function openModal(e) {
       <div>
         <div class="modal-sec">${esc(e.seccion)}</div>
         <div class="modal-title">${esc(e.titulo)}</div>
+        ${e.titulos_alt && e.titulos_alt.length ? `<div class="modal-alt-titles">${e.titulos_alt.map(t=>`<span class="modal-alt-title">${esc(t)}</span>`).join('')}</div>` : ''}
         ${e.adult ? '<div class="modal-adult-warn">🔞 Contenido para mayores de 18 años</div>' : ''}
         <div class="modal-meta">
           <span class="mbadge ${mc}">${ei} ${esc(e.estado)}</span>
@@ -3395,9 +3410,11 @@ function matches(e) {
   }
   if (fQ) {
     const q = fQ.toLowerCase();
+    const alt = (e.titulos_alt||[]).join(' ').toLowerCase();
     if (!e.titulo.toLowerCase().includes(q) &&
         !(e.desc||'').toLowerCase().includes(q) &&
-        !(e.tags||[]).join(' ').toLowerCase().includes(q)) return false;
+        !(e.tags||[]).join(' ').toLowerCase().includes(q) &&
+        !alt.includes(q)) return false;
   }
   return true;
 }
