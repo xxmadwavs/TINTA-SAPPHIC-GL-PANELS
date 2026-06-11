@@ -109,7 +109,7 @@
     "titulo": "Is it Normal to Raise a Yandere Heroine as a Villainess ?!",
     "seccion": "Manhua",
     "estado": "Continúa",
-    "imagen": "https://glcomic.lilymanga.net/WP-manga/data/manga_661ebb02a55a6/94b2a7d750d2996d072d377e74ee554d/001.webp",
+    "imagen": "https://mangadex.org/covers/6ef2cc94-eb99-4058-929f-6b1afae1caca/500263ae-db48-4adf-8458-248eef830f80.jpg.512.jpg",
     "desc": "Jiang Yang, una directora de arte de videojuegos que había transmigrado a un mundo de cultivo, es arrastrada accidentalmente a un nuevo mundo de magia basado en un juego otome justo antes de poder volver a casa. Allí se convierte en la protectora de la heroína, Xing Lu, a quien decide ayudar enseñándole artes marciales y alejándola de pretendientes tóxicos para evitar que sufra el destino cruel del guion original. Sin embargo, a medida que su relación se vuelve más íntima, Jiang Yang descubre que el vínculo místico que las une es mucho más complejo y profundo de lo que pensaba.",
     "tags": [
       "Drama",
@@ -119,7 +119,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Shēnwéi Èyì Nǚpèi de Wǒ Yǎngchéng Bìngjiāo Nǚzhǔ Hěn Zhèngcháng ba?!",
+      "Como Villana Debo Cuidar A La Heroína ¿Cierto?"
+    ]
   },
   {
     "id": "gl_1778185321184_ik1",
@@ -359,7 +363,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Ta Hao Xiang Zai Liao Wo",
+      "Ella parece estar coqueteando conmigo"
+    ]
   },
   {
     "id": "gl_1777838490733_jyj",
@@ -377,7 +385,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Hei Ye Qing Wen Wo",
+      "Bésame en la oscuridad de la noche"
+    ]
   },
   {
     "id": "gl_1777838433883_h1r",
@@ -395,7 +407,10 @@
     "in_biblioteca": false,
     "in_files": false,
     "adult": false,
-    "subido": ""
+    "subido": "",
+    "titulos_alt": [
+      "La seducción del toque de jade"
+    ]
   },
   {
     "id": "gl_1777838379388_qf1",
@@ -412,7 +427,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Qiánnǚyǒu Chéng le Wǒ de Dǐngtóushàngsī",
+      "¿La nueva jefa es mi exnovia?"
+    ]
   },
   {
     "id": "gl_1777838315050_5go",
@@ -430,7 +449,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Wéixiǎn Xīntiào",
+      "Latidos Cardiacos Peligrosos"
+    ]
   },
   {
     "id": "gl_1777838133528_a0v",
@@ -446,7 +469,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "El Viento Besa La Luz De La Luna",
+      "Jifeng Wen Yueguang"
+    ]
   },
   {
     "id": "anything__i_like_it_0",
@@ -4561,19 +4588,22 @@
   {
     "id": "my_stepmother_made_me_fall_for_her_241",
     "titulo": "My Stepmother Made Me Fall For Her",
+    "seccion": "Manhua",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2025/08/9036c01f-ba6f-44f0-b430-d31d840e6cd1.jpeg",
     "desc": "Soy Ruan Tao, la hijastra de una famosa actriz malvada. Quería adentrarme en el mundo del entretenimiento y volverme famosa, pero desde que comencé, tuve problemas con mi malvada madrastra, que es la más actriz más talentosa e influyente de la industria. Tuve que fingir someterme a ella, para así encontrar una forma de acabarla. Pero ahora, me pusieron en un programa de romance junto a ella. ¡Nadie me dijo que era uno de esos estúpidos shows de citas! Mi madrastra actúa cariñosa conmigo, pero estoy preocupada por cualquier drama que pueda ocurrir.",
     "tags": [
       "Drama",
       "Escolar",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "https://yuri-online.com/wp-content/uploads/2025/08/9036c01f-ba6f-44f0-b430-d31d840e6cd1.jpeg",
-    "seccion": "Manhua"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Mi madrastra me obligó a enamorarme de ella en un programa de romance"
+    ]
   },
   {
     "id": "my_echo_242",
@@ -4593,7 +4623,10 @@
   },
   {
     "id": "no_kissing_tonight__esta_noche_no_hay_be_243",
-    "titulo": "No Kissing tonight (Esta noche no hay besos)",
+    "titulo": "No Kissing tonight",
+    "seccion": "Manhua",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/03/portada-2-1086x1536.jpg",
     "desc": "Xu Jiajia y Duan Xi han sido enemigas juradas durante más de una década. Sin embargo, al caer la noche, ambas mantienen a escondidas una relación de “amigas con derechos”.  Tras una acalorada discusión que deriva en un encuentro íntimo, Xu Jiajia viaja inesperadamente al pasado, a la época ingenua de Duan Xi.  Frente a la joven e inexperta Duan Xi, Xu Jiajia decide seducirla primero y luego abandonarla, ¡para hacer que se rinda por completo!  Con su alma de 27 años enfrentándose a una Duan Xi de 20, sombría y sensible, lo que comienza como un juego de venganza y provocación poco a poco revela la fragilidad y el dolor oculto que la otra nunca ha mostrado…",
     "tags": [
       "Comedia",
@@ -4601,13 +4634,13 @@
       "Romance",
       "Viaje_Tiempo"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "https://yuri-online.com/wp-content/uploads/2026/03/portada-2-1086x1536.jpg",
-    "seccion": "Manhua"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Esta noche no hay besos"
+    ]
   },
   {
     "id": "into_the_sea_244",
@@ -4643,7 +4676,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Mi querida dama forense"
+    ]
   },
   {
     "id": "yumian_246",
@@ -4676,7 +4712,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Advertencia! Cuidado con el perro"
+    ]
   },
   {
     "id": "i_heard_that_both_of_our_empress_dowager_248",
@@ -4695,24 +4734,30 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "¡¿Acaso el Emperatriz x Emperatriz es real?!"
+    ],
     "capitulos_totales": 101
   },
   {
     "id": "_trembling__as_i_escape_from_you_249",
     "titulo": "“Trembling” as I Escape from You",
+    "seccion": "Manhua",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2025/08/PortadaTMO.jpg",
     "desc": "¡El enfrentamiento definitivo entre una introvertida y una extrovertida!  Ai Xu es diseñadora de figuras coleccionables y, desde pequeña, ha vivido con una ansiedad social extrema. Detesta las interacciones, odia trabajar en equipo y prefiere mantenerse al margen de todo. Ya adulta, luchó por conseguir el trabajo ideal: un puesto en el que el 90% de las tareas dependen únicamente de ella. Así se convirtió en creadora de conceptos originales. Bueno, sería ideal si no fuera por las reuniones semanales en las que está obligada a hablar. Por fortuna, hasta ahora ha sobrevivido escondiéndose detrás de sus presentaciones de PowerPoint sin decir una palabra.  Pero todo cambia cuando la obligan a formar equipo con la súper estrella del departamento de marketing: la brillante y deslumbrante Zhi Yi, una extrovertida de pies a cabeza, para desarrollar juntas un nuevo proyecto piloto. El choque extremo entre sus personalidades provoca una avalancha de situaciones dramáticas, llenas de explosiones y sorpresas que sacuden la tranquila vida de Ai Xu. Más allá de lo personal, sus formas de trabajar, su visión sobre el trabajo y sus ángulos de pensamiento entran constantemente en conflicto. Juntas atraviesan dificultades reales, aprenden a reconciliarse consigo mismas, a comprender la perspectiva de la otra, y logran transformar una línea creativa que estaba a punto de ser cancelada en la franquicia más exitosa de la compañía. Una historia de trabajo, colisiones y crecimiento, donde dos mundos completamente distintos aprenden a brillar juntos.",
     "tags": [
       "Comedia",
       "Oficina",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "https://yuri-online.com/wp-content/uploads/2025/08/PortadaTMO.jpg",
-    "seccion": "Manhua"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Temblando huyo de ti"
+    ]
   },
   {
     "id": "approximate_250",
@@ -4747,6 +4792,13 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Baili Jin Among Mortals",
+      "Bai Lijin Among Mortals",
+      "Mortal Baili Jin",
+      "人间百里锦",
+      "Ren jian bai li jin"
+    ],
     "capitulos_totales": 228
   },
   {
@@ -4764,6 +4816,13 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "青梅了了",
+      "Qīngméi Liǎoliǎo",
+      "Ciruelas verdes",
+      "Green Plum Liaoliao",
+      "Thanh Mai Liễu Liễu"
+    ],
     "capitulos_totales": 134
   },
   {
@@ -4781,6 +4840,10 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Chun et Alice",
+      "Chun Yu Ailisi"
+    ],
     "capitulos_totales": 98
   },
   {
@@ -4798,7 +4861,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Dangerous Lovers",
+      "危险情人"
+    ]
   },
   {
     "id": "falling_blue_255",
@@ -4835,7 +4902,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "这昏君的黑月光我当定了",
+      "Enamórate De La Emperatriz"
+    ]
   },
   {
     "id": "fugue_across_worlds_257",
@@ -4851,7 +4922,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "越过尘世的歌",
+      "The Song that Transcends This World"
+    ]
   },
   {
     "id": "heartbeat_error_x_258",
@@ -4867,7 +4942,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Heartbeat Inaccuracy X",
+      "Mistaken Heartbeat X"
+    ]
   },
   {
     "id": "heartfelt_diary_259",
@@ -4886,6 +4965,10 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Thoughtful Notebook",
+      "心意手账"
+    ],
     "capitulos_totales": 37
   },
   {
@@ -4904,6 +4987,10 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "她的山，她的海",
+      "Her Mountain, Her Ocean"
+    ],
     "capitulos_totales": 77
   },
   {
@@ -4922,7 +5009,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "许愿后，天降成精的星星",
+      "After Making a Wish, a Shooting Star Descended and Became a Spirit"
+    ]
   },
   {
     "id": "i_was_beaten_down_by_the_younger_generat_263",
@@ -4940,6 +5031,12 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "He Sido Derrotada Por La Generación Mas Joven Otra Vez",
+      "He Sido Derrotado Por La Generación Mas Joven Otra Vez",
+      "My Intern Bullied Me Again!",
+      "I've Been Defeated by The Younger Generation Again"
+    ],
     "capitulos_totales": 101
   },
   {
@@ -4960,6 +5057,10 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Weile Fuhuo Anlian De Shi Zun Wo Bei Po Kaile Hougong",
+      "Tuve que Crear un Harem para Revivir a la Maestra que Amaba"
+    ],
     "capitulos_totales": 27
   },
   {
@@ -4980,6 +5081,10 @@
     "in_files": false,
     "adult": true,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "囚你于掌中",
+      "Confine You in My Palm"
+    ],
     "capitulos_totales": 60
   },
   {
@@ -4997,6 +5102,10 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Tres compañías en los negocios",
+      "营业中请三连"
+    ],
     "capitulos_totales": 73
   },
   {
@@ -5028,7 +5137,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Escucha Las Estrellas"
+    ]
   },
   {
     "id": "living_with_the_vampire_lady_269",
@@ -5047,6 +5159,10 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "和吸血鬼姐姐同居了",
+      "Living With a Vampire Sister"
+    ],
     "capitulos_totales": 28
   },
   {
@@ -5066,6 +5182,11 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Mis Sentimientos Pueden Esperar",
+      "My Feelings Can Wait",
+      "余情可待"
+    ],
     "capitulos_totales": 164
   },
   {
@@ -6409,6 +6530,9 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "BACKSTAGE ชอบตอนเธอรัก"
+    ],
     "capitulos_totales": 80
   },
   {
@@ -6425,6 +6549,9 @@
     "in_files": false,
     "adult": true,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Drizzling Night"
+    ],
     "capitulos_totales": 14
   },
   {
@@ -6442,7 +6569,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "พบกันต์ ณ ที่รัก",
+      "My beloved"
+    ]
   },
   {
     "id": "level_one_dreamers_351",
@@ -6460,7 +6591,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "ผู้ชนะรักนี้ต้องเป็นฉัน"
+    ]
   },
   {
     "id": "my_honey_she_is_the_best__352",
@@ -6478,7 +6612,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "My Honey She is The Best!"
+    ]
   },
   {
     "id": "pastel_love_353",
@@ -6496,6 +6633,9 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Pastel Love"
+    ],
     "capitulos_totales": 62
   },
   {
@@ -6511,7 +6651,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Someday We'll Meet Again"
+    ]
   },
   {
     "id": "university_life_i_dreamed_of__it_s_not_l_355",
@@ -6527,6 +6670,9 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "ชีวิตมหา’ลัยที่ฝันไว้..มันต้องไม่ใช่แบบนี้สิ!"
+    ],
     "capitulos_totales": 150
   },
   {
@@ -6684,6 +6830,9 @@
     "ink_categories": [
       "2026",
       "Sin Clasificación"
+    ],
+    "titulos_alt": [
+      "펄스 Pulse"
     ],
     "capitulos_totales": 67
   },
