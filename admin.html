@@ -131,6 +131,8 @@ tr.row-img-broken{background:rgba(255,60,60,.04)}
 tr.row-img-broken:hover{background:rgba(255,60,60,.08)}
 .act-broken{background:rgba(255,60,60,.08);border-color:rgba(255,60,60,.3);color:#ff5050;font-family:"Space Mono",monospace;font-size:8px;letter-spacing:.5px}
 .act-broken.on{background:rgba(255,60,60,.2);border-color:#ff5050;color:#ff6060}
+.act-incomplete{background:rgba(71,160,255,.08);border-color:rgba(71,160,255,.3);color:#47a0ff;font-family:"Space Mono",monospace;font-size:8px;letter-spacing:.5px}
+.act-incomplete.on{background:rgba(71,160,255,.22);border-color:#47a0ff;color:#6fb5ff}
 .act-edit:hover{border-color:rgba(232,255,71,.4);color:var(--neon);background:rgba(232,255,71,.05)}
 .act-del:hover{border-color:rgba(255,71,163,.4);color:var(--neon2);background:rgba(255,71,163,.05)}
 .pagination{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:8px}
@@ -389,6 +391,7 @@ tr.row-img-broken:hover{background:rgba(255,60,60,.08)}
     </select>
     <span class="tb-count" id="tbCount"></span>
     <button class="act act-broken" id="btnBroken" onclick="toggleBrokenFilter()" title="Mostrar solo imágenes rotas">⚠ IMG ROTAS <span id="brokenCount" style="font-size:9px;opacity:.7"></span></button>
+    <button class="act act-incomplete" id="btnIncomplete" onclick="toggleIncompleteFilter()" title="Mostrar historias con datos incompletos">✎ INCOMPLETAS <span id="incompleteCount" style="font-size:9px;opacity:.7"></span></button>
   </div>
 
   <div class="table-wrap">
@@ -717,7 +720,7 @@ async function initApp(){
   catch{allData=[];toast('No se pudo cargar manga_data.json','err');}
   normalizeAllTags();
   await loadRatingsCount();
-  buildStats();applyFilters();renderInkAdmin();bindEvents();
+  buildStats();updateIncompleteCount();applyFilters();renderInkAdmin();bindEvents();
 }
 
 // Boot: auth first, app second
@@ -753,7 +756,9 @@ function applyFilters(){
 }
 
 function renderTable(){
-  const src=brokenFilter?filtered.filter(e=>brokenIds.has(e.id)):filtered;
+  let src=filtered;
+  if(brokenFilter)src=src.filter(e=>brokenIds.has(e.id));
+  if(incompleteFilter)src=src.filter(isIncomplete);
   const start=(page-1)*perPage,rows=src.slice(start,start+perPage);
   document.getElementById('adminTable').innerHTML=rows.map(e=>{
     const ec=ECLS[e.estado]||'b-fin',ei=EICO[e.estado]||'';
@@ -764,7 +769,7 @@ function renderTable(){
     const brokenBadge=e.imagen?`<span class="img-broken img-broken-badge" style="display:none">⚠ IMG ROTA</span>`:'';
     return `<tr>
       <td class="td-cov">${cov}</td>
-      <td class="td-tit"><div class="td-titulo">${esc(e.titulo)}</div>${e.adult?'<span class="adult-flag">+18</span>':''}${inkBadge}${brokenBadge}</td>
+      <td class="td-tit"><div class="td-titulo">${esc(e.titulo)}</div>${e.adult?'<span class="adult-flag">+18</span>':''}${inkBadge}${brokenBadge}${incompleteFilter&&(!e.titulos_alt||!e.titulos_alt.length)?'<span class="img-broken img-broken-badge" style="display:inline-block;background:rgba(71,160,255,.15);color:#47a0ff;border-color:rgba(71,160,255,.4)">✎ SIN ALT</span>':''}${incompleteFilter&&e.estado==='Finalizado'&&(!e.capitulos_totales||e.capitulos_totales<=0)?'<span class="img-broken img-broken-badge" style="display:inline-block;background:rgba(255,200,71,.12);color:#ffc847;border-color:rgba(255,200,71,.4)">✎ SIN CAPS</span>':''}</td>
       <td class="td-sec">${esc(e.seccion)}</td>
       <td class="td-tags"><div class="tag-row">${tags}</div></td>
       <td><span class="badge ${ec}">${ei} ${esc(e.estado)}</span></td>
@@ -852,7 +857,7 @@ function saveEntry(){
     tags:normalizedTags,in_biblioteca:bib,in_files:files,adult,subido,
     ink_club:inkClub,ink_categories:inkCategories,
   };
-  if(altList.length)entry.titulos_alt=altList; else delete entry.titulos_alt;
+  if(altList.length)entry.titulos_alt=[...altList]; else delete entry.titulos_alt;
   if(estado==='Finalizado'&&capsVal>0)entry.capitulos_totales=capsVal;
   if(!inkClub){delete entry.ink_club;delete entry.ink_categories;}
   if(editingId){
@@ -862,7 +867,7 @@ function saveEntry(){
     if(entry.imagen)brokenIds.delete(editingId);
   }
   else allData.unshift(entry);
-  const _savedPage=page; closeMod('editWrap'); buildStats(); applyFilters(); renderInkAdmin(); page=_savedPage; renderTable();
+  const _savedPage=page; closeMod('editWrap'); buildStats(); updateIncompleteCount(); applyFilters(); renderInkAdmin(); page=_savedPage; renderTable();
   toast(editingId?'Historia actualizada ✓':'Historia añadida ✓','ok');
 }
 function openDel(id){
@@ -870,7 +875,7 @@ function openDel(id){
   document.getElementById('delTitle').textContent=`"${e?.titulo||id}"`;openMod('delWrap');
 }
 function confirmDelete(){
-  allData=allData.filter(x=>x.id!==deletingId);const _p2=page;closeMod('delWrap');buildStats();applyFilters();renderInkAdmin();page=Math.min(_p2,Math.ceil(filtered.length/perPage)||1);renderTable();toast('Eliminada','ok');
+  allData=allData.filter(x=>x.id!==deletingId);const _p2=page;closeMod('delWrap');buildStats();updateIncompleteCount();applyFilters();renderInkAdmin();page=Math.min(_p2,Math.ceil(filtered.length/perPage)||1);renderTable();toast('Eliminada','ok');
 }
 
 function renderPills(){
@@ -915,6 +920,21 @@ function toast(msg,type=''){
 function mk(tag,cls,text){const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el;}
 let brokenFilter=false;
 let brokenIds=new Set();
+function isIncomplete(e){
+  const sinAlt=!e.titulos_alt||e.titulos_alt.length===0;
+  const sinCaps=e.estado==='Finalizado'&&(!e.capitulos_totales||e.capitulos_totales<=0);
+  return sinAlt||sinCaps;
+}
+let incompleteFilter=false;
+function updateIncompleteCount(){
+  const n=allData.filter(isIncomplete).length;
+  document.getElementById('incompleteCount').textContent=n?'('+n+')':'';
+}
+function toggleIncompleteFilter(){
+  incompleteFilter=!incompleteFilter;
+  document.getElementById('btnIncomplete').classList.toggle('on',incompleteFilter);
+  page=1;renderTable();
+}
 function markBroken(id){brokenIds.add(id);document.getElementById('brokenCount').textContent='('+brokenIds.size+')';}
 function toggleBrokenFilter(){
   brokenFilter=!brokenFilter;
