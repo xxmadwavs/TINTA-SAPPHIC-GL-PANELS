@@ -5191,7 +5191,7 @@
   },
   {
     "id": "love_gives_me_superpowers__el_amor_me_da_271",
-    "titulo": "Love Gives Me Superpowers (El amor me da superpoderes)",
+    "titulo": "Love Gives Me Superpowers",
     "seccion": "Manhua",
     "estado": "Continúa",
     "imagen": "https://mangadex.org/covers/730e65ef-b00c-4495-9935-9db252d93d4a/4af7d4c3-d1f5-4d46-bc12-0b5680fc24d2.png.512.jpg",
@@ -5204,7 +5204,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "El amor me da superpoderes"
+    ]
   },
   {
     "id": "miss_gu_and_miss_qu_272",
@@ -5221,6 +5224,11 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Twin Flames Of Destiny",
+      "Miss Gu & Miss Qu",
+      "顾小姐和曲小姐"
+    ],
     "capitulos_totales": 150
   },
   {
@@ -5241,6 +5249,9 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "La señorita Lobo y su hermana zorro"
+    ],
     "capitulos_totales": 70
   },
   {
@@ -5290,6 +5301,11 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Omega Heroine Wants Her Alpha Villainess",
+      "White Moonlight Female Host Always Wants to Monopolize Me Perfect Heroine Wants to Possess Me",
+      "La Perfecta Heroína Quiere Tenerme"
+    ],
     "capitulos_totales": 152
   },
   {
@@ -5307,7 +5323,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "¡Por Favor, Acosame Señorita Villana!",
+      "Please Bully Me, Miss Villainess!"
+    ]
   },
   {
     "id": "private_photos_278",
@@ -5323,7 +5343,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Boudoir Photos",
+      "Intimate Photos"
+    ]
   },
   {
     "id": "romance_of_the_stars_279",
@@ -5339,7 +5363,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "La Reina del Espectáculo",
+      "Superstar rivalry"
+    ]
   },
   {
     "id": "she_is_also_cute_today_280",
@@ -5358,6 +5386,10 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "My Darling is the Cutest",
+      "She Is Still Cute Today"
+    ],
     "capitulos_totales": 124
   },
   {
@@ -5375,7 +5407,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "潮夏"
+    ]
   },
   {
     "id": "sunshine___bright_stars_282",
@@ -5393,6 +5428,10 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Dawn Has Stars",
+      "Sunshine and Bright Stars"
+    ],
     "capitulos_totales": 69
   },
   {
@@ -5411,13 +5450,17 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Tamen di Gushi",
+      "Their Story"
+    ]
   },
   {
     "id": "teachers_who_always_call_parents_284",
     "titulo": "Teachers Who Always Call Parents",
     "seccion": "Manhua",
-    "estado": "Continúa",
+    "estado": "Finalizado",
     "imagen": "https://manhwatop.com/wp-content/uploads/2024/07/manga_84774_image.jpg",
     "desc": "Esa noche, Qi Yan coqueteó con una mujer madura en el bar y la llevó a la cama, sin saber que era la madre de un estudiante de su clase. Y luego, en una reunión de padres, sus miradas se encontraron.",
     "tags": [
@@ -5427,7 +5470,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Teachers Who Always Call Parents",
+      "Teachers who want to ask out Parents"
+    ]
   },
   {
     "id": "that_time_i_was_blackmailed_by_the_class_285",
@@ -5445,7 +5492,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Esa Vez Que Fui Chantajeada Por La Perra Del Té Verde De La Clase"
+    ]
   },
   {
     "id": "the_daughter_of_evil_and_miss_devil_286",
@@ -5464,6 +5514,10 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "The Villainess and Miss Demon Lord",
+      "The Daughter of Evil & Miss Devil"
+    ],
     "capitulos_totales": 98
   },
   {
@@ -5481,7 +5535,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Empress? I Only Date My Wife"
+    ]
   },
   {
     "id": "the_perfect_idol_s_guide_to_falling_in_l_288",
@@ -5497,6 +5554,9 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "The Perfect Idol's Handbook of Falling in Love"
+    ],
     "capitulos_totales": 19
   },
   {
@@ -5515,11 +5575,14 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Hechizo Del Viento"
+    ]
   },
   {
     "id": "twisting_tendrils__chan_zhi__290",
-    "titulo": "Twisting Tendrils (Chan Zhi)",
+    "titulo": "Twisting Tendrils",
     "seccion": "Manhua",
     "estado": "Continúa",
     "imagen": "https://yuri-online.com/__img/manga_6893f7ac2df5c/776b8071d9c65d3af074763dd5fa5e49/WhatsApp-Image-2025-06-12-at-21.23.07-(2).jpeg",
@@ -5531,7 +5594,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Chan Zhi"
+    ]
   },
   {
     "id": "universe_s_most_jealous_goddess_291",
@@ -5548,6 +5614,12 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Goddess of Jealousy",
+      "La Diosa Más Celosa Del Universo",
+      "La diosa de los celos",
+      "The first jealous god in the universe"
+    ],
     "capitulos_totales": 149
   },
   {
@@ -5566,7 +5638,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Sin saber que Su Majestad es una chica"
+    ]
   },
   {
     "id": "what_should_i_do_if_i_ve_signed_a_marria_293",
@@ -5582,6 +5657,11 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "¿Que Debo Hacer Si Firme Un Contrato Matrimonial Con La Princesa Elfo?",
+      "What Do I Do If I Signed a Marriage Contract with the Elf Princess?",
+      "Marrying an Elven Princess"
+    ],
     "capitulos_totales": 136
   },
   {
@@ -5601,6 +5681,10 @@
     "in_files": true,
     "adult": true,
     "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Addictive",
+      "Addictive (Bing Zi)"
+    ],
     "capitulos_totales": 45
   },
   {
@@ -5618,6 +5702,9 @@
     "in_files": true,
     "adult": false,
     "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "A Story About Sweets"
+    ],
     "capitulos_totales": 8
   },
   {
@@ -5635,12 +5722,15 @@
     "in_files": true,
     "adult": false,
     "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Beloved (Jaeliu)"
+    ],
     "capitulos_totales": 16
   },
   {
     "id": "concierto_secreto_297",
     "titulo": "Concierto Secreto",
-    "seccion": "Manhua",
+    "seccion": "Manhwa",
     "estado": "Finalizado",
     "imagen": "https://colorecito.site/colorcito/covers/b07e285e-daf6-40ea-acd1-06acb24d86f6.jpeg",
     "desc": "Jina, la única hija de una gran empresa, se ve obligada a aprender a tocar el violín debido a su mediocre talento; Kyung-mi, que ha abandonado el piano debido a las dificultades de su familia. Se conocen en la adolescencia y se acercan gracias a la música, y poco a poco van desarrollando sentimientos la uno por la otro. Pero el destino las separa. ¿Podrán volver a tocar juntas cuando se reencuentren después de 15 años?",
@@ -5656,7 +5746,10 @@
     "ink_club": true,
     "ink_categories": [
       "2026",
-      "Manhua"
+      "Manhwa"
+    ],
+    "titulos_alt": [
+      "Misterioso"
     ],
     "capitulos_totales": 54
   },
@@ -5701,6 +5794,9 @@
       "2025",
       "Manhua"
     ],
+    "titulos_alt": [
+      "My Red Spider Lily"
+    ],
     "capitulos_totales": 41
   },
   {
@@ -5719,6 +5815,9 @@
     "in_files": true,
     "adult": false,
     "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Yi Ban"
+    ],
     "capitulos_totales": 79
   },
   {
@@ -5737,6 +5836,9 @@
     "in_files": true,
     "adult": false,
     "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Soy más peligrosa que tú"
+    ],
     "capitulos_totales": 80
   },
   {
@@ -5756,6 +5858,11 @@
     "in_files": true,
     "adult": false,
     "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Garden of Ashes",
+      "Huijin Huayuan",
+      "The Garden of Ashes"
+    ],
     "capitulos_totales": 15
   },
   {
@@ -5820,6 +5927,10 @@
       "2025",
       "Manhua"
     ],
+    "titulos_alt": [
+      "Mi querida nemesis",
+      "My Dear Enemy"
+    ],
     "capitulos_totales": 42
   },
   {
@@ -5855,6 +5966,11 @@
     "in_files": true,
     "adult": false,
     "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Phoebe and Selina",
+      "Phoebe y Selina",
+      "What Dirty Intentions Could Jiejie Have?"
+    ],
     "capitulos_totales": 60
   },
   {
@@ -5872,6 +5988,12 @@
     "in_files": true,
     "adult": false,
     "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "She Who's Most Special To Me",
+      "My Special One",
+      "She Who Is Most Special to Me",
+      "My Most Special Her"
+    ],
     "capitulos_totales": 39
   },
   {
@@ -5916,6 +6038,10 @@
     "in_files": true,
     "adult": false,
     "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Straight Trap",
+      "Engañada por la chica hetero"
+    ],
     "capitulos_totales": 134
   },
   {
