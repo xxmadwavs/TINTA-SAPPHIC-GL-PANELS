@@ -125,6 +125,12 @@ td{padding:9px 14px;vertical-align:middle;font-size:13px}
 .td-acts{display:flex;gap:4px;white-space:nowrap}
 .act{padding:4px 10px;border:1px solid var(--border2);background:transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:11px;cursor:pointer;transition:all .15s;border-radius:1px}
 .act:hover{color:var(--paper);border-color:rgba(245,240,232,.35)}
+.img-broken{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.5px;padding:2px 6px;background:rgba(255,80,80,.15);color:#ff5050;border:1px solid rgba(255,80,80,.35);margin-top:3px;display:inline-block}
+tr.row-img-broken td.td-cov img{outline:2px solid rgba(255,60,60,.6)}
+tr.row-img-broken{background:rgba(255,60,60,.04)}
+tr.row-img-broken:hover{background:rgba(255,60,60,.08)}
+.act-broken{background:rgba(255,60,60,.08);border-color:rgba(255,60,60,.3);color:#ff5050;font-family:"Space Mono",monospace;font-size:8px;letter-spacing:.5px}
+.act-broken.on{background:rgba(255,60,60,.2);border-color:#ff5050;color:#ff6060}
 .act-edit:hover{border-color:rgba(232,255,71,.4);color:var(--neon);background:rgba(232,255,71,.05)}
 .act-del:hover{border-color:rgba(255,71,163,.4);color:var(--neon2);background:rgba(255,71,163,.05)}
 .pagination{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:8px}
@@ -382,6 +388,7 @@ td{padding:9px 14px;vertical-align:middle;font-size:13px}
       <option value="25">25 / pág</option><option value="50">50 / pág</option><option value="100">100 / pág</option>
     </select>
     <span class="tb-count" id="tbCount"></span>
+    <button class="act act-broken" id="btnBroken" onclick="toggleBrokenFilter()" title="Mostrar solo imágenes rotas">⚠ IMG ROTAS <span id="brokenCount" style="font-size:9px;opacity:.7"></span></button>
   </div>
 
   <div class="table-wrap">
@@ -735,15 +742,18 @@ function applyFilters(){
 }
 
 function renderTable(){
-  const start=(page-1)*perPage,rows=filtered.slice(start,start+perPage);
+  const src=brokenFilter?filtered.filter(e=>brokenIds.has(e.id)):filtered;
+  const start=(page-1)*perPage,rows=src.slice(start,start+perPage);
   document.getElementById('adminTable').innerHTML=rows.map(e=>{
     const ec=ECLS[e.estado]||'b-fin',ei=EICO[e.estado]||'';
     const tags=(e.tags||[]).slice(0,4).map(t=>`<span class="ttag${t.toLowerCase()==='erotica'?' adult':''}">${esc(t)}</span>`).join('');
-    const cov=e.imagen?`<img src="${esc(e.imagen)}" loading="lazy" onerror="this.outerHTML='<div class=no-cov>📖</div>'">`:'<div class="no-cov">📖</div>';
+    const brokenHandler="var tr=this.closest('tr');if(tr){tr.classList.add('row-img-broken');var b=tr.querySelector('.img-broken-badge');if(b)b.style.display='inline-block';}markBroken('"+(e.id)+"');this.outerHTML='<div class=no-cov>📖</div>'";
+    const cov=e.imagen?`<img src="${esc(e.imagen)}" loading="lazy" onerror="${brokenHandler}">`:'<div class="no-cov">📖</div>';
     const inkBadge=e.ink_club?`<span class="badge" style="background:rgba(255,71,163,.15);color:var(--neon2);border:1px solid rgba(255,71,163,.3)">📖 INK</span>`:'';
+    const brokenBadge=e.imagen?`<span class="img-broken img-broken-badge" style="display:none">⚠ IMG ROTA</span>`:'';
     return `<tr>
       <td class="td-cov">${cov}</td>
-      <td class="td-tit"><div class="td-titulo">${esc(e.titulo)}</div>${e.adult?'<span class="adult-flag">+18</span>':''}${inkBadge}</td>
+      <td class="td-tit"><div class="td-titulo">${esc(e.titulo)}</div>${e.adult?'<span class="adult-flag">+18</span>':''}${inkBadge}${brokenBadge}</td>
       <td class="td-sec">${esc(e.seccion)}</td>
       <td class="td-tags"><div class="tag-row">${tags}</div></td>
       <td><span class="badge ${ec}">${ei} ${esc(e.estado)}</span></td>
@@ -865,6 +875,14 @@ function toast(msg,type=''){
   requestAnimationFrame(()=>{t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600);});
 }
 function mk(tag,cls,text){const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el;}
+let brokenFilter=false;
+let brokenIds=new Set();
+function markBroken(id){brokenIds.add(id);document.getElementById('brokenCount').textContent='('+brokenIds.size+')';}
+function toggleBrokenFilter(){
+  brokenFilter=!brokenFilter;
+  document.getElementById('btnBroken').classList.toggle('on',brokenFilter);
+  page=1;renderTable();
+}
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 function exportJSON(){
   const blob=new Blob([JSON.stringify(allData,null,2)],{type:'application/json'});
