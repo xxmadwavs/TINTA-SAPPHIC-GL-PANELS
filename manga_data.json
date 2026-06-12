@@ -165,10 +165,14 @@
       "Romance",
       "Supernatural"
     ],
-    "in_biblioteca": true,
+    "in_biblioteca": false,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "",
+    "titulos_alt": [
+      "Portrait of Yoiko"
+    ],
+    "capitulos_totales": 6
   },
   {
     "id": "gl_1778185248638_58u",
@@ -2952,7 +2956,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Icha Love Only Anthology"
+    ],
+    "capitulos_totales": 9
   },
   {
     "id": "inkya_gyaru_demo_ikigaritai__136",
@@ -2988,7 +2996,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "The Vexations of a Shut-In Vampire Princess"
+    ],
+    "capitulos_totales": 101
   },
   {
     "id": "adachi_and_shimamura_138",
@@ -3061,7 +3073,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Blue"
+    ],
+    "capitulos_totales": 10
   },
   {
     "id": "osananajimi_biglove_142",
@@ -3159,7 +3175,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Sayonara Rose Garden"
+    ],
+    "capitulos_totales": 17
   },
   {
     "id": "hitogoto_desukara__147",
@@ -3176,7 +3196,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Hitogoto Desu kara!"
+    ],
+    "capitulos_totales": 24
   },
   {
     "id": "hoshi_no_taion__meguru_yume_148",
@@ -3231,7 +3255,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Sairoku Hon Sukida! ! To Tsutaete! !"
+    ],
+    "capitulos_totales": 3
   },
   {
     "id": "kyuuyuu_to_furin_shitemita_151",
@@ -3303,7 +3331,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "リリウム・テラリウム"
+    ],
+    "capitulos_totales": 16
   },
   {
     "id": "love_only_the_body_155",
@@ -3340,7 +3372,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Love Live! - Hakanaku Tatazumu Ixia no Hana (Doujinshi)"
+    ],
+    "capitulos_totales": 1
   },
   {
     "id": "mahou_shoujo_ni_akogarete_157",
@@ -3439,7 +3475,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Watashi no Megami ga Kyou mo Oseru"
+    ],
+    "capitulos_totales": 9
   },
   {
     "id": "my_love_for_my_roommate_is_one_sided_162",
@@ -3454,7 +3494,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Doukyonin ni Kataomoi Shiteru Yuri Manga"
+    ],
+    "capitulos_totales": 98
   },
   {
     "id": "office_sweet_365_163",
@@ -3471,7 +3515,8 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "capitulos_totales": 6
   },
   {
     "id": "ouji_sama_nante_iranai_164",
@@ -3489,7 +3534,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "We Don't Need a Prince"
+    ],
+    "capitulos_totales": 200
   },
   {
     "id": "our_yuri_started_with_me_getting_rejecte_165",
@@ -4621,7 +4670,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Our Dreams at Dusk"
+    ],
+    "capitulos_totales": 23
   },
   {
     "id": "shimeji_simulation_229",
@@ -4639,7 +4692,8 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "capitulos_totales": 49
   },
   {
     "id": "sekai_no_owari_to_majo_no_koi_230",
@@ -4657,7 +4711,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "A Witch's Love at the End of the World"
+    ],
+    "capitulos_totales": 12
   },
   {
     "id": "sougou_tovarisch_231",
@@ -4675,7 +4733,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Comprehensive Tovarisch"
+    ],
+    "capitulos_totales": 13
   },
   {
     "id": "still_sick_232",
@@ -4693,7 +4755,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Still sick"
+    ],
+    "capitulos_totales": 23
   },
   {
     "id": "suimitsutou_ha_shoujo_ni_kajirareru_233",
