@@ -72,7 +72,12 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Run Away With Me, Girl",
+      "Kakeochi Girl"
+    ],
+    "capitulos_totales": 16
   },
   {
     "id": "gl_1778185412037_gl7",
@@ -129,7 +134,7 @@
     "id": "gl_1778185321184_ik1",
     "titulo": "Border of love colors",
     "seccion": "Manga",
-    "estado": "Continúa",
+    "estado": "Finalizado",
     "imagen": "https://yuri-online.com/wp-content/uploads/2026/04/IMG-20260409-WA00311.jpg",
     "desc": "Reimu y Marisa han pasado años juntas, enfrentando incidentes y compartiendo tardes en el santuario. Sin embargo, hay una línea invisible entre la amistad y algo más profundo que ninguna se ha atrevido a cruzar… hasta ahora. Una historia cálida y mágica sobre cómo los colores de su relación empiezan a cambiar.",
     "tags": [
@@ -137,10 +142,14 @@
       "Fantasia",
       "Romance"
     ],
-    "in_biblioteca": true,
+    "in_biblioteca": false,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "",
+    "titulos_alt": [
+      "Koiiro no Kyoukai"
+    ],
+    "capitulos_totales": 18
   },
   {
     "id": "gl_1778185292064_bni",
@@ -177,6 +186,10 @@
     "in_files": false,
     "adult": true,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "[Professional Woongni Anthology] Pick Out My Love Too",
+      "Pick Out My Love Too"
+    ],
     "capitulos_totales": 10
   },
   {
@@ -193,7 +206,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "En el pantano del angel"
+    ]
   },
   {
     "id": "gl_1778185186358_im4",
@@ -210,7 +226,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "El Timbre de Blancanieves"
+    ]
   },
   {
     "id": "gl_1778185161223_qle",
@@ -243,6 +262,10 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Her Bitch",
+      "Her Dog"
+    ],
     "capitulos_totales": 73
   },
   {
@@ -262,7 +285,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Otherside Picnic"
+    ]
   },
   {
     "id": "gl_1778059815704_6u7",
@@ -297,7 +323,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "ROLL OVER AND DIE - I Will Fight for an Ordinary Life with My Love and Cursed Sword!",
+      "Do You Think Someone like You Could Defeat the Demon Lord?"
+    ]
   },
   {
     "id": "gl_1778059751150_pt1",
@@ -314,7 +344,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Boys Gilding the Lily Shall Die"
+    ]
   },
   {
     "id": "gl_1778059496628_74d",
@@ -330,7 +363,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "A Wish on the Bones, A Curse on the Stars"
+    ]
   },
   {
     "id": "gl_1777928221413_wmt",
@@ -492,14 +528,19 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Anything! Okay",
+      "Anything! I Like It"
+    ],
+    "capitulos_totales": 40
   },
   {
     "id": "arousing_taste_1",
     "titulo": "Arousing Taste",
     "seccion": "Manhwa",
     "estado": "Finalizado",
-    "imagen": "https://c10.patreonusercontent.com/4/patreon-media/p/campaign/2446852/a55468a98c934f1481c0ddb0764348e6/eyJ3IjoxNjAwLCJ3ZSI6MX0%3D/1.png?token-hash=mS93QrmK3__wWFcvkA2OGR47O1MbRST9kOuGImmkX9Y%3D&token-time=1777852800",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrvIti78z1fE2JgMVImXYcAYTrBg5r-tTXTQ&s",
     "desc": "Un par de oficinistas comienzan una relación clandestina sin saber que tipo de interés hay.",
     "tags": [
       "Drama",
@@ -509,7 +550,8 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "capitulos_totales": 55
   },
   {
     "id": "blood_time_2",
@@ -527,7 +569,8 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "capitulos_totales": 43
   },
   {
     "id": "dark_mermaid_3",
@@ -545,7 +588,8 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "capitulos_totales": 65
   },
   {
     "id": "distorted_love_4",
@@ -562,7 +606,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Amor Distorsionado"
+    ]
   },
   {
     "id": "drunken_my_boss_5",
@@ -582,7 +629,7 @@
   },
   {
     "id": "fall_falling_6",
-    "titulo": "Fall/Falling",
+    "titulo": "Falling",
     "seccion": "Manhwa",
     "estado": "Continúa",
     "imagen": "https://image-repository-cdn.tappytoon.com/series/1218/0a7fa829-9b22-47b1-bd58-c772e910bbc3.jpg?size=large",
@@ -594,7 +641,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Fall"
+    ]
   },
   {
     "id": "goodnight__cinderella_7",
@@ -611,7 +661,12 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Goodnight Cinderella",
+      "Good Night Cinderella"
+    ],
+    "capitulos_totales": 46
   },
   {
     "id": "happines_rides_a_broomstick_8",
@@ -645,7 +700,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "하티스 힐"
+    ],
+    "capitulos_totales": 1
   },
   {
     "id": "how_to_draw_an_eclipse_10",
@@ -662,7 +721,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Way to Draw an Oval"
+    ]
   },
   {
     "id": "hummingbird_effect_11",
@@ -679,7 +741,8 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "capitulos_totales": 50
   },
   {
     "id": "informal_romance_12",
@@ -696,6 +759,9 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Un Romance Informal"
+    ],
     "capitulos_totales": 60
   },
   {
@@ -712,7 +778,12 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Creo que eres…",
+      "I Think You Are"
+    ],
+    "capitulos_totales": 51
   },
   {
     "id": "jeong_nyeon_14",
@@ -729,7 +800,12 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Jeong nyeon",
+      "Jeongnyeon"
+    ],
+    "capitulos_totales": 137
   },
   {
     "id": "kill_me_now_15",
@@ -748,7 +824,12 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Matame ahora",
+      "Mátame ahora"
+    ],
+    "capitulos_totales": 186
   },
   {
     "id": "kiss_the_coming_apocalypse_16",
@@ -766,7 +847,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Kiss at the End of the World",
+      "The Ending Kiss"
+    ]
   },
   {
     "id": "lady_black_is_depressed_17",
@@ -783,7 +868,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Lady black está deprimida"
+    ]
   },
   {
     "id": "lemon_pie_night_18",
@@ -833,7 +921,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Love Your Neighbor",
+      "Ama a tu prójimo"
+    ]
   },
   {
     "id": "maid_in_a_dream_21",
@@ -934,7 +1026,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Angels and Devils"
+    ]
   },
   {
     "id": "murmur_27",
@@ -954,19 +1049,23 @@
   {
     "id": "i_ll_enjoy_my_route_even_if_i_can_t_chan_28",
     "titulo": "I’ll Enjoy My Route Even If I Can’t Change It",
+    "seccion": "Manhwa",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/03/ill-enjoy-my-route-even-if-i-cant-change-it-day-166-of-v0-dwvw1i8tt0bf1.png",
     "desc": "«Me desperté como la protagonista de un simulador de citas en el que el final es que la villana te mata. Pero la villana no es como la que recuerdo…».",
     "tags": [
       "Aventura",
       "Drama",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "https://yuri-online.com/wp-content/uploads/2026/03/ill-enjoy-my-route-even-if-i-cant-change-it-day-166-of-v0-dwvw1i8tt0bf1.png",
-    "seccion": "Manhwa"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Disfrutare de mi vida aunque no pueda cambiarla",
+      "If I Can't Change the Route, Just Enjoy It"
+    ]
   },
   {
     "id": "nude_pleasure_29",
@@ -999,7 +1098,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Only to You (Yongnak)",
+      "Only For You (Yongnak)"
+    ]
   },
   {
     "id": "other_than_my_friend_s_sister__something_31",
@@ -1016,7 +1119,12 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Algo mas que la hermana de mi amiga",
+      "진구 여동생 말고 다른 거",
+      "Aparte de la hermana de mi amiga, algo más"
+    ]
   },
   {
     "id": "please_teach_me__sunbae_nim__32",
@@ -1047,7 +1155,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Reblooming"
+    ]
   },
   {
     "id": "ruthless_34",
@@ -1137,7 +1248,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Muéstrame tu busto"
+    ]
   },
   {
     "id": "sister_prison_39",
@@ -1185,7 +1299,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Swallowtail"
+    ]
   },
   {
     "id": "talk_dirty_to_me_42",
@@ -1285,7 +1402,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "El escándalo de la familia real de Montfort",
+      "El escandalo de la familia real de Montfort"
+    ]
   },
   {
     "id": "the_name_of_my_feelings_48",
@@ -1728,7 +1849,10 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Exciting Feelings"
+    ]
   },
   {
     "id": "for_garbage_74",
@@ -1762,7 +1886,14 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "¡Sal de mi Casa!",
+      "Por favor, sal de mi casa",
+      "Please Get Out of My House",
+      "Please Leave My House",
+      "Exit's That Way"
+    ]
   },
   {
     "id": "getting_to_know_grace_76",
@@ -2701,7 +2832,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "La Razón Por La Que Vives",
+      "The Reason Why You Live"
+    ],
+    "capitulos_totales": 9
   },
   {
     "id": "45_seconds_130",
@@ -2717,7 +2853,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "45 Segundos"
+    ],
+    "capitulos_totales": 10
   },
   {
     "id": "after_the_curtain_call_131",
@@ -2733,7 +2873,8 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "capitulos_totales": 51
   },
   {
     "id": "a_joyful_life_132",
@@ -2750,7 +2891,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Annyeong Eunhaseyo",
+      "안녕은하세요"
+    ],
+    "capitulos_totales": 74
   },
   {
     "id": "a_model_advisory_133",
@@ -2767,7 +2913,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Portrait Rights Advisory",
+      "Model Advisory"
+    ],
+    "capitulos_totales": 22
   },
   {
     "id": "nengan_no_akuyaku_reijou_no_karada_wo_te_134",
@@ -2783,7 +2934,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "I Got My Wish and Reincarnated as the Villainess (Last Boss)!"
+    ]
   },
   {
     "id": "icha_love_only_anthology_135",
@@ -2803,18 +2957,22 @@
   {
     "id": "inkya_gyaru_demo_ikigaritai__136",
     "titulo": "Inkya Gyaru demo Ikigaritai!",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/03/inkya.jpg",
     "desc": "Ichiko y Kuran son miembros del club de investigación de subculturas. Les gustan varias subculturas y les gustan las cosas lindas. Siga leyendo mientras estas dos gyaru asociales pasan sus días en su nuevo tipo de “moratoria juvenil",
     "tags": [
       "Escolar",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "Subido biblioteca",
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "imagen": "https://yuri-online.com/wp-content/uploads/2026/03/inkya.jpg",
-    "seccion": "Manga"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Inkya Gal demo Ikigaritai!",
+      "Even the Introverted Gals Wanna Get Out There!"
+    ]
   },
   {
     "id": "hikikomari_kyuuketsuki_no_monmon_137",
@@ -2847,7 +3005,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Adachi to Shimamura"
+    ]
   },
   {
     "id": "a_story_about_how_she_grew_conscious_of__139",
@@ -2863,7 +3024,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "ノーマークだった幼なじみを意識し始める話"
+    ]
   },
   {
     "id": "borrowing_textbooks_140",
@@ -2878,7 +3042,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "#175160#"
+    ]
   },
   {
     "id": "blue__nananan_kiriko__141",
@@ -2910,7 +3077,12 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Tenshi datta Osananajimi, Saikai Shitara Gyaru datta",
+      "Childhood Friend, Big Love",
+      "My Angel Childhood Friend was a Gal When We Met Again"
+    ]
   },
   {
     "id": "citrus___143",
@@ -2926,7 +3098,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Citrus Plus",
+      "Citrus (SABURO Uta)"
+    ]
   },
   {
     "id": "even_a_dog_might_stumble_upon_a_princess_144",
@@ -2944,7 +3120,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Inu mo Arukeba Hime ni Ataru"
+    ]
   },
   {
     "id": "friend_girl_friend_145",
@@ -3013,7 +3192,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "A Star's Warmth, A Returning Dream"
+    ]
   },
   {
     "id": "how_do_i_get_together_with_my_childhood__149",
@@ -3029,7 +3211,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Doushitara Osananajimi ?? no Kanojo ni Naremasu Ka!?",
+      "Doushitara Osananajimi ?? No Kanojo Ni Naremasu Ka!?"
+    ]
   },
   {
     "id": "i_love_you___get_it_across__150",
@@ -3062,7 +3248,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "I had an affair with an old friend"
+    ]
   },
   {
     "id": "less_than_friends_152",
@@ -3079,7 +3268,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "フレンド未満"
+    ]
   },
   {
     "id": "lilies_153",
@@ -3129,7 +3321,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "I Want You to Only Love My Body",
+      "Aishiteii no wa, Karadadake"
+    ]
   },
   {
     "id": "love_live____my_adorable_bride_156",
@@ -3163,7 +3359,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Gushing over Magical Girls"
+    ]
   },
   {
     "id": "makoto_senpai_no_mae_de_wa_kakko_tsukera_158",
@@ -3181,7 +3380,12 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Makotosenpai no Mae de wa Kakko Tsukerarenai!",
+      "Makoto senpai no Mae de wa Kakko Tsukerarenai!",
+      "Makoto-senpai no Mae de wa Kakko Tsukerarenai!"
+    ]
   },
   {
     "id": "me_enamor__de_la_villana_159",
@@ -3197,7 +3401,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "I'm in Love with the Villainess"
+    ]
   },
   {
     "id": "my_blue_garnet_160",
@@ -3213,7 +3420,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Watashi no Blue Garnet"
+    ]
   },
   {
     "id": "my_goddess_spurs_me_on_161",
@@ -3296,7 +3506,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Yume de Furarete Hajimaru Yuri"
+    ]
   },
   {
     "id": "prism_166",
@@ -3353,7 +3566,7 @@
     "id": "so__do_you_wanna_go_out__or__169",
     "titulo": "So, Do You Wanna Go Out, Or?",
     "seccion": "Manga",
-    "estado": "Continúa",
+    "estado": "Finalizado",
     "imagen": "https://static.comix.to/8be1/i/3/51/68e4f3e3b5611.jpg",
     "desc": "La tímida Miwa siempre ha soñado con encontrar el amor, pero vivir en una pequeña localidad de Japón le ha dificultado encontrar la pareja adecuada. ¡Especialmente porque le gustan las chicas! Ir a la universidad tampoco le solucionó este problema, hasta que un día su extrovertida compañera de clase Saeko le sugiere comenzar a salir, ya que ninguna de las dos tiene otras opciones. Al principio parece que las cosas no van a funcionar porque sus personalidades chocan y abundan los malentendidos, pero cuando su amistad casual comienza a convertirse en algo más, Miwa comienza a preguntarse: ¿puede una propuesta pragmática conducir al amor verdadero?",
     "tags": [
@@ -3365,7 +3578,12 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Tsukiatte Agetemo Ii kana",
+      "Tsukiatte agete mo ii ka na"
+    ],
+    "capitulos_totales": 133
   },
   {
     "id": "the_duke_s_daughter_s_mission_to_seduce__170",
@@ -3383,7 +3601,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Koushaku Reijou no Rouraku Mission ~Maou to no Seiryaku Kekkon ga, Jinrui Saigo no Kirifuda desu!... tte, Maou ga Onnanoko no Baai wa Dou Sureba Ii no desu ka!?~",
+      "The Duke’s Daughter's Mission to Seduce the Demon King, Humanity's Final Gambit: A Political Marriage with the Demon King! ...Hang On, But What am I Supposed to Do If the Demon King is a Girl!?"
+    ]
   },
   {
     "id": "the_guy_she_was_interested_in_wasn_t_a_g_171",
@@ -3400,7 +3622,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "El chico que me gusta no es un chico"
+    ]
   },
   {
     "id": "the_maid_i_admire_looks_good_with_a_ciga_172",
@@ -3417,11 +3642,14 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Akogare no Maid-san wa Tabako ga Niau"
+    ]
   },
   {
     "id": "the_moon_on_a_rainy_night__amayo_no_tsuk_173",
-    "titulo": "The Moon on a Rainy Night (Amayo no tsuki)",
+    "titulo": "The Moon on a Rainy Night",
     "seccion": "Manga",
     "estado": "Continúa",
     "imagen": "https://static.comix.to/3fe5/i/0/4a/68deebcb6e143.jpg",
@@ -3433,13 +3661,16 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Amayo no Tsuki"
+    ]
   },
   {
     "id": "throw_away_the_suit_together_174",
     "titulo": "Throw Away the Suit Together",
     "seccion": "Manga",
-    "estado": "Cancelado",
+    "estado": "Finalizado",
     "imagen": "https://static.comix.to/00c4/i/b/d1/68deebb83edd2.jpg",
     "desc": "Universidad, búsqueda de empleo y expectativas para el futuro. Tener que seguir el ritmo del resto, \"hacer lo que hace todo el mundo\", a veces puede resultar tedioso. ¿Qué camino debes tomar cuando empiezas a perder de vista lo que es verdaderamente importante para ti? Esta es la historia de dos universitarias, Haru y Hii-chan, atrapadas en el meollo del asunto, ¡que buscan deshacerse de esas expectativas comunes y empezar una nueva vida en una isla!",
     "tags": [
@@ -3449,7 +3680,12 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Entering An Unknown Summer With You",
+      "Kimi to Shiranai Natsu ni Naru"
+    ],
+    "capitulos_totales": 16
   },
   {
     "id": "tragedy_1_175",
@@ -3531,7 +3767,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "A Face You Shouldn't Show"
+    ]
   },
   {
     "id": "warikitta_kankei_desukara_180",
@@ -3552,7 +3791,7 @@
   },
   {
     "id": "whisper_me_a_love_song__sasayaku_you_ni__181",
-    "titulo": "Whisper Me a Love Song (Sasayaku You ni Koi o Utau)",
+    "titulo": "Whisper Me a Love Song",
     "seccion": "Manga",
     "estado": "Continúa",
     "imagen": "https://static.comix.to/c31b/i/d/ab/68de74e58abed.jpg",
@@ -3564,7 +3803,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Sasayaku You ni Koi o Utau"
+    ]
   },
   {
     "id": "yearning_for_a_night_full_of_you_182",
@@ -3581,7 +3823,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Kimi Meku Yoru ni Kogarete"
+    ]
   },
   {
     "id": "watashi_no_yuri_wa_oshigoto_desu__183",
@@ -3599,7 +3844,10 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Yuri Is My Job!"
+    ]
   },
   {
     "id": "after_all_i_love_you_184",
@@ -4556,34 +4804,41 @@
   {
     "id": "baka_ni_kokuhaku_239",
     "titulo": "Baka ni kokuhaku",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/03/image.png",
     "desc": "Ootsuki Ayumu, la presidenta del club aficionado de Astronomía, vive soñando con el cosmos, alejada del amor y la compañía… hasta que un día, al dejar caer su póster, aparece Hayami, una senpai hermosa, energética y amante del deporte, que le dice algo que jamás había escuchado: “eres genial”. Desde ese momento, Ayumu no puede pensar en otra cosa. Entre carreras inesperadas, rechazos confusos y sueños de conocer extraterrestres, su corazón empieza a orbitar alrededor de alguien totalmente distinta. ¿Podrá una chica de las estrellas enamorar a una que solo quiere correr a toda fuerza? Una historia de confesiones, pasión y explosión… ¡Donde el amor escapa a toda proporción!",
     "tags": [
       "Comedia",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "",
     "in_biblioteca": false,
     "in_files": false,
     "adult": false,
-    "imagen": "https://yuri-online.com/wp-content/uploads/2026/03/image.png",
-    "seccion": "Manga"
+    "subido": "",
+    "titulos_alt": [
+      "Confessions for a Moron",
+      "Confessing to a Fool"
+    ]
   },
   {
     "id": "muryoku_seijo_to_munou_oujo__maryoku_zer_240",
     "titulo": "Muryoku Seijo to Munou Oujo ~Maryoku Zero de Shoukansareta Seijo no Isekai Kyuukokuki~",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://yuri-online.com/wp-content/uploads/2026/03/57.jpg",
     "desc": "Un día, Tamura Nana, un freeter, es convocada desde su habitación a otro mundo, donde se le pide que salve al país como santa. Sin embargo, aunque se supone que es llamada como santa, al investigar, se descubre que el poder mágico de Nana es de cero. Además, es elegida como compañera por una princesa que no puede usar magia… ¡El telón se levanta para la aventura del encuentro entre una santa impotente y una princesa inútil que no puede usar magia!",
     "tags": [
       "Fantasia",
       "Romance"
     ],
-    "estado": "Continúa",
-    "subido": "",
     "in_biblioteca": false,
     "in_files": false,
     "adult": false,
-    "imagen": "https://yuri-online.com/wp-content/uploads/2026/03/57.jpg",
-    "seccion": "Manga"
+    "subido": "",
+    "titulos_alt": [
+      "The Helpless Saint and the Powerless Princess: The Tale of How a Saint with No Magic Was Summoned to Save Another World A Santa Sem Magia e a Princesa Sem Poder"
+    ]
   },
   {
     "id": "my_stepmother_made_me_fall_for_her_241",
