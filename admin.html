@@ -133,6 +133,28 @@ tr.row-img-broken:hover{background:rgba(255,60,60,.08)}
 .act-broken.on{background:rgba(255,60,60,.2);border-color:#ff5050;color:#ff6060}
 .act-incomplete{background:rgba(71,160,255,.08);border-color:rgba(71,160,255,.3);color:#47a0ff;font-family:"Space Mono",monospace;font-size:8px;letter-spacing:.5px}
 .act-incomplete.on{background:rgba(71,160,255,.22);border-color:#47a0ff;color:#6fb5ff}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .act-edit:hover{border-color:rgba(232,255,71,.4);color:var(--neon);background:rgba(232,255,71,.05)}
 .act-del:hover{border-color:rgba(255,71,163,.4);color:var(--neon2);background:rgba(255,71,163,.05)}
 .pagination{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:8px}
@@ -392,7 +414,7 @@ tr.row-img-broken:hover{background:rgba(255,60,60,.08)}
     <span class="tb-count" id="tbCount"></span>
     <button class="act act-broken" id="btnBroken" onclick="toggleBrokenFilter()" title="Mostrar solo imágenes rotas">⚠ IMG ROTAS <span id="brokenCount" style="font-size:9px;opacity:.7"></span></button>
     <button class="act act-incomplete" id="btnIncomplete" onclick="toggleIncompleteFilter()" title="Mostrar historias con datos incompletos">✎ INCOMPLETAS <span id="incompleteCount" style="font-size:9px;opacity:.7"></span></button>
-  </div>
+    </div>
 
   <div class="table-wrap">
     <table>
@@ -820,7 +842,7 @@ function openEdit(id){
   document.getElementById('inkCatField').style.display=e.ink_club?'block':'none';
   document.getElementById('fCaps').value=e.capitulos_totales||'';
   document.getElementById('capsField').style.display=e.estado==='Finalizado'?'':'none';
-  altList=[...(e.titulos_alt||[])];renderAltPills();
+  const _alts=Array.isArray(e.titulos_alt)?e.titulos_alt:(e.titulos_alt?[e.titulos_alt]:[]);altList=[..._alts];document.getElementById('altInp').value='';renderAltPills();
   updateAdultLbl();updateCov(e.imagen||'');renderPills();openMod('editWrap');
 }
 function openAdd(){
@@ -834,10 +856,16 @@ function openAdd(){
   document.getElementById('inkCatField').style.display='none';
   document.getElementById('fCaps').value='';
   document.getElementById('capsField').style.display='none';
-  altList=[];renderAltPills();
+  altList=[];document.getElementById('altInp').value='';renderAltPills();
   updateAdultLbl();document.getElementById('covThumb').style.display='none';renderPills();openMod('editWrap');
 }
 function saveEntry(){
+  // Flush any text typed in altInp that wasn't confirmed with Enter
+  const _altPending=document.getElementById('altInp').value.trim();
+  if(_altPending){addAlt(_altPending);document.getElementById('altInp').value='';}
+  // Flush any text typed in tagInp that wasn't confirmed with Enter
+  const _tagPending=document.getElementById('tagInp').value.trim();
+  if(_tagPending){addTag(_tagPending);document.getElementById('tagInp').value='';}
   const titulo=document.getElementById('fTitulo').value.trim();
   if(!titulo){toast('El título es obligatorio','err');return;}
   const bib=document.getElementById('fBib').checked,files=document.getElementById('fFiles').checked;
@@ -907,6 +935,16 @@ function renderAltPills(){
 }
 function addAlt(v){const t=v.trim();if(!t||altList.includes(t))return;altList.push(t);renderAltPills();}
 function removeAlt(t){altList=altList.filter(x=>x!==t);renderAltPills();}
+
+
+
+
+
+
+
+
+
+
 window.removeTag=removeTag;window.removeAlt=removeAlt;window.openEdit=openEdit;window.openDel=openDel;
 
 function updateCov(url){const img=document.getElementById('covThumb');img.style.display=url?'block':'none';if(url)img.src=url;}
@@ -941,6 +979,8 @@ function toggleBrokenFilter(){
   document.getElementById('btnBroken').classList.toggle('on',brokenFilter);
   page=1;renderTable();
 }
+
+
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 function exportJSON(){
   const blob=new Blob([JSON.stringify(allData,null,2)],{type:'application/json'});

@@ -245,10 +245,10 @@
     "tags": [
       "Romance"
     ],
-    "in_biblioteca": true,
+    "in_biblioteca": false,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": ""
   },
   {
     "id": "gl_1778185139556_hg8",
@@ -3593,7 +3593,12 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "シーイズビューティフル",
+      "ella es hermosa"
+    ],
+    "capitulos_totales": 50
   },
   {
     "id": "sheep_princess_in_wolf_s_clothing_168",
@@ -3609,7 +3614,13 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Ookami no Kawa o Kabutta Hitsujihime",
+      "Ookami no Kawa wo Kabutta Hitsujihime",
+      "A Sheep in Wolf's Clothing"
+    ],
+    "capitulos_totales": 27
   },
   {
     "id": "so__do_you_wanna_go_out__or__169",
@@ -3798,7 +3809,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "Shoujo Kakumei Utena"
+    ],
+    "capitulos_totales": 22
   },
   {
     "id": "utsushicha_dame_na_kao_179",
@@ -3836,7 +3851,11 @@
     "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca",
+    "titulos_alt": [
+      "It's a Detached Relationship"
+    ],
+    "capitulos_totales": 21
   },
   {
     "id": "whisper_me_a_love_song__sasayaku_you_ni__181",
@@ -3912,7 +3931,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Kekkyoku Sonna Kimi Ga Suki"
+    ],
+    "capitulos_totales": 1
   },
   {
     "id": "after_hours_185",
@@ -3928,7 +3951,8 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "capitulos_totales": 17
   },
   {
     "id": "aqua_blue_cinema_186",
@@ -3944,7 +3968,13 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Mizuiro Cinema",
+      "Mizuiro Shinema",
+      "Light Blue Cinema"
+    ],
+    "capitulos_totales": 6
   },
   {
     "id": "aoi_hana_187",
@@ -3961,7 +3991,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Sweet Blue Flowers"
+    ],
+    "capitulos_totales": 52
   },
   {
     "id": "asagao_to_kase_san_188",
@@ -3978,7 +4012,13 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Kase-san and…",
+      "Kase-san Series",
+      "Kase-san to…"
+    ],
+    "capitulos_totales": 25
   },
   {
     "id": "a_secret_just_between_you_and_me_189",
@@ -3994,7 +4034,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Dare ni mo Ienai Futarigoto"
+    ],
+    "capitulos_totales": 5
   },
   {
     "id": "bocchi_kaibutsu_to_moumoku_shoujo_190",
@@ -4011,7 +4055,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Beauty and the Beast Girl",
+      "Lonely Monster and Blind Girl"
+    ],
+    "capitulos_totales": 50
   },
   {
     "id": "bloom_into_you_191",
@@ -4033,7 +4082,13 @@
     "ink_categories": [
       "2025",
       "Manga"
-    ]
+    ],
+    "titulos_alt": [
+      "Yagate Kimi ni Naru",
+      "Al final me convertiré en ti",
+      "Eventually, I Will Become Yours"
+    ],
+    "capitulos_totales": 45
   },
   {
     "id": "breath_supreme_yuri_fetish_anthology_192",
@@ -4050,7 +4105,8 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "capitulos_totales": 4
   },
   {
     "id": "citrus__saburouta__193",
@@ -4068,7 +4124,8 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "capitulos_totales": 41
   },
   {
     "id": "cry_for_the_moon_194",
@@ -4083,7 +4140,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Nichijou Yametara Shitai Koto"
+    ],
+    "capitulos_totales": 1
   },
   {
     "id": "doughnuts_under_a_crescent_moon_195",
@@ -4106,7 +4167,13 @@
     "ink_categories": [
       "2026",
       "Manga"
-    ]
+    ],
+    "titulos_alt": [
+      "Kaketa Tsuki to Doughnut",
+      "Bollos a la luz de la luna",
+      "欠けた月とドーナッツ"
+    ],
+    "capitulos_totales": 20
   },
   {
     "id": "falling_in_love_in_one_night_196",
@@ -4119,7 +4186,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Ichiya de Ochiru Koi Nante",
+      "A One-Night Stand Love"
+    ],
+    "capitulos_totales": 1
   },
   {
     "id": "fragtime_197",
@@ -4138,7 +4210,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Flag Time",
+      "フラグタイム"
+    ],
+    "capitulos_totales": 17
   },
   {
     "id": "gakuen_police_198",
@@ -4154,7 +4231,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "School Police",
+      "学園ポリーチェ"
+    ],
+    "capitulos_totales": 16
   },
   {
     "id": "girl_friends_199",
@@ -4171,7 +4253,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Girlfriends",
+      "ガールフレンズ"
+    ],
+    "capitulos_totales": 35
   },
   {
     "id": "goukaku_no_tame_no__yasashii_sankaku_kan_200",
@@ -4188,7 +4275,13 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "An Easy Introduction to Love Triangles (To Pass the Exam!)",
+      "For Passing! an Easy Introduction to Triangular Relations",
+      "Yasakan"
+    ],
+    "capitulos_totales": 11
   },
   {
     "id": "gunbured___sisters_201",
@@ -4207,7 +4300,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "ガンバレッド×シスターズ"
+    ],
+    "capitulos_totales": 20
   },
   {
     "id": "hana_ni_arashi_202",
@@ -4223,7 +4320,14 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Nanoha to Chidori",
+      "Tormenta de Flores",
+      "Rainbows After Storms",
+      "Flowers After Storms"
+    ],
+    "capitulos_totales": 162
   },
   {
     "id": "hana_to_hoshi_203",
@@ -4240,7 +4344,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Flower and Stars",
+      "The Flower and the Star"
+    ],
+    "capitulos_totales": 11
   },
   {
     "id": "handsome_girl_and_sheltered_girl_204",
@@ -4256,7 +4365,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Ikemen Onna to Hakoiri Musume"
+    ],
+    "capitulos_totales": 13
   },
   {
     "id": "happy_sugar_life_205",
@@ -4275,7 +4388,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "White Sugar Garden, Black Salt Cage",
+      "ハッピーシュガーライフ"
+    ],
+    "capitulos_totales": 48
   },
   {
     "id": "hayama_sensei_to_terano_sensei_wa_tsukia_206",
@@ -4291,7 +4409,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Our Teachers are Dating!",
+      "The Gym Teacher and School Nurse are Dating!"
+    ],
+    "capitulos_totales": 24
   },
   {
     "id": "hello__melancholic__207",
@@ -4308,7 +4431,8 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "capitulos_totales": 14
   },
   {
     "id": "hibike__euphonium___i_scream__208",
@@ -4324,7 +4448,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Happy I Scream."
+    ],
+    "capitulos_totales": 2
   },
   {
     "id": "himitsu_no_recipe_209",
@@ -4341,7 +4469,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Fall in Love",
+      "The Secret Recipe"
+    ],
+    "capitulos_totales": 17
   },
   {
     "id": "i_can_t_say_no_to_the_lonely_girl_210",
@@ -4363,7 +4496,12 @@
     "ink_categories": [
       "2025",
       "Manga"
-    ]
+    ],
+    "titulos_alt": [
+      "Lonely Girl ni Sakaraenai",
+      "Can't Defy The Lonely Girl"
+    ],
+    "capitulos_totales": 32
   },
   {
     "id": "kimi_to_tsuzuru_utakata_211",
@@ -4380,7 +4518,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "The Summer You Were There",
+      "Un amor de tinta y espuma"
+    ],
+    "capitulos_totales": 32
   },
   {
     "id": "kindred_spirits_on_the_roof_side_a__anot_212",
@@ -4397,7 +4540,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Okujou no Yurirei-san SIDE A Mou Hitotsu no Yuritopia",
+      "Kindred Spirits on the Roof"
+    ],
+    "capitulos_totales": 4
   },
   {
     "id": "koushin_koinu_ni_koibumi_wo_213",
@@ -4415,7 +4563,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "A Love Letter for the Marching Puppy"
+    ],
+    "capitulos_totales": 26
   },
   {
     "id": "la_amiga_de_mi_hermana_214",
@@ -4452,7 +4604,7 @@
   },
   {
     "id": "maitsuki_niwa_tsuki_ooya_tsuki_216",
-    "titulo": "Maitsuki Niwa Tsuki Ooya Tsuki (Monthly in the Garden with My Landlord)",
+    "titulo": "Maitsuki Niwa Tsuki Ooya Tsuki",
     "seccion": "Manga",
     "estado": "Finalizado",
     "imagen": "https://static.comix.to/f039/i/4/c5/68e0c639077c2.jpg",
@@ -4470,7 +4622,12 @@
     "ink_categories": [
       "2025",
       "Manga"
-    ]
+    ],
+    "titulos_alt": [
+      "Monthly in the Garden with My Landlord",
+      "Monthly /With Garden /With Ooya"
+    ],
+    "capitulos_totales": 31
   },
   {
     "id": "marking_217",
@@ -4501,7 +4658,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Sabishisugite Les Fuuzoku ni Ikimashita Repo",
+      "Mi Experiencia Lesbiana con La Soledad"
+    ],
+    "capitulos_totales": 5
   },
   {
     "id": "girl_x_girl_x_boy_219",
@@ -4518,7 +4680,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Girl×Girl×Boy - Otome no Inori"
+    ],
+    "capitulos_totales": 7
   },
   {
     "id": "nebesta_220",
@@ -4549,7 +4715,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Falsa Trampa",
+      "Trap of Falsehoods"
+    ],
+    "capitulos_totales": 26
   },
   {
     "id": "nettaigyo_wa_yuki_ni_kogareru_222",
@@ -4566,7 +4737,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "A Tropical Fish Yearns for Snow"
+    ],
+    "capitulos_totales": 34
   },
   {
     "id": "not_black__not_white_223",
@@ -4583,7 +4758,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Kuro de Naku, Shiro de Nai."
+    ],
+    "capitulos_totales": 1
   },
   {
     "id": "octave_224",
@@ -4600,7 +4779,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "オクターヴ"
+    ],
+    "capitulos_totales": 36
   },
   {
     "id": "run_away_with_me__girl_225",
@@ -4617,7 +4800,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Kakeochi Girl"
+    ],
+    "capitulos_totales": 16
   },
   {
     "id": "sasameki_koto_226",
@@ -4635,7 +4822,12 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "The Goddess' Dance",
+      "Whispered Words"
+    ],
+    "capitulos_totales": 53
   },
   {
     "id": "sei_kaihou_sorezore_no_ai_no_katachi_227",
@@ -4652,7 +4844,14 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Sei Kaihou, Sorezore no Ai no Katachi",
+      "Liberación: las diversas formas del amor",
+      "Sexual Liberation, The Shape of Each Love",
+      "Sexual Liberation: To Each Their Own Form of Love"
+    ],
+    "capitulos_totales": 18
   },
   {
     "id": "shimanami_tasogare_228",
@@ -4777,7 +4976,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "The Forbidden Peach"
+    ],
+    "capitulos_totales": 73
   },
   {
     "id": "tatoe_todokanu_ito_da_to_shite_mo_234",
@@ -4798,7 +5001,12 @@
     "ink_categories": [
       "2025",
       "Manga"
-    ]
+    ],
+    "titulos_alt": [
+      "If I Could Reach You",
+      "My Unrequited Love"
+    ],
+    "capitulos_totales": 37
   },
   {
     "id": "the_eternity_for_you_235",
@@ -4816,7 +5024,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Kimi ni Okuru Eien"
+    ],
+    "capitulos_totales": 1
   },
   {
     "id": "vampeerz_236",
@@ -4835,7 +5047,11 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Vampeerz, My Peer Vampires"
+    ],
+    "capitulos_totales": 46
   },
   {
     "id": "watashi_no_shumi_tte_hen_desu_ka__237",
@@ -4850,7 +5066,13 @@
     "in_biblioteca": true,
     "in_files": true,
     "adult": true,
-    "subido": "Subido biblioteca, Subido FILES"
+    "subido": "Subido biblioteca, Subido FILES",
+    "titulos_alt": [
+      "Himitsu no Zettai Ryouiki",
+      "Is My Hobby Weird?",
+      "Secret Honey's Absolute Territory"
+    ],
+    "capitulos_totales": 8
   },
   {
     "id": "yasuko_endo_acecha_en_la_noche_238",
