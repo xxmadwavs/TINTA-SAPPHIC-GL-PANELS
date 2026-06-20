@@ -1370,9 +1370,14 @@
       "Romance"
     ],
     "in_biblioteca": true,
-    "in_files": false,
+    "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca"
+    "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2026",
+      "Manhwa"
+    ]
   },
   {
     "id": "the_love_doctor_46",
