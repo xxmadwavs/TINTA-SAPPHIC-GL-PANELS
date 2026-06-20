@@ -2695,6 +2695,10 @@ function normalizeAllTags() {
 }
 
 async function init() {
+  // Capturar ?manga=ID lo antes posible, antes de que pushState() (llamado
+  // dentro de renderSections/renderInkClub) pueda sobrescribir la URL y perderlo.
+  const _initMangaId = new URLSearchParams(location.search).get('manga');
+
   // Default to HOME only on fresh load (no URL params at all)
   if (!location.search) homeActive = true;
   loadState();
@@ -2748,16 +2752,10 @@ async function init() {
     renderSections(false);
   }
 
-  // Abrir modal directamente si la URL tiene ?manga=ID
-  const _initParams = new URLSearchParams(location.search);
-  const _initMangaId = _initParams.get('manga');
+  // Abrir modal directamente si la URL tenía ?manga=ID (capturado al inicio de init())
   if (_initMangaId && allData.length) {
     const _initEntry = allData.find(e => e.id === _initMangaId);
     if (_initEntry) {
-      // Quitar ?manga= de la URL base antes de abrir (openModal la añade de nuevo)
-      _initParams.delete('manga');
-      const _baseUrl = _initParams.toString() ? '?' + _initParams.toString() : location.pathname;
-      history.replaceState(null, '', _baseUrl);
       openModal(_initEntry);
     }
   }
