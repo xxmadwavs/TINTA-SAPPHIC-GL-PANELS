@@ -2669,8 +2669,9 @@ function loadState() {
   if (p.get('view') === 'home') {
     homeActive = true; return;
   }
-  // ?manga=ID es solo para abrir modal, no altera filtros ni vista
-  if (p.has('manga') && p.size === 1) { homeActive = false; return; }
+  // ?manga=ID es solo para abrir modal, pero los demás filtros de la URL
+  // (sec, estado, sub, tags...) deben restaurarse igual para que el catálogo
+  // quede en el estado correcto detrás del modal.
   homeActive = false;
   if (p.has('sec'))   activeSec  = p.get('sec');
   if (p.has('estado')) fEstado   = p.get('estado');
