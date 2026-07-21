@@ -3188,7 +3188,6 @@ function buildVoteSectionHTML(e) {
     <p class="vote-prompt-m">${myScore ? 'Tu valoración actual: ' + '★'.repeat(myScore) : 'Tu valoración:'}</p>
     <div class="stars-row-m" id="starsRowM">${stars}</div>
     <div class="vote-btns-m">
-      <button class="btn-vote-submit" id="voteSubmitBtn" onclick="submitVote()" ${pendingStar === 0 ? 'disabled' : ''}>${myScore ? 'ACTUALIZAR' : 'VOTAR'}</button>
       ${myScore ? '<button class="btn-vote-del" id="voteDelBtn" onclick="deleteVote()">Eliminar</button>' : ''}
     </div>
     <div class="vote-feedback-m" id="voteFeedbackM"></div>`;
@@ -3204,15 +3203,13 @@ function lightStars(n) {
 }
 function selectStar(n) {
   pendingStar = n; lightStars(n);
-  const btn = document.getElementById('voteSubmitBtn');
-  if (btn) btn.disabled = false;
+  submitVote();
 }
 async function submitVote() {
   if (!SB_READY || !currentUser || pendingStar === 0 || !activeModalItem) return;
-  const submitBtn = document.getElementById('voteSubmitBtn');
-  const delBtn    = document.getElementById('voteDelBtn');
-  if (submitBtn) submitBtn.disabled = true;
-  if (delBtn)    delBtn.disabled    = true;
+  document.querySelectorAll('#starsRowM .sstar').forEach(b => b.disabled = true);
+  const delBtn = document.getElementById('voteDelBtn');
+  if (delBtn) delBtn.disabled = true;
   const existing = myRatings[activeModalItem.id];
   const { error } = existing
     ? await sb.from('ratings').update({ score: pendingStar }).eq('user_id', currentUser.id).eq('manga_id', activeModalItem.id)
@@ -3220,8 +3217,8 @@ async function submitVote() {
   if (error) {
     const fb = document.getElementById('voteFeedbackM');
     if (fb) fb.textContent = 'Error al guardar.';
-    if (submitBtn) submitBtn.disabled = false;
-    if (delBtn)    delBtn.disabled    = false;
+    document.querySelectorAll('#starsRowM .sstar').forEach(b => b.disabled = false);
+    if (delBtn) delBtn.disabled = false;
     return;
   }
   const r = ratingsMap[activeModalItem.id] || { avg: 0, count: 0 };
@@ -3239,12 +3236,11 @@ async function submitVote() {
 }
 async function deleteVote() {
   if (!SB_READY || !currentUser || !myRatings[activeModalItem.id]) return;
-  const submitBtn = document.getElementById('voteSubmitBtn');
-  const delBtn    = document.getElementById('voteDelBtn');
-  if (submitBtn) submitBtn.disabled = true;
-  if (delBtn)    delBtn.disabled    = true;
+  const delBtn = document.getElementById('voteDelBtn');
+  if (delBtn) delBtn.disabled = true;
+  document.querySelectorAll('#starsRowM .sstar').forEach(b => b.disabled = true);
   const { error } = await sb.from('ratings').delete().eq('user_id', currentUser.id).eq('manga_id', activeModalItem.id);
-  if (error) { if (submitBtn) submitBtn.disabled = false; if (delBtn) delBtn.disabled = false; return; }
+  if (error) { if (delBtn) delBtn.disabled = false; document.querySelectorAll('#starsRowM .sstar').forEach(b => b.disabled = false); return; }
   const r        = ratingsMap[activeModalItem.id];
   const oldScore = myRatings[activeModalItem.id];
   if (r.count <= 1) delete ratingsMap[activeModalItem.id];
