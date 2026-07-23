@@ -1766,6 +1766,92 @@ body.shelf-active .topbar-center { display: none; }
   .shelf-main { padding: 20px 16px 60px; }
 }
 
+/* ── MODAL "MIS LOGROS" ───────────────────────────────── */
+.logros-modal-wrap {
+  position: fixed; inset: 0; z-index: 400;
+  background: rgba(0,0,0,.87);
+  backdrop-filter: blur(8px);
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.logros-modal-wrap.open { display: flex; }
+.logros-modal {
+  background: #13131e;
+  border: 1px solid rgba(232,255,71,0.2);
+  border-radius: 2px;
+  max-width: 640px; width: 100%;
+  max-height: 85vh; overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(232,255,71,0.2) transparent;
+  position: relative;
+}
+.logros-modal::before {
+  content: '';
+  position: sticky; top: 0;
+  display: block; height: 2px;
+  background: linear-gradient(90deg, var(--neon), var(--neon2), var(--neon3));
+  z-index: 1;
+}
+.logros-modal-x {
+  position: absolute; top: 14px; right: 14px;
+  width: 28px; height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  transition: all .15s; z-index: 2;
+}
+.logros-modal-x:hover { border-color: var(--neon2); color: var(--neon2); }
+.logros-modal-body { padding: 24px 24px 28px; }
+.logros-modal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px; letter-spacing: 1px;
+  color: var(--white); margin-bottom: 6px;
+}
+.logros-modal-sub {
+  font-size: 12.5px; color: var(--muted);
+  line-height: 1.6; max-width: 52ch; margin-bottom: 22px;
+}
+.logros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 10px;
+}
+.logros-badge {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  text-align: center;
+  padding: 16px 10px 13px;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  transition: transform .15s, border-color .15s;
+}
+.logros-badge:hover { transform: translateY(-2px); border-color: rgba(232,255,71,0.4); }
+.logros-badge-imgbox {
+  width: 60px; height: 60px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  font-size: 28px;
+}
+.logros-badge-imgbox img {
+  max-width: 100%; max-height: 100%; width: auto; height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.5));
+}
+.logros-badge-name {
+  font-size: 11px; font-weight: 500; color: var(--paper); line-height: 1.35;
+}
+.logros-badge.locked { opacity: .5; }
+.logros-badge.locked .logros-badge-imgbox { filter: grayscale(1); opacity: .5; }
+.logros-badge.locked .logros-badge-name { color: var(--muted); }
+.logros-empty { padding: 2rem 0; text-align: center; color: var(--muted); font-size: 12.5px; grid-column: 1/-1; }
+@media (max-width: 600px) {
+  .logros-modal-body { padding: 18px 16px 22px; }
+  .logros-grid { grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+}
+
 /* ── AUTH MODAL ───────────────────────────────────────── */
 .auth-modal-wrap {
   position: fixed; inset: 0; z-index: 500;
@@ -2573,6 +2659,18 @@ body.home-active .topbar-center { display: none; }
   </div>
 </div>
 
+<!-- MODAL MIS LOGROS -->
+<div class="logros-modal-wrap" id="logrosModalWrap" onclick="handleLogrosBgClick(event)">
+  <div class="logros-modal">
+    <button class="logros-modal-x" onclick="closeLogrosModal()">✕</button>
+    <div class="logros-modal-body">
+      <div class="logros-modal-title">MIS LOGROS</div>
+      <p class="logros-modal-sub">Insignias que vas desbloqueando por tu actividad en la comunidad: valoraciones, votos, participación y más.</p>
+      <div class="logros-grid" id="logrosGrid"><div class="logros-empty">Cargando…</div></div>
+    </div>
+  </div>
+</div>
+
 <!-- TINTA SAPPHIC WATERMARK -->
 <div class="ts-watermark">Tinta Sapphic</div>
 
@@ -2991,6 +3089,7 @@ function renderAuthArea() {
           </div>
           <div class="user-dropdown-div"></div>
           <button class="user-dropdown-item" onclick="event.stopPropagation();openShelf('all')">📚 Mi estantería</button>
+          <button class="user-dropdown-item" onclick="event.stopPropagation();openLogrosModal()">🏅 Mis logros</button>
           <button class="user-dropdown-item danger" onclick="event.stopPropagation();signOut()">Cerrar sesión</button>
         </div>
       </div>`;
@@ -3022,6 +3121,75 @@ function closeAuthModal() {
 }
 function handleAuthBgClick(e) {
   if (e.target === document.getElementById('authModalWrap')) closeAuthModal();
+}
+
+// ── LOGROS (insignias) ─────────────────────────────────────
+let logrosCatalog = [];
+let userLogros    = [];
+
+async function loadLogrosCatalog() {
+  if (!sb) { logrosCatalog = []; return; }
+  try {
+    const { data, error } = await sb.from('logros').select('*').order('created_at');
+    if (error) throw error;
+    const permitidos = ['bienvenida', 'primera valoracion', 'primera valoración'];
+    logrosCatalog = (data || []).filter(l => {
+      const n = (l.nombre || '').toLowerCase();
+      const s = (l.slug || l.codigo || '').toLowerCase();
+      return permitidos.some(p => n.includes(p) || s.includes(p));
+    });
+  } catch (e) {
+    logrosCatalog = [];
+  }
+}
+
+async function loadUserLogros() {
+  if (!sb || !currentUser) { userLogros = []; return; }
+  try {
+    const { data, error } = await sb.from('user_logros').select('logro_id,awarded_at').eq('user_id', currentUser.id);
+    if (error) throw error;
+    userLogros = data || [];
+  } catch (e) {
+    userLogros = [];
+  }
+}
+
+function renderLogrosGrid() {
+  const grid = document.getElementById('logrosGrid');
+  if (!grid) return;
+  if (!logrosCatalog.length) {
+    grid.innerHTML = '<div class="logros-empty">Todavía no hay insignias disponibles.</div>';
+    return;
+  }
+  grid.innerHTML = logrosCatalog.map(l => {
+    const got = userLogros.some(ul => ul.logro_id === l.id);
+    const tip = got ? (l.descripcion || l.nombre) : 'Aún no conseguido';
+    const iconHtml = l.icono
+      ? `<img src="assets/logros/${esc(l.icono)}" alt="${esc(l.nombre)}" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'🏅'}))">`
+      : '🏅';
+    return `<div class="logros-badge ${got ? '' : 'locked'}" title="${esc(tip)}">
+      <div class="logros-badge-imgbox">${iconHtml}</div>
+      <div class="logros-badge-name">${esc(l.nombre)}</div>
+    </div>`;
+  }).join('');
+}
+
+async function openLogrosModal() {
+  if (!currentUser) { openAuthModal(); return; }
+  document.getElementById('logrosModalWrap').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('logrosGrid').innerHTML = '<div class="logros-empty">Cargando…</div>';
+  await Promise.all([loadLogrosCatalog(), loadUserLogros()]);
+  renderLogrosGrid();
+}
+
+function closeLogrosModal() {
+  document.getElementById('logrosModalWrap').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleLogrosBgClick(e) {
+  if (e.target === document.getElementById('logrosModalWrap')) closeLogrosModal();
 }
 function toggleAuthMode() {
   authModeState = authModeState === 'login' ? 'register' : 'login';
@@ -3188,6 +3356,7 @@ function buildVoteSectionHTML(e) {
     <p class="vote-prompt-m">${myScore ? 'Tu valoración actual: ' + '★'.repeat(myScore) : 'Tu valoración:'}</p>
     <div class="stars-row-m" id="starsRowM">${stars}</div>
     <div class="vote-btns-m">
+      <button class="btn-vote-submit" id="voteSubmitBtn" onclick="submitVote()" ${pendingStar === 0 ? 'disabled' : ''}>${myScore ? 'ACTUALIZAR' : 'VOTAR'}</button>
       ${myScore ? '<button class="btn-vote-del" id="voteDelBtn" onclick="deleteVote()">Eliminar</button>' : ''}
     </div>
     <div class="vote-feedback-m" id="voteFeedbackM"></div>`;
@@ -3203,13 +3372,15 @@ function lightStars(n) {
 }
 function selectStar(n) {
   pendingStar = n; lightStars(n);
-  submitVote();
+  const btn = document.getElementById('voteSubmitBtn');
+  if (btn) btn.disabled = false;
 }
 async function submitVote() {
   if (!SB_READY || !currentUser || pendingStar === 0 || !activeModalItem) return;
-  document.querySelectorAll('#starsRowM .sstar').forEach(b => b.disabled = true);
-  const delBtn = document.getElementById('voteDelBtn');
-  if (delBtn) delBtn.disabled = true;
+  const submitBtn = document.getElementById('voteSubmitBtn');
+  const delBtn    = document.getElementById('voteDelBtn');
+  if (submitBtn) submitBtn.disabled = true;
+  if (delBtn)    delBtn.disabled    = true;
   const existing = myRatings[activeModalItem.id];
   const { error } = existing
     ? await sb.from('ratings').update({ score: pendingStar }).eq('user_id', currentUser.id).eq('manga_id', activeModalItem.id)
@@ -3217,8 +3388,8 @@ async function submitVote() {
   if (error) {
     const fb = document.getElementById('voteFeedbackM');
     if (fb) fb.textContent = 'Error al guardar.';
-    document.querySelectorAll('#starsRowM .sstar').forEach(b => b.disabled = false);
-    if (delBtn) delBtn.disabled = false;
+    if (submitBtn) submitBtn.disabled = false;
+    if (delBtn)    delBtn.disabled    = false;
     return;
   }
   const r = ratingsMap[activeModalItem.id] || { avg: 0, count: 0 };
@@ -3236,11 +3407,12 @@ async function submitVote() {
 }
 async function deleteVote() {
   if (!SB_READY || !currentUser || !myRatings[activeModalItem.id]) return;
-  const delBtn = document.getElementById('voteDelBtn');
-  if (delBtn) delBtn.disabled = true;
-  document.querySelectorAll('#starsRowM .sstar').forEach(b => b.disabled = true);
+  const submitBtn = document.getElementById('voteSubmitBtn');
+  const delBtn    = document.getElementById('voteDelBtn');
+  if (submitBtn) submitBtn.disabled = true;
+  if (delBtn)    delBtn.disabled    = true;
   const { error } = await sb.from('ratings').delete().eq('user_id', currentUser.id).eq('manga_id', activeModalItem.id);
-  if (error) { if (delBtn) delBtn.disabled = false; document.querySelectorAll('#starsRowM .sstar').forEach(b => b.disabled = false); return; }
+  if (error) { if (submitBtn) submitBtn.disabled = false; if (delBtn) delBtn.disabled = false; return; }
   const r        = ratingsMap[activeModalItem.id];
   const oldScore = myRatings[activeModalItem.id];
   if (r.count <= 1) delete ratingsMap[activeModalItem.id];
