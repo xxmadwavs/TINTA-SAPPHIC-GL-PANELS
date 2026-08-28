@@ -7870,30 +7870,30 @@
       "2025",
       "Manhwa"
     ],
-    "titulos_alt": [
-      "¿Qué Dice el Zorro?",
-      "WDTFS"
-    ],
-    "capitulos_totales": 2015,
-    "autor": [
-      "Team Gaji"
-    ],
-    "anio_inicio": 145,
-    "content_rating": "erotica",
     "tropos": [],
     "personajes": [
       "Oficinista"
+    ],
+    "titulos_alt": [
+      "¿Qué Dice el Zorro?",
+      "WDTFS"
     ],
     "pais_cultura": [
       "Corea del Sur"
     ],
     "enlaces_lectura": [
       {
+        "id": "gl_19f64b8f76a4ibwb",
         "label": "Raw oficial",
-        "url": "https://page.kakao.com/home/52111205",
-        "id": "gl_19f64b8f76a4ibwb"
+        "url": "https://page.kakao.com/home/52111205"
       }
-    ]
+    ],
+    "capitulos_totales": 145,
+    "autor": [
+      "Team Gaji"
+    ],
+    "anio_inicio": 2015,
+    "content_rating": "erotica"
   },
   {
     "id": "white_angels_have_no_rest_126",
