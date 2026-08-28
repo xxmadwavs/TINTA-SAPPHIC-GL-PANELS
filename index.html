@@ -2004,7 +2004,18 @@ body.shelf-active .topbar-center { display: none; }
   letter-spacing: .3em; font-size: 1.1rem; text-align: center;
 }
 
-/* ── RATING BLOCK IN MODAL ────────────────────────────── */
+/* rating + spicy lado a lado en pantallas con espacio; se apilan solos si no cabe */
+.rating-spicy-row {
+  display: flex; flex-wrap: wrap; gap: 10px 24px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px; margin-top: 16px;
+}
+.rating-block-half {
+  flex: 1 1 220px; min-width: 220px;
+}
+.rating-block-half.rating-block {
+  border-top: none; padding-top: 0; margin-top: 0;
+}
 .rating-block {
   border-top: 1px solid var(--border);
   padding-top: 16px; margin-top: 16px;
@@ -5527,25 +5538,27 @@ function openModal(e, isRefresh) {
       <div class="rating-block-title">📚 Mi estantería</div>
       <div id="shelfSection">${buildShelfSectionHTML(e)}</div>
     </div>
-    <div class="rating-block">
-      <div class="rating-block-title">Valoraciones de la comunidad</div>
-      ${currentUser ? `
-      <div class="community-row" id="communityRow">${buildCommunityRowHTML(e)}</div>
-      <div id="voteSection">${buildVoteSectionHTML(e)}</div>` : `
-      <div class="rating-locked-box">
-        <div class="rlb-icon">🔒</div>
-        <p>Las valoraciones son solo para personas registradas.<br><a onclick="closeModal();openAuthModal()">Inicia sesión</a> para verlas y votar.</p>
-      </div>`}
-    </div>
-    <div class="rating-block">
-      <div class="rating-block-title">🌶️ Nivel Spicy (comunidad)</div>
-      ${currentUser ? `
-      <div class="spicy-community-row" id="spicyCommunityRow">${buildSpicyCommunityRowHTML(e)}</div>
-      <div id="spicyVoteSection">${buildSpicyVoteSectionHTML(e)}</div>` : `
-      <div class="rating-locked-box">
-        <div class="rlb-icon">🔒</div>
-        <p>El nivel spicy es solo para personas registradas.<br><a onclick="closeModal();openAuthModal()">Inicia sesión</a> para verlo y votar.</p>
-      </div>`}
+    <div class="rating-spicy-row">
+      <div class="rating-block rating-block-half">
+        <div class="rating-block-title">Valoraciones de la comunidad</div>
+        ${currentUser ? `
+        <div class="community-row" id="communityRow">${buildCommunityRowHTML(e)}</div>
+        <div id="voteSection">${buildVoteSectionHTML(e)}</div>` : `
+        <div class="rating-locked-box">
+          <div class="rlb-icon">🔒</div>
+          <p>Las valoraciones son solo para personas registradas.<br><a onclick="closeModal();openAuthModal()">Inicia sesión</a> para verlas y votar.</p>
+        </div>`}
+      </div>
+      <div class="rating-block rating-block-half">
+        <div class="rating-block-title">🌶️ Nivel Spicy (comunidad)</div>
+        ${currentUser ? `
+        <div class="spicy-community-row" id="spicyCommunityRow">${buildSpicyCommunityRowHTML(e)}</div>
+        <div id="spicyVoteSection">${buildSpicyVoteSectionHTML(e)}</div>` : `
+        <div class="rating-locked-box">
+          <div class="rlb-icon">🔒</div>
+          <p>El nivel spicy es solo para personas registradas.<br><a onclick="closeModal();openAuthModal()">Inicia sesión</a> para verlo y votar.</p>
+        </div>`}
+      </div>
     </div>`;
 
   document.getElementById('modalWrap').classList.add('open');
