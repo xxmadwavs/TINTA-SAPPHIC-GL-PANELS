@@ -1012,6 +1012,7 @@ div.search-box:focus { outline: none; }
 }
 .mb-adult { background: rgba(255,71,163,0.12); color: var(--neon2); border: 1px solid rgba(255,71,163,0.25); }
 .mb-caps { background: rgba(245,240,232,0.06); color: var(--muted); border: 1px solid rgba(245,240,232,0.15); }
+.mb-spicy { background: rgba(255,71,163,0.14); color: var(--neon2); border: 1px solid rgba(255,71,163,0.3); font-weight: 700; }
 .modal-autor {
   font-size: 11.5px; color: var(--muted);
   font-family: 'DM Sans', sans-serif; letter-spacing: .2px;
@@ -3149,6 +3150,7 @@ body.home-active .topbar-center { display: none; }
       <div class="drop-panel" id="panelSort">
         <div class="dopt on" data-f="sort" data-v="recent">✦ Recientes</div>
         <div class="dopt" data-f="sort" data-v="rating">★ Más valorados</div>
+        <div class="dopt" data-f="sort" data-v="spicy">🌶 Más spicy</div>
         <div class="dopt" data-f="sort" data-v="az">Az A–Z</div>
       </div>
     </div>
@@ -3290,6 +3292,7 @@ body.home-active .topbar-center { display: none; }
       <div class="fsheet-opts single" id="fsSortOpts">
         <button class="fsopt on" data-f="sort" data-v="recent">✦ Recientes</button>
         <button class="fsopt" data-f="sort" data-v="rating">★ Más valorados</button>
+        <button class="fsopt" data-f="sort" data-v="spicy">🌶 Más spicy</button>
         <button class="fsopt" data-f="sort" data-v="az">A–Z</button>
       </div>
     </div>
@@ -5141,11 +5144,17 @@ function buildCatTabs() {
 /* ── RENDER ─────────────────────────────────────────────── */
 function sortItems(items) {
   if (activeSort === 'recent') {
-    // IDs start with gl_TIMESTAMP — higher = more recent; items at start of JSON are newest
-    return items.slice(); // JSON order = already newest first
+    // IDs start with gl_TIMESTAMP — higher = más reciente; items at start of JSON son newest
+    return items.slice(); // JSON order = ya newest first
   } else if (activeSort === 'rating') {
     return items.slice().sort((a, b) => {
       const ra = ratingsMap[a.id], rb = ratingsMap[b.id];
+      if (!ra && !rb) return 0; if (!ra) return 1; if (!rb) return -1;
+      return (rb.avg * Math.log1p(rb.count)) - (ra.avg * Math.log1p(ra.count));
+    });
+  } else if (activeSort === 'spicy') {
+    return items.slice().sort((a, b) => {
+      const ra = spicyMap[a.id], rb = spicyMap[b.id];
       if (!ra && !rb) return 0; if (!ra) return 1; if (!rb) return -1;
       return (rb.avg * Math.log1p(rb.count)) - (ra.avg * Math.log1p(ra.count));
     });
@@ -5454,6 +5463,16 @@ function openModal(e, isRefresh) {
               <div class="meta-row">${chips.join('')}</div>
             </div>`;
           })()}
+          ${(() => {
+            const r = spicyMap[e.id];
+            if (!r || !r.count) return '';
+            return `<div class="meta-group">
+              <span class="meta-glabel">Spicy</span>
+              <div class="meta-row">
+                <span class="mbadge mb-spicy" title="${r.count} voto${r.count === 1 ? '' : 's'} de la comunidad">🌶 ${r.avg}/5</span>
+              </div>
+            </div>`;
+          })()}
         </div>
       </div>
     </div>
@@ -5706,7 +5725,7 @@ function bindEvents() {
         if (f === 'demo')   { fDemo = v;   updateDropLabel('dropDemo','valDemo', v === 'all' ? 'Demográfico' : demoLabel(v), v !== 'all', 'on'); }
         if (f === 'sub')    { fSub = v;    updateDropLabel('dropSub','valSub', v === 'all' ? 'Ubicación' : (v === 'bib' ? 'Biblioteca' : v === 'files' ? 'FILES' : 'Ambos'), v !== 'all', 'on-teal'); }
         if (f === 'anio')   { fAnio = v;   updateDropLabel('dropAnio','valAnio', v === 'all' ? 'Año' : v, v !== 'all', 'on'); }
-        if (f === 'sort')   { activeSort = v; const sl = {'recent':'Recientes','rating':'★ Más valorados','az':'Az A–Z'}; updateDropLabel('dropSort','valSort', sl[v], v !== 'recent', 'on'); }
+        if (f === 'sort')   { activeSort = v; const sl = {'recent':'Recientes','rating':'★ Más valorados','spicy':'🌶 Más spicy','az':'Az A–Z'}; updateDropLabel('dropSort','valSort', sl[v], v !== 'recent', 'on'); }
         if (f === 'shelf')  { fShelf = v; const shl = {'all':'📚 Mi estantería','want':'＋ Quiero leer','reading':'📖 Leyendo','read':'✓ Terminado'}; updateDropLabel('dropShelf','valShelf', shl[v], v !== 'all', 'on'); }
         drop.classList.remove('open');
         renderSections(true);
@@ -6071,7 +6090,7 @@ function onFsheetChange() {
   updateTropoDropUI();
   updatePersonajeDropUI();
   updateAutorDropUI();
-  const sl3 = {'recent':'Recientes','rating':'★ Más valorados','az':'Az A–Z'};
+  const sl3 = {'recent':'Recientes','rating':'★ Más valorados','spicy':'🌶 Más spicy','az':'Az A–Z'};
   updateDropLabel('dropSort','valSort', sl3[activeSort], activeSort !== 'recent', 'on');
   // adult UI sync
   document.getElementById('adultBtn').classList.toggle('active', hideAdult);
