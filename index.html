@@ -1303,7 +1303,6 @@ div.search-box:focus { outline: none; }
   .card-estado { font-size: 7px; padding: 2px 5px; }
   .adult-chip { font-size: 8px; padding: 1px 5px; }
   .sbadge { font-size: 6px; padding: 1px 4px; }
-  .card-spicy { font-size: 12px; padding: 3px 7px; }
 
   /* ── Modal — full screen ── */
   .modal-wrap { padding: 0; align-items: flex-end; }
@@ -2136,16 +2135,15 @@ body.shelf-active .topbar-center { display: none; }
 .schile.zero.lit { opacity: 1; border-color: var(--neon2); color: var(--neon2); }
 .spicy-unknown-note { font-size: 10.5px; color: var(--dim); margin-top: 2px; }
 
-/* spicy badge on card — deliberadamente más grande y llamativo que el resto de badges,
-   ya que es información que la comunidad pidió que se viera de un vistazo */
+/* spicy badge on card — mismo tamaño que el resto de badges de la card, solo con su propio color */
 .card-spicy {
   position: absolute; bottom: 7px; right: 7px; z-index: 10;
-  background: linear-gradient(135deg, #ff2f7e, #ff6a3d);
-  border-radius: 3px; padding: 4px 9px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 15px; font-weight: 700; letter-spacing: .5px;
-  color: #fff; display: flex; align-items: center; gap: 4px;
-  box-shadow: 0 2px 12px rgba(255,47,126,0.55), 0 1px 8px rgba(0,0,0,0.6);
+  background: var(--neon2);
+  border-radius: 2px; padding: 2px 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px; font-weight: 700;
+  color: #1a0410; display: flex; align-items: center; gap: 3px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.6);
 }
 
 /* ── RULETA ──────────────────────────────────────────────── */
