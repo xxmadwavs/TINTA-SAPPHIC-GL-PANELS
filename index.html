@@ -922,6 +922,21 @@ div.search-box:focus { outline: none; }
 }
 .modal-x:hover { border-color: var(--neon2); color: var(--neon2); }
 
+.modal-share-btn {
+  position: absolute; top: 14px; right: 50px;
+  width: 28px; height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  transition: all .15s; z-index: 1;
+}
+.modal-share-btn:hover { border-color: var(--neon3); color: var(--neon3); }
+.modal-share-btn.copied { border-color: #6bff9e; color: #6bff9e; }
+
 .modal-body { padding: 20px 24px 28px; }
 
 .modal-top {
@@ -990,6 +1005,32 @@ div.search-box:focus { outline: none; }
 .mb-cr-safe { background: rgba(71,255,140,0.1); color: #47ff8c; border: 1px solid rgba(71,255,140,0.22); }
 .mb-cr-sugestiva { background: rgba(255,200,71,0.1); color: #ffc847; border: 1px solid rgba(255,200,71,0.22); }
 .mb-cr-erotica { background: rgba(255,71,113,0.12); color: #ff4771; border: 1px solid rgba(255,71,113,0.25); }
+.mb-adapt { background: rgba(180,71,255,0.1); color: #b447ff; border: 1px solid rgba(180,71,255,0.22); }
+
+/* ── HISTORIAS SIMILARES ─────────────────────────────────── */
+.similar-block { margin: 18px 0; }
+.similar-title {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: .5px;
+  color: var(--muted); margin-bottom: 10px;
+}
+.similar-row {
+  display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px;
+  scrollbar-width: thin; scrollbar-color: rgba(245,240,232,0.15) transparent;
+}
+.similar-card {
+  flex-shrink: 0; width: 96px; cursor: pointer;
+}
+.similar-cover {
+  width: 96px; height: 138px; border-radius: 2px; overflow: hidden;
+  background: var(--surface2); position: relative;
+}
+.similar-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.similar-noimg { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; opacity: .4; }
+.similar-card-title {
+  font-size: 10.5px; color: var(--muted); margin-top: 5px; line-height: 1.25;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.similar-card:hover .similar-card-title { color: var(--paper); }
 
 .modal-adult-warn {
   display: flex; align-items: center; gap: 8px;
@@ -1160,6 +1201,10 @@ div.search-box:focus { outline: none; }
   /* ── Adult btn — icon only ── */
   .adult-btn { padding: 5px 8px; }
   #adultLbl { display: none; }
+
+  /* ── Home/Ruleta nav btns — icon only, so topbar-right fits ── */
+  .home-nav-btn, .ruleta-nav-btn { padding: 5px 8px; }
+  #homeNavLbl, #ruletaNavLbl, #calendarNavLbl { display: none; }
 
   /* ── Hero — much smaller ── */
   .hero { padding: 60px 12px 0; }
@@ -2007,6 +2052,23 @@ body.shelf-active .topbar-center { display: none; }
 .shelf-btn.cs-reading.active { background: rgba(232,255,71,0.16); border-color: var(--neon); color: var(--neon); }
 .shelf-btn.cs-read.active { background: rgba(107,255,158,0.16); border-color: #6bff9e; color: #6bff9e; }
 .shelf-remove-btn { margin-top: 2px; }
+.shelf-dates-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 10px; }
+.shelf-date-label {
+  display: flex; flex-direction: column; gap: 4px;
+  font-size: 10.5px; color: var(--dim);
+}
+.shelf-date-selects { display: flex; gap: 4px; }
+.shelf-date-select {
+  padding: 6px 4px; border-radius: 2px;
+  border: 1px solid var(--border2);
+  background: var(--surface); color: var(--paper);
+  font-family: 'DM Sans', sans-serif; font-size: 11.5px;
+  outline: none; color-scheme: dark;
+}
+.shelf-date-select:focus { border-color: var(--neon3); }
+.shelf-date-select.sd-day   { width: 52px; }
+.shelf-date-select.sd-month { width: 92px; }
+.shelf-date-select.sd-year  { width: 70px; }
 
 /* shelf status badge on card */
 .card-shelf-badge {
@@ -2030,6 +2092,197 @@ body.shelf-active .topbar-center { display: none; }
   box-shadow: 0 1px 8px rgba(0,0,0,0.6);
 }
 .card-avg .cstar { font-size: 9px; }
+
+/* ── SPICY VOTE (nivel spicy comunitario, Supabase) ──────── */
+.spicy-community-row {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 12px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.avg-chiles-m { display: flex; gap: 1px; margin-bottom: 2px; font-size: 13px; }
+.cm.on { filter: none; opacity: 1; }
+.cm.off { filter: grayscale(1); opacity: .18; }
+.chiles-row-m { display: flex; gap: 2px; margin-bottom: 8px; flex-wrap: wrap; }
+.schile {
+  background: transparent; border: none; cursor: pointer;
+  font-size: 1.45rem; opacity: .18; filter: grayscale(1);
+  transition: opacity .1s, filter .1s; padding: 2px 3px; line-height: 1;
+}
+.schile.lit { opacity: 1; filter: none; }
+.schile.zero {
+  font-size: 1rem; opacity: .35; border: 1px solid var(--border2); border-radius: 2px;
+  padding: 3px 8px; margin-right: 4px; color: var(--muted); font-family: 'DM Sans', sans-serif;
+}
+.schile.zero.lit { opacity: 1; border-color: var(--neon2); color: var(--neon2); }
+.spicy-unknown-note { font-size: 10.5px; color: var(--dim); margin-top: 2px; }
+
+/* spicy badge on card */
+.card-spicy {
+  position: absolute; bottom: 7px; right: 7px; z-index: 10;
+  background: var(--neon2);
+  border-radius: 2px; padding: 2px 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px; font-weight: 700;
+  color: #1a0410; display: flex; align-items: center; gap: 3px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.6);
+}
+
+/* ── RULETA ──────────────────────────────────────────────── */
+.ruleta-nav-btn {
+  padding: 5px 12px; border-radius: 2px;
+  border: 1px solid var(--border);
+  background: transparent; color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: .3px;
+  cursor: pointer; transition: all .18s;
+}
+.ruleta-nav-btn:hover { border-color: var(--neon3); color: var(--neon3); }
+@media (max-width: 600px) { .ruleta-nav-btn { padding: 5px 8px; font-size: 10px; } }
+
+.ruleta-modal-wrap {
+  position: fixed; inset: 0; z-index: 400;
+  background: rgba(0,0,0,.87);
+  backdrop-filter: blur(8px);
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.ruleta-modal-wrap.open { display: flex; }
+.ruleta-modal {
+  background: #13131e;
+  border: 1px solid rgba(255,71,163,0.25);
+  border-radius: 2px;
+  max-width: 460px; width: 100%;
+  max-height: 88vh; overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,71,163,0.25) transparent;
+  position: relative;
+}
+.ruleta-modal::before {
+  content: '';
+  position: sticky; top: 0;
+  display: block; height: 2px;
+  background: linear-gradient(90deg, var(--neon2), var(--neon), var(--neon3));
+  z-index: 1;
+}
+.ruleta-modal-body { padding: 24px 24px 28px; }
+.ruleta-filtros-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 12px; }
+.ruleta-select {
+  padding: 7px 10px; border-radius: 2px;
+  border: 1px solid var(--border2);
+  background: var(--surface); color: var(--paper);
+  font-family: 'DM Sans', sans-serif; font-size: 11.5px;
+  cursor: pointer; outline: none; flex: 1; min-width: 140px;
+}
+.ruleta-toggle-btn {
+  padding: 7px 12px; border-radius: 2px;
+  border: 1px solid var(--border2);
+  background: transparent; color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+  cursor: pointer; transition: all .18s; white-space: nowrap;
+}
+.ruleta-toggle-btn:hover { border-color: rgba(245,240,232,0.35); color: var(--paper); }
+.ruleta-toggle-btn.active { background: rgba(232,255,71,0.14); border-color: var(--neon); color: var(--neon); }
+.ruleta-count { font-size: 11px; color: var(--dim); letter-spacing: .3px; margin-bottom: 14px; }
+.ruleta-stage {
+  min-height: 210px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px; padding: 12px 0 18px; text-align: center;
+}
+.ruleta-die { font-size: 3.2rem; line-height: 1; }
+.ruleta-die.spinning { animation: ruletaSpinAnim .55s ease infinite; }
+@keyframes ruletaSpinAnim {
+  0%   { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(200deg) scale(1.15); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+.ruleta-hint { font-size: 12px; color: var(--muted); max-width: 32ch; }
+.ruleta-btn-row { display: flex; justify-content: center; }
+.ruleta-spin-btn { padding: 9px 30px; font-size: 1.15rem; }
+.ruleta-result-card {
+  width: 100%; display: flex; gap: 14px; align-items: flex-start;
+  text-align: left; padding: 4px 0;
+}
+.ruleta-result-cover {
+  width: 78px; height: 112px; flex-shrink: 0; border-radius: 2px; overflow: hidden;
+  background: var(--surface2);
+}
+.ruleta-result-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ruleta-result-info { flex: 1; min-width: 0; }
+.ruleta-result-sec { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dim); margin-bottom: 3px; }
+.ruleta-result-title {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem; line-height: 1.1;
+  color: var(--white); margin-bottom: 6px;
+}
+.ruleta-result-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+.ruleta-result-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.ruleta-again-btn {
+  padding: 6px 14px; border-radius: 2px;
+  border: 1px solid rgba(255,71,163,0.35);
+  background: transparent; color: var(--neon2);
+  font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+  cursor: pointer; transition: all .18s;
+}
+.ruleta-again-btn:hover { background: rgba(255,71,163,0.1); border-color: var(--neon2); }
+.ruleta-empty { font-size: 12.5px; color: var(--muted); text-align: center; padding: 1rem 0; }
+@media (max-width: 600px) {
+  .ruleta-modal-body { padding: 18px 16px 22px; }
+  .ruleta-select { min-width: 120px; }
+}
+
+/* ── CALENDARIO DE LECTURA ───────────────────────────────── */
+.cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 10px; flex-wrap: wrap; }
+.cal-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; letter-spacing: .5px; color: var(--white); text-transform: capitalize; }
+.cal-nav { display: flex; align-items: center; gap: 8px; }
+.cal-nav-btn {
+  width: 28px; height: 28px; border-radius: 2px;
+  border: 1px solid var(--border2); background: var(--surface2); color: var(--paper);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-size: 13px; transition: all .15s;
+}
+.cal-nav-btn:hover { border-color: var(--neon3); color: var(--neon3); }
+.cal-today-btn {
+  padding: 6px 12px; border-radius: 2px; border: 1px solid var(--border2);
+  background: var(--surface2); color: var(--muted); font-size: 11px; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; transition: all .15s;
+}
+.cal-today-btn:hover { color: var(--paper); border-color: var(--neon3); }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-weekday { text-align: center; font-size: 9.5px; color: var(--dim); font-weight: 700; text-transform: uppercase; letter-spacing: .5px; padding-bottom: 4px; }
+.cal-day {
+  min-height: 68px; border-radius: 2px; border: 1px solid var(--border); background: var(--surface2);
+  padding: 4px; cursor: default; display: flex; flex-direction: column; gap: 3px; transition: all .15s;
+}
+.cal-day.has-books { cursor: pointer; border-color: rgba(71,255,224,0.22); }
+.cal-day.has-books:hover { border-color: var(--neon3); background: var(--surface); }
+.cal-day.is-today { border-color: var(--neon); box-shadow: 0 0 0 1px rgba(232,255,71,.25) inset; }
+.cal-day.is-selected { border-color: var(--neon2); background: rgba(255,71,163,.08); }
+.cal-day.empty-cell { background: transparent; border: none; }
+.cal-day-num { font-size: 10px; color: var(--dim); font-weight: 500; }
+.cal-day.is-today .cal-day-num { color: var(--neon); font-weight: 700; }
+.cal-day-covers { display: flex; flex-wrap: wrap; gap: 2px; align-items: flex-end; flex: 1; }
+.cal-cover-thumb { width: 20px; height: 28px; border-radius: 2px; object-fit: cover; flex-shrink: 0; border: 2px solid transparent; display: block; background: var(--surface); }
+.cal-cover-thumb.dot-reading { border-color: var(--neon); }
+.cal-cover-thumb.dot-read { border-color: #6bff9e; }
+.cal-cover-ph { width: 20px; height: 28px; border-radius: 2px; flex-shrink: 0; background: var(--surface); display: flex; align-items: center; justify-content: center; font-size: 9px; border: 2px solid transparent; }
+.cal-cover-ph.dot-reading { border-color: var(--neon); }
+.cal-cover-ph.dot-read { border-color: #6bff9e; }
+.cal-day-more { font-size: 8px; color: var(--dim); align-self: flex-end; padding-bottom: 1px; }
+.cal-legend { display: flex; gap: 14px; flex-wrap: wrap; margin: 12px 0 16px; font-size: 10.5px; color: var(--muted); }
+.cal-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.cal-legend .cal-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.cal-legend .cal-dot.dot-reading { background: var(--neon); }
+.cal-legend .cal-dot.dot-read { background: #6bff9e; }
+.cal-day-panel { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+.cal-day-panel-title { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: var(--white); margin-bottom: 8px; text-transform: capitalize; }
+.cal-panel-book { display: flex; align-items: center; gap: 10px; padding: 6px; border-radius: 2px; cursor: pointer; transition: background .15s; }
+.cal-panel-book:hover { background: var(--surface2); }
+.cal-panel-cover { width: 32px; height: 46px; border-radius: 2px; object-fit: cover; flex-shrink: 0; background: var(--surface); }
+.cal-panel-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.cal-panel-title { font-size: 12px; color: var(--paper); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cal-panel-range { font-size: 10.5px; color: var(--muted); }
+.cal-empty-msg { text-align: center; color: var(--muted); padding: 28px 0; font-size: 12px; }
+@media (max-width: 600px) {
+  .cal-day { min-height: 52px; }
+  .cal-cover-thumb, .cal-cover-ph { width: 15px; height: 21px; }
+}
 
 /* ── HOME VIEW ───────────────────────────────────────────── */
 #homeView {
@@ -2377,7 +2630,9 @@ body.home-active .topbar-center { display: none; }
   </div>
   <div class="topbar-right">
     <div id="authArea"></div>
-    <button class="home-nav-btn" id="homeNavBtn" onclick="showHome()">⌂ Inicio</button>
+    <button class="home-nav-btn" id="homeNavBtn" onclick="showHome()">⌂ <span id="homeNavLbl">Inicio</span></button>
+    <button class="ruleta-nav-btn" id="ruletaNavBtn" onclick="openRuletaModal()">🎲 <span id="ruletaNavLbl">Ruleta</span></button>
+    <button class="ruleta-nav-btn" id="calendarNavBtn" onclick="openCalendarModal()">📅 <span id="calendarNavLbl">Calendario</span></button>
     <button class="adult-btn" id="adultBtn">
       <span class="pill"></span>
       <span id="adultLbl">+18 visible</span>
@@ -2667,6 +2922,60 @@ body.home-active .topbar-center { display: none; }
       <div class="logros-modal-title">MIS LOGROS</div>
       <p class="logros-modal-sub">Insignias que vas desbloqueando por tu actividad en la comunidad: valoraciones, votos, participación y más.</p>
       <div class="logros-grid" id="logrosGrid"><div class="logros-empty">Cargando…</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL RULETA -->
+<div class="ruleta-modal-wrap" id="ruletaModalWrap" onclick="handleRuletaBgClick(event)">
+  <div class="ruleta-modal">
+    <button class="logros-modal-x" onclick="closeRuletaModal()">✕</button>
+    <div class="ruleta-modal-body">
+      <div class="logros-modal-title">🎲 RULETA</div>
+      <p class="logros-modal-sub">Gira y deja que el azar elija tu próxima lectura. Ajusta los filtros para acotar el catálogo antes de girar.</p>
+
+      <div class="ruleta-filtros-row" id="ruletaFiltrosRow">
+        <select class="ruleta-select" id="ruletaSecSelect" onchange="ruletaFilterChanged()">
+          <option value="all">Todas las categorías</option>
+          <option value="Manhwa">🇰🇷 Manhwa</option>
+          <option value="Manga">🇯🇵 Manga</option>
+          <option value="Manhua">🇨🇳 Manhua</option>
+          <option value="Webtoon">📱 Webtoon</option>
+          <option value="Cómic">💥 Cómic</option>
+          <option value="Novela Gráfica">📗 Novela Gráfica</option>
+        </select>
+        <select class="ruleta-select" id="ruletaEstadoSelect" onchange="ruletaFilterChanged()">
+          <option value="all">Cualquier estado</option>
+          <option value="Finalizado">✓ Finalizado</option>
+          <option value="Continúa">▶ Continúa</option>
+          <option value="Hiatus">⏸ Hiatus</option>
+        </select>
+        <button class="ruleta-toggle-btn" id="ruletaWantBtn" onclick="ruletaToggleWant()">📌 Solo «Quiero leer»</button>
+        <button class="ruleta-toggle-btn" id="ruletaUnratedBtn" onclick="ruletaToggleUnrated()">⭐ Solo sin valorar</button>
+      </div>
+
+      <div class="ruleta-count" id="ruletaCount"></div>
+
+      <div class="ruleta-stage" id="ruletaStage">
+        <div class="ruleta-die" id="ruletaDie">🎲</div>
+        <p class="ruleta-hint">Pulsa girar para descubrir tu próxima historia.</p>
+      </div>
+
+      <div class="ruleta-btn-row">
+        <button class="btn-vote-submit ruleta-spin-btn" id="ruletaSpinBtn" onclick="ruletaSpin()">GIRAR</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CALENDARIO DE LECTURA -->
+<div class="ruleta-modal-wrap" id="calendarModalWrap" onclick="handleCalendarBgClick(event)">
+  <div class="ruleta-modal" style="max-width:520px">
+    <button class="logros-modal-x" onclick="closeCalendarModal()">✕</button>
+    <div class="ruleta-modal-body">
+      <div class="logros-modal-title">📅 CALENDARIO DE LECTURA</div>
+      <p class="logros-modal-sub">Qué estabas leyendo cada día, según las fechas que guardas en cada ficha.</p>
+      <div id="readingCalendarContainer"></div>
     </div>
   </div>
 </div>
@@ -3042,6 +3351,7 @@ body.home-active .topbar-center { display: none; }
   <div class="modal" id="modal">
     <div class="modal-drag-handle" id="modalDragHandle"></div>
     <button class="modal-x" id="modalX">✕</button>
+    <button class="modal-share-btn" id="modalShareBtn" onclick="shareBook()" title="Compartir ficha">⇪</button>
     <div class="modal-body" id="modalBody"></div>
   </div>
 </div>
@@ -3070,6 +3380,12 @@ let myRatings     = {};   // { manga_id: score }
 let pendingStar   = 0;
 let activeModalItem = null;
 let authModeState = 'login';
+
+// ── SPICY (nivel spicy votado por la comunidad) ────────────
+const SPICY_LABELS = ['0/5 Sin Steam','1/5 Mini Steam','2/5 Soft Steam','3/5 Spicy Light','4/5 Spicy','5/5 Infernal 🔥'];
+let spicyMap     = {};   // { manga_id: { avg, count } }
+let mySpicyVotes = {};   // { manga_id: score }
+let pendingSpicy = -1;
 
 // ── AUTH ──────────────────────────────────────────────────
 function renderAuthArea() {
@@ -3437,19 +3753,196 @@ function refreshCardBadge(id) {
   });
 }
 
+// ── SPICY VOTES (Supabase) ─────────────────────────────────
+async function loadSpicy() {
+  if (!SB_READY) return;
+  const { data } = await sb.from('spicy_votes').select('manga_id,score');
+  spicyMap = {};
+  if (!data) return;
+  const grouped = {};
+  data.forEach(r => { (grouped[r.manga_id] = grouped[r.manga_id] || []).push(r.score); });
+  Object.entries(grouped).forEach(([id, scores]) => {
+    spicyMap[id] = {
+      avg:   Math.round(scores.reduce((a, b) => a + b, 0) / scores.length * 10) / 10,
+      count: scores.length
+    };
+  });
+}
+async function loadMySpicy() {
+  if (!SB_READY || !currentUser) return;
+  const { data } = await sb.from('spicy_votes').select('manga_id,score').eq('user_id', currentUser.id);
+  mySpicyVotes = {};
+  if (data) data.forEach(r => mySpicyVotes[r.manga_id] = r.score);
+}
+function buildSpicyCommunityRowHTML(e) {
+  const r = spicyMap[e.id] || { avg: 0, count: 0 };
+  if (!r.count) return `<div style="font-size:12px;color:var(--dim);font-style:italic;padding:4px 0">Sin votos de nivel spicy aún. ¡Sé la primera!</div>`;
+  const rounded = Math.round(r.avg);
+  const chiles = rounded === 0
+    ? `<span class="cm on" style="opacity:.5">🚫</span>`
+    : [1,2,3,4,5].map(i => `<span class="cm ${i <= rounded ? 'on' : 'off'}">🌶</span>`).join('');
+  return `<div class="avg-big-m">${r.avg}</div><div><div class="avg-chiles-m">${chiles}</div><div class="avg-votes-m">${r.count} voto${r.count !== 1 ? 's' : ''}</div></div>`;
+}
+function buildSpicyVoteSectionHTML(e) {
+  if (!currentUser) return `<p class="login-prompt-m">Para votar el nivel spicy, <a onclick="closeModal();openAuthModal()">inicia sesión</a>.</p>`;
+  const myScore = mySpicyVotes.hasOwnProperty(e.id) ? mySpicyVotes[e.id] : null;
+  const zeroBtn = `<button class="schile zero${pendingSpicy === 0 ? ' lit' : ''}" data-s="0" title="${SPICY_LABELS[0]}" onclick="selectSpicy(0)">🚫 Sin steam</button>`;
+  const chiles = [1,2,3,4,5].map(n => `<button class="schile${n <= pendingSpicy ? ' lit' : ''}" data-s="${n}" title="${SPICY_LABELS[n]}" onclick="selectSpicy(${n})">🌶</button>`).join('');
+  return `
+    <p class="vote-prompt-m">${myScore !== null ? 'Tu voto actual: ' + SPICY_LABELS[myScore] : 'Tu voto de nivel spicy:'}</p>
+    <div class="chiles-row-m" id="chilesRowM">${zeroBtn}${chiles}</div>
+    <div class="spicy-unknown-note">0 = sin contenido sexual · 5 = muy explícito</div>
+    <div class="vote-btns-m" style="margin-top:8px">
+      <button class="btn-vote-submit" id="spicySubmitBtn" onclick="submitSpicyVote()" ${pendingSpicy < 0 ? 'disabled' : ''}>${myScore !== null ? 'ACTUALIZAR' : 'VOTAR'}</button>
+      ${myScore !== null ? '<button class="btn-vote-del" id="spicyDelBtn" onclick="deleteSpicyVote()">Eliminar</button>' : ''}
+    </div>
+    <div class="vote-feedback-m" id="spicyFeedbackM"></div>`;
+}
+function attachSpicyEvents() {
+  document.querySelectorAll('#chilesRowM .schile').forEach(btn => {
+    btn.addEventListener('mouseenter', () => _paintChiles(+btn.dataset.s));
+    btn.addEventListener('mouseleave', () => _paintChiles(pendingSpicy));
+  });
+}
+function _paintChiles(n) {
+  document.querySelectorAll('#chilesRowM .schile').forEach(b => {
+    const v = +b.dataset.s;
+    b.classList.toggle('lit', v === 0 ? n === 0 : (v <= n && n > 0));
+  });
+}
+function selectSpicy(n) {
+  pendingSpicy = n; _paintChiles(n);
+  const btn = document.getElementById('spicySubmitBtn');
+  if (btn) btn.disabled = false;
+}
+async function submitSpicyVote() {
+  if (!SB_READY || !currentUser || pendingSpicy < 0 || !activeModalItem) return;
+  const submitBtn = document.getElementById('spicySubmitBtn');
+  const delBtn    = document.getElementById('spicyDelBtn');
+  if (submitBtn) submitBtn.disabled = true;
+  if (delBtn)    delBtn.disabled    = true;
+  const existing = mySpicyVotes.hasOwnProperty(activeModalItem.id) ? mySpicyVotes[activeModalItem.id] : undefined;
+  const { error } = existing !== undefined
+    ? await sb.from('spicy_votes').update({ score: pendingSpicy }).eq('user_id', currentUser.id).eq('manga_id', activeModalItem.id)
+    : await sb.from('spicy_votes').insert({ user_id: currentUser.id, manga_id: activeModalItem.id, score: pendingSpicy });
+  if (error) {
+    const fb = document.getElementById('spicyFeedbackM');
+    if (fb) fb.textContent = 'Error al guardar.';
+    if (submitBtn) submitBtn.disabled = false;
+    if (delBtn)    delBtn.disabled    = false;
+    return;
+  }
+  const r = spicyMap[activeModalItem.id] || { avg: 0, count: 0 };
+  const oldScore = existing !== undefined ? existing : 0;
+  const newCount = existing !== undefined ? r.count : r.count + 1;
+  const newAvg   = existing !== undefined
+    ? (r.avg * r.count - oldScore + pendingSpicy) / newCount
+    : (r.avg * r.count + pendingSpicy) / newCount;
+  spicyMap[activeModalItem.id] = { avg: Math.round(newAvg * 10) / 10, count: newCount };
+  mySpicyVotes[activeModalItem.id] = pendingSpicy;
+  refreshCardSpicyBadge(activeModalItem.id);
+  const fb = document.getElementById('spicyFeedbackM');
+  if (fb) fb.textContent = '✓ Voto guardado';
+  setTimeout(refreshSpicySection, 400);
+}
+async function deleteSpicyVote() {
+  if (!SB_READY || !currentUser || !activeModalItem || !mySpicyVotes.hasOwnProperty(activeModalItem.id)) return;
+  const submitBtn = document.getElementById('spicySubmitBtn');
+  const delBtn    = document.getElementById('spicyDelBtn');
+  if (submitBtn) submitBtn.disabled = true;
+  if (delBtn)    delBtn.disabled    = true;
+  const { error } = await sb.from('spicy_votes').delete().eq('user_id', currentUser.id).eq('manga_id', activeModalItem.id);
+  if (error) { if (submitBtn) submitBtn.disabled = false; if (delBtn) delBtn.disabled = false; return; }
+  const r        = spicyMap[activeModalItem.id];
+  const oldScore = mySpicyVotes[activeModalItem.id];
+  if (!r || r.count <= 1) delete spicyMap[activeModalItem.id];
+  else spicyMap[activeModalItem.id] = { avg: Math.round((r.avg * r.count - oldScore) / (r.count - 1) * 10) / 10, count: r.count - 1 };
+  delete mySpicyVotes[activeModalItem.id];
+  pendingSpicy = -1;
+  refreshCardSpicyBadge(activeModalItem.id);
+  setTimeout(refreshSpicySection, 300);
+}
+function refreshSpicySection() {
+  const cr = document.getElementById('spicyCommunityRow');
+  const vs = document.getElementById('spicyVoteSection');
+  if (cr && activeModalItem) cr.innerHTML = buildSpicyCommunityRowHTML(activeModalItem);
+  if (vs && activeModalItem) vs.innerHTML = buildSpicyVoteSectionHTML(activeModalItem);
+  attachSpicyEvents();
+}
+function refreshCardSpicyBadge(id) {
+  document.querySelectorAll(`.card[data-id="${id}"] .card-spicy`).forEach(el => {
+    const r = spicyMap[id];
+    if (r && r.avg > 0) el.innerHTML = `🌶 ${r.avg}`;
+    else el.remove();
+  });
+}
+
 // ── MI ESTANTERÍA (reading_status) ────────────────────────
 const SHELF_INFO = {
   want:    { label: 'Quiero leer', icon: '＋', cls: 'cs-want' },
   reading: { label: 'Leyendo',     icon: '📖', cls: 'cs-reading' },
   read:    { label: 'Terminado',   icon: '✓',  cls: 'cs-read' }
 };
+const MESES_CORTOS = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+function daysInMonth(year, month) { return new Date(year, month, 0).getDate(); }
+function buildDateSelectsHTML(field, isoValue) {
+  const [y, m, d] = isoValue ? isoValue.split('-').map(Number) : [null, null, null];
+  const nowYear = new Date().getFullYear();
+  const minYear = nowYear - 15;
+  const dCount = (y && m) ? daysInMonth(y, m) : 31;
+  const dayOpts = ['<option value="">--</option>'].concat(
+    Array.from({ length: dCount }, (_, i) => i + 1).map(n => `<option value="${n}"${n === d ? ' selected' : ''}>${n}</option>`)
+  ).join('');
+  const monthOpts = ['<option value="">--</option>'].concat(
+    MESES_CORTOS.map((label, i) => `<option value="${i + 1}"${(i + 1) === m ? ' selected' : ''}>${label}</option>`)
+  ).join('');
+  const yearOpts = ['<option value="">----</option>'].concat(
+    Array.from({ length: nowYear - minYear + 1 }, (_, i) => nowYear - i).map(n => `<option value="${n}"${n === y ? ' selected' : ''}>${n}</option>`)
+  ).join('');
+  return `
+    <div class="shelf-date-selects" data-field="${field}">
+      <select class="shelf-date-select sd-day" onchange="handleShelfDatePart('${field}')">${dayOpts}</select>
+      <select class="shelf-date-select sd-month" onchange="handleShelfDatePart('${field}')">${monthOpts}</select>
+      <select class="shelf-date-select sd-year" onchange="handleShelfDatePart('${field}')">${yearOpts}</select>
+    </div>`;
+}
+function handleShelfDatePart(field) {
+  const container = document.querySelector(`.shelf-date-selects[data-field="${field}"]`);
+  if (!container) return;
+  const daySel = container.querySelector('.sd-day');
+  const monthSel = container.querySelector('.sd-month');
+  const yearSel = container.querySelector('.sd-year');
+  let d = daySel.value, m = monthSel.value, y = yearSel.value;
+
+  // Recalcular los días válidos si cambia el mes/año (p.ej. no dejar 31 de febrero)
+  if (m && y) {
+    const maxDay = daysInMonth(+y, +m);
+    if (daySel.options.length - 1 !== maxDay) {
+      const keep = d && +d <= maxDay ? d : '';
+      daySel.innerHTML = ['<option value="">--</option>'].concat(
+        Array.from({ length: maxDay }, (_, i) => i + 1).map(n => `<option value="${n}"${String(n) === keep ? ' selected' : ''}>${n}</option>`)
+      ).join('');
+      d = keep;
+    }
+  }
+
+  if (!d && !m && !y) { setReadingDate(field, null); return; }
+  if (!d || !m || !y) return; // aún incompleto, esperamos a que se rellenen los 3
+  const iso = `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+  setReadingDate(field, iso);
+}
 let myReadingStatus = {}; // { manga_id: 'want' | 'reading' | 'read' }
+let myReadingDates   = {}; // { manga_id: { start_date, end_date } }
 
 async function loadMyReadingStatus() {
   if (!SB_READY || !currentUser) return;
-  const { data } = await sb.from('reading_status').select('book_id,status').eq('user_id', currentUser.id);
+  const { data } = await sb.from('reading_status').select('book_id,status,start_date,end_date').eq('user_id', currentUser.id);
   myReadingStatus = {};
-  if (data) data.forEach(r => myReadingStatus[r.book_id] = r.status);
+  myReadingDates = {};
+  if (data) data.forEach(r => {
+    myReadingStatus[r.book_id] = r.status;
+    if (r.start_date || r.end_date) myReadingDates[r.book_id] = { start_date: r.start_date, end_date: r.end_date };
+  });
 }
 
 function buildShelfSectionHTML(e) {
@@ -3459,11 +3952,23 @@ function buildShelfSectionHTML(e) {
         <p>Tu estantería personal es solo para personas registradas.<br><a onclick="closeModal();openAuthModal()">Inicia sesión</a> para guardar tu progreso.</p>
       </div>`;
   const cur = myReadingStatus[e.id];
+  const dates = myReadingDates[e.id] || {};
   const btns = Object.entries(SHELF_INFO).map(([key, info]) =>
     `<button class="shelf-btn ${info.cls}${cur === key ? ' active' : ''}" onclick="setReadingStatus('${key}')">${info.icon} ${info.label}</button>`
   ).join('');
+  const dateFields = (cur === 'reading' || cur === 'read') ? `
+    <div class="shelf-dates-row">
+      <label class="shelf-date-label">Empecé el
+        ${buildDateSelectsHTML('start_date', dates.start_date)}
+      </label>
+      ${cur === 'read' ? `
+      <label class="shelf-date-label">Terminé el
+        ${buildDateSelectsHTML('end_date', dates.end_date)}
+      </label>` : ''}
+    </div>` : '';
   return `
     <div class="shelf-btns-row">${btns}</div>
+    ${dateFields}
     ${cur ? `<button class="btn-vote-del shelf-remove-btn" onclick="removeReadingStatus()">Quitar de mi lista</button>` : ''}`;
 }
 
@@ -3476,17 +3981,41 @@ async function setReadingStatus(status) {
   if (!SB_READY || !currentUser || !activeModalItem) return;
   const id = activeModalItem.id;
   const prev = myReadingStatus[id];
+  const prevDates = myReadingDates[id] ? { ...myReadingDates[id] } : {};
   myReadingStatus[id] = status; // optimista
+  const today = new Date().toISOString().slice(0, 10);
+  const dates = { ...prevDates };
+  if (status === 'reading' && !dates.start_date) dates.start_date = today;
+  if (status === 'read') {
+    if (!dates.start_date) dates.start_date = today;
+    if (!dates.end_date) dates.end_date = today;
+  }
+  myReadingDates[id] = dates;
   refreshShelfSection();
   refreshShelfBadge(id);
   const { error } = await sb.from('reading_status')
-    .upsert({ user_id: currentUser.id, book_id: id, status }, { onConflict: 'user_id,book_id' });
+    .upsert({ user_id: currentUser.id, book_id: id, status, start_date: dates.start_date || null, end_date: dates.end_date || null }, { onConflict: 'user_id,book_id' });
   if (error) {
     if (prev) myReadingStatus[id] = prev; else delete myReadingStatus[id];
+    myReadingDates[id] = prevDates;
     refreshShelfSection();
     refreshShelfBadge(id);
   } else if (fShelf !== 'all') {
     renderSections(false);
+  }
+}
+async function setReadingDate(field, value) {
+  if (!SB_READY || !currentUser || !activeModalItem) return;
+  const id = activeModalItem.id;
+  const prevDates = myReadingDates[id] ? { ...myReadingDates[id] } : {};
+  myReadingDates[id] = { ...prevDates, [field]: value || null };
+  refreshShelfSection();
+  const { error } = await sb.from('reading_status')
+    .update({ [field]: value || null })
+    .eq('user_id', currentUser.id).eq('book_id', id);
+  if (error) {
+    myReadingDates[id] = prevDates;
+    refreshShelfSection();
   }
 }
 
@@ -3494,12 +4023,15 @@ async function removeReadingStatus() {
   if (!SB_READY || !currentUser || !activeModalItem) return;
   const id = activeModalItem.id;
   const prev = myReadingStatus[id];
+  const prevDates = myReadingDates[id] ? { ...myReadingDates[id] } : undefined;
   delete myReadingStatus[id];
+  delete myReadingDates[id];
   refreshShelfSection();
   refreshShelfBadge(id);
   const { error } = await sb.from('reading_status').delete().eq('user_id', currentUser.id).eq('book_id', id);
   if (error) {
     if (prev) myReadingStatus[id] = prev;
+    if (prevDates) myReadingDates[id] = prevDates;
     refreshShelfSection();
     refreshShelfBadge(id);
   } else if (fShelf !== 'all') {
@@ -3815,15 +4347,15 @@ async function init() {
       currentUser = session?.user || null;
       renderAuthArea();
       updateAuthGatedUI();
-      if (currentUser) Promise.all([loadMyRatings(), loadMyReadingStatus()]).then(() => { renderSections(false); if (shelfActive) renderShelfView(); if (activeModalItem) openModal(activeModalItem, true); });
-      else { myRatings = {}; myReadingStatus = {}; if (shelfActive) closeShelf(); renderSections(false); if (activeModalItem) openModal(activeModalItem, true); }
+      if (currentUser) Promise.all([loadMyRatings(), loadMyReadingStatus(), loadMySpicy()]).then(() => { renderSections(false); if (shelfActive) renderShelfView(); if (activeModalItem) openModal(activeModalItem, true); });
+      else { myRatings = {}; myReadingStatus = {}; myReadingDates = {}; mySpicyVotes = {}; if (shelfActive) closeShelf(); renderSections(false); if (activeModalItem) openModal(activeModalItem, true); }
     });
   }
   renderAuthArea();
 
   try {
     const fetches = [fetch(DATA)];
-    if (SB_READY) fetches.push(loadRatings());
+    if (SB_READY) fetches.push(loadRatings(), loadSpicy());
     const [dataResp] = await Promise.all(fetches);
     allData = await dataResp.json();
     normalizeAllTags();
@@ -3831,7 +4363,7 @@ async function init() {
     console.warn('No se pudo cargar manga_data.json:', e.message);
     allData = [];
   }
-  if (SB_READY && currentUser) await Promise.all([loadMyRatings(), loadMyReadingStatus()]);
+  if (SB_READY && currentUser) await Promise.all([loadMyRatings(), loadMyReadingStatus(), loadMySpicy()]);
 
   buildStats();
   buildCatTabs();
@@ -4822,7 +5354,8 @@ function buildCard(e, bgColor) {
       ${e.in_biblioteca ? '<span class="sbadge sbib">BIB</span>' : ''}
       ${e.in_files ? '<span class="sbadge sfiles">FILE</span>' : ''}
     </div>
-    ${ratingsMap[e.id] ? `<div class="card-avg"><span class="cstar">★</span>${ratingsMap[e.id].avg}</div>` : ''}`;
+    ${ratingsMap[e.id] ? `<div class="card-avg"><span class="cstar">★</span>${ratingsMap[e.id].avg}</div>` : ''}
+    ${spicyMap[e.id] && spicyMap[e.id].avg > 0 ? `<div class="card-spicy">🌶 ${spicyMap[e.id].avg}</div>` : ''}`;
 
   d.addEventListener('click', () => openModal(e));
   return d;
@@ -4830,9 +5363,29 @@ function buildCard(e, bgColor) {
 
 /* ── MODAL ──────────────────────────────────────────────── */
 let _preModalUrl = null;
+function getSimilarBooks(e, limit) {
+  limit = limit || 10;
+  const myTags = new Set(e.tags || []);
+  const myAutores = new Set((Array.isArray(e.autor) ? e.autor : (e.autor ? [e.autor] : [])).map(a => a.toLowerCase()));
+  const scored = [];
+  allData.forEach(o => {
+    if (o.id === e.id) return;
+    if (hideAdult && o.adult) return;
+    const oTags = o.tags || [];
+    const sharedTags = oTags.filter(t => myTags.has(t)).length;
+    const oAutores = (Array.isArray(o.autor) ? o.autor : (o.autor ? [o.autor] : [])).map(a => a.toLowerCase());
+    const sameAutor = oAutores.some(a => myAutores.has(a));
+    const sameSeccion = o.seccion === e.seccion;
+    let score = sharedTags * 3 + (sameAutor ? 5 : 0) + (sameSeccion ? 1 : 0);
+    if (score > 0) scored.push({ item: o, score });
+  });
+  scored.sort((a, b) => b.score - a.score);
+  return scored.slice(0, limit).map(s => s.item);
+}
 function openModal(e, isRefresh) {
   activeModalItem = e;
   pendingStar = myRatings[e.id] || 0;
+  pendingSpicy = mySpicyVotes.hasOwnProperty(e.id) ? mySpicyVotes[e.id] : -1;
 
   const mc = ESTADO_MCLS[e.estado] || 'mb-fin';
   const ei = ESTADO_ICONS[e.estado] || '';
@@ -4865,6 +5418,7 @@ function openModal(e, isRefresh) {
           ${e.in_files ? '<span class="mbadge mb-files">📁 FILES</span>' : ''}
           ${e.adult ? '<span class="mbadge mb-adult">+18</span>' : ''}
           ${crBadgeData ? `<span class="mbadge mb-cr mb-cr-${esc(e.content_rating)}">${crBadgeData.icon} ${crBadgeData.label}</span>` : ''}
+          ${e.adaptacion ? `<span class="mbadge mb-adapt">🎬 ${esc(typeof e.adaptacion === 'string' ? e.adaptacion : 'Tiene adaptación')}</span>` : ''}
         </div>
       </div>
     </div>
@@ -4889,6 +5443,15 @@ function openModal(e, isRefresh) {
         <div class="modal-extra-locked">🔒 Tropes y personajes solo para personas registradas. <a onclick="closeModal();openAuthModal()">Inicia sesión</a></div>
       `}
     </div>` : ''}
+    ${(() => { const sim = getSimilarBooks(e); return sim.length ? `
+    <div class="similar-block">
+      <div class="similar-title">Historias similares</div>
+      <div class="similar-row">${sim.map(s => `
+        <div class="similar-card" onclick="ruletaOpenBook(${JSON.stringify(s.id)})">
+          <div class="similar-cover">${s.imagen ? `<img src="${esc(s.imagen)}" alt="${esc(s.titulo)}" referrerpolicy="no-referrer" onerror="this.parentElement.innerHTML='<div class=similar-noimg>📖</div>'">` : '<div class="similar-noimg">📖</div>'}</div>
+          <div class="similar-card-title">${esc(s.titulo)}</div>
+        </div>`).join('')}</div>
+    </div>` : ''; })()}
     <div class="rating-block shelf-block">
       <div class="rating-block-title">📚 Mi estantería</div>
       <div id="shelfSection">${buildShelfSectionHTML(e)}</div>
@@ -4902,11 +5465,22 @@ function openModal(e, isRefresh) {
         <div class="rlb-icon">🔒</div>
         <p>Las valoraciones son solo para personas registradas.<br><a onclick="closeModal();openAuthModal()">Inicia sesión</a> para verlas y votar.</p>
       </div>`}
+    </div>
+    <div class="rating-block">
+      <div class="rating-block-title">🌶️ Nivel Spicy (comunidad)</div>
+      ${currentUser ? `
+      <div class="spicy-community-row" id="spicyCommunityRow">${buildSpicyCommunityRowHTML(e)}</div>
+      <div id="spicyVoteSection">${buildSpicyVoteSectionHTML(e)}</div>` : `
+      <div class="rating-locked-box">
+        <div class="rlb-icon">🔒</div>
+        <p>El nivel spicy es solo para personas registradas.<br><a onclick="closeModal();openAuthModal()">Inicia sesión</a> para verlo y votar.</p>
+      </div>`}
     </div>`;
 
   document.getElementById('modalWrap').classList.add('open');
   document.body.style.overflow = 'hidden';
   attachStarEvents();
+  attachSpicyEvents();
 
   if (isRefresh) return;
 
@@ -4927,6 +5501,32 @@ function closeModal() {
     _preModalUrl = null;
   }
   document.title = 'GL PANELS — カタログ';
+}
+async function shareBook() {
+  if (!activeModalItem) return;
+  const params = new URLSearchParams(location.search);
+  params.set('manga', activeModalItem.id);
+  const url = location.origin + location.pathname + '?' + params.toString();
+  const btn = document.getElementById('modalShareBtn');
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: activeModalItem.titulo + ' — GL PANELS', url });
+    } catch (err) {
+      // usuario canceló el share sheet, no hacemos nada
+    }
+    return;
+  }
+  try {
+    await navigator.clipboard.writeText(url);
+    if (btn) {
+      const prevContent = btn.innerHTML;
+      btn.innerHTML = '✓';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.innerHTML = prevContent; btn.classList.remove('copied'); }, 1600);
+    }
+  } catch (err) {
+    console.error('No se pudo copiar el enlace:', err);
+  }
 }
 
 /* ── FILTERS ────────────────────────────────────────────── */
@@ -5626,6 +6226,242 @@ function bindModalSwipe() {
   handle.addEventListener('touchstart', onStart, { passive: true });
   document.addEventListener('touchmove', e => { if (dragging) onMove(e); }, { passive: true });
   document.addEventListener('touchend', e => { if (dragging) onEnd(e); });
+}
+
+// ── CALENDARIO DE LECTURA ──────────────────────────────────────
+let calYear = new Date().getFullYear();
+let calMonth = new Date().getMonth(); // 0-11
+let calSelectedDay = null; // 'YYYY-MM-DD'
+
+// ── RULETA ──────────────────────────────────────────────────
+let ruletaSec     = 'all';
+let ruletaEstado  = 'all';
+let ruletaWant    = false;
+let ruletaUnrated = false;
+function openRuletaModal() {
+  document.getElementById('ruletaModalWrap').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  ruletaResetStage();
+  ruletaUpdateCount();
+}
+function closeRuletaModal() {
+  document.getElementById('ruletaModalWrap').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function handleRuletaBgClick(e) {
+  if (e.target === document.getElementById('ruletaModalWrap')) closeRuletaModal();
+}
+function ruletaResetStage() {
+  document.getElementById('ruletaStage').innerHTML = `
+    <div class="ruleta-die" id="ruletaDie">🎲</div>
+    <p class="ruleta-hint">Pulsa girar para descubrir tu próxima historia.</p>`;
+}
+function ruletaFilterChanged() {
+  ruletaSec    = document.getElementById('ruletaSecSelect').value;
+  ruletaEstado = document.getElementById('ruletaEstadoSelect').value;
+  ruletaUpdateCount();
+}
+function ruletaToggleWant() {
+  if (!currentUser) { closeRuletaModal(); openAuthModal(); return; }
+  ruletaWant = !ruletaWant;
+  document.getElementById('ruletaWantBtn').classList.toggle('active', ruletaWant);
+  ruletaUpdateCount();
+}
+function ruletaToggleUnrated() {
+  if (!currentUser) { closeRuletaModal(); openAuthModal(); return; }
+  ruletaUnrated = !ruletaUnrated;
+  document.getElementById('ruletaUnratedBtn').classList.toggle('active', ruletaUnrated);
+  ruletaUpdateCount();
+}
+function ruletaGetPool() {
+  return allData.filter(e => {
+    if (hideAdult && e.adult) return false;
+    if (ruletaSec !== 'all' && e.seccion !== ruletaSec) return false;
+    if (ruletaEstado !== 'all' && e.estado !== ruletaEstado) return false;
+    if (ruletaWant && (!currentUser || myReadingStatus[e.id] !== 'want')) return false;
+    if (ruletaUnrated && (!currentUser || myRatings[e.id])) return false;
+    return true;
+  });
+}
+function ruletaUpdateCount() {
+  const n = ruletaGetPool().length;
+  const el = document.getElementById('ruletaCount');
+  if (el) el.textContent = n === 0
+    ? 'Ninguna historia coincide con estos filtros.'
+    : `${n} historia${n !== 1 ? 's' : ''} disponible${n !== 1 ? 's' : ''} para girar.`;
+  const spinBtn = document.getElementById('ruletaSpinBtn');
+  if (spinBtn) spinBtn.disabled = n === 0;
+}
+function ruletaSpin() {
+  const pool = ruletaGetPool();
+  if (!pool.length) { ruletaUpdateCount(); return; }
+  const die = document.getElementById('ruletaDie');
+  if (die) die.classList.add('spinning');
+  setTimeout(() => {
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    ruletaShowResult(pick);
+  }, 550);
+}
+function ruletaShowResult(e) {
+  const coverHtml = e.imagen
+    ? `<img src="${esc(e.imagen)}" alt="${esc(e.titulo)}" referrerpolicy="no-referrer">`
+    : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.5rem">📖</div>`;
+  const tags = (e.tags||[]).slice(0,3).map(t => `<span class="ctag">${esc(tagLabel(t))}</span>`).join('');
+  document.getElementById('ruletaStage').innerHTML = `
+    <div class="ruleta-result-card">
+      <div class="ruleta-result-cover">${coverHtml}</div>
+      <div class="ruleta-result-info">
+        <div class="ruleta-result-sec">${esc(e.seccion || '')}</div>
+        <div class="ruleta-result-title">${esc(e.titulo)}</div>
+        <div class="ruleta-result-tags">${tags}</div>
+        <div class="ruleta-result-btns">
+          <button class="btn-vote-submit" style="font-size:.9rem;padding:6px 14px" onclick="ruletaOpenBook(${JSON.stringify(e.id)})">Ver ficha</button>
+          <button class="ruleta-again-btn" onclick="ruletaSpin()">🎲 Girar otra vez</button>
+        </div>
+      </div>
+    </div>`;
+}
+function ruletaOpenBook(id) {
+  const item = allData.find(x => x.id === id);
+  if (!item) return;
+  closeRuletaModal();
+  closeCalendarModal();
+  openModal(item);
+}
+
+// ── CALENDARIO DE LECTURA ──────────────────────────────────
+// Construye los "periodos de lectura" a partir de myReadingStatus + myReadingDates.
+// Si la lectura sigue en curso (estado 'reading' sin fecha de fin), el tramo se extiende hasta hoy.
+function buildReadingPeriods() {
+  const periods = [];
+  const todayISO = new Date().toISOString().slice(0, 10);
+  Object.keys(myReadingStatus).forEach(id => {
+    const status = myReadingStatus[id];
+    if (status !== 'reading' && status !== 'read') return;
+    const book = allData.find(b => b.id === id);
+    if (!book) return;
+    const dates = myReadingDates[id] || {};
+    const start = dates.start_date;
+    if (!start) return; // sin fecha de inicio, no se puede ubicar en el calendario
+    const ongoing = status === 'reading';
+    const end = ongoing ? todayISO : (dates.end_date || start);
+    periods.push({ bookId: id, title: book.titulo, cover: book.imagen, start, end, ongoing });
+  });
+  return periods;
+}
+function _calCoverThumbHTML(p) {
+  const cls = p.ongoing ? 'dot-reading' : 'dot-read';
+  const t = esc(p.title);
+  return p.cover
+    ? `<img class="cal-cover-thumb ${cls}" src="${esc(p.cover)}" alt="" title="${t}" loading="lazy" referrerpolicy="no-referrer">`
+    : `<div class="cal-cover-ph ${cls}" title="${t}">📖</div>`;
+}
+function renderReadingCalendar() {
+  const container = document.getElementById('readingCalendarContainer');
+  if (!container) return;
+  if (!currentUser) {
+    container.innerHTML = `
+      <div class="rating-locked-box">
+        <div class="rlb-icon">🔒</div>
+        <p>El calendario de lectura es solo para personas registradas.<br><a onclick="closeCalendarModal();openAuthModal()">Inicia sesión</a> para verlo.</p>
+      </div>`;
+    return;
+  }
+  const periods = buildReadingPeriods();
+  const monthNames = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  const first = new Date(calYear, calMonth, 1);
+  const startWeekday = (first.getDay() + 6) % 7; // lunes = 0
+  const daysInMonthCal = new Date(calYear, calMonth + 1, 0).getDate();
+  const todayISO = new Date().toISOString().slice(0, 10);
+
+  let cells = '';
+  for (let i = 0; i < startWeekday; i++) cells += `<div class="cal-day empty-cell"></div>`;
+  for (let d = 1; d <= daysInMonthCal; d++) {
+    const dateStr = `${calYear}-${String(calMonth + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+    const active = periods.filter(p => p.start <= dateStr && dateStr <= p.end);
+    const isToday = dateStr === todayISO;
+    const isSelected = dateStr === calSelectedDay;
+    const covers = active.slice(0, 3).map(p => _calCoverThumbHTML(p)).join('');
+    const more = active.length > 3 ? `<span class="cal-day-more">+${active.length - 3}</span>` : '';
+    cells += `<div class="cal-day${active.length ? ' has-books' : ''}${isToday ? ' is-today' : ''}${isSelected ? ' is-selected' : ''}" ${active.length ? `onclick="calSelectDay('${dateStr}')"` : ''}>
+      <span class="cal-day-num">${d}</span>
+      <div class="cal-day-covers">${covers}${more}</div>
+    </div>`;
+  }
+
+  const monthLabel = `${monthNames[calMonth]} ${calYear}`;
+  let panelHtml = '';
+  if (calSelectedDay) {
+    const active = periods.filter(p => p.start <= calSelectedDay && calSelectedDay <= p.end);
+    if (active.length) {
+      const dStr = new Date(calSelectedDay + 'T12:00:00').toLocaleDateString('es-ES', { day: '2-digit', month: 'long', year: 'numeric' });
+      panelHtml = `<div class="cal-day-panel">
+        <div class="cal-day-panel-title">${dStr}</div>
+        ${active.map(p => {
+          const rangeStr = `${new Date(p.start + 'T12:00:00').toLocaleDateString('es-ES', { day: '2-digit', month: 'short' })} → ${p.ongoing ? 'ahora' : new Date(p.end + 'T12:00:00').toLocaleDateString('es-ES', { day: '2-digit', month: 'short' })}`;
+          const cov = p.cover ? `<img class="cal-panel-cover" src="${esc(p.cover)}" alt="" referrerpolicy="no-referrer">` : `<div class="cal-panel-cover" style="display:flex;align-items:center;justify-content:center">📖</div>`;
+          return `<div class="cal-panel-book" onclick="ruletaOpenBook(${JSON.stringify(p.bookId)})">
+            ${cov}
+            <div class="cal-panel-info">
+              <div class="cal-panel-title">${esc(p.title)}</div>
+              <div class="cal-panel-range">${rangeStr}</div>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>`;
+    }
+  }
+
+  container.innerHTML = `
+    <div class="cal-header">
+      <div class="cal-title">${monthLabel}</div>
+      <div class="cal-nav">
+        <button class="cal-nav-btn" onclick="calChangeMonth(-1)">‹</button>
+        <button class="cal-today-btn" onclick="calGoToday()">Hoy</button>
+        <button class="cal-nav-btn" onclick="calChangeMonth(1)">›</button>
+      </div>
+    </div>
+    <div class="cal-legend">
+      <span><span class="cal-dot dot-reading"></span> Leyendo</span>
+      <span><span class="cal-dot dot-read"></span> Terminado</span>
+    </div>
+    <div class="cal-grid">
+      <div class="cal-weekday">L</div><div class="cal-weekday">M</div><div class="cal-weekday">X</div><div class="cal-weekday">J</div><div class="cal-weekday">V</div><div class="cal-weekday">S</div><div class="cal-weekday">D</div>
+      ${cells}
+    </div>
+    ${panelHtml}
+    ${periods.length === 0 ? `<p class="cal-empty-msg">Aún no hay lecturas registradas. Marca un título como «Leyendo» o «Terminado» y ponle fecha de inicio para verlo aquí 📖</p>` : ''}
+  `;
+}
+function calChangeMonth(delta) {
+  calMonth += delta;
+  if (calMonth < 0) { calMonth = 11; calYear--; }
+  if (calMonth > 11) { calMonth = 0; calYear++; }
+  calSelectedDay = null;
+  renderReadingCalendar();
+}
+function calGoToday() {
+  const now = new Date();
+  calYear = now.getFullYear();
+  calMonth = now.getMonth();
+  calSelectedDay = now.toISOString().slice(0, 10);
+  renderReadingCalendar();
+}
+function calSelectDay(dateStr) {
+  calSelectedDay = (calSelectedDay === dateStr) ? null : dateStr;
+  renderReadingCalendar();
+}
+function openCalendarModal() {
+  document.getElementById('calendarModalWrap').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  renderReadingCalendar();
+}
+function closeCalendarModal() {
+  document.getElementById('calendarModalWrap').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function handleCalendarBgClick(e) {
+  if (e.target === document.getElementById('calendarModalWrap')) closeCalendarModal();
 }
 
 init();</script>
