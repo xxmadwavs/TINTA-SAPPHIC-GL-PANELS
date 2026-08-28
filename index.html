@@ -790,9 +790,13 @@ div.search-box:focus { outline: none; }
   word-break: keep-all;
 }
 
+/* top-right corner stack: +18 chip + subido tags */
+.card-topright {
+  position: absolute; top: 7px; right: 7px; z-index: 10;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 3px;
+}
 /* +18 chip */
 .adult-chip {
-  position: absolute; top: 7px; right: 7px; z-index: 10;
   background: var(--neon2);
   color: #1a0010;
   font-family: 'Bebas Neue', sans-serif;
@@ -852,9 +856,8 @@ div.search-box:focus { outline: none; }
 }
 .ctag.adult { background: rgba(255,71,163,0.15); color: var(--neon2); }
 
-/* subido badges */
+/* subido badges — ahora dentro de .card-topright, ya no fijos por su cuenta */
 .card-subido {
-  position: absolute; bottom: 7px; right: 7px; z-index: 10;
   display: flex; gap: 2px;
 }
 .sbadge {
@@ -1300,6 +1303,7 @@ div.search-box:focus { outline: none; }
   .card-estado { font-size: 7px; padding: 2px 5px; }
   .adult-chip { font-size: 8px; padding: 1px 5px; }
   .sbadge { font-size: 6px; padding: 1px 4px; }
+  .card-spicy { font-size: 12px; padding: 3px 7px; }
 
   /* ── Modal — full screen ── */
   .modal-wrap { padding: 0; align-items: flex-end; }
@@ -2132,15 +2136,16 @@ body.shelf-active .topbar-center { display: none; }
 .schile.zero.lit { opacity: 1; border-color: var(--neon2); color: var(--neon2); }
 .spicy-unknown-note { font-size: 10.5px; color: var(--dim); margin-top: 2px; }
 
-/* spicy badge on card */
+/* spicy badge on card — deliberadamente más grande y llamativo que el resto de badges,
+   ya que es información que la comunidad pidió que se viera de un vistazo */
 .card-spicy {
   position: absolute; bottom: 7px; right: 7px; z-index: 10;
-  background: var(--neon2);
-  border-radius: 2px; padding: 2px 8px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 10px; font-weight: 700;
-  color: #1a0410; display: flex; align-items: center; gap: 3px;
-  box-shadow: 0 1px 8px rgba(0,0,0,0.6);
+  background: linear-gradient(135deg, #ff2f7e, #ff6a3d);
+  border-radius: 3px; padding: 4px 9px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px; font-weight: 700; letter-spacing: .5px;
+  color: #fff; display: flex; align-items: center; gap: 4px;
+  box-shadow: 0 2px 12px rgba(255,47,126,0.55), 0 1px 8px rgba(0,0,0,0.6);
 }
 
 /* ── RULETA ──────────────────────────────────────────────── */
@@ -3888,10 +3893,19 @@ function refreshSpicySection() {
   attachSpicyEvents();
 }
 function refreshCardSpicyBadge(id) {
-  document.querySelectorAll(`.card[data-id="${id}"] .card-spicy`).forEach(el => {
+  document.querySelectorAll(`.card[data-id="${id}"]`).forEach(cardEl => {
     const r = spicyMap[id];
-    if (r && r.avg > 0) el.innerHTML = `🌶 ${r.avg}`;
-    else el.remove();
+    let el = cardEl.querySelector('.card-spicy');
+    if (r && r.avg > 0) {
+      if (!el) {
+        el = document.createElement('div');
+        el.className = 'card-spicy';
+        cardEl.appendChild(el);
+      }
+      el.innerHTML = `🌶 ${r.avg}/5`;
+    } else if (el) {
+      el.remove();
+    }
   });
 }
 
@@ -5018,7 +5032,9 @@ function renderInkGrid() {
     d.innerHTML = `
       ${coverHtml}
       <span class="ink-club-badge">INK</span>
-      ${e.adult ? `<span class="adult-chip">+18</span>` : ''}
+      <div class="card-topright">
+        ${e.adult ? `<span class="adult-chip">+18</span>` : ''}
+      </div>
       <span class="card-estado ${ec}">${ei}</span>
       <div class="card-overlay"></div>
       <div class="card-info">
@@ -5026,7 +5042,8 @@ function renderInkGrid() {
         <div class="card-title">${esc(e.titulo)}</div>
         <div class="card-tags">${(e.tags||[]).slice(0,3).map(t=>`<span class="ctag">${tagLabel(t)}</span>`).join('')}</div>
       </div>
-      ${ratingsMap[e.id] ? `<div class="card-avg"><span class="cstar">★</span>${ratingsMap[e.id].avg}</div>` : ''}`;
+      ${ratingsMap[e.id] ? `<div class="card-avg"><span class="cstar">★</span>${ratingsMap[e.id].avg}</div>` : ''}
+      ${spicyMap[e.id] && spicyMap[e.id].avg > 0 ? `<div class="card-spicy">🌶 ${spicyMap[e.id].avg}/5</div>` : ''}`;
     d.addEventListener('click', () => openModal(e));
     grid.appendChild(d);
   });
@@ -5366,7 +5383,13 @@ function buildCard(e, bgColor) {
 
   d.innerHTML = `
     ${coverHtml}
-    ${e.adult ? `<span class="adult-chip">+18</span>` : ''}
+    <div class="card-topright">
+      ${e.adult ? `<span class="adult-chip">+18</span>` : ''}
+      ${(e.in_biblioteca || e.in_files) ? `<div class="card-subido">
+        ${e.in_biblioteca ? '<span class="sbadge sbib">BIB</span>' : ''}
+        ${e.in_files ? '<span class="sbadge sfiles">FILE</span>' : ''}
+      </div>` : ''}
+    </div>
     <span class="card-estado ${ec}">${ei}</span>
     <div class="card-overlay"></div>
     <div class="card-info">
@@ -5374,12 +5397,8 @@ function buildCard(e, bgColor) {
       <div class="card-title">${esc(e.titulo)}</div>
       <div class="card-tags">${tags}</div>
     </div>
-    <div class="card-subido">
-      ${e.in_biblioteca ? '<span class="sbadge sbib">BIB</span>' : ''}
-      ${e.in_files ? '<span class="sbadge sfiles">FILE</span>' : ''}
-    </div>
     ${ratingsMap[e.id] ? `<div class="card-avg"><span class="cstar">★</span>${ratingsMap[e.id].avg}</div>` : ''}
-    ${spicyMap[e.id] && spicyMap[e.id].avg > 0 ? `<div class="card-spicy">🌶 ${spicyMap[e.id].avg}</div>` : ''}`;
+    ${spicyMap[e.id] && spicyMap[e.id].avg > 0 ? `<div class="card-spicy">🌶 ${spicyMap[e.id].avg}/5</div>` : ''}`;
 
   d.addEventListener('click', () => openModal(e));
   return d;
