@@ -983,18 +983,33 @@ div.search-box:focus { outline: none; }
   margin-right: 4px;
   opacity: .4;
 }
-.modal-meta { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+/* ── modal meta: grupos con jerarquía, no una fila plana de chips ── */
+.modal-meta-groups {
+  display: flex; flex-wrap: wrap; gap: 14px 22px;
+  margin-bottom: 14px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.meta-group { display: flex; flex-direction: column; gap: 6px; }
+.meta-glabel {
+  font-size: 8.5px; letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--dim); font-family: 'DM Sans', sans-serif; font-weight: 500;
+}
+.meta-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .mbadge {
-  font-size: 9px; letter-spacing: 1px; text-transform: uppercase;
-  padding: 3px 8px; border-radius: 1px;
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 10px; letter-spacing: .4px;
+  padding: 4px 9px; border-radius: 2px; white-space: nowrap;
   font-family: 'DM Sans', sans-serif; font-weight: 500;
 }
 .mb-fin { background: rgba(71,255,224,0.12); color: var(--neon3); border: 1px solid rgba(71,255,224,0.25); }
 .mb-cont { background: rgba(232,255,71,0.1); color: var(--neon); border: 1px solid rgba(232,255,71,0.2); }
 .mb-hiatus { background: rgba(255,200,71,0.1); color: #ffc847; border: 1px solid rgba(255,200,71,0.2); }
 .mb-cancel { background: rgba(255,71,71,0.1); color: #ff6b6b; border: 1px solid rgba(255,71,71,0.2); }
-.mb-bib { background: rgba(71,255,224,0.08); color: var(--neon3); border: 1px solid rgba(71,255,224,0.18); }
-.mb-files { background: rgba(232,255,71,0.07); color: var(--neon); border: 1px solid rgba(232,255,71,0.15); }
+/* ubicación: mismo tratamiento neutro, solo el icono distingue */
+.mb-bib, .mb-files {
+  background: rgba(245,240,232,0.05); color: var(--muted);
+  border: 1px solid rgba(245,240,232,0.14); text-transform: none;
+}
 .mb-adult { background: rgba(255,71,163,0.12); color: var(--neon2); border: 1px solid rgba(255,71,163,0.25); }
 .mb-caps { background: rgba(245,240,232,0.06); color: var(--muted); border: 1px solid rgba(245,240,232,0.15); }
 .modal-autor {
@@ -5411,14 +5426,34 @@ function openModal(e, isRefresh) {
         ${e.titulos_alt && e.titulos_alt.length ? `<div class="modal-alt-titles">${e.titulos_alt.map(t=>`<span class="modal-alt-title">${esc(t)}</span>`).join('')}</div>` : ''}
         ${(() => { const autores = Array.isArray(e.autor) ? e.autor : (e.autor ? [e.autor] : []); const autorStr = autores.join(', '); return autorStr ? `<div class="modal-autor">✍️ ${esc(autorStr)}${e.anio_inicio ? ' · ' + esc(String(e.anio_inicio)) : ''}</div>` : (e.anio_inicio ? `<div class="modal-autor">${esc(String(e.anio_inicio))}</div>` : ''); })()}
         ${e.adult ? '<div class="modal-adult-warn">🔞 Contenido para mayores de 18 años</div>' : ''}
-        <div class="modal-meta">
-          <span class="mbadge ${mc}">${ei} ${esc(e.estado)}</span>
-          ${e.capitulos_totales ? `<span class="mbadge mb-caps">📖 ${e.capitulos_totales} cap.</span>` : ''}
-          ${e.in_biblioteca ? '<span class="mbadge mb-bib">📚 Biblioteca</span>' : ''}
-          ${e.in_files ? '<span class="mbadge mb-files">📁 FILES</span>' : ''}
-          ${e.adult ? '<span class="mbadge mb-adult">+18</span>' : ''}
-          ${crBadgeData ? `<span class="mbadge mb-cr mb-cr-${esc(e.content_rating)}">${crBadgeData.icon} ${crBadgeData.label}</span>` : ''}
-          ${e.adaptacion ? `<span class="mbadge mb-adapt">🎬 ${esc(typeof e.adaptacion === 'string' ? e.adaptacion : 'Tiene adaptación')}</span>` : ''}
+        <div class="modal-meta-groups">
+          <div class="meta-group">
+            <span class="meta-glabel">Lectura</span>
+            <div class="meta-row">
+              <span class="mbadge ${mc}">${ei} ${esc(e.estado)}${e.capitulos_totales ? ` · ${e.capitulos_totales} cap.` : ''}</span>
+            </div>
+          </div>
+          ${(e.in_biblioteca || e.in_files) ? `
+          <div class="meta-group">
+            <span class="meta-glabel">Dónde</span>
+            <div class="meta-row">
+              ${e.in_biblioteca ? '<span class="mbadge mb-bib">📚 Biblioteca</span>' : ''}
+              ${e.in_files ? '<span class="mbadge mb-files">📁 Files</span>' : ''}
+            </div>
+          </div>` : ''}
+          ${(() => {
+            const chips = [];
+            // el aviso grande de +18 ya va arriba (modal-adult-warn); aquí no lo repetimos.
+            // solo mostramos +18 suelto si no hay rating de contenido que ya lo comunique.
+            if (crBadgeData) chips.push(`<span class="mbadge mb-cr mb-cr-${esc(e.content_rating)}">${crBadgeData.icon} ${crBadgeData.label}</span>`);
+            else if (e.adult) chips.push('<span class="mbadge mb-adult">+18</span>');
+            if (e.adaptacion) chips.push(`<span class="mbadge mb-adapt">🎬 ${esc(typeof e.adaptacion === 'string' ? e.adaptacion : 'Tiene adaptación')}</span>`);
+            if (!chips.length) return '';
+            return `<div class="meta-group">
+              <span class="meta-glabel">Clasificación</span>
+              <div class="meta-row">${chips.join('')}</div>
+            </div>`;
+          })()}
         </div>
       </div>
     </div>
