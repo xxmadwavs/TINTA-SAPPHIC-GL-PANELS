@@ -2146,6 +2146,30 @@ body.shelf-active .topbar-center { display: none; }
 .schile.zero.lit { opacity: 1; border-color: var(--neon2); color: var(--neon2); }
 .spicy-unknown-note { font-size: 10.5px; color: var(--dim); margin-top: 2px; }
 
+/* ── READ-DONE MODAL (valorar + spicy al marcar como Terminado) ── */
+.rd-wrap { position: fixed; inset: 0; z-index: 500; background: rgba(0,0,0,.87); backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center; padding: 20px; }
+.rd-wrap.open { display: flex; }
+.rd-modal { background: #13131e; border: 1px solid rgba(232,255,71,0.2); border-radius: 2px; max-width: 380px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; }
+.rd-modal::before { content: ''; position: sticky; top: 0; display: block; height: 2px; background: linear-gradient(90deg, var(--neon), var(--neon2)); }
+.rd-modal-x { position: absolute; top: 14px; right: 14px; width: 28px; height: 28px; border: 1px solid var(--border); border-radius: 2px; background: transparent; color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; transition: all .15s; z-index: 1; }
+.rd-modal-x:hover { border-color: var(--neon2); color: var(--neon2); }
+.rd-body { padding: 22px 22px 24px; }
+.rd-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #6bff9e; margin-bottom: 8px; }
+.rd-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 18px; }
+.rd-cover img { width: 58px; height: 84px; object-fit: cover; border-radius: 1px; border: 1px solid var(--border); flex-shrink: 0; }
+.rd-cover-gen { width: 58px; height: 84px; background: #1c1c28; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.rd-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem; letter-spacing: .5px; line-height: 1.05; color: var(--paper); }
+.rd-autor { font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--dim); margin-top: 4px; }
+.rd-block { border-top: 1px solid var(--border); padding-top: 14px; margin-top: 14px; }
+.rd-block:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+.rd-block-title { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); margin-bottom: 9px; font-family: 'DM Sans', sans-serif; }
+.rd-btns-row { display: flex; gap: 8px; margin-top: 20px; }
+.rd-btn-skip { flex: 1; padding: 8px 14px; border-radius: 2px; border: 1px solid var(--border2); background: transparent; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 11.5px; font-weight: 500; letter-spacing: .3px; cursor: pointer; transition: all .18s; }
+.rd-btn-skip:hover { border-color: rgba(245,240,232,0.35); color: var(--paper); }
+.rd-btn-save { flex: 1; padding: 8px 14px; border-radius: 2px; background: var(--neon); border: none; color: var(--screen); font-family: 'Bebas Neue', sans-serif; font-size: 1.05rem; letter-spacing: 1.5px; cursor: pointer; transition: all .18s; }
+.rd-btn-save:hover { background: #d4f03c; }
+
+
 /* spicy badge on card — mismo tamaño que el resto de badges de la card, solo con su propio color */
 .card-spicy {
   position: absolute; bottom: 7px; right: 7px; z-index: 10;
@@ -3388,6 +3412,15 @@ body.home-active .topbar-center { display: none; }
   </div>
 </div>
 
+<!-- READ DONE MODAL (valorar + spicy al marcar como Terminado) -->
+<div class="rd-wrap" id="rdWrap">
+  <div class="rd-modal">
+    <button class="rd-modal-x" onclick="closeReadDoneModal()">✕</button>
+    <div class="rd-body" id="rdBody"></div>
+  </div>
+</div>
+
+
 <button class="scroll-top" id="stBtn">▲</button>
 
 <script>
@@ -3918,6 +3951,109 @@ function refreshCardSpicyBadge(id) {
   });
 }
 
+/* ══════════════════════════════════
+   READ DONE MODAL — al marcar un título como Terminado por primera vez,
+   ofrece valorar (★) y votar nivel spicy (🌶), ambos opcionales.
+══════════════════════════════════ */
+let rdStar = 0, rdSpicy = -1;
+
+function openReadDoneModal() {
+  if (!activeModalItem) return;
+  rdStar  = myRatings[activeModalItem.id] || 0;
+  rdSpicy = mySpicyVotes.hasOwnProperty(activeModalItem.id) ? mySpicyVotes[activeModalItem.id] : -1;
+  renderReadDoneModal();
+  document.getElementById('rdWrap').classList.add('open');
+}
+function closeReadDoneModal() {
+  document.getElementById('rdWrap').classList.remove('open');
+  rdStar = 0; rdSpicy = -1;
+}
+function renderReadDoneModal() {
+  const e = activeModalItem;
+  const body = document.getElementById('rdBody');
+  if (!e || !body) return;
+  const autores = Array.isArray(e.autor) ? e.autor : (e.autor ? [e.autor] : []);
+  const autorStr = autores.join(', ');
+  const coverHtml = e.imagen
+    ? `<div class="rd-cover"><img src="${esc(e.imagen)}" alt="" referrerpolicy="no-referrer" onerror="this.closest('.rd-cover').outerHTML='<div class=rd-cover-gen>📖</div>'"></div>`
+    : `<div class="rd-cover-gen">📖</div>`;
+  const starBtns = [1,2,3,4,5].map(n => `<button class="sstar${n <= rdStar ? ' lit' : ''}" data-n="${n}" onclick="rdSelectStar(${n})">★</button>`).join('');
+  const zeroBtn = `<button class="schile zero${rdSpicy === 0 ? ' lit' : ''}" data-s="0" title="${SPICY_LABELS[0]}" onclick="rdSelectSpicy(0)">🚫 Sin steam</button>`;
+  const chiles = [1,2,3,4,5].map(n => `<button class="schile${n <= rdSpicy && rdSpicy > 0 ? ' lit' : ''}" data-s="${n}" title="${SPICY_LABELS[n]}" onclick="rdSelectSpicy(${n})">🌶</button>`).join('');
+  body.innerHTML = `
+    <div class="rd-eyebrow">He terminado de leer</div>
+    <div class="rd-top">
+      ${coverHtml}
+      <div>
+        <div class="rd-title">${esc(e.titulo)}</div>
+        ${autorStr ? `<div class="rd-autor">✍️ ${esc(autorStr)}</div>` : ''}
+      </div>
+    </div>
+    <div class="rd-block">
+      <div class="rd-block-title">Tu valoración (opcional)</div>
+      <div class="stars-row-m" id="rdStarsRow">${starBtns}</div>
+    </div>
+    <div class="rd-block">
+      <div class="rd-block-title">Nivel spicy (opcional)</div>
+      <div class="chiles-row-m" id="rdChilesRow">${zeroBtn}${chiles}</div>
+    </div>
+    <div class="rd-btns-row">
+      <button class="rd-btn-skip" onclick="closeReadDoneModal()">Ahora no</button>
+      <button class="rd-btn-save" onclick="saveReadDoneModal()">GUARDAR</button>
+    </div>`;
+}
+function rdSelectStar(n) {
+  rdStar = (rdStar === n) ? 0 : n; // clic en la misma estrella la desmarca
+  document.querySelectorAll('#rdStarsRow .sstar').forEach(b => b.classList.toggle('lit', +b.dataset.n <= rdStar));
+}
+function rdSelectSpicy(n) {
+  rdSpicy = (rdSpicy === n) ? -1 : n; // clic en el mismo nivel lo desmarca
+  document.querySelectorAll('#rdChilesRow .schile').forEach(b => {
+    const s = +b.dataset.s;
+    b.classList.toggle('lit', s === 0 ? rdSpicy === 0 : (rdSpicy > 0 && s <= rdSpicy));
+  });
+}
+async function saveReadDoneModal() {
+  if (!SB_READY || !currentUser || !activeModalItem) { closeReadDoneModal(); return; }
+  const id = activeModalItem.id;
+  // Valoración por estrellas (solo si se ha elegido alguna)
+  if (rdStar > 0) {
+    const existing = myRatings[id];
+    const { error } = existing
+      ? await sb.from('ratings').update({ score: rdStar }).eq('user_id', currentUser.id).eq('manga_id', id)
+      : await sb.from('ratings').insert({ user_id: currentUser.id, manga_id: id, score: rdStar });
+    if (!error) {
+      const r = ratingsMap[id] || { avg: 0, count: 0 };
+      const oldScore = existing || 0;
+      const newCount = existing ? r.count : r.count + 1;
+      const newAvg   = existing ? (r.avg * r.count - oldScore + rdStar) / newCount : (r.avg * r.count + rdStar) / newCount;
+      ratingsMap[id] = { avg: Math.round(newAvg * 10) / 10, count: newCount };
+      myRatings[id]  = rdStar;
+      refreshCardBadge(id);
+    }
+  }
+  // Nivel spicy (solo si se ha elegido alguno, incluido 🚫 = 0)
+  if (rdSpicy >= 0) {
+    const existing = mySpicyVotes.hasOwnProperty(id) ? mySpicyVotes[id] : undefined;
+    const { error } = existing !== undefined
+      ? await sb.from('spicy_votes').update({ score: rdSpicy }).eq('user_id', currentUser.id).eq('manga_id', id)
+      : await sb.from('spicy_votes').insert({ user_id: currentUser.id, manga_id: id, score: rdSpicy });
+    if (!error) {
+      const r = spicyMap[id] || { avg: 0, count: 0 };
+      const oldScore = existing !== undefined ? existing : 0;
+      const newCount = existing !== undefined ? r.count : r.count + 1;
+      const newAvg   = existing !== undefined ? (r.avg * r.count - oldScore + rdSpicy) / newCount : (r.avg * r.count + rdSpicy) / newCount;
+      spicyMap[id] = { avg: Math.round(newAvg * 10) / 10, count: newCount };
+      mySpicyVotes[id] = rdSpicy;
+      refreshCardSpicyBadge(id);
+    }
+  }
+  closeReadDoneModal();
+  refreshVoteSection();
+  refreshSpicySection();
+}
+document.getElementById('rdWrap').addEventListener('click', e => { if (e.target.id === 'rdWrap') closeReadDoneModal(); });
+
 // ── MI ESTANTERÍA (reading_status) ────────────────────────
 const SHELF_INFO = {
   want:    { label: 'Quiero leer', icon: '＋', cls: 'cs-want' },
@@ -4041,8 +4177,10 @@ async function setReadingStatus(status) {
     myReadingDates[id] = prevDates;
     refreshShelfSection();
     refreshShelfBadge(id);
-  } else if (fShelf !== 'all') {
-    renderSections(false);
+  } else {
+    if (fShelf !== 'all') renderSections(false);
+    // Primera vez que se marca este título como Terminado: ofrecer valorar + nivel spicy (opcional)
+    if (status === 'read' && prev !== 'read') openReadDoneModal();
   }
 }
 async function setReadingDate(field, value) {
