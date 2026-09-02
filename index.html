@@ -795,7 +795,7 @@ div.search-box:focus { outline: none; }
   position: absolute; top: 7px; right: 7px; z-index: 10;
   display: flex; flex-direction: column; align-items: flex-end; gap: 3px;
 }
-/* +18 chip */
+/* +18 chip — fondo sólido, no translúcido, para que no se pierda en portadas oscuras */
 .adult-chip {
   background: var(--neon2);
   color: #1a0010;
@@ -803,29 +803,33 @@ div.search-box:focus { outline: none; }
   font-size: 10px; letter-spacing: 1px;
   padding: 1px 6px;
   border-radius: 1px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.5);
 }
 .card.adult-blurred .card-cover img,
 .card.adult-blurred .card-gen::before { filter: blur(14px); }
 .card.adult-blurred .adult-chip::after { content: '🔞 OCULT'; }
 .card.adult-blurred .adult-chip { background: rgba(255,71,163,0.4); color: var(--neon2); }
 
-/* estado corner */
+/* estado corner — fondo sólido + borde propio, ya no depende del color de la portada */
 .card-estado {
   position: absolute; top: 7px; left: 7px; z-index: 10;
   font-family: 'DM Sans', sans-serif;
   font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase;
   padding: 2px 6px; border-radius: 1px;
+  background: rgba(10,10,14,0.75);
+  border: 1px solid currentColor;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
 }
-.e-fin { background: rgba(71,255,224,0.2); color: var(--neon3); }
-.e-cont { background: rgba(232,255,71,0.2); color: var(--neon); }
-.e-hiatus { background: rgba(255,200,71,0.2); color: #ffc847; }
-.e-cancel { background: rgba(255,71,71,0.18); color: #ff6b6b; }
+.e-fin { color: var(--neon3); }
+.e-cont { color: var(--neon); }
+.e-hiatus { color: #ffc847; }
+.e-cancel { color: #ff6b6b; }
 
 /* overlay — siempre visible para garantizar contraste sobre cualquier portada;
-   se intensifica un poco más en hover como detalle extra */
+   incluye también una ligera viñeta arriba para las esquinas de badges */
 .card-overlay {
   position: absolute; inset: 0; z-index: 5;
-  background: linear-gradient(180deg, transparent 15%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.96) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 22%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.96) 100%);
   opacity: 1;
   transition: opacity .22s;
 }
@@ -872,9 +876,11 @@ div.search-box:focus { outline: none; }
   border-radius: 1px;
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
+  background: rgba(10,10,14,0.75);
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
 }
-.sbib { background: rgba(71,255,224,0.15); color: var(--neon3); border: 1px solid rgba(71,255,224,0.3); }
-.sfiles { background: rgba(232,255,71,0.12); color: var(--neon); border: 1px solid rgba(232,255,71,0.25); }
+.sbib { color: var(--neon3); border: 1px solid rgba(71,255,224,0.5); }
+.sfiles { color: var(--neon); border: 1px solid rgba(232,255,71,0.45); }
 
 /* ── EMPTY ────────────────────────────────────────────── */
 .empty {
