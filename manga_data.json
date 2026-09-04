@@ -1,5 +1,85 @@
 [
   {
+    "id": "gl_1788554844441_cyt",
+    "titulo": "Love Me Tender at Midnight",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://mangadex.org/covers/c2a12541-9dd7-4eb3-a896-45e7b9314ec2/22b41f3f-8fe1-4a17-80b0-c9dd70bd1002.jpg.512.jpg",
+    "desc": "",
+    "tags": [
+      "Romance",
+      "Comedia"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "Mayonaka ni Aishiteyo"
+    ],
+    "autor": [
+      "Amazaki Suika"
+    ],
+    "anio_inicio": 2026,
+    "content_rating": "sugestiva"
+  },
+  {
+    "id": "gl_1788554762491_2as",
+    "titulo": "My Boss, She Plotted Against Me",
+    "seccion": "Manhua",
+    "estado": "Continúa",
+    "imagen": "https://cdn.anime-planet.com/manga/primary/my-boss-she-plotted-against-me-1-285x399.webp?t=1693780949",
+    "desc": "Al comienzo de su pasantía, XuNian tuvo la mala suerte de ofender a su jefa, JiangZhi, ¡XuNian solo podía maldecir su gran mala suerte! Afortunadamente, XuNian tiene un romance en linea, su pareja es cariñosa y empalagosa, que también le daba consejos sobre cómo lidiar con su jefa tiránica. Pero... ¡¿Cómo es que su pareja y su tiránica jefa resultaron ser la misma persona?! Durante el día la regañaba al punto de hacerla llorar, y durante la noche se encargaba de consolarla, ¡Incluso se regañaba a sí misma!, cuando JiangZhi descubrió la verdad, no pudo evitar llevarse la mano a la frente y suspirar profundamente.",
+    "tags": [
+      "Drama",
+      "Romance",
+      "Comedia"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "上司她对我图谋不轨"
+    ],
+    "autor": [
+      "Fire工作室",
+      "速度线工作室"
+    ],
+    "anio_inicio": 2023,
+    "demografico": "shoujo"
+  },
+  {
+    "id": "gl_1788554483499_kyb",
+    "titulo": "Absolute Obedience!",
+    "seccion": "Manhwa",
+    "estado": "Continúa",
+    "imagen": "https://i6.mangapicgallery.com/r/coverlink/rROHYYKHa8HlWy3U7kHm8eI5JAZfMRXfoQQqBg1cwmDVnaN.jpeg?4",
+    "desc": "Han Seora es la diosa del departamento de Educación Física. Está enamorada de su amiga de la infancia, Yuneun, desde que eran niñas… ¿Pero es un amor no correspondido?",
+    "tags": [
+      "Romance",
+      "Drama"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": true,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "¡Obediencia Absoluta!"
+    ],
+    "subgeneros": [
+      "Erótica"
+    ],
+    "anio_inicio": 2026,
+    "content_rating": "erotica"
+  },
+  {
     "id": "gl_1788553548720_ogl",
     "titulo": "Akuyaku Reijou no Oyome-sama",
     "seccion": "Manga",
