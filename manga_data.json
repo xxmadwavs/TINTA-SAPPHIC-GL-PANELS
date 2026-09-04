@@ -1,5 +1,351 @@
 [
   {
+    "id": "gl_1788553548720_ogl",
+    "titulo": "Akuyaku Reijou no Oyome-sama",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://mangadex.org/covers/f8a6e3ef-d7a8-4aa3-89b2-03ef234deae6/59efa489-dd83-405c-8eb4-48c4af389afa.jpg.512.jpg",
+    "desc": "Un día, Karina, una joven que ha sido preparada para ser reina, ve cómo su prometido, el príncipe, rompe repentinamente su compromiso. Ahora él la envía al exilio, mientras se queda al lado de su hermana, Aurora. Exiliada al lejano norte, donde se dice que habitan los monstruos, Karina se aventura a investigar el origen de un sonido inquietante y tiene un encuentro fatídico en la nieve...",
+    "tags": [
+      "Drama",
+      "Fantasía",
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "The Villainess' Bride"
+    ],
+    "autor": [
+      "Kawano Akiko"
+    ],
+    "anio_inicio": 2025,
+    "content_rating": "sugestiva",
+    "demografico": "josei"
+  },
+  {
+    "id": "gl_1788553281961_7f8",
+    "titulo": "Love Bullet",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://mangadex.org/covers/cb1b1da5-9436-49f5-8a6b-a1689fb86d91/37c5f1ca-d930-432c-9e4e-0c632f954b85.png.512.jpg",
+    "desc": "Desde los albores de la humanidad, la diosa del amor concede una segunda oportunidad en la vida, en forma de Cupidos, a aquellos que nunca han experimentado el amor y han tenido un final prematuro.\n\nLos Cupidos de hoy en día han cambiado el arco y las flechas por armas de fuego modernas, pero su misión sigue siendo la misma: ¡encontrar parejas adecuadas para sus objetivos y hacer que se enamoren!",
+    "tags": [
+      "Acción",
+      "Romance",
+      "Paranormal"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "subgeneros": [
+      "Sobrenatural"
+    ],
+    "autor": [
+      "inee"
+    ],
+    "anio_inicio": 2023,
+    "content_rating": "safe",
+    "demografico": "seinen"
+  },
+  {
+    "id": "gl_1788553196740_nfl",
+    "titulo": "Onna Chara de Isekai Teni shite Cheatppoi kedo Zako Chara na no de Medatazu Heiwa na Shomin wo Mezashimasu!",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://mangadex.org/covers/8f5366b7-3c41-4cff-895c-385a41d5e39a/f40a263c-bd71-48fe-9c50-006dc0332c35.jpg.512.jpg",
+    "desc": "Un oficinista un poco agotado. Un día, tras despertarse… se encontró en otro mundo, en el cuerpo de un personaje femenino, Susie, del MMORPG al que le gustaba jugar. Desorientado, intentó lanzar un ataque… e hizo que todos los monstruos huyeran hacia la zona habitada, asustados por su poder destructivo, capaz de derribar una montaña. Tras acabar con ellos, acabó salvando a Howard, un tribuno local que invitó a su salvador al pueblo, pero...",
+    "tags": [
+      "Comedia",
+      "Romance",
+      "Fantasía"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "After Reincarnating in Another World as My Sort of Cheat but Small Fry Female Character I will Strive to Live a Peaceful Life of an Ordinary Person!"
+    ],
+    "subgeneros": [
+      "Magia"
+    ],
+    "autor": [
+      "ＴＡ☆ＫＡ",
+      "Kanida Nobi"
+    ],
+    "anio_inicio": 2024,
+    "content_rating": "sugestiva"
+  },
+  {
+    "id": "gl_1788552976306_og5",
+    "titulo": "College Student and OL",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://mangadex.org/covers/2eb359a5-d2aa-4e1e-acec-21ebbc5f330f/61941e7e-82c9-4756-87dc-1132a92d308c.png",
+    "desc": "",
+    "tags": [
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "Joshidaisei to OL-san"
+    ],
+    "capitulos_totales": 1,
+    "autor": [
+      "Inui Ayu"
+    ],
+    "content_rating": "safe"
+  },
+  {
+    "id": "gl_1788552914510_fwv",
+    "titulo": "Kobayashi-san Chi no Maid Dragon",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://mangadex.org/covers/67b35ba4-9c53-4957-91e7-4f7884e4b412/1199758c-01c3-46c9-96af-bb8d8415a98a.jpg",
+    "desc": "Kobayashi vive sola en un piso, hasta que un día aparece Tooru y acaban viviendo juntas. Tooru considera a los humanos seres inferiores y necios, pero, tras haber sido salvada por Kobayashi-san, hace todo lo posible por saldar su deuda y ayudarla en diversas cosas, aunque no todo sale según lo previsto.",
+    "tags": [
+      "Comedia",
+      "Fantasía",
+      "Romance",
+      "Drama",
+      "Fantasía Urbana"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [
+      "Oficinista",
+      "Sirvienta"
+    ],
+    "subgeneros": [
+      "Magia"
+    ],
+    "pais_cultura": [
+      "Japón"
+    ],
+    "autor": [
+      "Cool-kyou Shinja"
+    ],
+    "anio_inicio": 2013,
+    "content_rating": "sugestiva",
+    "demografico": "seinen"
+  },
+  {
+    "id": "gl_1788552647869_nxs",
+    "titulo": "Watashi ga Koibito ni Nareru Wakenai jan, Murimuri! (※Muri ja Nakatta!?)",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://mangadex.org/covers/e160a8e3-304f-4dca-838b-ee1821c490d8/28e0ba67-b714-4aae-b5ad-55fc20f69918.jpg",
+    "desc": "Con el deseo de ser una chica normal, yo, Renako Amaori, por fin estoy haciendo mi debut en el instituto después de haberme esforzado tanto para ello. Sin embargo, debido a mi dificultad para comunicarme, desprendo un aire sombrío. Y tras pasar día tras día con el grupo de chicas normales, acabé tan agotada que dije: «Ya no puedo más», ¡y llegué a mi límite!\n\nDurante ese tiempo, conocí por casualidad a la mejor alumna de nuestro instituto. Con un rostro y una figura perfectos, sin rival ni con la espada ni con la pluma, la mejor estudiante de nuestro instituto: Mai Odzuka.",
+    "tags": [
+      "Comedia",
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [
+      "Unrequited Love"
+    ],
+    "personajes": [],
+    "titulos_alt": [
+      "There's No Freaking Way I'll be Your Lover! Unless…"
+    ],
+    "advertencias": [
+      "Violencia sexual",
+      "Abuso Sexual",
+      "Violación"
+    ],
+    "subgeneros": [
+      "Escolar",
+      "Poliamor"
+    ],
+    "autor": [
+      "Mikami Teren",
+      "Musshu"
+    ],
+    "anio_inicio": 2020,
+    "content_rating": "sugestiva",
+    "demografico": "seinen"
+  },
+  {
+    "id": "gl_1788552421180_j4u",
+    "titulo": "Asumi-chan wa Les Fuuzoku ni Kyoumi ga Arimasu!",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://mangadex.org/covers/af66b380-623e-4dfc-9fbb-8ca093b9d5a9/36274106-6bd7-43a9-808b-f93edd94bd95.jpg",
+    "desc": "Asumi, una estudiante universitaria dulce pero torpe, nunca superó el enamoramiento que sintió de pequeña por su vieja amiga Mai. Su primer y único beso no pudo salir peor. Así que, cuando se entera de que Mai podría estar trabajando en un burdel cercano, ¡se propone redimirse! Pero hay un problema: ninguna de las mujeres que aparecen en la página web del burdel muestra fotos completas ni utiliza su nombre real. Así comienza un viaje de autodescubrimiento y exploración sexual mientras se lanza a la búsqueda de aquella que se le escapó.",
+    "tags": [
+      "Comedia",
+      "Romance"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": true,
+    "subido": "Subido biblioteca",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "Asumi-chan is Interested in Lesbian Brothels!"
+    ],
+    "advertencias": [
+      "Prostitución / Trabajo Sexual"
+    ],
+    "subgeneros": [
+      "Erótica",
+      "Universidad"
+    ],
+    "pais_cultura": [
+      "Japón"
+    ],
+    "autor": [
+      "Itsuki Kuro"
+    ],
+    "anio_inicio": 2022,
+    "content_rating": "erotica"
+  },
+  {
+    "id": "gl_1788551486404_uuc",
+    "titulo": "Yoku Wakaranai Keredo Isekai ni Tensei Shiteita You Desu",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://mangadex.org/covers/6bae5c8c-d5ff-43df-acf7-b7670532c8b1/e5f2ef36-c009-4882-9793-c7b722c58c14.jpg",
+    "desc": "Ren, una joven huérfana, ha sido vendida a un comerciante que tiene planes siniestros para ella. De repente, los recuerdos de su vida pasada en un mundo llamado Tierra le invaden la mente, y Ren recuerda que solía ser investigadora científica… ¡y un hombre adulto! Mientras Ren huye hacia el Bosque Oscuro, despiertan en su interior unos poderes mágicos. Para sobrevivir a las duras realidades de este mundo, deberá utilizar tanto sus conocimientos científicos de la Tierra, ahora reavivados, como sus nuevos poderes. ¿Serán suficientes sus poderes mágicos y los conocimientos de su vida pasada para conservar su libertad, o está condenada a una vida de servidumbre?",
+    "tags": [
+      "Comedia",
+      "Aventura",
+      "Fantasía"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca",
+    "tropos": [
+      "Sex Toys / Juguetes Sexuales"
+    ],
+    "personajes": [],
+    "titulos_alt": [
+      "This Is Screwed up, but I was Reincarnated as a GIRL in Another World!"
+    ],
+    "advertencias": [
+      "Abuso Infantil",
+      "Esclavitud Sexual",
+      "Abuso Sexual"
+    ],
+    "subgeneros": [
+      "Reencarnación",
+      "Magia"
+    ],
+    "pais_cultura": [
+      "Ambientación europea"
+    ],
+    "autor": [
+      "Ashi",
+      "Uchiuchi Keyaki"
+    ],
+    "anio_inicio": 2019,
+    "content_rating": "erotica",
+    "demografico": "shounen"
+  },
+  {
+    "id": "gl_1788551203769_4y9",
+    "titulo": "TenTen 4-koma Gekijou",
+    "seccion": "Manga",
+    "estado": "Finalizado",
+    "imagen": "https://mangadex.org/covers/6aa24f43-e9a9-4ef3-8ecb-a3b456bd8e60/17a28919-1ff3-4584-8ab8-a8d265b46b3c.png",
+    "desc": "¡Un encantador proyecto paralelo en formato 4-koma de Nadaka Harutsugu-sensei, el dibujante responsable de la adaptación al manga!",
+    "tags": [
+      "Romance"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": false,
+    "subido": "Subido biblioteca",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "The Magical Revolution of the Reincarnated Princess and the Genius Young Lady 4-koma Theater",
+      "Tensei Oujo to Tensai Reijou no Mahou Kakumei 4-koma Gekijou"
+    ],
+    "autor": [
+      "Nadaka Harutsugu"
+    ],
+    "anio_inicio": 2023,
+    "content_rating": "safe"
+  },
+  {
+    "id": "gl_1788550924216_cjh",
+    "titulo": "Shinimodori Oujo wa Ikinobiru tame ni Yuri Harem o Tsukuru koto ni shita",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://mangadex.org/covers/b232c191-6e14-4522-a1a2-c4b0f688f00d/7ba9cbd3-7cef-4806-a519-94ef736dba89.jpg",
+    "desc": "Marie, una princesa autoritaria y egoísta, se enfrentó a su fin bajo la cuchilla de la guillotina después de que sus súbditos se hartaran de ella. Sin embargo, tras morir, Marie se ve transportada al año anterior y descubre que, haga lo que haga, nunca podrá escapar del destino que le espera dentro de un año. Finalmente, tras descubrir que la única forma de escapar de su propia ejecución es conquistar a un gran número de mujeres «con problemas sentimentales», Marie decide utilizar su propio «carisma real» para crear un harén yuri.",
+    "tags": [
+      "Comedia",
+      "Fantasía",
+      "Histórica"
+    ],
+    "in_biblioteca": true,
+    "in_files": false,
+    "adult": true,
+    "subido": "Subido biblioteca",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "The Death Defying Princess Creates a Yuri Harem to Survive",
+      "No Lily, No Life!!"
+    ],
+    "advertencias": [
+      "Incesto"
+    ],
+    "subgeneros": [
+      "Viaje en el Tiempo",
+      "BDSM"
+    ],
+    "pais_cultura": [
+      "Japón"
+    ],
+    "enlaces_lectura": [
+      {
+        "id": "mtnd0xkocf7jg",
+        "label": "Official Raw",
+        "url": "https://heros-web.com/series/ec09a10dc9490"
+      },
+      {
+        "id": "mtnd1c5qgck4y",
+        "label": "Official English",
+        "url": "https://sevenseasentertainment.com/series/the-death-defying-princess-creates-a-yuri-harem-to-survive/"
+      }
+    ],
+    "autor": [
+      "Kouji Moromi",
+      "Akashiro Aoi",
+      "Murata Shinya",
+      "Yanai Nobuhiko"
+    ],
+    "anio_inicio": 2024,
+    "content_rating": "erotica",
+    "demografico": "seinen"
+  },
+  {
     "id": "gl_1787935294455_n0y",
     "titulo": "Orange-Flavored Summer",
     "seccion": "Manhua",
@@ -429,15 +775,21 @@
       "Misterio",
       "Thriller"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
       "If Only Hina Were Still Alive",
       "Si tan solo Hina siguiera viva"
+    ],
+    "subgeneros": [
+      "Sobrenatural"
+    ],
+    "pais_cultura": [
+      "Japon"
     ],
     "enlaces_lectura": [
       {
@@ -446,14 +798,14 @@
         "url": "https://ichicomi.com/episode/2551460909885349908"
       },
       {
+        "id": "gl_19f64aec14btxlm3",
         "label": "BookWalker",
-        "url": "https://bookwalker.jp/series/598055",
-        "id": "gl_19f64aec14btxlm3"
+        "url": "https://bookwalker.jp/series/598055"
       },
       {
+        "id": "gl_19f64aec14bbezpr",
         "label": "eBookJapan",
-        "url": "https://ebookjapan.yahoo.co.jp/books/980136/",
-        "id": "gl_19f64aec14bbezpr"
+        "url": "https://ebookjapan.yahoo.co.jp/books/980136/"
       }
     ],
     "autor": [
@@ -461,13 +813,7 @@
     ],
     "anio_inicio": 2025,
     "content_rating": "safe",
-    "demografico": "seinen",
-    "pais_cultura": [
-      "Japon"
-    ],
-    "subgeneros": [
-      "Sobrenatural"
-    ]
+    "demografico": "seinen"
   },
   {
     "id": "gl_1783876960207_met",
@@ -906,10 +1252,10 @@
       "Drama",
       "Misterio"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
@@ -951,10 +1297,10 @@
       "Romance",
       "Slice of Life"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [
       "Estudiante"
@@ -962,28 +1308,28 @@
     "titulos_alt": [
       "Juhyun and Jinsol"
     ],
+    "subgeneros": [
+      "Slice of Life"
+    ],
     "edad_protagonistas": [
       "Young Adult (15–18)"
+    ],
+    "pais_cultura": [
+      "Corea del Sur"
+    ],
+    "enlaces_lectura": [
+      {
+        "id": "gl_19f64af77e6nihd0",
+        "label": "Raw oficial",
+        "url": "https://www.postype.com/@shindo9600"
+      }
     ],
     "capitulos_totales": 40,
     "autor": [
       "Bulgasa-ri"
     ],
     "anio_inicio": 2025,
-    "content_rating": "safe",
-    "pais_cultura": [
-      "Corea del Sur"
-    ],
-    "enlaces_lectura": [
-      {
-        "label": "Raw oficial",
-        "url": "https://www.postype.com/@shindo9600",
-        "id": "gl_19f64af77e6nihd0"
-      }
-    ],
-    "subgeneros": [
-      "Slice of Life"
-    ]
+    "content_rating": "safe"
   },
   {
     "id": "gl_1783198072030_r5a",
@@ -995,15 +1341,21 @@
     "tags": [
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
       "월화X목금",
       "Wolhwa x Mokgeum"
+    ],
+    "subgeneros": [
+      "Vida Escolar"
+    ],
+    "pais_cultura": [
+      "Corea del Sur"
     ],
     "enlaces_lectura": [
       {
@@ -1012,9 +1364,9 @@
         "url": "https://www.bomtoon.com/detail/MTxTF"
       },
       {
+        "id": "gl_19f64af860dj1tsc",
         "label": "Raw oficial",
-        "url": "https://bomtoon.com/comic/ep_list/MTxTF",
-        "id": "gl_19f64af860dj1tsc"
+        "url": "https://bomtoon.com/comic/ep_list/MTxTF"
       }
     ],
     "capitulos_totales": 30,
@@ -1023,13 +1375,7 @@
     ],
     "anio_inicio": 2016,
     "content_rating": "safe",
-    "demografico": "shoujo",
-    "pais_cultura": [
-      "Corea del Sur"
-    ],
-    "subgeneros": [
-      "Vida Escolar"
-    ]
+    "demografico": "shoujo"
   },
   {
     "id": "gl_1782935674948_7jg",
@@ -1106,10 +1452,10 @@
       "Fantasía",
       "Psicológico"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [
       "Delincuente"
@@ -1117,22 +1463,22 @@
     "titulos_alt": [
       "Caballero de la chatarra"
     ],
+    "subgeneros": [
+      "Magia"
+    ],
+    "enlaces_lectura": [
+      {
+        "id": "gl_19f64afb0e5b2paf",
+        "label": "Traduccion oficial (EN)",
+        "url": "https://namicomi.com/t/uY59DJf4?utm_source=md"
+      }
+    ],
     "capitulos_totales": 1,
     "autor": [
       "Nawar dagher"
     ],
     "anio_inicio": 2026,
-    "content_rating": "safe",
-    "enlaces_lectura": [
-      {
-        "label": "Traduccion oficial (EN)",
-        "url": "https://namicomi.com/t/uY59DJf4?utm_source=md",
-        "id": "gl_19f64afb0e5b2paf"
-      }
-    ],
-    "subgeneros": [
-      "Magia"
-    ]
+    "content_rating": "safe"
   },
   {
     "id": "gl_1782934352539_z3n",
@@ -1146,15 +1492,18 @@
       "Romance",
       "Drama"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
       "El club de los corazones frágiles",
       "Yowai Mono Club"
+    ],
+    "pais_cultura": [
+      "Japon"
     ],
     "enlaces_lectura": [
       {
@@ -1163,9 +1512,9 @@
         "url": "https://mangaplus.shueisha.co.jp/titles/100616"
       },
       {
+        "id": "gl_19f64afbf41kx9e9",
         "label": "Raw oficial",
-        "url": "https://shonenjumpplus.com/episode/17107094911687897042",
-        "id": "gl_19f64afbf41kx9e9"
+        "url": "https://shonenjumpplus.com/episode/17107094911687897042"
       }
     ],
     "capitulos_totales": 1,
@@ -1174,10 +1523,7 @@
     ],
     "anio_inicio": 2019,
     "content_rating": "safe",
-    "demografico": "shounen",
-    "pais_cultura": [
-      "Japon"
-    ]
+    "demografico": "shounen"
   },
   {
     "id": "gl_1782825532411_r49",
@@ -1611,31 +1957,31 @@
       "Drama",
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
+    "tropos": [],
+    "personajes": [],
     "titulos_alt": [
       "buke kang yinli",
       "不可抗引力"
     ],
-    "autor": [
-      "发乐"
-    ],
-    "anio_inicio": 2025,
-    "content_rating": "safe",
-    "tropos": [],
-    "personajes": [],
     "pais_cultura": [
       "China"
     ],
     "enlaces_lectura": [
       {
+        "id": "gl_19f64b05defqpmhf",
         "label": "Raw oficial",
-        "url": "https://m.kuaikanmanhua.com/mobile/27191/list/?cps=undefined",
-        "id": "gl_19f64b05defqpmhf"
+        "url": "https://m.kuaikanmanhua.com/mobile/27191/list/?cps=undefined"
       }
-    ]
+    ],
+    "autor": [
+      "发乐"
+    ],
+    "anio_inicio": 2025,
+    "content_rating": "safe"
   },
   {
     "id": "gl_1782464036655_pmx",
