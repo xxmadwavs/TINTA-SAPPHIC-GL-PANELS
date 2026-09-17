@@ -297,7 +297,9 @@ div.search-box:focus { outline: none; }
   align-items: center;
 }
 .cat-tabs::-webkit-scrollbar { display: none; }
-.cat-tabs { scrollbar-width: none; -ms-overflow-style: none; }
+.cat-tabs { scrollbar-width: none; -ms-overflow-style: none; cursor: grab; }
+.cat-tabs.dragging { cursor: grabbing; user-select: none; }
+.cat-tabs.dragging .ctab { pointer-events: none; }
 
 /* Edge fade hints so it reads as "scroll for more" */
 .cat-tabs-wrap::before,
@@ -5879,6 +5881,43 @@ function bindEvents() {
     scrollTo({ top: 0, behavior: 'smooth' });
     renderSections(false);
   });
+
+  // Category tabs — let mouse wheel scroll horizontally, and allow click+drag
+  // so desktop users (no touch/trackpad swipe) can reach tabs hidden off-screen
+  // like "Cómic" and "Novela Gráfica" when the strip overflows.
+  (function enableCatTabsScrolling() {
+    const strip = document.getElementById('catTabs');
+    if (!strip) return;
+
+    strip.addEventListener('wheel', (e) => {
+      // Only hijack the wheel when there is actually something to scroll
+      if (strip.scrollWidth <= strip.clientWidth) return;
+      const delta = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+      if (delta === 0) return;
+      e.preventDefault();
+      strip.scrollLeft += delta;
+    }, { passive: false });
+
+    let isDown = false, startX = 0, startScroll = 0, dragged = false;
+    strip.addEventListener('mousedown', (e) => {
+      isDown = true; dragged = false;
+      startX = e.pageX; startScroll = strip.scrollLeft;
+      strip.classList.add('dragging');
+    });
+    window.addEventListener('mouseup', () => { isDown = false; strip.classList.remove('dragging'); });
+    window.addEventListener('mouseleave', () => { isDown = false; strip.classList.remove('dragging'); });
+    strip.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      const dx = e.pageX - startX;
+      if (Math.abs(dx) > 4) dragged = true;
+      strip.scrollLeft = startScroll - dx;
+    });
+    // Suppress the click that follows a drag so it doesn't accidentally
+    // select whichever tab the cursor lands on.
+    strip.addEventListener('click', (e) => {
+      if (dragged) { e.stopPropagation(); e.preventDefault(); dragged = false; }
+    }, true);
+  })();
 
   // Dropdown toggles — open/close on button click (not on panel clicks)
   document.querySelectorAll('.fdrop').forEach(drop => {
