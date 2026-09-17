@@ -1,5 +1,190 @@
 [
   {
+    "id": "gl_1789676732095_s9z",
+    "titulo": "My Boss, She Plotted Against Me",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx169439-v0Y6pn52AKAr.jpg",
+    "desc": "Al comienzo de su pasantía, XuNian tuvo la mala suerte de ofender a su jefa, JiangZhi, ¡XuNian solo podía maldecir su gran mala suerte! Afortunadamente, XuNian tiene un romance en linea, su pareja es cariñosa y empalagosa, que también le daba consejos sobre cómo lidiar con su jefa tiránica. Pero... ¡¿Cómo es que su pareja y su tiránica jefa resultaron ser la misma persona?! Durante el día la regañaba al punto de hacerla llorar, y durante la noche se encargaba de consolarla, ¡Incluso se regañaba a sí misma!, cuando JiangZhi descubrió la verdad, no pudo evitar llevarse la mano a la frente y suspirar profundamente.",
+    "tags": [
+      "Drama",
+      "Comedia",
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "Mi jefa planea algo contra mí",
+      "Shangsi Ta Dui Wo Tumoubugui",
+      "上司她对我图谋不轨"
+    ],
+    "capitulos_totales": 20,
+    "autor": [
+      "Fire工作室",
+      "速度线工作室"
+    ],
+    "anio_inicio": 2023,
+    "content_rating": "safe"
+  },
+  {
+    "id": "gl_1789676297332_r0o",
+    "titulo": "Absolute Obedience!",
+    "seccion": "Manhwa",
+    "estado": "Continúa",
+    "imagen": "https://i6.mangapicgallery.com/r/coverlink/rROHYYKHa8HlWy3U7kHm8eI5JAZfMRXfoQQqBg1cwmDVnaN.jpeg?4",
+    "desc": "Han Seora es la diosa del departamento de Educación Física. Está enamorada de su amiga de la infancia, Yuneun, desde que eran niñas… ¿Pero es un amor no correspondido?",
+    "tags": [
+      "Drama",
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": true,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "절대복종!",
+      "¡Obediencia Absoluta!"
+    ],
+    "subgeneros": [
+      "Erótica"
+    ],
+    "anio_inicio": 2026,
+    "content_rating": "erotica"
+  },
+  {
+    "id": "gl_1789676040631_ljw",
+    "titulo": "Mayonaka ni Aishiteyo (Love Me Tender at Midnight)",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://uploads.mangadex.org/covers/c2a12541-9dd7-4eb3-a896-45e7b9314ec2/22b41f3f-8fe1-4a17-80b0-c9dd70bd1002.jpg",
+    "desc": "",
+    "tags": [
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "真夜中に愛してよ",
+      "Love Me Tender at Midnight",
+      "한밤중에 사랑해 줘"
+    ],
+    "pais_cultura": [
+      "Japón"
+    ],
+    "autor": [
+      "Amazaki Suika"
+    ],
+    "anio_inicio": 2026,
+    "content_rating": "sugestiva"
+  },
+  {
+    "id": "gl_1789674961744_h7t",
+    "titulo": "Compañeras",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://us-a.tapas.io/sa/10/74fb4874-ef5b-490a-82e0-6059129afef2_z.jpg",
+    "desc": "Elena tiene un objetivo este año y es volverse más cercana a su compañera de clases, Ana. Sus emociones y la notoria amabilidad de Ana hacia ella hacen que todo sea más confuso pero al mismo tiempo emocionante. ¿Logrará Elena tener la cercanía que espera?",
+    "tags": [
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "Classmates"
+    ],
+    "autor": [
+      "Blackgem_"
+    ],
+    "anio_inicio": 2022,
+    "content_rating": "safe"
+  },
+  {
+    "id": "gl_1789672559866_u32",
+    "titulo": "Toki",
+    "seccion": "Manhwa",
+    "estado": "Continúa",
+    "imagen": "https://uploads.mangadex.org/covers/04d4dcd8-c009-476e-86f5-d00ddb2057bd/45625217-217e-4df1-adce-a0f050f59dc3.jpg",
+    "desc": "Spin-off del manga de KOBAYASHI Ritz, “Saki”, que sigue la historia de Toki Onjouji, Ryuuka Shimizudani y otras chicas de Osaka durante sus años de secundaria y su curiosa relación…",
+    "tags": [
+      "Drama"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "怜-Toki-"
+    ],
+    "subgeneros": [
+      "Deporte"
+    ],
+    "identidad_genero": [
+      "Masc"
+    ],
+    "pais_cultura": [
+      "Japón"
+    ],
+    "autor": [
+      "Kobayashi Ritz",
+      "Mekimeki"
+    ],
+    "anio_inicio": 2016,
+    "content_rating": "safe",
+    "demografico": "seinen"
+  },
+  {
+    "id": "gl_1789672413668_xpe",
+    "titulo": "We’ve Been Reincarnated, There’s No Way I’m Giving You My Mana Again!",
+    "seccion": "Manhwa",
+    "estado": "Continúa",
+    "imagen": "https://uploads.mangadex.org/covers/cf4d634f-7199-4f4b-9ce2-2488e95c91b6/c5680a90-7190-4507-a1c0-674d74f9d511.png",
+    "desc": "En su vida pasada, llevaba grilletes para ella. En esta vida, recibió un anillo de bodas de ella.\n\n“¡Seré el que cuide de ti esta vida!”\n\nUna princesa wolfkin renacida de las llamas x una santa reencarnada unida por su destino… ¡Una historia de amor prohibida que se renueva a través del tiempo y el espacio!",
+    "tags": [
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [
+      "Forbidden Love"
+    ],
+    "personajes": [],
+    "titulos_alt": [
+      "都转生了，我才不要再给你补魔！",
+      "都轉生了，我才不要再給你補魔！",
+      "We've Been Reincarnated, There's No Way I'm Giving You My Mana Again!"
+    ],
+    "subgeneros": [
+      "Reencarnación"
+    ],
+    "pais_cultura": [
+      "China"
+    ],
+    "autor": [
+      "Chise",
+      "xiao-Dao"
+    ],
+    "anio_inicio": 2026,
+    "content_rating": "sugestiva"
+  },
+  {
     "id": "gl_1789671801528_oyc",
     "titulo": "Programmed To Love You",
     "seccion": "Manhua",

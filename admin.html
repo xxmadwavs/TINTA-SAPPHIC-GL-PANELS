@@ -553,6 +553,15 @@ tr.row-dup:hover{background:rgba(180,71,255,.08)}
     <div class="m-body m-split">
       <div class="m-left" id="secBasicos">
         <div class="form-grid">
+          <div class="form-full fg" id="mdSearchBox" style="background:var(--surface2);border:1px solid var(--border);padding:12px 14px">
+            <label class="flbl" style="color:var(--neon3)">🔎 Buscar en MangaDex</label>
+            <div class="link-add-row" style="margin-bottom:0;padding:0;background:transparent;border:none">
+              <input type="text" id="mdQuery" class="link-inp" placeholder="Título (inglés o romanizado funciona mejor)" onkeydown="if(event.key==='Enter'){event.preventDefault();searchMangaDex();}">
+              <button type="button" class="tb-btn tb-neon" onclick="searchMangaDex()">Buscar</button>
+            </div>
+            <div class="fhint" id="mdStatus" style="margin-top:6px"></div>
+            <div id="mdResults" style="display:none;flex-direction:column;gap:6px;margin-top:8px"></div>
+          </div>
           <input type="hidden" id="fId">
           <div class="form-full fg">
             <label class="flbl">Título <span class="req">*</span></label>
@@ -891,6 +900,160 @@ function chipClick(kind,val){
   else cfg.add(val);
   cfg.render();
   renderChipGroup(kind);
+}
+
+// ── BUSCADOR MANGADEX ─────────────────────────────────────
+let mdLastResults=[];
+const MD_LANG_TO_PAIS={ja:'Japón',ko:'Corea del Sur',zh:'China','zh-hk':'Taiwán',en:'Estados Unidos',th:'Tailandia',fr:'Francia',es:'España',de:'Alemania',it:'Italia',vi:'Vietnam','pt-br':'Brasil'};
+const MD_STATUS_TO_ESTADO={ongoing:'Continúa',completed:'Finalizado',hiatus:'Hiatus',cancelled:'Cancelado'};
+const MD_RATING_TO_CONTENT={safe:'safe',suggestive:'sugestiva',erotica:'erotica',pornographic:'erotica'};
+const MD_DEMO_MAP={shounen:'shounen',shoujo:'shoujo',josei:'josei',seinen:'seinen'};
+
+function cleanStrMD(s){return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z0-9]/g,'').toLowerCase();}
+function matchTagsFromTextMD(text,list){
+  const ct=cleanStrMD(text);
+  const found=[];
+  list.forEach(item=>{
+    const ci=cleanStrMD(item);
+    if(ci.length>=4 && ct.indexOf(ci)>=0) found.push(item);
+  });
+  return found;
+}
+
+async function searchMangaDex(){
+  const status=document.getElementById('mdStatus');
+  const resultsWrap=document.getElementById('mdResults');
+  const q=(document.getElementById('mdQuery').value||'').trim();
+  if(!q){status.style.color='var(--neon2)';status.textContent='Escribe un título para buscar.';return;}
+
+  status.style.color='var(--dim)';status.textContent='Buscando…';
+  resultsWrap.style.display='none';resultsWrap.innerHTML='';
+
+  try{
+    const url='https://api.mangadex.org/manga?title='+encodeURIComponent(q)+'&limit=5&includes[]=cover_art&includes[]=author&includes[]=artist&order[relevance]=desc';
+    const res=await fetch(url);
+    const data=await res.json();
+    mdLastResults=data.data||[];
+
+    if(!mdLastResults.length){
+      status.style.color='var(--neon2)';
+      status.textContent='Sin resultados. Prueba con el título en inglés o romanizado.';
+      return;
+    }
+
+    resultsWrap.innerHTML=mdLastResults.map((m,i)=>{
+      const at=m.attributes||{};
+      const titleObj=at.title||{};
+      const title=titleObj.en||titleObj['ja-ro']||titleObj.ja||Object.values(titleObj)[0]||'(sin título)';
+      const cover=(m.relationships||[]).find(r=>r.type==='cover_art');
+      const fileName=cover&&cover.attributes?cover.attributes.fileName:null;
+      const thumb=fileName?`https://uploads.mangadex.org/covers/${m.id}/${fileName}.256.jpg`:'';
+      const meta=[at.year,at.status].filter(Boolean).join(' · ');
+      return `<div style="display:flex;gap:10px;align-items:center;padding:8px 10px;background:var(--surface3);border:1px solid var(--border);cursor:pointer" onclick="applyMangaDexResult(${i})">
+        ${thumb?`<img src="${esc(thumb)}" style="width:34px;height:50px;object-fit:cover;flex-shrink:0;border:1px solid var(--border)">`:`<div style="width:34px;height:50px;display:flex;align-items:center;justify-content:center;background:var(--surface2);flex-shrink:0">📕</div>`}
+        <div style="flex:1;min-width:0">
+          <div style="font-size:12.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(title)}</div>
+          <div style="font-size:10.5px;color:var(--dim)">${esc(meta)}</div>
+        </div>
+      </div>`;
+    }).join('');
+    resultsWrap.style.display='flex';
+    status.style.color='var(--neon3)';
+    status.textContent='Elige un resultado para rellenar el formulario.';
+  }catch(err){
+    status.style.color='var(--neon2)';
+    status.textContent='Error al buscar. Revisa tu conexión.';
+  }
+}
+
+function applyMangaDexResult(i){
+  const m=mdLastResults[i];
+  if(!m) return;
+  const at=m.attributes||{};
+  let filled=0;
+
+  const titleObj=at.title||{};
+  const mainTitle=titleObj.en||titleObj['ja-ro']||titleObj.ja||Object.values(titleObj)[0]||'';
+  const fTitulo=document.getElementById('fTitulo');
+  if(mainTitle && !fTitulo.value.trim()){fTitulo.value=mainTitle;filled++;}
+
+  /* Títulos alternativos (hasta 4, sin repetir el principal) */
+  if(altList.length===0 && Array.isArray(at.altTitles)){
+    const seen=new Set([mainTitle]);
+    at.altTitles.forEach(obj=>{
+      Object.values(obj).forEach(v=>{
+        if(v && !seen.has(v) && altList.length<4){addAlt(v);seen.add(v);filled++;}
+      });
+    });
+  }
+
+  /* Autor/a y artista (vienen expandidos por includes[]=author,artist) */
+  if(autorList.length===0){
+    (m.relationships||[]).filter(r=>r.type==='author'||r.type==='artist').forEach(r=>{
+      const name=r.attributes?r.attributes.name:null;
+      if(name){const before=autorList.length;addAutor(name);if(autorList.length>before)filled++;}
+    });
+  }
+
+  const fAnioInicio=document.getElementById('fAnioInicio');
+  if(at.year && !fAnioInicio.value){fAnioInicio.value=at.year;filled++;}
+
+  const estadoMapeado=MD_STATUS_TO_ESTADO[at.status];
+  if(estadoMapeado){
+    const fEstado=document.getElementById('fEstado');
+    fEstado.value=estadoMapeado;
+    fEstado.dispatchEvent(new Event('change'));
+    filled++;
+  }
+
+  const fContentRating=document.getElementById('fContentRating');
+  const ratingMapeado=MD_RATING_TO_CONTENT[at.contentRating];
+  if(ratingMapeado && !fContentRating.value){fContentRating.value=ratingMapeado;filled++;}
+
+  const fDemografico=document.getElementById('fDemografico');
+  const demoMapeado=MD_DEMO_MAP[at.publicationDemographic];
+  if(demoMapeado && !fDemografico.value){fDemografico.value=demoMapeado;filled++;}
+
+  const fImagen=document.getElementById('fImagen');
+  if(!fImagen.value.trim()){
+    const cover=(m.relationships||[]).find(r=>r.type==='cover_art');
+    const fileName=cover&&cover.attributes?cover.attributes.fileName:null;
+    if(fileName){
+      const coverUrl=`https://uploads.mangadex.org/covers/${m.id}/${fileName}`;
+      fImagen.value=coverUrl;
+      updateCov(coverUrl);
+      filled++;
+    }
+  }
+
+  const descObj=at.description||{};
+  const desc=descObj.es||descObj.en||Object.values(descObj)[0]||'';
+  const fDesc=document.getElementById('fDesc');
+  if(desc && !fDesc.value.trim()){fDesc.value=desc;filled++;}
+
+  /* País y cultura, a partir del idioma original de la obra */
+  const paisMapeado=MD_LANG_TO_PAIS[at.originalLanguage];
+  if(paisMapeado && paisList.length===0){addPais(paisMapeado);filled++;}
+
+  /* Tags de MangaDex -> intentar casar contra géneros/subgéneros/tropos/personajes/identidad/advertencias */
+  const tagNames=(at.tags||[]).map(t=>t.attributes&&t.attributes.name?t.attributes.name.en||'':'').filter(Boolean);
+  const freeText=[tagNames.join(' '), desc].join(' ');
+  if(freeText.trim()){
+    let chipsMatched=0;
+    matchTagsFromTextMD(freeText,GENERO_OPTS).forEach(v=>{const b=tagsList.length;addTag(v);if(tagsList.length>b)chipsMatched++;});
+    matchTagsFromTextMD(freeText,SUBGENERO_OPTS).forEach(v=>{const b=subgenerosList.length;addSubgenero(v);if(subgenerosList.length>b)chipsMatched++;});
+    matchTagsFromTextMD(freeText,TROPE_OPTS).forEach(v=>{const b=tropesList.length;addTrope(v);if(tropesList.length>b)chipsMatched++;});
+    matchTagsFromTextMD(freeText,PERSONAJE_OPTS).forEach(v=>{const b=personajesList.length;addPersonaje(v);if(personajesList.length>b)chipsMatched++;});
+    matchTagsFromTextMD(freeText,IDENTIDAD_OPTS).forEach(v=>{const b=identidadList.length;addIdentidad(v);if(identidadList.length>b)chipsMatched++;});
+    matchTagsFromTextMD(freeText,ADVERTENCIA_OPTS).forEach(v=>{const b=advertenciasList.length;addAdvertencia(v);if(advertenciasList.length>b)chipsMatched++;});
+    filled+=chipsMatched;
+  }
+
+  document.getElementById('mdResults').style.display='none';
+  document.getElementById('mdQuery').value='';
+  const status=document.getElementById('mdStatus');
+  status.style.color='var(--neon3)';
+  status.textContent='Rellenados '+filled+' campo(s) desde MangaDex. Revisa el estado, el país y las categorías (a veces vienen en inglés).';
 }
 
 // ── TAG NORMALIZATION ─────────────────────────────────────
