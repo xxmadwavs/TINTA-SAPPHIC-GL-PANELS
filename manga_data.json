@@ -1,5 +1,107 @@
 [
   {
+    "id": "gl_1789763447903_gun",
+    "titulo": "She Loves to Cook, and She Loves to Eat",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://uploads.mangadex.org/covers/a9a3d2c8-fb68-4067-948b-7602f1bb060d/b0accca3-7166-467c-967f-4ef22a62d4fd.jpg",
+    "desc": "Es una encantadora historia que sigue la vida de Nomoto-san, un amante de la cocina que vive solo y desea compartir su pasión culinaria con alguien más. A pesar de su talento en la cocina, Nomoto-san siempre ha sentido que sus habilidades y creatividad están siendo desaprovechadas al cocinar solo para ella, ya que come en pequeñas cantidades. Un día, debido al estrés acumulado, Nomoto-san cocina sin querer un plato que se sale de su control y no puede terminar. Es en ese momento que su atención se dirige hacia Kyosuke, una mujer que vive en el mismo edificio de apartamentos. Consciente de que Kyosuke disfruta de comidas abundantes, Nomoto se hacerca a ella. A medida que comienzan a interactuar audazmente, una conexión especial se desarrolla entre Nomoto-san y Kyosuke Juntas, empiezan a explorar la cocina. A través de esta amistad culinaria, Nomoto-san comienza a darse cuenta de sus sentimientos hacia Kyosuke mientras disfrutan de hacer platos elaborados con amor.",
+    "tags": [
+      "Romance",
+      "Comedia",
+      "Drama"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "作りたい女と食べたい女",
+      "She Loves to Cook, and She Loves to Eat",
+      "TsukuTabe",
+      "つくたべ",
+      "Tsukuritai Onna to Tabetai Onna",
+      "A ella le encanta cocinar y a ella le encanta comer"
+    ],
+    "pais_cultura": [
+      "Japón"
+    ],
+    "autor": [
+      "Yuzaki Sakaomi"
+    ],
+    "anio_inicio": 2021,
+    "content_rating": "safe",
+    "demografico": "josei"
+  },
+  {
+    "id": "gl_1789763076078_nuv",
+    "titulo": "Kuchibeta Shokudou",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://uploads.mangadex.org/covers/cd8c0cda-debe-40e4-a0ea-462046a97697/0b227b02-3008-4652-b05e-ed19d691759f.jpg",
+    "desc": "¡Una clienta que ha querido entrar al restaurante pero no lo ha hecho durante 5 años y una empleada que quiere que la clienta entre al restaurante!\nTanto que decir… pero es tan difícil expresarse…\n¿Cómo podrá desarrollarse su relación? ¿Será solo una amistad o tal vez… amor…?",
+    "tags": [
+      "Comedia"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "くちべた食堂",
+      "Restaurant of the Awkward People",
+      "Restaurante para gente con pocas habilidades sociales"
+    ],
+    "pais_cultura": [
+      "Japón"
+    ],
+    "autor": [
+      "Bonkara"
+    ],
+    "anio_inicio": 2021,
+    "content_rating": "safe",
+    "demografico": "seinen"
+  },
+  {
+    "id": "gl_1789762907419_gdc",
+    "titulo": "Intoxicated Cherries",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt_HoFNeVeIO9sokVDqw2c1cmkord5GkowzqxEbtN-8EbuG0NLX3aebJad&s=10",
+    "desc": "Una comedia romántica sobre Asha, una perra alfa de 26 años que se considera la más perdedora del mundo. Sin experiencia en citas y sin tener idea de cómo lidiar con el amor, tiene un objetivo sencillo: ¡encontrar una novia y perder por fin su virginidad! A medida que la caótica vida de Asha se ve envuelta en amistades inesperadas y encuentros incómodos, conoce a la Sra. Irina, una leoparda de las nieves omega de 41 años, de una belleza impresionante, que está muy por encima de su nivel… pero que, curiosamente, se interesa por la perdedora de Asha.",
+    "tags": [
+      "Comedia Romántica"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "subgeneros": [
+      "Omegaverse"
+    ],
+    "edad_protagonistas": [
+      "+40",
+      "25–39"
+    ],
+    "enlaces_lectura": [
+      {
+        "id": "mu7elhfx9mlj6",
+        "label": "webtoon",
+        "url": "https://www.webtoons.com/en/canvas/intoxicated-cherries-gl/list?title_no=1158653"
+      }
+    ],
+    "autor": [
+      "moonbun00"
+    ],
+    "anio_inicio": 2026
+  },
+  {
     "id": "gl_1789676732095_s9z",
     "titulo": "My Boss, She Plotted Against Me",
     "seccion": "Manhwa",
@@ -719,10 +821,10 @@
       "Drama",
       "Histórica"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
@@ -823,10 +925,10 @@
       "Comedia",
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [
       "Delicuentes",
@@ -912,10 +1014,10 @@
       "Comedia",
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [
       "Estudiante",
@@ -1044,14 +1146,20 @@
       "Drama",
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
       "Durmiendo juntas"
+    ],
+    "subgeneros": [
+      "Slice of Life"
+    ],
+    "pais_cultura": [
+      "Japon"
     ],
     "enlaces_lectura": [
       {
@@ -1060,24 +1168,18 @@
         "url": "https://manga.bilibili.com/detail/mc41777?from=manga_homepage_discuss"
       },
       {
+        "id": "gl_19f64aecf485ua9r",
         "label": "Raw oficial",
-        "url": "https://mangahot.jp/site/works/z_R0017",
-        "id": "gl_19f64aecf485ua9r"
+        "url": "https://mangahot.jp/site/works/z_R0017"
       }
     ],
-    "anio_inicio": 2026,
-    "content_rating": "safe",
+    "capitulos_totales": 25,
     "autor": [
       "Higurashi Kinoko (Himuro)"
     ],
-    "demografico": "seinen",
-    "pais_cultura": [
-      "Japon"
-    ],
-    "capitulos_totales": 25,
-    "subgeneros": [
-      "Slice of Life"
-    ]
+    "anio_inicio": 2026,
+    "content_rating": "safe",
+    "demografico": "seinen"
   },
   {
     "id": "gl_1783876867819_sus",
@@ -1415,10 +1517,10 @@
       "Romance",
       "Fantasía"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
