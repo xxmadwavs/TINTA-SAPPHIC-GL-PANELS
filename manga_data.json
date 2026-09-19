@@ -199,10 +199,10 @@
     "tags": [
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
@@ -755,10 +755,10 @@
     "tags": [
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [
       "Zombie",
@@ -784,10 +784,10 @@
     "tags": [
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [
       "Estudiante"
@@ -858,10 +858,10 @@
       "Drama",
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
@@ -891,10 +891,10 @@
       "Drama",
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
@@ -1543,10 +1543,10 @@
       "Fantasía",
       "Drama"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
@@ -1656,7 +1656,7 @@
     "titulo": "Wol-hwa x Mok-gum",
     "seccion": "Manhwa",
     "estado": "Finalizado",
-    "imagen": "https://cdn.anime-planet.com/manga/primary/wolhwa-x-mokgeum-1-190x257.jpg?t=1625922732",
+    "imagen": "https://uploads.mangadex.org/covers/c80f60d9-1a21-4d8f-b49e-e0025a9324e7/87e072ef-678f-447b-b9dd-bf17026e98a8.jpg",
     "desc": "Al final del juego de huida, las dos mujeres se encontraron por fin. Por sus recuerdos desfilan fragmentos de su vida cotidiana en el instituto, donde tuvieron que enfrentarse a mucha gente.",
     "tags": [
       "Romance"
@@ -2314,12 +2314,24 @@
       "Drama",
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
+    "tropos": [],
+    "personajes": [],
     "titulos_alt": [
       "Shao"
+    ],
+    "pais_cultura": [
+      "China"
+    ],
+    "enlaces_lectura": [
+      {
+        "id": "gl_19f64b06c07fe748",
+        "label": "Raw oficial",
+        "url": "https://m.kuaikanmanhua.com/mobile/17527/list/"
+      }
     ],
     "capitulos_totales": 28,
     "autor": [
@@ -2329,19 +2341,7 @@
       "悠作文化"
     ],
     "anio_inicio": 2023,
-    "content_rating": "safe",
-    "tropos": [],
-    "personajes": [],
-    "pais_cultura": [
-      "China"
-    ],
-    "enlaces_lectura": [
-      {
-        "label": "Raw oficial",
-        "url": "https://m.kuaikanmanhua.com/mobile/17527/list/",
-        "id": "gl_19f64b06c07fe748"
-      }
-    ]
+    "content_rating": "safe"
   },
   {
     "id": "gl_1778224342735_ym9",
@@ -2353,10 +2353,10 @@
     "tags": [
       "YA"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "enlaces_lectura": [
@@ -4364,7 +4364,7 @@
     "titulo": "Maid in a Dream",
     "seccion": "Manhwa",
     "estado": "Finalizado",
-    "imagen": "https://cdn.anime-planet.com/manga/primary/maid-in-a-dream-1.webp?t=1644974110",
+    "imagen": "https://uploads.mangadex.org/covers/85b726a1-70e7-472a-8e04-fba182939754/b09be778-6409-49a7-905a-673611645be2.jpg",
     "desc": "Ah-ju vive dos vidas, una estudiante universitaria y una doncella exclusiva para el emperador. Cuando duerme en un mundo, se despierta en otro. Un día, la reina de Aran le pregunta: \"¡Ayúdame con mi amor!\"",
     "tags": [
       "Comedia",
@@ -4375,8 +4375,23 @@
     "in_files": false,
     "adult": false,
     "subido": "Subido biblioteca",
+    "tropos": [],
+    "personajes": [],
     "titulos_alt": [
       "Kumsogui Maid"
+    ],
+    "identidad_genero": [
+      "Stud"
+    ],
+    "pais_cultura": [
+      "Corea del Sur"
+    ],
+    "enlaces_lectura": [
+      {
+        "id": "gl_19f64b326796crk6",
+        "label": "Raw oficial",
+        "url": "https://www.bomtoon.com/comic/ep_list/D_maid"
+      }
     ],
     "capitulos_totales": 41,
     "autor": [
@@ -4384,19 +4399,7 @@
       "Happiness"
     ],
     "anio_inicio": 2018,
-    "content_rating": "safe",
-    "tropos": [],
-    "personajes": [],
-    "pais_cultura": [
-      "Corea del Sur"
-    ],
-    "enlaces_lectura": [
-      {
-        "label": "Raw oficial",
-        "url": "https://www.bomtoon.com/comic/ep_list/D_maid",
-        "id": "gl_19f64b326796crk6"
-      }
-    ]
+    "content_rating": "safe"
   },
   {
     "id": "maid_in_heaven_22",
@@ -5474,7 +5477,7 @@
     "titulo": "The Soaking-Wet Unnie Next Door Wants Me To Touch Her Down There?",
     "seccion": "Manhwa",
     "estado": "Finalizado",
-    "imagen": "https://cdn.anime-planet.com/manga/primary/the-next-door-neighbor-wants-me-to-touch-her-because-shes-so-wet-1-285x399.webp?t=1763243596",
+    "imagen": "https://uploads.mangadex.org/covers/47e7bee9-8f16-4fb0-a46b-88d38bf6769c/9cac4279-01c1-4b64-b37f-2e707177eb50.png",
     "desc": "",
     "tags": [
       "Erótica",
@@ -5485,9 +5488,24 @@
     "in_files": false,
     "adult": true,
     "subido": "Subido biblioteca",
+    "tropos": [],
+    "personajes": [],
     "titulos_alt": [
       "잔뜩젖은 옆집언니가 만져달라는데요?",
       "The Next-Door Neighbor Wants Me to Touch Her Because She's So Wet?"
+    ],
+    "subgeneros": [
+      "Slice of Life"
+    ],
+    "pais_cultura": [
+      "Corea del Sur"
+    ],
+    "enlaces_lectura": [
+      {
+        "id": "gl_19f64b4b6d2b49kz",
+        "label": "Raw oficial",
+        "url": "https://www.postype.com/@original/post/17132927"
+      }
     ],
     "capitulos_totales": 1,
     "autor": [
@@ -5495,22 +5513,7 @@
       "조상덕"
     ],
     "anio_inicio": 2024,
-    "content_rating": "erotica",
-    "tropos": [],
-    "personajes": [],
-    "pais_cultura": [
-      "Corea del Sur"
-    ],
-    "enlaces_lectura": [
-      {
-        "label": "Raw oficial",
-        "url": "https://www.postype.com/@original/post/17132927",
-        "id": "gl_19f64b4b6d2b49kz"
-      }
-    ],
-    "subgeneros": [
-      "Slice of Life"
-    ]
+    "content_rating": "erotica"
   },
   {
     "id": "trash_flower_50",
@@ -10987,7 +10990,7 @@
     "titulo": "Utena, la chica revolucionaria",
     "seccion": "Manga",
     "estado": "Finalizado",
-    "imagen": "https://pics.filmaffinity.com/shojo_kakumei_utena-101325225-large.jpg",
+    "imagen": "https://www.normaeditorial.com/upload/media/albumes/0001/27/036754f23ada4178cdd4e62d11b9d2317aab23be.jpeg",
     "desc": "Utena Tenjô acaba de entrar en la prestigiosa Academia Ohtori, y descubre con sorpresa que el anillo que le regaló el príncipe que le salvó la vida de niña le abre las puertas de la arena de los duelos, donde podrá competir por el poder de la revolución. Pese a no tener el menor interés en ello, se enfrenta a uno de los engreídos miembros del Consejo para darle una lección y su victoria la convierte en la duelista vencedora... y en dueña y señora de Anthy Himemiya, la Novia de la rosa.",
     "tags": [
       "Acción",
@@ -10995,7 +10998,8 @@
       "Psicológico",
       "Romance",
       "Thriller",
-      "Fantasía"
+      "Fantasía",
+      "Drama"
     ],
     "in_biblioteca": true,
     "in_files": true,
@@ -11005,6 +11009,9 @@
     "personajes": [],
     "titulos_alt": [
       "Shoujo Kakumei Utena"
+    ],
+    "identidad_genero": [
+      "Masc"
     ],
     "pais_cultura": [
       "Japon"
@@ -11023,6 +11030,7 @@
       "Saitou Chiho"
     ],
     "anio_inicio": 1996,
+    "content_rating": "safe",
     "demografico": "shoujo"
   },
   {
