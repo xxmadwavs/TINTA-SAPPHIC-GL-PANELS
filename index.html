@@ -5902,15 +5902,14 @@ function bindEvents() {
     strip.addEventListener('mousedown', (e) => {
       isDown = true; dragged = false;
       startX = e.pageX; startScroll = strip.scrollLeft;
-      strip.classList.add('dragging');
     });
     window.addEventListener('mouseup', () => { isDown = false; strip.classList.remove('dragging'); });
     window.addEventListener('mouseleave', () => { isDown = false; strip.classList.remove('dragging'); });
     strip.addEventListener('mousemove', (e) => {
       if (!isDown) return;
       const dx = e.pageX - startX;
-      if (Math.abs(dx) > 4) dragged = true;
-      strip.scrollLeft = startScroll - dx;
+      if (Math.abs(dx) > 4 && !dragged) { dragged = true; strip.classList.add('dragging'); }
+      if (dragged) strip.scrollLeft = startScroll - dx;
     });
     // Suppress the click that follows a drag so it doesn't accidentally
     // select whichever tab the cursor lands on.
