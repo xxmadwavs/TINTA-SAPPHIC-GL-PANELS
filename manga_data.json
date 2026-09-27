@@ -1,5 +1,470 @@
 [
   {
+    "id": "gl_1790534086722_t0r",
+    "titulo": "The Queen’s Last Tea Time",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://uploads.mangadex.org/covers/8ec0691c-8690-4f84-ad8c-e36b814f2f32/7afb1161-5fa7-4a2f-94e6-5af51e9704b5.jpg",
+    "desc": "Una estudiante es encontrada muerta en el colegio femenino Santa Adela, al que sólo pueden asistir chicas de clase alta. A simple vista, parece un suicidio, pero Emily, la mejor amiga de la víctima, está convencida de que fue un asesinato. Después de pensarlo mucho, Emily le pide a Irene, la alumna más inteligente del colegio, y ahora una vieja amiga de la infancia, que investigue el caso...",
+    "tags": [
+      "Drama",
+      "Histórica"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "The Queen’s Last Tea Time",
+      "여왕님의 마지막 티타임",
+      "Yowangnime Majimak Teatime",
+      "El ultimo te de la reina"
+    ],
+    "identidad_genero": [
+      "Masc",
+      "Stud"
+    ],
+    "pais_cultura": [
+      "Corea del Sur"
+    ],
+    "capitulos_totales": 11,
+    "autor": [
+      "Tou",
+      "Seonjeong"
+    ],
+    "anio_inicio": 2018,
+    "content_rating": "safe"
+  },
+  {
+    "id": "gl_1790533787520_s1u",
+    "titulo": "To Get Her",
+    "seccion": "Cómic",
+    "estado": "Continúa",
+    "imagen": "https://uploads.mangadex.org/covers/50dd9811-9ea8-4790-b49a-12f463558051/eaffdd9f-011f-4baa-817d-c202f9980d6a.jpg",
+    "desc": "Ann, una chica muy seria, no tiene vida sentimental y prefiere centrarse en su carrera como diseñadora gráfica. Pero cuando un proyecto la lleva al bar de la alegre y despreocupada Libby, ¿cambiará eso?",
+    "tags": [
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "Заполучить её"
+    ],
+    "pais_cultura": [
+      "Estados Unidos"
+    ],
+    "autor": [
+      "ChamomileTea"
+    ],
+    "anio_inicio": 2025,
+    "content_rating": "safe"
+  },
+  {
+    "id": "gl_1790533660690_2ri",
+    "titulo": "The Voyeur's Confession",
+    "seccion": "Manhua",
+    "estado": "Continúa",
+    "imagen": "https://uploads.mangadex.org/covers/b291bdaa-47b8-49a2-84a8-a0f7f5bb324c/198438fc-7298-4845-b92d-3f6d44bea782.png",
+    "desc": "Últimamente, Jiang Miao se siente un poco rara. Wei Yi, esa compañera de clase con una forma de pensar tan peculiar, no deja de mirarla fijamente e intenta seguirla... Una chica «denpa» y sin pelos en la lengua frente a alguien que se disfraza de rayo de sol, pero que en el fondo esconde una naturaleza oscura y sombría.",
+    "tags": [
+      "Drama",
+      "Psicológico",
+      "Misterio",
+      "Romance",
+      "Fantasía"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [
+      "Ángel",
+      "Hada"
+    ],
+    "titulos_alt": [
+      "偷窥者的告白",
+      "The Voyeur's Confession",
+      "Tōukuīzhě de Gàobái",
+      "LA CONFESIÓN DEL VOYEUR"
+    ],
+    "identidad_genero": [
+      "Sunshine"
+    ],
+    "pais_cultura": [
+      "China"
+    ],
+    "autor": [
+      "Bai San Culture (白三文化)"
+    ],
+    "anio_inicio": 2026,
+    "content_rating": "sugestiva"
+  },
+  {
+    "id": "gl_1790533487570_1iv",
+    "titulo": "IRINA",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://uploads.mangadex.org/covers/d0422641-2fc8-468e-a5e7-92a32f3a4f71/79ce6115-eb74-487c-b09c-ae03df2e407e.png",
+    "desc": "Cómo organiza Irina su vida",
+    "tags": [
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "pais_cultura": [
+      "Estados Unidos"
+    ],
+    "enlaces_lectura": [
+      {
+        "id": "muk59tz972x12",
+        "label": "Webtoon",
+        "url": "https://www.webtoons.com/en/canvas/irina/list?title_no=1158332"
+      }
+    ],
+    "autor": [
+      "Jeonsoleil"
+    ],
+    "anio_inicio": 2026,
+    "content_rating": "safe"
+  },
+  {
+    "id": "gl_1790533158927_ds9",
+    "titulo": "The Time of Scorpions",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://image-repository-cdn.tappytoon.com/series/1772/eea7868c-caae-4167-a021-a72fa5a39ac2.jpg?size=large",
+    "desc": "La tiradora olímpica Seung-a se convierte en asesina para vengar el asesinato de su hermana, al tiempo que se debate entre su oscuro destino y dos mujeres cautivadoras. Dentro de su grupo de justicieros, lucha contra una pasión cada vez mayor por su intensa jefa de equipo, Sihyeon. En su trabajo de tapadera como empleada de una librería, sucumbe a los encantos seductores de Yurim, una impresionante clienta habitual. A medida que ambas relaciones se intensifican, un secreto devastador se cierne sobre sus cabezas. La seductora Yurim es, en secreto, la fría mente maestra femenina detrás de un peligroso complot, lo que obliga a Seung-a a tomar una decisión mortal entre su compañera y su enemiga.",
+    "tags": [
+      "Romance",
+      "Acción"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [
+      "Age Gap"
+    ],
+    "personajes": [],
+    "subgeneros": [
+      "Venganza"
+    ],
+    "enlaces_lectura": [
+      {
+        "id": "muk57mao5hqv9",
+        "label": "Tappytoon",
+        "url": "https://www.tappytoon.com/en/book/the-time-of-scorpions"
+      }
+    ],
+    "capitulos_totales": 55,
+    "autor": [
+      "Sunjiae",
+      "J STUDIO",
+      "Hongjo"
+    ],
+    "anio_inicio": 2022
+  },
+  {
+    "id": "gl_1790532940420_40v",
+    "titulo": "Lora",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://uploads.mangadex.org/covers/acfb0115-9eb7-43d7-9496-9434c4c3f2d7/961f2646-45e6-45a1-aacc-01d3e788794d.jpg",
+    "desc": "Lora, una sirvienta al servicio de la vampira Carmilla, quiere ir a la Noche de Walpurgis, el festival donde se encuentra la Piedra Filosofal, que se dice que concede cualquier deseo…",
+    "tags": [
+      "Romance",
+      "Histórica"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "Laura",
+      "로라"
+    ],
+    "subgeneros": [
+      "Sobrenatural"
+    ],
+    "pais_cultura": [
+      "Corea del Sur"
+    ],
+    "capitulos_totales": 4,
+    "autor": [
+      "Unun (언니)"
+    ],
+    "anio_inicio": 2026,
+    "content_rating": "safe"
+  },
+  {
+    "id": "gl_1790530872908_jbq",
+    "titulo": "Love My Boss [Wife]",
+    "seccion": "Sin Clasificación",
+    "estado": "Finalizado",
+    "imagen": "https://uploads.mangadex.org/covers/3beb945e-8364-4684-971a-7d3b46404e3a/c661d126-f015-4ffd-b756-4aeb320e1352.jpg",
+    "desc": "La gente a menudo dice que el período más feliz es cuando han estado coqueteando durante años, y tras un largo tiempo de haber probado el verdadero amor, finalmente acceden a casarse. Si esto fuera una novela, podría tener un final feliz con los dos personajes principales casándose y amándose. Sin embargo, desconocen que en realidad esto es solo el comienzo; la vida matrimonial no se limita únicamente a amarse, estar juntos y disfrutar de momentos íntimos, sino que también está llena de aventuras e historias que pueden unirnos o grietas que nos separen.",
+    "tags": [
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "pais_cultura": [
+      "Tailandia"
+    ],
+    "capitulos_totales": 52,
+    "autor": [
+      "Ratana Satis"
+    ],
+    "anio_inicio": 2024,
+    "content_rating": "erotica"
+  },
+  {
+    "id": "gl_1790528548988_ejh",
+    "titulo": "Make Her Mine",
+    "seccion": "Webtoon",
+    "estado": "Continúa",
+    "imagen": "https://swebtoon-phinf.pstatic.net/20250827_261/1756292444640ps6Ck_PNG/thumbnail.jpg",
+    "desc": "A Ella le gusta su amiga Luna, pero conoce a Ava, que se muestra interesada en ella. ¿Cambiarán sus sentimientos hacia Luna tras conocer a Ava, o seguirá sintiendo lo mismo?",
+    "tags": [
+      "Drama",
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [
+      "Unrequited Love",
+      "Love Triangle",
+      "Friends to Lovers",
+      "Slow Burn"
+    ],
+    "personajes": [],
+    "enlaces_lectura": [
+      {
+        "id": "muk2g0abbcqy6",
+        "label": "Webtoon",
+        "url": "https://www.webtoons.com/en/canvas/make-her-mine/list?title_no=916067"
+      }
+    ],
+    "autor": [
+      "Ladybox"
+    ],
+    "anio_inicio": 2024,
+    "content_rating": "safe",
+    "demografico": "shoujo"
+  },
+  {
+    "id": "gl_1789985717692_04o",
+    "titulo": "Never Mind",
+    "seccion": "Manhwa",
+    "estado": "Continúa",
+    "imagen": "https://uploads.mangadex.org/covers/745c5140-ff76-41ae-a010-dae9425d378e/e89e3564-ff4e-4973-8a1b-37cbf7c978a9.jpg",
+    "desc": "Una historia sobre una chica de instituto que se enamoró de su amiga de la infancia.",
+    "tags": [],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "신경쓰지마",
+      "Never Mind",
+      "Shinyeongsseujima"
+    ],
+    "pais_cultura": [
+      "Corea del Sur"
+    ],
+    "autor": [
+      "NETS"
+    ],
+    "anio_inicio": 2026,
+    "content_rating": "safe"
+  },
+  {
+    "id": "gl_1789985483692_9db",
+    "titulo": "Our Similarities",
+    "seccion": "Manhua",
+    "estado": "Continúa",
+    "imagen": "https://uploads.mangadex.org/covers/79e8c0ec-5617-4910-9a33-45c76e5cbd1b/69a61fbe-dc80-4526-971f-fbeddae16086.jpg",
+    "desc": "Todas las heridas que una persona sufre de pequeño explotarán cuando crezca. Qi Lian opta por desahogarse con el mundo exterior, pero Yan Jin, sólo se tortura a sí misma.",
+    "tags": [
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "同类",
+      "Del Mismo Tipo"
+    ],
+    "pais_cultura": [
+      "China"
+    ],
+    "autor": [
+      "Mo You (墨柚)",
+      "WuYU (呉羽)",
+      "Cat Orange Studio (猫橘工作室)"
+    ],
+    "anio_inicio": 2024,
+    "content_rating": "sugestiva"
+  },
+  {
+    "id": "gl_1789985394991_wi8",
+    "titulo": "A Reasonable Motive",
+    "seccion": "Manhwa",
+    "estado": "Continúa",
+    "imagen": "https://uploads.mangadex.org/covers/1391def0-c8a1-4b8a-b0b9-5744c27de668/f621b9c4-f692-47dd-a967-2482e0830ebd.png",
+    "desc": "«Do-kyung» es un ídolo que se ha convertido en actor.\nEs el tipo de persona que, si le dan un golpe, devuelve el doble. Decide volver a la universidad tras ser provocado por Cheol-won —su compañero de trabajo y acérrimo rival—, quien le menosprecia y traza una línea divisoria entre ellos solo porque Do-kyung aún no se ha licenciado.\nMientras tanto…\n«No volveré a tener nada que ver con un chico que se maquille jamás».\n«Jae-ni» estudia Fotografía y es una fan incondicional del actor Cheol-won.\nFue ella quien le hizo esa foto legendaria que se hizo viral en Internet, pero, debido a un incidente desagradable, acaba abandonando el fandom para siempre. Sintiéndose vacía, decide volver a la universidad para retomar el rumbo de su vida.\nY así, sin más, ese mismo día, los dos legendarios estudiantes que regresan a la Universidad de Pyeonghwa hacen su reaparición.\nDo-kyung y Jae-ni parecen no tener ninguna conexión entre sí, pero, de alguna manera, sí la tienen.\nTras conocerse en clase, sus vidas comienzan a entrelazarse de la forma más inesperada…",
+    "tags": [
+      "Drama",
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "그럴만한 동기",
+      "A Reasonable Motive",
+      "Sufficient Motivation"
+    ],
+    "identidad_genero": [
+      "Masc",
+      "Stud"
+    ],
+    "pais_cultura": [
+      "Corea del Sur"
+    ],
+    "autor": [
+      "peace",
+      "Jaepil"
+    ],
+    "anio_inicio": 2026,
+    "content_rating": "safe"
+  },
+  {
+    "id": "gl_1789985050916_eq5",
+    "titulo": "Lily's Melancholy",
+    "seccion": "Manhwa",
+    "estado": "Finalizado",
+    "imagen": "https://uploads.mangadex.org/covers/6ebc38c9-367a-4fba-ab36-ad9a957ee7d1/6a1ed3d3-9e6b-4fb1-96e0-91a5ec4ebad5.png",
+    "desc": "Baekhap, una chica que siempre elige salir con chicos que no valen nada, e Iseul, su mejor amiga, que siempre la anima. Esta es la historia de su trayectoria hasta que finalmente se convierten en pareja.",
+    "tags": [
+      "Drama"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "Lily's Melancholy",
+      "백합의 우울"
+    ],
+    "identidad_genero": [
+      "Masc",
+      "Nerd"
+    ],
+    "pais_cultura": [
+      "Corea del Sur"
+    ],
+    "capitulos_totales": 62,
+    "autor": [
+      "하시아"
+    ],
+    "anio_inicio": 2023,
+    "content_rating": "safe"
+  },
+  {
+    "id": "gl_1789984811115_czj",
+    "titulo": "Shino to Ren",
+    "seccion": "Manga",
+    "estado": "Continúa",
+    "imagen": "https://uploads.mangadex.org/covers/561cf196-01a3-4c38-a838-5c6bf84ab24d/5bff4915-31a5-4ca1-9dee-76134004e542.jpg",
+    "desc": "\"I can't... take it... any longer...\"\n\"She's mine.\"\n\nThe quiet and gentle Shino and the lively tomboyish Ren are lovers.",
+    "tags": [
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": true,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "志乃と恋",
+      "Shino and Ren",
+      "시노와 렌",
+      "Сино и Рэн",
+      "Shino y Ren"
+    ],
+    "pais_cultura": [
+      "Japón"
+    ],
+    "autor": [
+      "Chigusa Minori"
+    ],
+    "anio_inicio": 2023,
+    "content_rating": "erotica",
+    "demografico": "seinen"
+  },
+  {
+    "id": "gl_1789984492272_mim",
+    "titulo": "Give Me a Pat!",
+    "seccion": "Manhua",
+    "estado": "Cancelado",
+    "imagen": "https://uploads.mangadex.org/covers/dd3a2e1d-cc1c-4028-887b-38d7c22eb4f7/2ea11461-d7cc-400e-b1fe-67112c2abf8f.jpg",
+    "desc": "En medio del caos de una vida destrozada, Yu Zhou se enfrenta a una crisis: el desánimo que amenaza su carrera como escritora. Todo parece desmoronarse… hasta que un encuentro inesperado cambia el rumbo de su vida. Xiang Wan, una mujer misteriosa y tenaz que afirma haber viajado en el tiempo desde la China imperial, aparece en su vida como un soplo de esperanza.\n\nCon su valor ancestral y su peculiar visión del mundo moderno, ayuda a Yu Zhou a encontrar la fuerza para seguir adelante. Sin embargo, el destino le tiene reservada otra sorpresa: la obra literaria de Yu Zhou se adapta a una obra de teatro radiofónica, y la protagonista elegida para dar voz a la historia no es otra que Su Chang, su exnovia. El reencuentro de ambas reaviva recuerdos y sentimientos latentes, creando un delicado triángulo emocional.",
+    "tags": [
+      "Drama",
+      "Romance"
+    ],
+    "in_biblioteca": false,
+    "in_files": false,
+    "adult": false,
+    "subido": "",
+    "tropos": [],
+    "personajes": [],
+    "titulos_alt": [
+      "帮我拍拍",
+      "Bang wo pai pai",
+      "Pogłaskaj mnie!"
+    ],
+    "pais_cultura": [
+      "China"
+    ],
+    "autor": [
+      "七小皇叔"
+    ],
+    "anio_inicio": 2023,
+    "content_rating": "safe"
+  },
+  {
     "id": "gl_1789763447903_gun",
     "titulo": "She Loves to Cook, and She Loves to Eat",
     "seccion": "Manga",
@@ -143,10 +608,10 @@
       "Drama",
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": true,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
@@ -169,10 +634,10 @@
     "tags": [
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
@@ -675,10 +1140,10 @@
     "tags": [
       "Romance"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
@@ -700,10 +1165,10 @@
     "tags": [
       "Drama"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "subgeneros": [
@@ -727,10 +1192,10 @@
       "Romance",
       "Fantasía"
     ],
-    "in_biblioteca": false,
+    "in_biblioteca": true,
     "in_files": false,
     "adult": false,
-    "subido": "",
+    "subido": "Subido biblioteca",
     "tropos": [],
     "personajes": [],
     "titulos_alt": [
@@ -6789,13 +7254,13 @@
     "in_files": true,
     "adult": false,
     "subido": "Subido biblioteca, Subido FILES",
+    "ink_club": true,
+    "ink_categories": [
+      "2026",
+      "Manhwa"
+    ],
     "tropos": [],
     "personajes": [],
-    "autor": [
-      "Seri (세리)",
-      "Biwan (비완)"
-    ],
-    "anio_inicio": 2017,
     "titulos_alt": [
       "Geunyeo ui Simcheong",
       "그녀의 심청",
@@ -6807,14 +7272,19 @@
     "pais_cultura": [
       "Corea del Sur"
     ],
-    "capitulos_totales": 81,
     "enlaces_lectura": [
       {
+        "id": "gl_19f64b68208ozna8",
         "label": "Raw oficial",
-        "url": "http://www.comico.jp/articleList.nhn?titleNo=27281",
-        "id": "gl_19f64b68208ozna8"
+        "url": "http://www.comico.jp/articleList.nhn?titleNo=27281"
       }
-    ]
+    ],
+    "capitulos_totales": 81,
+    "autor": [
+      "Seri (세리)",
+      "Biwan (비완)"
+    ],
+    "anio_inicio": 2017
   },
   {
     "id": "how_to_end_an_unrequited_love_82",
@@ -9217,45 +9687,45 @@
       "Comedia"
     ],
     "in_biblioteca": true,
-    "in_files": false,
+    "in_files": true,
     "adult": false,
-    "subido": "Subido biblioteca",
-    "titulos_alt": [
-      "The Vexations of a Shut-In Vampire Princess"
-    ],
-    "capitulos_totales": 101,
+    "subido": "Subido biblioteca, Subido FILES",
     "tropos": [],
     "personajes": [
       "Demonio",
       "Vampira"
     ],
-    "autor": [
-      "Kobayashi Kotei",
-      "Riichu"
+    "titulos_alt": [
+      "The Vexations of a Shut-In Vampire Princess"
     ],
-    "anio_inicio": 2021,
-    "demografico": "seinen",
+    "subgeneros": [
+      "Magia",
+      "Militar",
+      "Sobrenatural"
+    ],
     "pais_cultura": [
       "Japon"
     ],
     "enlaces_lectura": [
       {
+        "id": "gl_19f64b9a5c444yhw",
         "label": "Traduccion oficial (EN)",
-        "url": "https://global.manga-up.com/manga/336",
-        "id": "gl_19f64b9a5c444yhw"
+        "url": "https://global.manga-up.com/manga/336"
       },
       {
+        "id": "gl_19f64b9a5c4icxkz",
         "label": "Raw oficial",
-        "url": "https://www.ganganonline.com/title/1593",
-        "id": "gl_19f64b9a5c4icxkz"
+        "url": "https://www.ganganonline.com/title/1593"
       }
     ],
+    "capitulos_totales": 101,
+    "autor": [
+      "Kobayashi Kotei",
+      "Riichu"
+    ],
+    "anio_inicio": 2021,
     "content_rating": "sugestiva",
-    "subgeneros": [
-      "Magia",
-      "Militar",
-      "Sobrenatural"
-    ]
+    "demografico": "seinen"
   },
   {
     "id": "adachi_and_shimamura_138",
@@ -18702,7 +19172,8 @@
     "subido": "Subido biblioteca, Subido FILES",
     "ink_club": true,
     "ink_categories": [
-      "2026"
+      "2026",
+      "Sin Clasificación"
     ],
     "tropos": [
       "Love Triangle",
